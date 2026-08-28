@@ -13,17 +13,19 @@ function initNavigation() {
   const navLinks = document.querySelector(".nav-links");
   const navWrap = document.querySelector("[data-nav]");
 
-  const closeMenu = () => {
-    navLinks?.classList.remove("open");
-    menuBtn?.setAttribute("aria-expanded", "false");
-    menuBtn?.setAttribute("aria-label", "Open menu");
-  };
-
   menuBtn?.addEventListener("click", () => {
     const isOpen = navLinks?.classList.toggle("open");
     menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    document.body.classList.toggle("menu-open", Boolean(isOpen));
   });
+
+  const closeMenu = () => {
+    navLinks?.classList.remove("open");
+    menuBtn?.setAttribute("aria-expanded", "false");
+    menuBtn?.setAttribute("aria-label", "Open menu");
+    document.body.classList.remove("menu-open");
+  };
 
   document.querySelectorAll(".nav-links a, .footer-links a").forEach((link) => {
     link.addEventListener("click", closeMenu);
