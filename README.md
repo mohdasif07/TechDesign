@@ -39,7 +39,7 @@ After deploying to production:
 ## Customize
 
 - WhatsApp: `919917639330` in `app/views/shared/_contact_panel.html.erb`
-- Email: `hello@asdesigntech.in`
+- Email: `mohdasif.dev01@gmail.com`
 - Replace portfolio placeholders with real projects
 
 ## Structure
