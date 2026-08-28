@@ -1,0 +1,18 @@
+<header class="nav-wrap" data-nav>
+  <nav class="nav container" aria-label="Main navigation">
+    <%= link_to root_path, class: "brand", aria: { label: "AS DesignTech home" } do %>
+      <span class="brand-mark">AS</span>
+      <span class="brand-name">DesignTech</span>
+    <% end %>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <%= nav_link interior_design_path, "Interior Design" %>
+      <%= nav_link web_development_path, "IT Development" %>
+      <%= nav_link root_path, "Work", anchor: "#work" %>
+      <%= nav_link root_path, "About", anchor: "#about" %>
+      <%= nav_link root_path, "Get a Quote", anchor: "#contact", extra_class: "nav-cta" %>
+    </div>
+  </nav>
+</header>

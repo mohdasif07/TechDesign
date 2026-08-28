@@ -1,93 +1,130 @@
-<header class="nav-wrap">
-  <nav class="nav container">
-    <a class="brand" href="#home" aria-label="AS DesignTech home">
-      <span class="brand-mark">AS</span>
-      <span class="brand-name">DesignTech</span>
-    </a>
-    <button class="menu-btn" aria-label="Open menu">☰</button>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#work">Our Work</a>
-      <a href="#about">About</a>
-      <a href="#process">Process</a>
-      <a class="nav-cta" href="#contact">Get a Quote</a>
-    </div>
-  </nav>
-</header>
+<% content_for :meta_title, "AS DesignTech | Interior Design & IT Development in Delhi NCR" %>
+<% content_for :meta_description, "AS DesignTech — equal focus on interior design in Delhi NCR and IT development across India. Websites, apps, CRM, AI automation, modular kitchens, 3BHK design and more." %>
+<% content_for :meta_keywords, "interior design Delhi NCR, web development Delhi, IT company Gurgaon, website design Noida, modular kitchen, mobile app development, interior designer near me" %>
+<% content_for :canonical_url, request.base_url + root_path %>
 
-<main id="home">
-  <section class="hero">
-    <div class="hero-glow glow-one"></div>
-    <div class="hero-glow glow-two"></div>
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow"><span></span> Delhi NCR • Remote</div>
-        <h1>Design.<br><em>Technology.</em><br>Delivered.</h1>
-        <p class="hero-text">We create thoughtful interior spaces and powerful digital solutions for modern homes and businesses.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Start a Project <span>↗</span></a>
-          <a class="btn btn-ghost" href="#services">Explore Services</a>
+<%= render "shared/navigation" %>
+
+<main id="main-content">
+  <section class="hero" id="home">
+    <div class="hero-glow glow-one" aria-hidden="true"></div>
+    <div class="hero-glow glow-two" aria-hidden="true"></div>
+    <div class="container hero-grid hero-balanced">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span> Delhi NCR • Remote India</div>
+        <h1>Interior Design<br>&amp; <em>IT Development.</em><br>One Studio.</h1>
+        <p class="hero-text">Whether you need a modular kitchen in Gurgaon or a business website that converts — AS DesignTech delivers both with the same care and expertise.</p>
+        <div class="hero-actions hero-actions-split">
+          <%= link_to interior_design_path, class: "btn btn-primary" do %>
+            Interior Design <span aria-hidden="true">→</span>
+          <% end %>
+          <%= link_to web_development_path, class: "btn btn-ghost" do %>
+            IT Development <span aria-hidden="true">→</span>
+          <% end %>
         </div>
         <div class="hero-proof">
-          <div><strong>2</strong><span>Core<br>Divisions</span></div>
-          <div><strong>1</strong><span>Creative<br>Vision</span></div>
-          <div><strong>∞</strong><span>Ways to<br>Build</span></div>
+          <div><strong>50/50</strong><span>Two Equal<br>Divisions</span></div>
+          <div><strong>2</strong><span>Expert<br>Founders</span></div>
+          <div><strong>∞</strong><span>Spaces &amp;<br>Software</span></div>
         </div>
       </div>
 
-      <div class="hero-art" aria-label="Interior and technology visual">
-        <div class="art-card art-main">
-          <div class="room">
+      <div class="hero-split-art reveal delay-1" aria-label="Interior design and IT development visuals">
+        <div class="split-panel split-tech">
+          <div class="split-label">IT Development</div>
+          <div class="visual-digital compact">
+            <div class="browser">
+              <span></span><span></span><span></span>
+              <div class="browser-title">Build. Ship. Scale.</div>
+              <div class="browser-lines"></div>
+              <div class="code-snippet">
+                <span class="code-kw">const</span> app = <span class="code-fn">launch</span>();
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-panel split-interior">
+          <div class="split-label">Interior Design</div>
+          <div class="mini-room">
             <div class="wall"></div><div class="floor"></div><div class="window"></div>
             <div class="sofa"></div><div class="table"></div>
             <div class="plant"><i></i><i></i><i></i></div>
-            <div class="lamp"><span></span></div>
           </div>
         </div>
-        <div class="floating-card code-card">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <div class="code-line long"></div><div class="code-line mid"></div>
-          <div class="code-line short"></div><div class="code-line long"></div>
-        </div>
-        <div class="floating-card tag-card">SPACE × DIGITAL</div>
-        <div class="as-orb">AS</div>
+        <div class="split-connector">×</div>
       </div>
     </div>
   </section>
 
+  <section class="path-selector">
+    <div class="container path-grid reveal">
+      <%= link_to interior_design_path, class: "path-card path-interior" do %>
+        <span class="path-icon" aria-hidden="true">⌂</span>
+        <h2>Interior Design</h2>
+        <p>Homes, offices, modular kitchens, 3D plans and full execution in Delhi NCR.</p>
+        <span class="path-link">Explore interiors <span aria-hidden="true">→</span></span>
+      <% end %>
+      <%= link_to web_development_path, class: "path-card path-tech" do %>
+        <span class="path-icon" aria-hidden="true">&lt;/&gt;</span>
+        <h2>IT Development</h2>
+        <p>Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software.</p>
+        <span class="path-link">Explore technology <span aria-hidden="true">→</span></span>
+      <% end %>
+    </div>
+  </section>
+
+  <div class="trust-bar" aria-label="Capabilities">
+    <div class="container trust-inner">
+      <span>Web Development</span>
+      <span>Interior Design</span>
+      <span>Mobile Apps</span>
+      <span>Modular Kitchen</span>
+      <span>E-commerce</span>
+      <span>3BHK Design</span>
+      <span>CRM &amp; AI</span>
+      <span>Office Interiors</span>
+    </div>
+  </div>
+
   <section class="section services" id="services">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div>
           <div class="eyebrow"><span></span> What we do</div>
-          <h2>Two disciplines.<br><em>One studio.</em></h2>
+          <h2>Two divisions.<br><em>Equal focus.</em></h2>
         </div>
-        <p>From physical spaces to digital experiences, AS DesignTech brings design thinking and technology together under one roof.</p>
+        <p>Interior design and IT development are both core to AS DesignTech — not add-ons. Pick one, or combine both for a unified brand and space.</p>
       </div>
 
       <div class="service-grid">
-        <article class="service-card interior">
-          <div class="service-icon">⌂</div><div class="service-no">01</div>
+        <article class="service-card interior reveal">
+          <div class="service-icon" aria-hidden="true">⌂</div>
+          <div class="service-no">01</div>
           <h3>Interior Design</h3>
           <p>Beautiful, functional spaces designed around your lifestyle, brand and budget.</p>
           <ul>
-            <li>2D Planning & Layouts</li><li>3D Visualization</li>
-            <li>Residential & Commercial</li><li>Modular Kitchen & Wardrobes</li>
-            <li>Execution & Vendor Coordination</li>
+            <li>2D Planning &amp; Layouts</li>
+            <li>3D Visualization</li>
+            <li>Residential &amp; Commercial</li>
+            <li>Modular Kitchen &amp; Wardrobes</li>
+            <li>Execution &amp; Vendor Coordination</li>
           </ul>
-          <a href="#contact">Discuss your space <span>→</span></a>
+          <%= link_to interior_design_path do %>View interior services <span aria-hidden="true">→</span><% end %>
         </article>
 
-        <article class="service-card tech">
-          <div class="service-icon">&lt;/&gt;</div><div class="service-no">02</div>
-          <h3>Technology</h3>
+        <article class="service-card tech reveal delay-1">
+          <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+          <div class="service-no">02</div>
+          <h3>IT Development</h3>
           <p>Digital products and automation that help businesses look better and work smarter.</p>
           <ul>
-            <li>Websites & E-commerce</li><li>Web & Mobile Applications</li>
-            <li>AI Chatbots & Automation</li><li>CRM & Custom Software</li>
-            <li>API Integration & Support</li>
+            <li>Websites &amp; E-commerce</li>
+            <li>Web &amp; Mobile Applications</li>
+            <li>AI Chatbots &amp; Automation</li>
+            <li>CRM &amp; Custom Software</li>
+            <li>API Integration &amp; Support</li>
           </ul>
-          <a href="#contact">Build your solution <span>→</span></a>
+          <%= link_to web_development_path do %>View IT services <span aria-hidden="true">→</span><% end %>
         </article>
       </div>
     </div>
@@ -95,22 +132,49 @@
 
   <section class="section work" id="work">
     <div class="container">
-      <div class="section-head compact">
-        <div><div class="eyebrow"><span></span> Our work</div><h2>Built with <em>intention.</em></h2></div>
-        <p>Selected concepts and solutions. Replace these with your real projects as AS DesignTech grows.</p>
+      <div class="section-head compact reveal">
+        <div>
+          <div class="eyebrow"><span></span> Our work</div>
+          <h2>Built with <em>intention.</em></h2>
+        </div>
+        <p>Equal showcase of digital products and interior concepts. Replace with your real projects as AS DesignTech grows.</p>
       </div>
-      <div class="work-grid">
+
+      <div class="work-split-head reveal">
+        <h3 class="work-category-label tech-label">&lt;/&gt; IT Development</h3>
+        <%= link_to "All IT projects", web_development_path(anchor: "portfolio"), class: "work-category-link" %>
+      </div>
+      <div class="work-grid work-grid-3 reveal">
+        <article class="work-card work-digital">
+          <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
+          <div class="work-meta"><span>Website</span><b>Business Website</b><p>Fast, mobile-first site with clear messaging and lead capture.</p></div>
+        </article>
+        <article class="work-card work-mobile">
+          <div class="visual-mobile"><div class="phone"><div class="phone-notch"></div><div class="phone-screen"><div class="app-bar"></div><div class="app-card"></div><div class="app-card short"></div></div></div></div>
+          <div class="work-meta"><span>Mobile App</span><b>Service Booking App</b><p>Cross-platform app with login, booking flow and notifications.</p></div>
+        </article>
+        <article class="work-card work-crm">
+          <div class="visual-crm"><div class="dashboard"><div class="dash-sidebar"></div><div class="dash-main"><div class="dash-stat"></div><div class="dash-stat"></div><div class="dash-chart"></div></div></div></div>
+          <div class="work-meta"><span>Custom Software</span><b>CRM Dashboard</b><p>Lead tracking, pipeline view and automated follow-ups for sales teams.</p></div>
+        </article>
+      </div>
+
+      <div class="work-split-head reveal">
+        <h3 class="work-category-label interior-label">⌂ Interior Design</h3>
+        <%= link_to "All interior projects", interior_design_path(anchor: "portfolio"), class: "work-category-link" %>
+      </div>
+      <div class="work-grid work-grid-3 reveal">
         <article class="work-card work-room">
           <div class="visual-room"><div class="v-window"></div><div class="v-sofa"></div><div class="v-table"></div><div class="v-light"></div></div>
-          <div class="work-meta"><span>Interior Concept</span><b>Modern 3BHK</b></div>
+          <div class="work-meta"><span>Residential</span><b>Modern 3BHK</b><p>Warm neutrals, open layout, and smart storage for urban living.</p></div>
         </article>
         <article class="work-card work-office">
           <div class="visual-office"><div class="desk"></div><div class="screen"></div><div class="plant2"></div><div class="chair"></div></div>
-          <div class="work-meta"><span>Interior Concept</span><b>Modern Office</b></div>
+          <div class="work-meta"><span>Commercial</span><b>Modern Office</b><p>Productive workspace with natural light and ergonomic flow.</p></div>
         </article>
-        <article class="work-card work-digital">
-          <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
-          <div class="work-meta"><span>Digital Product</span><b>Business Website</b></div>
+        <article class="work-card work-kitchen">
+          <div class="visual-kitchen"><div class="k-counter"></div><div class="k-cabinets"></div><div class="k-hood"></div><div class="k-island"></div></div>
+          <div class="work-meta"><span>Modular Kitchen</span><b>Contemporary Kitchen</b><p>Handle-less cabinets, quartz top and optimized work triangle.</p></div>
         </article>
       </div>
     </div>
@@ -118,17 +182,17 @@
 
   <section class="section about" id="about">
     <div class="container about-grid">
-      <div class="about-badge">
+      <div class="about-badge reveal">
         <div class="badge-ring">AS</div>
-        <span>Founded by<br><strong>Asif & Shalu</strong></span>
+        <span>Founded by<br><strong>Asif &amp; Shalu</strong></span>
       </div>
-      <div>
+      <div class="reveal delay-1">
         <div class="eyebrow"><span></span> About AS DesignTech</div>
-        <h2>Where <em>design meets technology.</em></h2>
-        <p>AS DesignTech is a husband-and-wife founded studio built around two complementary strengths: technology and interior design.</p>
-        <p>Asif leads technology and business solutions, while Shalu leads interior design. Together, we help clients turn ideas into spaces, websites, software and experiences.</p>
+        <h2>Two founders.<br><em>Two equal strengths.</em></h2>
+        <p>AS DesignTech is built on a simple idea: interior design and IT development deserve the same level of craft. Neither is secondary.</p>
+        <p><strong>Asif</strong> leads technology — websites, apps, CRM, AI and business software. <strong>Shalu</strong> leads interior design — residential, commercial, 3D visualization and execution. Together, clients get one team for spaces and software.</p>
         <div class="founders">
-          <div><strong>Asif</strong><span>Founder · Technology & Business</span></div>
+          <div><strong>Asif</strong><span>Founder · IT Development &amp; Business</span></div>
           <div><strong>Shalu</strong><span>Co-Founder · Interior Design</span></div>
         </div>
       </div>
@@ -137,37 +201,121 @@
 
   <section class="section process" id="process">
     <div class="container">
-      <div class="section-head compact">
+      <div class="section-head compact reveal">
         <div><div class="eyebrow"><span></span> How we work</div><h2>Simple. Clear. <em>Collaborative.</em></h2></div>
       </div>
       <div class="steps">
-        <div class="step"><span>01</span><h3>Discover</h3><p>We understand your goals, space, audience and budget.</p></div>
-        <div class="step"><span>02</span><h3>Design</h3><p>We create concepts, layouts, prototypes and clear proposals.</p></div>
-        <div class="step"><span>03</span><h3>Build</h3><p>We turn the approved idea into a real space or digital product.</p></div>
-        <div class="step"><span>04</span><h3>Deliver</h3><p>We test, refine and hand over a solution ready to use.</p></div>
+        <div class="step reveal"><span>01</span><h3>Discover</h3><p>We understand your goals — whether that's a floor plan or a product roadmap.</p></div>
+        <div class="step reveal delay-1"><span>02</span><h3>Design</h3><p>3D layouts, wireframes, prototypes and clear proposals before build.</p></div>
+        <div class="step reveal delay-2"><span>03</span><h3>Build</h3><p>Development sprints or on-site execution — always with regular updates.</p></div>
+        <div class="step reveal delay-3"><span>04</span><h3>Deliver</h3><p>Handover of your space or software, ready to use and easy to maintain.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div>
+          <div class="eyebrow"><span></span> Client trust</div>
+          <h2>Trusted for <em>both.</em></h2>
+        </div>
+      </div>
+      <div class="testimonial-grid testimonial-grid-4">
+        <blockquote class="testimonial-card reveal">
+          <p>"Our new site loads fast, looks professional on mobile, and actually brings in enquiries."</p>
+          <footer><strong>Small Business Owner</strong><span>IT Development · Remote</span></footer>
+        </blockquote>
+        <blockquote class="testimonial-card reveal delay-1">
+          <p>"The CRM they built cut our follow-up time in half. Clean dashboard, exactly what we needed."</p>
+          <footer><strong>Operations Manager</strong><span>IT Development · Delhi</span></footer>
+        </blockquote>
+        <blockquote class="testimonial-card reveal delay-2">
+          <p>"Clear process from 3D layout to final execution. Every detail was thought through before we started."</p>
+          <footer><strong>Homeowner</strong><span>Interior Design · Gurgaon</span></footer>
+        </blockquote>
+        <blockquote class="testimonial-card reveal delay-3">
+          <p>"One team for both our office redesign and company website — saved time and kept the vision consistent."</p>
+          <footer><strong>Startup Founder</strong><span>Both · Delhi NCR</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div>
+          <div class="eyebrow"><span></span> FAQ</div>
+          <h2>Questions by <em>service.</em></h2>
+        </div>
+        <p class="faq-intro">Find answers for interior design and IT development. More detail on each service page.</p>
+      </div>
+      <div class="faq-columns reveal">
+        <div class="faq-column">
+          <h3 class="faq-column-title interior-label">⌂ Interior Design</h3>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Which areas do you serve for interior projects?</summary>
+              <p>We focus on Delhi NCR — Delhi, Gurgaon, Noida and nearby — for site visits, measurements and execution coordination.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you provide 3D visualizations before construction?</summary>
+              <p>Yes. Every interior project includes layout planning and 3D views so you approve the design before work begins.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can you design modular kitchens and wardrobes?</summary>
+              <p>Yes. Modular kitchen and wardrobe design is a core offering, with material and finish options to match your budget.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you handle execution and vendors?</summary>
+              <p>We coordinate with trusted vendors and contractors so the finished space matches the approved design.</p>
+            </details>
+          </div>
+          <%= link_to "More interior FAQs →", interior_design_path(anchor: "faq"), class: "faq-page-link" %>
+        </div>
+        <div class="faq-column">
+          <h3 class="faq-column-title tech-label">&lt;/&gt; IT Development</h3>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Do you work with clients outside Delhi NCR?</summary>
+              <p>Yes. IT projects are delivered remotely across India and internationally — discovery calls, demos and support are all online.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What IT services do you offer?</summary>
+              <p>Websites, e-commerce stores, web and mobile apps, CRM systems, AI chatbots, API integrations and ongoing support.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How long does a website or app take?</summary>
+              <p>A business website typically takes 2–4 weeks. Apps and custom software depend on scope — we give a clear timeline after discovery.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you provide maintenance after launch?</summary>
+              <p>Yes. We offer support plans for updates, hosting guidance, bug fixes and feature additions after go-live.</p>
+            </details>
+          </div>
+          <%= link_to "More IT FAQs →", web_development_path(anchor: "faq"), class: "faq-page-link" %>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="cta-section" id="contact">
     <div class="container cta-box">
-      <div>
+      <div class="reveal">
         <div class="eyebrow"><span></span> Start a conversation</div>
-        <h2>Have an idea?<br><em>Let's build it.</em></h2>
-        <p>Tell us about your space, business or digital idea. We'll get back to you with the next step.</p>
+        <h2>Interior or IT —<br><em>let's talk.</em></h2>
+        <p>Tell us about your space, website, app or software idea. We'll reply with clear next steps within 24 hours.</p>
+        <ul class="contact-details">
+          <li><span>Interior</span> Delhi NCR · On-site visits</li>
+          <li><span>IT</span> India &amp; remote · Video calls</li>
+          <li><span>Email</span> hello@asdesigntech.in</li>
+        </ul>
       </div>
-      <div class="contact-actions">
-        <a class="btn btn-light" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp Us ↗</a>
-        <a class="mail-link" href="mailto:hello@asdesigntech.in">hello@asdesigntech.in</a>
-      </div>
+      <%= render "shared/contact_panel" %>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="container footer-inner">
-    <div><a class="brand footer-brand" href="#home"><span class="brand-mark">AS</span><span class="brand-name">DesignTech</span></a><p>Design. Technology. Delivered.</p></div>
-    <div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-    <div class="copyright">© <%= Time.current.year %> AS DesignTech. All rights reserved.</div>
-  </div>
-</footer>
+<%= render "shared/footer" %>
+<%= render "shared/page_extras" %>

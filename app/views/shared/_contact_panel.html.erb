@@ -1,0 +1,17 @@
+<% subject = local_assigns.fetch(:subject, "Project Enquiry - AS DesignTech") %>
+<% note = local_assigns.fetch(:note, nil) %>
+
+<div class="contact-panel reveal delay-1">
+  <div class="contact-actions">
+    <a class="btn btn-light btn-block" href="https://wa.me/919917639330?text=Hi%20AS%20DesignTech%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">
+      WhatsApp Us <span aria-hidden="true">↗</span>
+    </a>
+    <a class="btn btn-outline btn-block" href="mailto:hello@asdesigntech.in?subject=<%= ERB::Util.url_encode(subject) %>">
+      Email Us
+    </a>
+  </div>
+  <a class="mail-link" href="mailto:hello@asdesigntech.in">hello@asdesigntech.in</a>
+  <% if note.present? %>
+    <p class="contact-note"><%= note %></p>
+  <% end %>
+</div>

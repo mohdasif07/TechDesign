@@ -1,0 +1,215 @@
+<% content_for :meta_title, "Web Development & App Development Delhi | Websites, CRM, AI | AS DesignTech" %>
+<% content_for :meta_description, "IT development company in Delhi NCR — business websites, e-commerce, mobile apps, CRM, AI chatbots and custom software. Remote delivery across India. Free consultation." %>
+<% content_for :meta_keywords, "web development Delhi, website design company Gurgaon, mobile app development India, IT company Delhi NCR, e-commerce development, CRM development, custom software development, AI chatbot development" %>
+<% content_for :canonical_url, request.base_url + web_development_path %>
+
+<% content_for :structured_data do %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "IT Development Services",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "AS DesignTech",
+          "url": "<%= request.base_url %>"
+        },
+        "url": "<%= request.base_url %><%= web_development_path %>",
+        "description": "Website development, mobile apps, e-commerce, CRM, AI chatbots and custom software development for businesses in India and internationally.",
+        "areaServed": [
+          { "@type": "Country", "name": "India" },
+          { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+        ],
+        "serviceType": ["Web Development", "Mobile App Development", "E-commerce Development", "CRM Development", "AI Automation"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does a business website cost in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A professional business website typically starts from a modest budget for a landing page and scales with pages, features and integrations. We provide a clear quote after understanding your goals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you build mobile apps for Android and iOS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We build cross-platform and native mobile applications depending on your requirements, timeline and budget."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<% end %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content">
+  <section class="page-hero page-hero-tech">
+    <div class="container page-hero-grid reveal">
+      <div>
+        <div class="eyebrow"><span></span> IT Development · India &amp; Remote</div>
+        <h1>Web &amp; App Development <em>Company.</em></h1>
+        <p class="page-hero-text">Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software — built for businesses that need results, not just a pretty homepage.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Start Your Project <span aria-hidden="true">→</span></a>
+          <%= link_to "View Interior Design", interior_design_path, class: "btn btn-ghost-light" %>
+        </div>
+        <ul class="page-hero-tags">
+          <li>Websites</li><li>Mobile Apps</li><li>E-commerce</li><li>CRM</li><li>AI Bots</li>
+        </ul>
+      </div>
+      <div class="page-hero-visual">
+        <div class="visual-digital tall">
+          <div class="browser">
+            <span></span><span></span><span></span>
+            <div class="browser-title">Build. Ship. Scale.</div>
+            <div class="browser-lines"></div>
+            <div class="code-snippet">
+              <span class="code-kw">const</span> app = <span class="code-fn">launch</span>();<br>
+              <span class="code-kw">await</span> app.<span class="code-fn">deploy</span>();
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><span></span> Services</div>
+          <h2>What we <em>build.</em></h2>
+        </div>
+        <p>Full-stack IT development for startups, SMEs and established businesses — led by founder Asif with a focus on performance, maintainability and business outcomes.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card feature-card-dark reveal">
+          <h3>Business Websites</h3>
+          <p>Fast, mobile-first websites with SEO foundations, clear CTAs and lead capture.</p>
+        </article>
+        <article class="feature-card feature-card-dark reveal delay-1">
+          <h3>E-commerce Stores</h3>
+          <p>Online stores with product catalog, payments, order management and admin panel.</p>
+        </article>
+        <article class="feature-card feature-card-dark reveal delay-2">
+          <h3>Mobile Applications</h3>
+          <p>Cross-platform and native apps for Android and iOS — booking, delivery, SaaS and more.</p>
+        </article>
+        <article class="feature-card feature-card-dark reveal">
+          <h3>CRM &amp; Custom Software</h3>
+          <p>Lead tracking, pipeline management, internal tools and workflow automation.</p>
+        </article>
+        <article class="feature-card feature-card-dark reveal delay-1">
+          <h3>AI Chatbots</h3>
+          <p>Customer support bots, lead qualification and process automation powered by AI.</p>
+        </article>
+        <article class="feature-card feature-card-dark reveal delay-2">
+          <h3>API &amp; Integrations</h3>
+          <p>Connect your tools — payment gateways, WhatsApp, email, third-party SaaS and legacy systems.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section work" id="portfolio">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div>
+          <div class="eyebrow"><span></span> Portfolio</div>
+          <h2>Digital <em>products.</em></h2>
+        </div>
+        <p>Sample projects — add real screenshots and case study links for stronger search rankings.</p>
+      </div>
+      <div class="work-grid work-grid-3 reveal">
+        <article class="work-card work-digital">
+          <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
+          <div class="work-meta"><span>Website</span><b>Business Website</b><p>Fast, mobile-first site with clear messaging and lead capture.</p></div>
+        </article>
+        <article class="work-card work-mobile">
+          <div class="visual-mobile"><div class="phone"><div class="phone-notch"></div><div class="phone-screen"><div class="app-bar"></div><div class="app-card"></div><div class="app-card short"></div></div></div></div>
+          <div class="work-meta"><span>Mobile App</span><b>Service Booking App</b><p>Cross-platform app with login, booking flow and notifications.</p></div>
+        </article>
+        <article class="work-card work-crm">
+          <div class="visual-crm"><div class="dashboard"><div class="dash-sidebar"></div><div class="dash-main"><div class="dash-stat"></div><div class="dash-stat"></div><div class="dash-chart"></div></div></div></div>
+          <div class="work-meta"><span>Custom Software</span><b>CRM Dashboard</b><p>Lead tracking, pipeline view and automated follow-ups for sales teams.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div><div class="eyebrow"><span></span> Process</div><h2>From brief to <em>launch.</em></h2></div>
+      </div>
+      <div class="steps steps-4">
+        <div class="step reveal"><span>01</span><h3>Discovery</h3><p>We map goals, users, features and timeline in a structured kickoff call.</p></div>
+        <div class="step reveal delay-1"><span>02</span><h3>Design &amp; Prototype</h3><p>Wireframes and UI design so you see the product before development starts.</p></div>
+        <div class="step reveal delay-2"><span>03</span><h3>Development</h3><p>Agile sprints with regular demos — you see progress every week.</p></div>
+        <div class="step reveal delay-3"><span>04</span><h3>Launch &amp; Support</h3><p>Deployment, testing, handover docs and optional maintenance plans.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-block content-block-dark">
+    <div class="container content-prose reveal">
+      <h2>Why choose AS DesignTech for IT development in Delhi NCR?</h2>
+      <p>When you search for a <strong>web development company in Delhi</strong> or <strong>app developer in Gurgaon</strong>, you need a team that understands business — not just code. AS DesignTech's IT division is led by founder <strong>Asif</strong>, who builds websites, apps and software with a focus on speed, SEO, conversion and long-term maintainability.</p>
+      <p>We serve clients across <strong>Delhi NCR</strong> and deliver projects <strong>remotely across India</strong> and internationally. Whether you need a landing page, an e-commerce store, a mobile app, a CRM or an AI chatbot — you get clear scope, transparent pricing and regular communication throughout.</p>
+      <p>Many clients also use our <%= link_to "interior design services", interior_design_path %> when opening a new office or showroom — one studio for both your space and your digital presence.</p>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container faq-single reveal">
+      <div class="eyebrow"><span></span> FAQ</div>
+      <h2>IT development <em>questions.</em></h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How much does a business website cost in India?</summary>
+          <p>Depends on pages, features and integrations. We provide a clear quote after discovery — no vague estimates.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you build mobile apps for Android and iOS?</summary>
+          <p>Yes. We recommend cross-platform or native based on your budget, timeline and feature requirements.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you work remotely outside Delhi NCR?</summary>
+          <p>Absolutely. Most IT projects are delivered remotely with video calls, shared demos and async updates.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you provide maintenance after launch?</summary>
+          <p>Yes. Support plans cover bug fixes, updates, hosting guidance and new feature development.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you also offer interior design services?</summary>
+          <p>Yes. <%= link_to "Our interior design division", interior_design_path %> serves Delhi NCR for homes, kitchens and office spaces.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="container cta-box">
+      <div class="reveal">
+        <div class="eyebrow"><span></span> Start your IT project</div>
+        <h2>Ready to build<br><em>your product?</em></h2>
+        <p>Share your idea, target users and timeline. We'll reply with next steps and a discovery call slot.</p>
+      </div>
+      <%= render "shared/contact_panel", subject: "IT Development Enquiry - AS DesignTech" %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>
+<%= render "shared/page_extras" %>

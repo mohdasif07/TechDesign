@@ -1,15 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>AS DesignTech — Design. Technology. Delivered.</title>
+    <title><%= meta_title %></title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="AS DesignTech — Interior Design & Technology Solutions in Delhi NCR and remotely.">
+    <meta name="description" content="<%= meta_description %>">
+    <meta name="keywords" content="<%= meta_keywords %>">
+    <meta name="author" content="AS DesignTech">
+    <meta name="theme-color" content="#0b1930">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AS DesignTech">
+    <meta name="application-name" content="AS DesignTech">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="canonical" href="<%= canonical_url %>">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AS DesignTech">
+    <meta property="og:title" content="<%= og_title %>">
+    <meta property="og:description" content="<%= og_description %>">
+    <meta property="og:url" content="<%= canonical_url %>">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image" content="<%= request.base_url %>/icon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<%= og_title %>">
+    <meta name="twitter:description" content="<%= og_description %>">
+    <meta name="twitter:image" content="<%= request.base_url %>/icon.png">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+    <link rel="icon" href="/icon.png" type="image/png" sizes="512x512">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", defer: true %>
+
+    <% if content_for?(:structured_data) %>
+      <%= yield :structured_data %>
+    <% else %>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "<%= request.base_url %>/#business",
+            "name": "AS DesignTech",
+            "description": "Interior design and IT development studio serving Delhi NCR and clients across India.",
+            "url": "<%= request.base_url %>",
+            "logo": "<%= request.base_url %>/icon.png",
+            "image": "<%= request.base_url %>/icon.png",
+            "email": "hello@asdesigntech.in",
+            "areaServed": ["Delhi NCR", "Gurgaon", "Noida", "India"],
+            "founder": [
+              { "@type": "Person", "name": "Asif", "jobTitle": "Founder — Technology & Business" },
+              { "@type": "Person", "name": "Shalu", "jobTitle": "Co-Founder — Interior Design" }
+            ],
+            "knowsAbout": ["Interior Design", "Web Development", "Mobile Applications", "AI Automation"]
+          },
+          {
+            "@type": "Service",
+            "name": "Interior Design",
+            "provider": { "@id": "<%= request.base_url %>/#business" },
+            "areaServed": "Delhi NCR",
+            "url": "<%= request.base_url %><%= interior_design_path %>",
+            "description": "Residential and commercial interior design, 3D visualization, modular kitchen and wardrobe design."
+          },
+          {
+            "@type": "Service",
+            "name": "IT Development",
+            "provider": { "@id": "<%= request.base_url %>/#business" },
+            "areaServed": "India",
+            "url": "<%= request.base_url %><%= web_development_path %>",
+            "description": "Website development, mobile apps, e-commerce, CRM, custom software and AI automation."
+          }
+        ]
+      }
+      </script>
+    <% end %>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <%= yield %>
   </body>
 </html>

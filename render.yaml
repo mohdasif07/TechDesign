@@ -1,0 +1,21 @@
+# Free deployment on Render.com
+# Docs: https://render.com/docs/deploy-rails-docker
+services:
+  - type: web
+    name: as-designtech
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    healthCheckPath: /up
+    autoDeploy: true
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      # Paste your key from config/master.key in the Render dashboard after first deploy setup
+      - key: RAILS_MASTER_KEY
+        sync: false

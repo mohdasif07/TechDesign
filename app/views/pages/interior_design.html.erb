@@ -1,0 +1,207 @@
+<% content_for :meta_title, "Interior Design Delhi NCR | 3D Plans, Modular Kitchen | AS DesignTech" %>
+<% content_for :meta_description, "Professional interior design in Delhi NCR — 3BHK, modular kitchen, office interiors, 3D visualization and execution. Serving Delhi, Gurgaon, Noida. Free consultation." %>
+<% content_for :meta_keywords, "interior designer Delhi NCR, interior design Gurgaon, modular kitchen design, 3BHK interior design, office interior design Noida, home interior designer near me, 3D interior visualization" %>
+<% content_for :canonical_url, request.base_url + interior_design_path %>
+
+<% content_for :structured_data do %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Interior Design Services",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "AS DesignTech",
+          "url": "<%= request.base_url %>"
+        },
+        "url": "<%= request.base_url %><%= interior_design_path %>",
+        "description": "Residential and commercial interior design in Delhi NCR including 3BHK design, modular kitchen, office interiors and 3D visualization.",
+        "areaServed": [
+          { "@type": "City", "name": "Delhi" },
+          { "@type": "City", "name": "Gurgaon" },
+          { "@type": "City", "name": "Noida" },
+          { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+        ],
+        "serviceType": ["Residential Interior Design", "Commercial Interior Design", "Modular Kitchen Design", "3D Visualization"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does interior design cost in Delhi NCR?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cost depends on scope, materials and area size. We provide a clear estimate after understanding your space, style preferences and budget range during the discovery call."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide 3D visualization before construction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every interior project includes 2D layouts and 3D views so you can approve the design before any work begins on site."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<% end %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content">
+  <section class="page-hero page-hero-interior">
+    <div class="container page-hero-grid reveal">
+      <div>
+        <div class="eyebrow"><span></span> Interior Design · Delhi NCR</div>
+        <h1>Interior Design in <em>Delhi NCR.</em></h1>
+        <p class="page-hero-text">Residential and commercial spaces designed with clarity — from first layout to final execution. 3BHK homes, modular kitchens, office interiors and full 3D visualization.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Get a Free Consultation <span aria-hidden="true">→</span></a>
+          <%= link_to "View IT Development", web_development_path, class: "btn btn-ghost-light" %>
+        </div>
+        <ul class="page-hero-tags">
+          <li>Delhi</li><li>Gurgaon</li><li>Noida</li><li>3D Plans</li><li>Modular Kitchen</li>
+        </ul>
+      </div>
+      <div class="page-hero-visual">
+        <div class="visual-room tall"><div class="v-window"></div><div class="v-sofa"></div><div class="v-table"></div><div class="v-light"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><span></span> Services</div>
+          <h2>What we <em>design.</em></h2>
+        </div>
+        <p>End-to-end interior design for homes and businesses across Delhi NCR — led by co-founder Shalu with a focus on function, aesthetics and budget clarity.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <h3>Residential Interiors</h3>
+          <p>3BHK, 2BHK, villas and apartments — layouts optimized for light, storage and daily living.</p>
+        </article>
+        <article class="feature-card reveal delay-1">
+          <h3>Modular Kitchen</h3>
+          <p>Custom kitchen design with cabinet layouts, material selection and optimized work triangle.</p>
+        </article>
+        <article class="feature-card reveal delay-2">
+          <h3>Office &amp; Commercial</h3>
+          <p>Productive workspaces, reception areas and retail spaces that reflect your brand.</p>
+        </article>
+        <article class="feature-card reveal">
+          <h3>3D Visualization</h3>
+          <p>Photorealistic 3D renders so you see your space before a single nail is hammered.</p>
+        </article>
+        <article class="feature-card reveal delay-1">
+          <h3>Wardrobes &amp; Storage</h3>
+          <p>Built-in wardrobes, TV units and smart storage solutions for every room.</p>
+        </article>
+        <article class="feature-card reveal delay-2">
+          <h3>Execution Support</h3>
+          <p>Vendor coordination and site supervision to ensure the finished space matches the plan.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section work" id="portfolio">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div>
+          <div class="eyebrow"><span></span> Portfolio</div>
+          <h2>Interior <em>concepts.</em></h2>
+        </div>
+        <p>Sample projects — replace with your real work and photography for stronger Google visibility.</p>
+      </div>
+      <div class="work-grid work-grid-3 reveal">
+        <article class="work-card work-room">
+          <div class="visual-room"><div class="v-window"></div><div class="v-sofa"></div><div class="v-table"></div><div class="v-light"></div></div>
+          <div class="work-meta"><span>Residential</span><b>Modern 3BHK</b><p>Warm neutrals, open layout, and smart storage for urban living.</p></div>
+        </article>
+        <article class="work-card work-office">
+          <div class="visual-office"><div class="desk"></div><div class="screen"></div><div class="plant2"></div><div class="chair"></div></div>
+          <div class="work-meta"><span>Commercial</span><b>Modern Office</b><p>Productive workspace with natural light and ergonomic flow.</p></div>
+        </article>
+        <article class="work-card work-kitchen">
+          <div class="visual-kitchen"><div class="k-counter"></div><div class="k-cabinets"></div><div class="k-hood"></div><div class="k-island"></div></div>
+          <div class="work-meta"><span>Modular Kitchen</span><b>Contemporary Kitchen</b><p>Handle-less cabinets, quartz top and optimized work triangle.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div><div class="eyebrow"><span></span> Process</div><h2>From idea to <em>finished space.</em></h2></div>
+      </div>
+      <div class="steps steps-4">
+        <div class="step reveal"><span>01</span><h3>Site Visit</h3><p>We measure your space, understand lifestyle needs and discuss budget.</p></div>
+        <div class="step reveal delay-1"><span>02</span><h3>Design &amp; 3D</h3><p>2D layouts and 3D renders for your approval before procurement.</p></div>
+        <div class="step reveal delay-2"><span>03</span><h3>Execution</h3><p>Vendor coordination, material selection and on-site supervision.</p></div>
+        <div class="step reveal delay-3"><span>04</span><h3>Handover</h3><p>Final walkthrough and styling — your space, ready to live or work in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-block">
+    <div class="container content-prose reveal">
+      <h2>Why choose AS DesignTech for interior design in Delhi NCR?</h2>
+      <p>Searching for an <strong>interior designer in Delhi NCR</strong> means comparing dozens of options. AS DesignTech stands out because interior design is a dedicated division — not a side service. Co-founder <strong>Shalu</strong> leads every interior project with a structured process: site visit, 2D planning, 3D visualization, material selection and execution support.</p>
+      <p>Whether you're renovating a <strong>3BHK in Gurgaon</strong>, designing a <strong>modular kitchen in Noida</strong>, or setting up a <strong>commercial office in Delhi</strong>, you get clear communication, transparent proposals and designs you can see before committing.</p>
+      <p>We also work alongside our IT division when clients want both — for example, an office interior plus a company website — keeping brand, colour and experience consistent across physical and digital touchpoints.</p>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container faq-single reveal">
+      <div class="eyebrow"><span></span> FAQ</div>
+      <h2>Interior design <em>questions.</em></h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How much does interior design cost in Delhi NCR?</summary>
+          <p>Cost depends on area size, scope and material choices. We provide a clear estimate after the discovery call and site visit — no hidden surprises.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Which areas do you serve?</summary>
+          <p>Delhi, Gurgaon, Noida and the wider Delhi NCR region for site visits and execution coordination.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you provide 3D visualization before construction?</summary>
+          <p>Yes. 3D renders are included so you approve every major decision before work starts on site.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you design only a modular kitchen or wardrobe?</summary>
+          <p>Yes. We take on room-specific projects as well as full-home and commercial interior design.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you also offer IT and website services?</summary>
+          <p>Yes. <%= link_to "Our IT development division", web_development_path %> builds websites, apps and software — many clients use both services together.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="container cta-box">
+      <div class="reveal">
+        <div class="eyebrow"><span></span> Start your interior project</div>
+        <h2>Ready to design<br><em>your space?</em></h2>
+        <p>Share your location, property type and budget range. We'll schedule a discovery call and site visit in Delhi NCR.</p>
+      </div>
+      <%= render "shared/contact_panel", subject: "Interior Design Enquiry - AS DesignTech" %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>
+<%= render "shared/page_extras" %>
