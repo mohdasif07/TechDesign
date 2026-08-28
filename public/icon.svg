@@ -4,9 +4,16 @@
       <stop offset="0%" stop-color="#0b1930"/>
       <stop offset="100%" stop-color="#142a4a"/>
     </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e87935"/>
+      <stop offset="100%" stop-color="#f4a261"/>
+    </linearGradient>
   </defs>
   <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <rect x="48" y="48" width="416" height="416" rx="88" fill="none" stroke="#e87935" stroke-width="8" opacity="0.35"/>
-  <text x="256" y="292" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="148" font-weight="800" fill="#ffffff">AS</text>
-  <rect x="136" y="336" width="240" height="10" rx="5" fill="#e87935"/>
+  <rect x="56" y="56" width="400" height="400" rx="84" fill="none" stroke="url(#accent)" stroke-width="6" opacity="0.45"/>
+  <!-- A -->
+  <path d="M148 340 L196 220 L244 340 M168 300 H224" fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- S -->
+  <path d="M288 248 C288 220 312 208 340 208 C368 208 388 224 388 248 C388 272 364 280 340 288 C316 296 288 304 288 328 C288 352 312 368 340 368 C368 368 388 352 388 328" fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
+  <rect x="136" y="368" width="240" height="12" rx="6" fill="url(#accent)"/>
 </svg>

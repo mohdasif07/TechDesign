@@ -124,6 +124,13 @@ img, svg { max-width: 100%; display: block; }
   font-weight: 800;
 }
 
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
 .brand-mark {
   display: grid;
   place-items: center;
