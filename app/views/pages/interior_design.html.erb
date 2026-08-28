@@ -198,7 +198,9 @@
         <h2>Ready to design<br><em>your space?</em></h2>
         <p>Share your location, property type and budget range. We'll schedule a discovery call and site visit in Delhi NCR.</p>
       </div>
-      <%= render "shared/contact_panel", subject: "Interior Design Enquiry - AS DesignTech" %>
+      <%= render "shared/contact_panel",
+            default_service: "Interior Design",
+            return_to: interior_design_path(anchor: "contact") %>
     </div>
   </section>
 </main>

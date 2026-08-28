@@ -1,0 +1,9 @@
+New enquiry from AS DesignTech website
+
+Name: <%= @contact.name %>
+Email: <%= @contact.email %>
+<% if @contact.phone.present? %>Phone: <%= @contact.phone %>
+<% end %>Service: <%= @contact.service.presence || "Not specified" %>
+
+Message:
+<%= @contact.message %>

@@ -1,0 +1,8 @@
+<% if flash[:notice].present? || flash[:alert].present? %>
+  <div class="flash-bar <%= flash[:alert].present? ? "flash-error" : "flash-success" %>" role="status">
+    <div class="container flash-inner">
+      <p><%= flash[:notice] || flash[:alert] %></p>
+      <button type="button" class="flash-close" aria-label="Dismiss">&times;</button>
+    </div>
+  </div>
+<% end %>

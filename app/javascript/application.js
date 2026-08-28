@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBackToTop();
   initServiceWorker();
   initInstallPrompt();
+  initFlashBar();
 });
 
 function initNavigation() {
@@ -141,4 +142,18 @@ function initInstallPrompt() {
     banner.hidden = true;
     deferredPrompt = null;
   });
+}
+
+function initFlashBar() {
+  const bar = document.querySelector(".flash-bar");
+  const closeBtn = bar?.querySelector(".flash-close");
+  if (!bar) return;
+
+  closeBtn?.addEventListener("click", () => bar.remove());
+
+  if (window.location.hash === "#contact") {
+    document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  window.setTimeout(() => bar.remove(), 8000);
 }

@@ -206,7 +206,9 @@
         <h2>Ready to build<br><em>your product?</em></h2>
         <p>Share your idea, target users and timeline. We'll reply with next steps and a discovery call slot.</p>
       </div>
-      <%= render "shared/contact_panel", subject: "IT Development Enquiry - AS DesignTech" %>
+      <%= render "shared/contact_panel",
+            default_service: "IT Development",
+            return_to: web_development_path(anchor: "contact") %>
     </div>
   </section>
 </main>

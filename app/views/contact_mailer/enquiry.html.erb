@@ -1,0 +1,13 @@
+<h1>New enquiry from AS DesignTech website</h1>
+
+<p><strong>Name:</strong> <%= @contact.name %></p>
+<p><strong>Email:</strong> <%= @contact.email %></p>
+<% if @contact.phone.present? %>
+  <p><strong>Phone:</strong> <%= @contact.phone %></p>
+<% end %>
+<p><strong>Service:</strong> <%= @contact.service.presence || "Not specified" %></p>
+
+<h2>Message</h2>
+<p><%= simple_format(@contact.message) %></p>
+
+<p style="color:#667085;font-size:12px;">Reply directly to this email to respond to the client.</p>

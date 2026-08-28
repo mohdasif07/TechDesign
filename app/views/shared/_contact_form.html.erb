@@ -1,0 +1,48 @@
+<% contact_message = local_assigns[:contact_message].presence || ContactMessage.new(service: local_assigns[:default_service]) %>
+<% return_to = local_assigns.fetch(:return_to, request.path + "#contact") %>
+
+<%= form_with model: contact_message, url: contact_path, method: :post, local: true, class: "contact-form", html: { id: "contact-form" } do |f| %>
+  <%= f.hidden_field :return_to, value: return_to %>
+
+  <div class="form-honeypot" aria-hidden="true">
+    <%= f.label :website, "Website" %>
+    <%= f.text_field :website, tabindex: "-1", autocomplete: "off" %>
+  </div>
+
+  <div class="form-row">
+    <div class="form-field">
+      <%= f.label :name, "Your name *" %>
+      <%= f.text_field :name, required: true, autocomplete: "name", placeholder: "Full name" %>
+    </div>
+    <div class="form-field">
+      <%= f.label :email, "Email *" %>
+      <%= f.email_field :email, required: true, autocomplete: "email", placeholder: "you@email.com" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-field">
+      <%= f.label :phone, "Phone / WhatsApp" %>
+      <%= f.telephone_field :phone, autocomplete: "tel", placeholder: "+91 98765 43210" %>
+    </div>
+    <div class="form-field">
+      <%= f.label :service, "What do you need?" %>
+      <%= f.select :service, ContactMessage::SERVICES, { include_blank: "Select a service" } %>
+    </div>
+  </div>
+
+  <div class="form-field">
+    <%= f.label :message, "Your message *" %>
+    <%= f.text_area :message, required: true, rows: 5, placeholder: "Tell us about your space, website, app or project..." %>
+  </div>
+
+  <%= f.submit "Send Message", class: "btn btn-light btn-block form-submit" %>
+<% end %>
+
+<p class="contact-or">or reach us directly</p>
+
+<div class="contact-actions contact-actions-inline">
+  <a class="btn btn-outline btn-block" href="https://wa.me/919917639330?text=Hi%20AS%20DesignTech%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">
+    WhatsApp Us <span aria-hidden="true">↗</span>
+  </a>
+</div>

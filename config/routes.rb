@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "interior-design", to: "pages#interior_design", as: :interior_design
   get "web-development", to: "pages#web_development", as: :web_development
 
+  post "contact", to: "contacts#create", as: :contact
+
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
