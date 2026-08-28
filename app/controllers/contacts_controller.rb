@@ -12,14 +12,27 @@ class ContactsController < ApplicationController
       return
     end
 
+    unless smtp_configured?
+      redirect_to redirect_path, alert: "Email is not configured yet. Please WhatsApp us or email mohdasif.dev01@gmail.com directly."
+      return
+    end
+
     ContactMailer.enquiry(@contact_message).deliver_now
     redirect_to redirect_path, notice: "Message sent successfully! We will reply within 24 hours."
   rescue StandardError => e
     Rails.logger.error("[ContactMailer] #{e.class}: #{e.message}")
-    redirect_to redirect_path, alert: "Could not send your message right now. Please WhatsApp us or email mohdasif.dev01@gmail.com directly."
+    if smtp_configured?
+      redirect_to redirect_path, alert: "Could not send your message right now. Please WhatsApp us or email mohdasif.dev01@gmail.com directly."
+    else
+      redirect_to redirect_path, alert: "Email is not configured yet. Please WhatsApp us or email mohdasif.dev01@gmail.com directly."
+    end
   end
 
   private
+
+  def smtp_configured?
+    ENV["SMTP_ADDRESS"].present? && ENV["SMTP_USERNAME"].present? && ENV["SMTP_PASSWORD"].present?
+  end
 
   def contact_params
     params.require(:contact_message).permit(:name, :email, :phone, :service, :message, :website, :return_to)

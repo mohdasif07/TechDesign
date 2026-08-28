@@ -53,7 +53,7 @@ Rails.application.configure do
   config.active_job.queue_adapter = :async
 
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = ENV["SMTP_ADDRESS"].present?
+  config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: ENV.fetch("APP_HOST", "as-designtech.onrender.com"), protocol: "https" }
