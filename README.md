@@ -36,24 +36,33 @@ After deploying to production:
 3. Add real project photos and case studies to both service pages
 4. Set up Google Business Profile with both service categories
 
-## Contact form email (Gmail SMTP)
+## Contact form email
 
-The website contact form sends email via Gmail. On **Render**, add these Environment variables:
+The contact form sends enquiries to **mohdasif.dev01@gmail.com**.
+
+### Option A — Web3Forms (recommended, free, works on Render)
+
+1. Open [https://web3forms.com](https://web3forms.com)
+2. Enter email: `mohdasif.dev01@gmail.com` → Create Access Key
+3. Copy the access key
+4. Render → **Environment** → add:
 
 | Key | Value |
 |-----|--------|
+| `WEB3FORMS_ACCESS_KEY` | your access key from web3forms.com |
+
+5. Save → redeploy. Form emails will arrive in Gmail.
+
+### Option B — Gmail SMTP (optional, may fail on Render)
+
+| Key | Value |
+|-----|--------|
+| `SMTP_ADDRESS` | `smtp.gmail.com` |
+| `SMTP_PORT` | `587` |
 | `SMTP_USERNAME` | `mohdasif.dev01@gmail.com` |
-| `SMTP_PASSWORD` | Gmail **App Password** (16 characters) |
-| `CONTACT_EMAIL` | `mohdasif.dev01@gmail.com` |
+| `SMTP_PASSWORD` | Gmail App Password (16 chars) |
 
-### Create Gmail App Password
-
-1. Google Account → **Security** → turn on **2-Step Verification**
-2. Search **App passwords** → create one for "Mail"
-3. Copy the 16-character password → paste as `SMTP_PASSWORD` on Render
-4. Redeploy the service
-
-Local dev without SMTP saves emails to `tmp/mail/`.
+Local dev without config saves SMTP emails to `tmp/mail/`.
 
 ## Customize
 
