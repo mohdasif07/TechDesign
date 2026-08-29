@@ -1,7 +1,11 @@
 <% contact_message = local_assigns[:contact_message].presence || ContactMessage.new(service: local_assigns[:default_service]) %>
 <% return_to = local_assigns.fetch(:return_to, request.path + "#contact") %>
+<% web3forms_key = ENV["WEB3FORMS_ACCESS_KEY"].presence %>
 
-<%= form_with model: contact_message, url: contact_path, method: :post, local: true, class: "contact-form", html: { id: "contact-form" } do |f| %>
+<%= form_with model: contact_message, url: contact_path, method: :post, local: true, class: "contact-form", html: {
+      id: "contact-form",
+      data: web3forms_key ? { web3forms_key: web3forms_key } : {}
+    } do |f| %>
   <%= f.hidden_field :return_to, value: return_to %>
 
   <div class="form-honeypot" aria-hidden="true">
@@ -35,6 +39,8 @@
     <%= f.label :message, "Your message *" %>
     <%= f.text_area :message, required: true, rows: 5, placeholder: "Tell us about your space, website, app or project..." %>
   </div>
+
+  <div class="form-status" role="status" hidden></div>
 
   <%= f.submit "Send Message", class: "btn btn-light btn-block form-submit" %>
 <% end %>

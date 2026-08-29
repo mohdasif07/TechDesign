@@ -2578,6 +2578,32 @@ footer {
   overflow: hidden;
 }
 
+.form-status {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.form-status--success {
+  background: rgba(34, 197, 94, 0.12);
+  color: #166534;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.form-status--error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.form-status--info {
+  background: rgba(59, 130, 246, 0.1);
+  color: #1e40af;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
 .contact-or {
   text-align: center;
   margin: 18px 0 14px;

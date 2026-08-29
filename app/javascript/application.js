@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initServiceWorker();
   initInstallPrompt();
   initFlashBar();
+  initContactForm();
 });
 
 function initNavigation() {
@@ -156,4 +157,101 @@ function initFlashBar() {
   }
 
   window.setTimeout(() => bar.remove(), 8000);
+}
+
+function initContactForm() {
+  document.querySelectorAll("form.contact-form[data-web3forms-key]").forEach((form) => {
+    const accessKey = form.dataset.web3formsKey;
+    if (!accessKey) return;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitBtn = form.querySelector('[type="submit"]');
+      const statusEl = form.querySelector(".form-status");
+      const website = form.querySelector('[name="contact_message[website]"]');
+
+      if (website?.value) {
+        showFormStatus(statusEl, "Thank you! We will get back to you within 24 hours.", "success");
+        form.reset();
+        return;
+      }
+
+      const field = (name) => form.querySelector(`[name="contact_message[${name}]"]`)?.value?.trim() || "";
+      const name = field("name");
+      const email = field("email");
+      const phone = field("phone");
+      const service = field("service");
+      const message = field("message");
+
+      if (!name || !email || !message) {
+        showFormStatus(statusEl, "Please fill in all required fields.", "error");
+        return;
+      }
+
+      const defaultLabel = submitBtn?.value || "Send Message";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.value = "Sending...";
+      }
+      showFormStatus(statusEl, "Sending your message...", "info");
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `New enquiry — ${service || "AS DesignTech"} — ${name}`,
+            name,
+            email,
+            phone,
+            service,
+            message,
+            from_name: "AS DesignTech Website",
+            replyto: email,
+            botcheck: ""
+          })
+        });
+
+        const data = await response.json();
+        const ok = data.success === true;
+        const msg =
+          data.message ||
+          data.body?.message ||
+          (ok ? "Message sent successfully! We will reply within 24 hours." : "Could not send your message.");
+
+        if (ok) {
+          showFormStatus(statusEl, msg, "success");
+          form.reset();
+        } else {
+          showFormStatus(statusEl, msg, "error");
+        }
+      } catch {
+        showFormStatus(
+          statusEl,
+          "Could not send your message right now. Please WhatsApp us or email mohdasif.dev01@gmail.com directly.",
+          "error"
+        );
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.value = defaultLabel;
+        }
+      }
+    });
+  });
+}
+
+function showFormStatus(el, message, type) {
+  if (!el) return;
+  el.hidden = false;
+  el.textContent = message;
+  el.className = `form-status form-status--${type}`;
+  if (type === "success") {
+    el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
 }

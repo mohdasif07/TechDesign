@@ -17,6 +17,11 @@ class ContactsController < ApplicationController
       return
     end
 
+    if ContactNotifier.web3forms_configured? && !ContactNotifier.smtp_configured? && !Rails.env.development?
+      redirect_to redirect_path, alert: "Please enable JavaScript to send the form, or contact us via WhatsApp or email."
+      return
+    end
+
     ContactNotifier.deliver(@contact_message)
     redirect_to redirect_path, notice: "Message sent successfully! We will reply within 24 hours."
   rescue ContactNotifier::DeliveryError, StandardError => e
