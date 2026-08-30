@@ -1,18 +1,23 @@
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1930"/>
-      <stop offset="100%" stop-color="#142a4a"/>
+    <linearGradient id="icon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081428"/>
+      <stop offset="100%" stop-color="#16345c"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="icon-accent" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#e87935"/>
-      <stop offset="100%" stop-color="#f4a261"/>
+      <stop offset="100%" stop-color="#ffb07a"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <rect x="56" y="56" width="400" height="400" rx="84" fill="none" stroke="url(#accent)" stroke-width="6" opacity="0.45"/>
-  <circle cx="256" cy="156" r="22" fill="url(#accent)"/>
-  <path d="M172 364 L256 148 L340 364" fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M204 292 H308" fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
-  <rect x="154" y="388" width="204" height="12" rx="6" fill="url(#accent)"/>
+  <rect width="512" height="512" rx="118" fill="url(#icon-bg)"/>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="none" stroke="url(#icon-accent)" stroke-width="8" opacity="0.35"/>
+  <path d="M256 86 L396 396 H324 L256 246 L188 396 H116 Z" fill="none" stroke="#ffffff" stroke-width="26" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M188 316 H324" fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+  <path d="M324 188 V396" fill="none" stroke="url(#icon-accent)" stroke-width="16" stroke-linecap="round" stroke-dasharray="0 28"/>
+  <circle cx="256" cy="108" r="26" fill="url(#icon-accent)"/>
+  <circle cx="256" cy="108" r="11" fill="#fff" opacity="0.85"/>
+  <path d="M148 418 H364" stroke="url(#icon-accent)" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="178" cy="418" r="8" fill="#ffb07a"/>
+  <circle cx="256" cy="418" r="8" fill="#ffb07a"/>
+  <circle cx="334" cy="418" r="8" fill="#ffb07a"/>
 </svg>

@@ -1,20 +1,30 @@
-<svg width="480" height="120" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa">
+<svg width="520" height="128" viewBox="0 0 520 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1930"/>
-      <stop offset="100%" stop-color="#142a4a"/>
+    <linearGradient id="logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081428"/>
+      <stop offset="100%" stop-color="#16345c"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="logo-accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#e87935"/>
-      <stop offset="100%" stop-color="#f4a261"/>
+      <stop offset="100%" stop-color="#ffb07a"/>
+    </linearGradient>
+    <linearGradient id="logo-text-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d06524"/>
+      <stop offset="100%" stop-color="#e87935"/>
     </linearGradient>
   </defs>
-  <rect x="8" y="8" width="104" height="104" rx="24" fill="url(#bg)"/>
-  <circle cx="60" cy="36" r="7" fill="url(#accent)"/>
-  <path d="M32 82 L60 32 L88 82" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M44 64 H76" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
-  <rect x="28" y="92" width="64" height="5" rx="2.5" fill="url(#accent)"/>
-  <text x="132" y="58" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800" fill="#0b1930" letter-spacing="-0.5">Arqvexa</text>
-  <rect x="132" y="72" width="148" height="5" rx="2.5" fill="url(#accent)"/>
-  <text x="132" y="98" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#667085" letter-spacing="1.5">INTERIOR DESIGN AND IT DEVELOPMENT</text>
+  <rect x="4" y="4" width="112" height="112" rx="28" fill="url(#logo-bg)"/>
+  <path d="M60 28 L92 92 H78 L60 54 L42 92 H28 Z" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M42 72 H78" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M78 44 V92" fill="none" stroke="url(#logo-accent)" stroke-width="4" stroke-linecap="round" stroke-dasharray="0 8"/>
+  <circle cx="60" cy="34" r="7" fill="url(#logo-accent)"/>
+  <circle cx="60" cy="34" r="3" fill="#fff" opacity="0.9"/>
+  <path d="M34 98 H86" stroke="url(#logo-accent)" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="42" cy="98" r="2.2" fill="#ffb07a"/>
+  <circle cx="60" cy="98" r="2.2" fill="#ffb07a"/>
+  <circle cx="78" cy="98" r="2.2" fill="#ffb07a"/>
+  <text x="136" y="58" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="#0b1930" letter-spacing="-1">Arq</text>
+  <text x="228" y="58" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" fill="url(#logo-text-accent)" letter-spacing="-1">vexa</text>
+  <rect x="136" y="72" width="176" height="5" rx="2.5" fill="url(#logo-accent)"/>
+  <text x="136" y="98" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#667085" letter-spacing="2.2">INTERIOR DESIGN | IT DEVELOPMENT</text>
 </svg>

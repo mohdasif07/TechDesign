@@ -1,17 +1,27 @@
 <svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa mark">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1930"/>
-      <stop offset="100%" stop-color="#142a4a"/>
+    <linearGradient id="mark-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081428"/>
+      <stop offset="100%" stop-color="#16345c"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="mark-accent" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#e87935"/>
-      <stop offset="100%" stop-color="#f4a261"/>
+      <stop offset="100%" stop-color="#ffb07a"/>
+    </linearGradient>
+    <linearGradient id="mark-glow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="320" height="320" rx="72" fill="url(#bg)"/>
-  <circle cx="160" cy="98" r="14" fill="url(#accent)"/>
-  <path d="M108 228 L160 108 L212 228" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M128 188 H192" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round"/>
-  <rect x="96" y="244" width="128" height="8" rx="4" fill="url(#accent)"/>
+  <rect width="320" height="320" rx="76" fill="url(#mark-bg)"/>
+  <rect x="18" y="18" width="284" height="284" rx="64" fill="url(#mark-glow)"/>
+  <path d="M160 54 L248 248 L204 248 L160 154 L116 248 L72 248 Z" fill="none" stroke="#ffffff" stroke-width="16" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M116 198 H204" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round"/>
+  <path d="M204 118 V248" fill="none" stroke="url(#mark-accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="0 18"/>
+  <circle cx="160" cy="68" r="16" fill="url(#mark-accent)"/>
+  <circle cx="160" cy="68" r="7" fill="#fff" opacity="0.85"/>
+  <path d="M92 262 H228" stroke="url(#mark-accent)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="108" cy="262" r="5" fill="#ffb07a"/>
+  <circle cx="160" cy="262" r="5" fill="#ffb07a"/>
+  <circle cx="212" cy="262" r="5" fill="#ffb07a"/>
 </svg>
