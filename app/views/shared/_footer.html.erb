@@ -5,7 +5,12 @@
         <%= image_tag "/logo-mark.svg", alt: "", class: "brand-logo", width: 38, height: 38 %>
         <span class="brand-name">Arqvexa</span>
       <% end %>
-      <p>Interior Design & IT Development. Delhi NCR & Remote.</p>
+      <p>Interior Design &amp; IT Development. Delhi NCR &amp; Remote.</p>
+      <ul class="footer-contact">
+        <li><%= mail_to contact_email, contact_email %></li>
+        <li><%= link_to contact_phone_display, "tel:#{contact_phone_tel}" %></li>
+        <li><%= link_to "WhatsApp", "https://wa.me/919917639330", target: "_blank", rel: "noopener noreferrer" %></li>
+      </ul>
     </div>
     <div class="footer-links">
       <%= link_to "Interior Design", interior_design_path %>
@@ -14,7 +19,11 @@
       <%= link_to "Blog", blog_path %>
       <%= link_to "About", root_path(anchor: "about") %>
       <%= link_to "Contact", root_path(anchor: "contact") %>
+      <%= link_to "Privacy", privacy_path %>
     </div>
-    <div class="copyright">© <%= Time.current.year %> Arqvexa. All rights reserved.</div>
+    <div class="copyright">
+      <div>© <%= Time.current.year %> Arqvexa. All rights reserved.</div>
+      <%= link_to "Privacy Policy", privacy_path, class: "footer-legal-link" %>
+    </div>
   </div>
 </footer>

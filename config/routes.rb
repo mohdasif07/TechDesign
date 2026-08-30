@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "interior-design", to: "pages#interior_design", as: :interior_design
   get "web-development", to: "pages#web_development", as: :web_development
+  get "privacy", to: "pages#privacy", as: :privacy
   get "portfolio", to: "portfolio#index", as: :portfolio
   get "blog", to: "blog#index", as: :blog
   get "blog/:slug", to: "blog#show", as: :blog_post

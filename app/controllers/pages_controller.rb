@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def web_development
   end
+
+  def privacy
+  end
 end

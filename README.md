@@ -2,7 +2,9 @@
 
 Rails website for **Arqvexa** with equal focus on **Interior Design** and **IT Development**, PWA support, and SEO-optimized service pages.
 
-## Run
+**Live site:** https://arqvexa.onrender.com
+
+## Run locally
 
 ```bash
 bundle install
@@ -15,106 +17,65 @@ Open http://localhost:3000
 
 | URL | Purpose |
 |-----|---------|
-| `/` | Homepage — balanced hub for both divisions |
+| `/` | Homepage — services, portfolio, pricing, blog preview, contact |
 | `/interior-design` | Interior design SEO landing page (Delhi NCR) |
 | `/web-development` | IT development SEO landing page (India + remote) |
-
-## Features
-
-- **Balanced homepage** — split hero, dual CTAs, 3+3 portfolio, split FAQ
-- **Dedicated service pages** — unique titles, meta, H1, content, FAQ schema
-- **PWA** — installable app with offline support
-- **SEO** — canonical URLs, Open Graph, JSON-LD, sitemap.xml
-- **Shared layout** — navigation, footer, contact panel partials
+| `/portfolio` | Filterable project gallery |
+| `/blog` | SEO articles — costs, timelines, guides |
+| `/privacy` | Privacy Policy |
+| `/#pricing` | Starting price ranges on homepage |
 
 ## Deploy on Render
 
-**Important:** Render does **not** change the `*.onrender.com` URL when you rename a service in Settings. The subdomain is fixed when the service is **first created**.
+Service name: **arqvexa** → https://arqvexa.onrender.com
 
-| URL | Status |
+Required environment variables:
+
+| Key | Value |
 |-----|--------|
-| `https://as-designtech.onrender.com` | Your **current live** URL (works now) |
-| `https://arqvexa.onrender.com` | Does **not** exist until you create a **new** service named `arqvexa` |
+| `RAILS_MASTER_KEY` | From `config/master.key` |
+| `APP_HOST` | `arqvexa.onrender.com` |
+| `WEB3FORMS_ACCESS_KEY` | From [web3forms.com](https://web3forms.com) |
+| `MAILER_FROM` | `Arqvexa <mohdasif.dev01@gmail.com>` |
+| `CONTACT_EMAIL` | `mohdasif.dev01@gmail.com` |
+| `GOOGLE_ANALYTICS_ID` | Optional — GA4 measurement ID |
 
-Target live URL: **https://arqvexa.onrender.com**
+Push to `main` triggers auto-deploy when connected to Render.
 
-### Get `arqvexa.onrender.com` (create new service)
+## SEO & Google Business Profile
 
-1. [Render Dashboard](https://dashboard.render.com) → **New +** → **Web Service**
-2. Connect repo: `mohdasif07/TechDesign` → branch `main`
-3. **Name:** `arqvexa` (exactly — not `arqvexaa`)
-4. **Runtime:** Docker · **Region:** Singapore · **Plan:** Free
-5. **Health check path:** `/up`
-6. Copy **all Environment variables** from the old `as-designtech` service:
-   - `APP_HOST` = `arqvexa.onrender.com`
-   - `RAILS_MASTER_KEY`, `WEB3FORMS_ACCESS_KEY`, `MAILER_FROM`, etc.
-7. **Create Web Service** → wait for deploy → open `https://arqvexa.onrender.com`
-8. After the new site works, delete the old **as-designtech** service (optional)
-
-Renaming the service in Settings only changes the dashboard label — the URL stays `as-designtech.onrender.com`.
-
-## SEO setup
-
-After deploying to production:
-
-1. Update domain in `public/sitemap.xml` and `public/robots.txt`
-2. Submit sitemap in [Google Search Console](https://search.google.com/search-console)
-3. Add real project photos and case studies to both service pages
-4. Set up Google Business Profile with both service categories
+1. **Search Console** — add property https://arqvexa.onrender.com and submit `public/sitemap.xml`
+2. **Google Business Profile** — [business.google.com](https://business.google.com):
+   - Business name: **Arqvexa**
+   - Categories: *Interior designer* + *Software company* (or *Website designer*)
+   - Service area: Delhi NCR (Delhi, Gurgaon, Noida)
+   - Phone: +91 99176 39330
+   - Website: https://arqvexa.onrender.com
+   - Add photos of interior and IT work when available
+3. Update `public/sitemap.xml` when you add a custom domain
 
 ## Contact form email
 
-The contact form sends enquiries to **mohdasif.dev01@gmail.com**.
-
-### Option A — Web3Forms (recommended, free, works on Render)
+Enquiries go to **mohdasif.dev01@gmail.com** via Web3Forms (browser-side).
 
 1. Open [https://web3forms.com](https://web3forms.com)
-2. Enter email: `mohdasif.dev01@gmail.com` → Create Access Key
-3. Copy the access key
-4. Render → **Environment** → add:
+2. Enter email → Create Access Key
+3. Render → **Environment** → `WEB3FORMS_ACCESS_KEY`
 
-| Key | Value |
-|-----|--------|
-| `WEB3FORMS_ACCESS_KEY` | your access key from web3forms.com |
+Local dev without SMTP saves emails to `tmp/mail/`.
 
-5. Save → redeploy. Form emails will arrive in Gmail.
+## Customize content
 
-### Option B — Gmail SMTP (optional, may fail on Render)
-
-| Key | Value |
-|-----|--------|
-| `SMTP_ADDRESS` | `smtp.gmail.com` |
-| `SMTP_PORT` | `587` |
-| `SMTP_USERNAME` | `mohdasif.dev01@gmail.com` |
-| `SMTP_PASSWORD` | Gmail App Password (16 chars) |
-
-Local dev without config saves SMTP emails to `tmp/mail/`.
-
-## New pages
-
-| URL | Purpose |
-|-----|---------|
-| `/portfolio` | Filterable project gallery (Interior / IT) |
-| `/blog` | SEO articles — costs, timelines, guides |
-| `/#pricing` | Starting price ranges on homepage |
-
-## Optional: Google Analytics
-
-Add to Render Environment:
-
-| Key | Value |
-|-----|--------|
-| `GOOGLE_ANALYTICS_ID` | Your GA4 ID (e.g. `G-XXXXXXXXXX`) |
-
-## Customize
-
-- WhatsApp: `919917639330` in `app/views/shared/_contact_form.html.erb`
-- Email inbox: `CONTACT_EMAIL` env var or `app/mailers/contact_mailer.rb`
+| What | Where |
+|------|--------|
+| Portfolio projects | `config/portfolio.yml` |
+| Blog articles | `config/blog_posts.yml` |
+| Pricing | `app/views/shared/_pricing_section.html.erb` |
+| Phone / email helpers | `app/helpers/application_helper.rb` |
 
 ## Structure
 
-- `app/views/home/index.html.erb` — balanced homepage
-- `app/views/pages/interior_design.html.erb` — interior SEO page
-- `app/views/pages/web_development.html.erb` — IT SEO page
-- `app/views/shared/` — navigation, footer, contact partials
+- `app/views/home/index.html.erb` — homepage
+- `app/views/pages/` — service pages + privacy
+- `app/views/shared/` — navigation, footer, contact, portfolio, pricing
 - `app/assets/stylesheets/application.css` — all styles

@@ -41,4 +41,16 @@ module ApplicationHelper
 
     link_to label, href, opts
   end
+
+  def contact_email
+    ENV.fetch("CONTACT_EMAIL", "mohdasif.dev01@gmail.com")
+  end
+
+  def contact_phone_display
+    "+91 99176 39330"
+  end
+
+  def contact_phone_tel
+    "+919917639330"
+  end
 end

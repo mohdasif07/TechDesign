@@ -1296,6 +1296,36 @@ footer {
   margin: 10px 0 0;
 }
 
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.footer-contact a {
+  color: #c5ceda;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: #fff;
+}
+
+.footer-legal-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #7a8aa3;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.footer-legal-link:hover {
+  color: #fff;
+}
+
 .footer-links {
   display: flex;
   gap: 20px;
@@ -1881,9 +1911,28 @@ footer {
 /* Service pages */
 .page-hero {
   padding: 90px 0 70px;
-  color: #fff;
   overflow: hidden;
   position: relative;
+}
+
+.page-hero-interior,
+.page-hero-tech {
+  color: #fff;
+}
+
+.page-hero-light {
+  padding: 48px 0 24px;
+  color: var(--ink);
+  background: transparent;
+}
+
+.page-hero-light .eyebrow {
+  color: var(--orange);
+}
+
+.page-hero-light h1 em {
+  color: var(--orange);
+  font-style: normal;
 }
 
 .page-hero-interior {
@@ -2951,16 +3000,14 @@ footer {
 }
 
 .page-main {
-  padding-top: 88px;
+  padding-top: 80px;
 }
 
-.page-hero {
-  padding: 48px 0 24px;
-}
-
-.page-hero h1 {
+.page-hero-light h1 {
   font-size: clamp(36px, 5vw, 56px);
   margin: 12px 0;
+  font: 800 clamp(36px, 5vw, 56px)/1.08 Manrope, sans-serif;
+  letter-spacing: -1.5px;
 }
 
 .page-lead {
@@ -3017,6 +3064,27 @@ footer {
 .prose a {
   color: #e87935;
   font-weight: 600;
+}
+
+.legal-prose {
+  max-width: 760px;
+  padding-bottom: 48px;
+}
+
+.legal-prose h2 {
+  font-size: 22px;
+  margin: 28px 0 12px;
+  color: var(--ink);
+}
+
+.legal-prose p,
+.legal-prose li {
+  line-height: 1.75;
+  color: #334155;
+}
+
+.legal-prose ul {
+  padding-left: 20px;
 }
 
 .blog-article-footer {
