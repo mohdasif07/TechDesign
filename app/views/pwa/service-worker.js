@@ -1,4 +1,4 @@
-const CACHE_NAME = "as-designtech-v1";
+const CACHE_NAME = "arqvexa-v2";
 const OFFLINE_URL = "/";
 
 const PRECACHE_URLS = [

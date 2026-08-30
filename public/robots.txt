@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://asdesigntech.in/sitemap.xml
+Sitemap: https://as-designtech.onrender.com/sitemap.xml

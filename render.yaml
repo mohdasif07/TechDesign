@@ -22,7 +22,7 @@ services:
       - key: CONTACT_EMAIL
         value: mohdasif.dev01@gmail.com
       - key: MAILER_FROM
-        value: "AS DesignTech <mohdasif.dev01@gmail.com>"
+        value: "Arqvexa <mohdasif.dev01@gmail.com>"
       # Recommended (free, works on Render): https://web3forms.com — use your Gmail to get access key
       - key: WEB3FORMS_ACCESS_KEY
         sync: false

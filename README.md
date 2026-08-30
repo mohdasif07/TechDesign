@@ -1,6 +1,6 @@
-# AS DesignTech — Rails Website
+# Arqvexa — Rails Website
 
-Rails website for AS DesignTech with equal focus on **Interior Design** and **IT Development**, PWA support, and SEO-optimized service pages.
+Rails website for **Arqvexa** with equal focus on **Interior Design** and **IT Development**, PWA support, and SEO-optimized service pages.
 
 ## Run
 

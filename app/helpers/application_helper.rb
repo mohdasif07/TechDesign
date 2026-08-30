@@ -1,10 +1,10 @@
 module ApplicationHelper
   def meta_title
-    content_for?(:meta_title) ? content_for(:meta_title) : "AS DesignTech | Interior Design & IT Development in Delhi NCR"
+    content_for?(:meta_title) ? content_for(:meta_title) : "Arqvexa | Interior Design & IT Development in Delhi NCR"
   end
 
   def meta_description
-    content_for?(:meta_description) ? content_for(:meta_description) : "AS DesignTech offers interior design in Delhi NCR and IT development across India — websites, apps, CRM, AI automation, and beautiful spaces."
+    content_for?(:meta_description) ? content_for(:meta_description) : "Arqvexa offers interior design in Delhi NCR and IT development across India — websites, apps, CRM, AI automation, and beautiful spaces."
   end
 
   def meta_keywords

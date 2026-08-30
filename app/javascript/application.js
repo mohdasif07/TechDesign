@@ -1,4 +1,4 @@
-// AS DesignTech — navigation, scroll effects, PWA
+// Arqvexa — navigation, scroll effects, PWA
 document.addEventListener("DOMContentLoaded", () => {
   initNavigation();
   initScrollReveal();
@@ -205,13 +205,13 @@ function initContactForm() {
           },
           body: JSON.stringify({
             access_key: accessKey,
-            subject: `New enquiry — ${service || "AS DesignTech"} — ${name}`,
+            subject: `New enquiry — ${service || "Arqvexa"} — ${name}`,
             name,
             email,
             phone,
             service,
             message,
-            from_name: "AS DesignTech Website",
+            from_name: "Arqvexa Website",
             replyto: email,
             botcheck: ""
           })

@@ -5,7 +5,7 @@ class ContactMailer < ApplicationMailer
     mail(
       to: ENV.fetch("CONTACT_EMAIL", "mohdasif.dev01@gmail.com"),
       reply_to: contact.email,
-      subject: "New enquiry — #{contact.service.presence || 'AS DesignTech'} — #{contact.name}"
+      subject: "New enquiry — #{contact.service.presence || 'Arqvexa'} — #{contact.name}"
     )
   end
 end
