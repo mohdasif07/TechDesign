@@ -1,0 +1,40 @@
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa cover">
+  <defs>
+    <linearGradient id="cover-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081428"/>
+      <stop offset="45%" stop-color="#0f2440"/>
+      <stop offset="100%" stop-color="#16345c"/>
+    </linearGradient>
+    <linearGradient id="cover-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e87935"/>
+      <stop offset="100%" stop-color="#ffb07a"/>
+    </linearGradient>
+    <radialGradient id="cover-glow" cx="22%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cover-glow-2" cx="88%" cy="70%" r="35%">
+      <stop offset="0%" stop-color="#e87935" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#e87935" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="628" fill="url(#cover-bg)"/>
+  <rect width="1200" height="628" fill="url(#cover-glow)"/>
+  <rect width="1200" height="628" fill="url(#cover-glow-2)"/>
+  <g transform="translate(210 314)">
+    <path d="M0 -118 L102 136 H68 L0 16 L-68 136 H-102 Z" fill="none" stroke="#ffffff" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M-68 76 H68" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
+    <path d="M68 -8 V136" fill="none" stroke="url(#cover-accent)" stroke-width="14" stroke-linecap="round" stroke-dasharray="0 24"/>
+    <circle cy="-92" r="26" fill="url(#cover-accent)"/>
+    <circle cy="-92" r="11" fill="#fff" opacity="0.9"/>
+    <path d="M-86 152 H86" stroke="url(#cover-accent)" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="-62" cy="152" r="7" fill="#ffb07a"/>
+    <circle cx="0" cy="152" r="7" fill="#ffb07a"/>
+    <circle cx="62" cy="152" r="7" fill="#ffb07a"/>
+  </g>
+  <text x="430" y="280" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" fill="#ffffff" letter-spacing="-2">Arq<tspan fill="url(#cover-accent)">vexa</tspan></text>
+  <text x="430" y="340" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#aebbd0" letter-spacing="5">INTERIOR DESIGN | IT DEVELOPMENT</text>
+  <text x="430" y="385" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#8fa0b8">Delhi NCR | India</text>
+  <rect x="430" y="410" width="220" height="6" rx="3" fill="url(#cover-accent)"/>
+  <text x="430" y="455" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" fill="#c5ceda">Spaces and software. One studio.</text>
+</svg>
