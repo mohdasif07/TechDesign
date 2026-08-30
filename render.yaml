@@ -2,7 +2,7 @@
 # Docs: https://render.com/docs/deploy-rails-docker
 services:
   - type: web
-    name: as-designtech
+    name: arqvexa
     runtime: docker
     plan: free
     region: singapore
@@ -19,6 +19,8 @@ services:
       # Paste your key from config/master.key in the Render dashboard after first deploy setup
       - key: RAILS_MASTER_KEY
         sync: false
+      - key: APP_HOST
+        value: arqvexa.onrender.com
       - key: CONTACT_EMAIL
         value: mohdasif.dev01@gmail.com
       - key: MAILER_FROM

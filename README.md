@@ -27,6 +27,22 @@ Open http://localhost:3000
 - **SEO** — canonical URLs, Open Graph, JSON-LD, sitemap.xml
 - **Shared layout** — navigation, footer, contact panel partials
 
+## Deploy on Render
+
+Live URL: **https://arqvexa.onrender.com**
+
+### Rename existing service (one-time)
+
+If your Render service is still named `as-designtech`:
+
+1. Open [Render Dashboard](https://dashboard.render.com) → select **as-designtech**
+2. **Settings** → **General** → **Name** → change to `arqvexa`
+3. **Save** — your URL becomes `https://arqvexa.onrender.com`
+4. **Environment** → add or update `APP_HOST` = `arqvexa.onrender.com`
+5. Push this repo and redeploy
+
+The old URL (`as-designtech.onrender.com`) will stop working after rename.
+
 ## SEO setup
 
 After deploying to production:
