@@ -1,0 +1,30 @@
+<% content_for :meta_title, "#{@post.title} | Arqvexa Blog" %>
+<% content_for :meta_description, @post.excerpt %>
+<% content_for :canonical_url, request.base_url + blog_post_path(@post.slug) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <article class="blog-article">
+    <header class="blog-article-header">
+      <div class="container blog-article-header-inner">
+        <%= link_to "← Back to blog", blog_path, class: "blog-back-link" %>
+        <span class="blog-category <%= @post.interior? ? "interior-label" : "tech-label" %>"><%= @post.category_label %></span>
+        <h1><%= @post.title %></h1>
+        <div class="blog-meta">
+          <time datetime="<%= @post.published_at %>"><%= @post.formatted_date %></time>
+          <span><%= @post.read_time %></span>
+        </div>
+      </div>
+    </header>
+    <div class="container blog-article-body prose">
+      <%= @post.body.html_safe %>
+    </div>
+    <footer class="container blog-article-footer">
+      <p>Ready to start your project?</p>
+      <%= link_to "Get a free quote", root_path(anchor: "contact"), class: "btn btn-primary" %>
+    </footer>
+  </article>
+</main>
+
+<%= render "shared/footer" %>

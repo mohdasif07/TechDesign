@@ -1,0 +1,24 @@
+<article class="work-card portfolio-card <%= item.work_card_class %>" data-category="<%= item.category %>">
+  <% case item.visual %>
+  <% when "digital" %>
+    <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
+  <% when "mobile" %>
+    <div class="visual-mobile"><div class="phone"><div class="phone-notch"></div><div class="phone-screen"><div class="app-bar"></div><div class="app-card"></div><div class="app-card short"></div></div></div></div>
+  <% when "crm" %>
+    <div class="visual-crm"><div class="dashboard"><div class="dash-sidebar"></div><div class="dash-main"><div class="dash-stat"></div><div class="dash-stat"></div><div class="dash-chart"></div></div></div></div>
+  <% when "room" %>
+    <div class="visual-room"><div class="v-window"></div><div class="v-sofa"></div><div class="v-table"></div><div class="v-light"></div></div>
+  <% when "office" %>
+    <div class="visual-office"><div class="desk"></div><div class="screen"></div><div class="plant2"></div><div class="chair"></div></div>
+  <% when "kitchen" %>
+    <div class="visual-kitchen"><div class="k-counter"></div><div class="k-cabinets"></div><div class="k-hood"></div><div class="k-island"></div></div>
+  <% end %>
+  <div class="work-meta">
+    <span><%= item.tag %></span>
+    <b><%= item.title %></b>
+    <p><%= item.description %></p>
+    <% if item.location.present? %>
+      <small class="portfolio-location"><%= item.location %></small>
+    <% end %>
+  </div>
+</article>

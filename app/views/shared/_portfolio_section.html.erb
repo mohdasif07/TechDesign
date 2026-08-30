@@ -1,0 +1,29 @@
+<section class="section work portfolio-section" id="work" data-portfolio-filter>
+  <div class="container">
+    <div class="section-head compact reveal">
+      <div>
+        <div class="eyebrow"><span></span> Our work</div>
+        <h2>Built with <em>intention.</em></h2>
+      </div>
+      <p>Filter by Interior Design or IT Development. Replace with your real project photos as Arqvexa grows.</p>
+    </div>
+
+    <div class="portfolio-filters reveal" role="tablist" aria-label="Filter portfolio">
+      <button type="button" class="portfolio-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button type="button" class="portfolio-filter" data-filter="interior" role="tab" aria-selected="false">⌂ Interior</button>
+      <button type="button" class="portfolio-filter" data-filter="tech" role="tab" aria-selected="false">&lt;/&gt; IT</button>
+    </div>
+
+    <div class="work-grid work-grid-3 portfolio-grid reveal">
+      <% PortfolioItem.all.each do |item| %>
+        <%= render "shared/portfolio_card", item: item %>
+      <% end %>
+    </div>
+
+    <div class="section-cta reveal">
+      <%= link_to portfolio_path, class: "btn btn-dark-outline" do %>
+        View full portfolio <span aria-hidden="true">→</span>
+      <% end %>
+    </div>
+  </div>
+</section>

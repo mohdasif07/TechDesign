@@ -1,0 +1,64 @@
+items:
+  - id: business-website
+    category: tech
+    tag: Website
+    title: Business Website
+    description: Fast, mobile-first site with clear messaging and lead capture.
+    visual: digital
+    location: Remote
+
+  - id: service-booking-app
+    category: tech
+    tag: Mobile App
+    title: Service Booking App
+    description: Cross-platform app with login, booking flow and notifications.
+    visual: mobile
+    location: Delhi
+
+  - id: crm-dashboard
+    category: tech
+    tag: Custom Software
+    title: CRM Dashboard
+    description: Lead tracking, pipeline view and automated follow-ups for sales teams.
+    visual: crm
+    location: Gurgaon
+
+  - id: ecommerce-store
+    category: tech
+    tag: E-commerce
+    title: Online Store
+    description: Product catalog, cart, payments and order management for a retail brand.
+    visual: digital
+    location: India
+
+  - id: modern-3bhk
+    category: interior
+    tag: Residential
+    title: Modern 3BHK
+    description: Warm neutrals, open layout, and smart storage for urban living.
+    visual: room
+    location: Gurgaon
+
+  - id: modern-office
+    category: interior
+    tag: Commercial
+    title: Modern Office
+    description: Productive workspace with natural light and ergonomic flow.
+    visual: office
+    location: Noida
+
+  - id: contemporary-kitchen
+    category: interior
+    tag: Modular Kitchen
+    title: Contemporary Kitchen
+    description: Handle-less cabinets, quartz top and optimized work triangle.
+    visual: kitchen
+    location: Delhi
+
+  - id: boutique-showroom
+    category: interior
+    tag: Retail
+    title: Boutique Showroom
+    description: Brand-led retail interior with display lighting and customer flow.
+    visual: office
+    location: Delhi NCR

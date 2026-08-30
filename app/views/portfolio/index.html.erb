@@ -1,0 +1,48 @@
+<% content_for :meta_title, "Portfolio | Interior & IT Projects | Arqvexa" %>
+<% content_for :meta_description, "Explore Arqvexa portfolio — interior design projects in Delhi NCR and IT development work across India." %>
+<% content_for :canonical_url, request.base_url + portfolio_path %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow"><span></span> Portfolio</div>
+      <h1>Our <em>work.</em></h1>
+      <p class="page-lead">Interior spaces and digital products — filter by division or browse everything.</p>
+    </div>
+  </section>
+
+  <section class="section portfolio-page" data-portfolio-filter>
+    <div class="container">
+      <div class="portfolio-filters reveal" role="tablist" aria-label="Filter portfolio">
+        <% [["all", "All"], ["interior", "⌂ Interior"], ["tech", "<\/> IT"]].each do |cat, label| %>
+          <%= link_to label,
+                portfolio_path(category: (cat == "all" ? nil : cat)),
+                class: ["portfolio-filter", ("is-active" if @category == cat)].compact.join(" "),
+                role: "tab",
+                aria: { selected: (@category == cat).to_s } %>
+        <% end %>
+      </div>
+
+      <div class="work-grid work-grid-3 portfolio-grid reveal">
+        <% @filtered_items.each do |item| %>
+          <%= render "shared/portfolio_card", item: item %>
+        <% end %>
+      </div>
+
+      <% if @filtered_items.empty? %>
+        <p class="portfolio-empty">No projects in this category yet.</p>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="section cta-inline">
+    <div class="container cta-inline-box">
+      <h2>Have a similar project in mind?</h2>
+      <%= link_to "Start a conversation", root_path(anchor: "contact"), class: "btn btn-primary" %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>

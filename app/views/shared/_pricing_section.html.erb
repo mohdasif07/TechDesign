@@ -1,0 +1,65 @@
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="section-head compact reveal">
+      <div>
+        <div class="eyebrow"><span></span> Transparent pricing</div>
+        <h2>Starting <em>ranges.</em></h2>
+      </div>
+      <p>Every project is unique — these are typical starting points. We share a detailed quote after discovery.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="pricing-card reveal">
+        <span class="pricing-badge interior-label">⌂ Interior</span>
+        <h3>Design Consultation</h3>
+        <p class="pricing-amount">From ₹5,000</p>
+        <p class="pricing-note">Site visit, measurements &amp; initial recommendations in Delhi NCR.</p>
+        <ul>
+          <li>On-site visit (Delhi NCR)</li>
+          <li>Layout suggestions</li>
+          <li>Budget guidance</li>
+        </ul>
+        <%= link_to "Get consultation", root_path(anchor: "contact"), class: "pricing-link" %>
+      </article>
+
+      <article class="pricing-card pricing-featured reveal delay-1">
+        <span class="pricing-badge interior-label">⌂ Interior</span>
+        <h3>Full 3BHK Interior</h3>
+        <p class="pricing-amount">From ₹8L</p>
+        <p class="pricing-note">Design, 3D views, modular &amp; on-site execution support.</p>
+        <ul>
+          <li>2D + 3D visualization</li>
+          <li>Modular kitchen &amp; wardrobes</li>
+          <li>Vendor coordination</li>
+        </ul>
+        <%= link_to interior_design_path, class: "pricing-link" do %>View interiors <span aria-hidden="true">→</span><% end %>
+      </article>
+
+      <article class="pricing-card reveal delay-1">
+        <span class="pricing-badge tech-label">&lt;/&gt; IT</span>
+        <h3>Business Website</h3>
+        <p class="pricing-amount">From ₹35,000</p>
+        <p class="pricing-note">Mobile-first, SEO-ready site with contact form &amp; fast hosting.</p>
+        <ul>
+          <li>Up to 5 pages</li>
+          <li>Contact form &amp; WhatsApp</li>
+          <li>2–4 week delivery</li>
+        </ul>
+        <%= link_to web_development_path, class: "pricing-link" do %>View IT services <span aria-hidden="true">→</span><% end %>
+      </article>
+
+      <article class="pricing-card reveal delay-2">
+        <span class="pricing-badge tech-label">&lt;/&gt; IT</span>
+        <h3>Web / Mobile App</h3>
+        <p class="pricing-amount">From ₹1.5L</p>
+        <p class="pricing-note">Custom apps, CRM, e-commerce or automation — scoped after discovery.</p>
+        <ul>
+          <li>Discovery &amp; wireframes</li>
+          <li>Custom development</li>
+          <li>Launch &amp; support plans</li>
+        </ul>
+        <%= link_to "Request a quote", root_path(anchor: "contact"), class: "pricing-link" %>
+      </article>
+    </div>
+  </div>
+</section>

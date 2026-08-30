@@ -130,55 +130,9 @@
     </div>
   </section>
 
-  <section class="section work" id="work">
-    <div class="container">
-      <div class="section-head compact reveal">
-        <div>
-          <div class="eyebrow"><span></span> Our work</div>
-          <h2>Built with <em>intention.</em></h2>
-        </div>
-        <p>Equal showcase of digital products and interior concepts. Replace with your real projects as Arqvexa grows.</p>
-      </div>
+  <%= render "shared/portfolio_section" %>
 
-      <div class="work-split-head reveal">
-        <h3 class="work-category-label tech-label">&lt;/&gt; IT Development</h3>
-        <%= link_to "All IT projects", web_development_path(anchor: "portfolio"), class: "work-category-link" %>
-      </div>
-      <div class="work-grid work-grid-3 reveal">
-        <article class="work-card work-digital">
-          <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
-          <div class="work-meta"><span>Website</span><b>Business Website</b><p>Fast, mobile-first site with clear messaging and lead capture.</p></div>
-        </article>
-        <article class="work-card work-mobile">
-          <div class="visual-mobile"><div class="phone"><div class="phone-notch"></div><div class="phone-screen"><div class="app-bar"></div><div class="app-card"></div><div class="app-card short"></div></div></div></div>
-          <div class="work-meta"><span>Mobile App</span><b>Service Booking App</b><p>Cross-platform app with login, booking flow and notifications.</p></div>
-        </article>
-        <article class="work-card work-crm">
-          <div class="visual-crm"><div class="dashboard"><div class="dash-sidebar"></div><div class="dash-main"><div class="dash-stat"></div><div class="dash-stat"></div><div class="dash-chart"></div></div></div></div>
-          <div class="work-meta"><span>Custom Software</span><b>CRM Dashboard</b><p>Lead tracking, pipeline view and automated follow-ups for sales teams.</p></div>
-        </article>
-      </div>
-
-      <div class="work-split-head reveal">
-        <h3 class="work-category-label interior-label">⌂ Interior Design</h3>
-        <%= link_to "All interior projects", interior_design_path(anchor: "portfolio"), class: "work-category-link" %>
-      </div>
-      <div class="work-grid work-grid-3 reveal">
-        <article class="work-card work-room">
-          <div class="visual-room"><div class="v-window"></div><div class="v-sofa"></div><div class="v-table"></div><div class="v-light"></div></div>
-          <div class="work-meta"><span>Residential</span><b>Modern 3BHK</b><p>Warm neutrals, open layout, and smart storage for urban living.</p></div>
-        </article>
-        <article class="work-card work-office">
-          <div class="visual-office"><div class="desk"></div><div class="screen"></div><div class="plant2"></div><div class="chair"></div></div>
-          <div class="work-meta"><span>Commercial</span><b>Modern Office</b><p>Productive workspace with natural light and ergonomic flow.</p></div>
-        </article>
-        <article class="work-card work-kitchen">
-          <div class="visual-kitchen"><div class="k-counter"></div><div class="k-cabinets"></div><div class="k-hood"></div><div class="k-island"></div></div>
-          <div class="work-meta"><span>Modular Kitchen</span><b>Contemporary Kitchen</b><p>Handle-less cabinets, quartz top and optimized work triangle.</p></div>
-        </article>
-      </div>
-    </div>
-  </section>
+  <%= render "shared/pricing_section" %>
 
   <section class="section about" id="about">
     <div class="container about-grid">
@@ -300,6 +254,8 @@
     </div>
   </section>
 
+  <%= render "shared/blog_preview" %>
+
   <section class="cta-section" id="contact">
     <div class="container cta-box">
       <div class="reveal">
@@ -318,4 +274,3 @@
 </main>
 
 <%= render "shared/footer" %>
-<%= render "shared/page_extras" %>

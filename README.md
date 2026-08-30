@@ -29,19 +29,29 @@ Open http://localhost:3000
 
 ## Deploy on Render
 
-Live URL: **https://arqvexa.onrender.com**
+**Important:** Render does **not** change the `*.onrender.com` URL when you rename a service in Settings. The subdomain is fixed when the service is **first created**.
 
-### Rename existing service (one-time)
+| URL | Status |
+|-----|--------|
+| `https://as-designtech.onrender.com` | Your **current live** URL (works now) |
+| `https://arqvexa.onrender.com` | Does **not** exist until you create a **new** service named `arqvexa` |
 
-If your Render service is still named `as-designtech`:
+Target live URL: **https://arqvexa.onrender.com**
 
-1. Open [Render Dashboard](https://dashboard.render.com) → select **as-designtech**
-2. **Settings** → **General** → **Name** → change to `arqvexa`
-3. **Save** — your URL becomes `https://arqvexa.onrender.com`
-4. **Environment** → add or update `APP_HOST` = `arqvexa.onrender.com`
-5. Push this repo and redeploy
+### Get `arqvexa.onrender.com` (create new service)
 
-The old URL (`as-designtech.onrender.com`) will stop working after rename.
+1. [Render Dashboard](https://dashboard.render.com) → **New +** → **Web Service**
+2. Connect repo: `mohdasif07/TechDesign` → branch `main`
+3. **Name:** `arqvexa` (exactly — not `arqvexaa`)
+4. **Runtime:** Docker · **Region:** Singapore · **Plan:** Free
+5. **Health check path:** `/up`
+6. Copy **all Environment variables** from the old `as-designtech` service:
+   - `APP_HOST` = `arqvexa.onrender.com`
+   - `RAILS_MASTER_KEY`, `WEB3FORMS_ACCESS_KEY`, `MAILER_FROM`, etc.
+7. **Create Web Service** → wait for deploy → open `https://arqvexa.onrender.com`
+8. After the new site works, delete the old **as-designtech** service (optional)
+
+Renaming the service in Settings only changes the dashboard label — the URL stays `as-designtech.onrender.com`.
 
 ## SEO setup
 
@@ -79,6 +89,22 @@ The contact form sends enquiries to **mohdasif.dev01@gmail.com**.
 | `SMTP_PASSWORD` | Gmail App Password (16 chars) |
 
 Local dev without config saves SMTP emails to `tmp/mail/`.
+
+## New pages
+
+| URL | Purpose |
+|-----|---------|
+| `/portfolio` | Filterable project gallery (Interior / IT) |
+| `/blog` | SEO articles — costs, timelines, guides |
+| `/#pricing` | Starting price ranges on homepage |
+
+## Optional: Google Analytics
+
+Add to Render Environment:
+
+| Key | Value |
+|-----|--------|
+| `GOOGLE_ANALYTICS_ID` | Your GA4 ID (e.g. `G-XXXXXXXXXX`) |
 
 ## Customize
 

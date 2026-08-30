@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initInstallPrompt();
   initFlashBar();
   initContactForm();
+  initPortfolioFilter();
 });
 
 function initNavigation() {
@@ -254,4 +255,33 @@ function showFormStatus(el, message, type) {
   if (type === "success") {
     el.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
+}
+
+function initPortfolioFilter() {
+  document.querySelectorAll("[data-portfolio-filter]").forEach((section) => {
+    const filters = section.querySelectorAll(".portfolio-filter[data-filter]");
+    const cards = section.querySelectorAll(".portfolio-card[data-category]");
+    if (!filters.length || !cards.length) return;
+
+    filters.forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+        if (btn.tagName === "A") return;
+
+        event.preventDefault();
+        const filter = btn.dataset.filter;
+
+        filters.forEach((el) => {
+          const active = el === btn;
+          el.classList.toggle("is-active", active);
+          el.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        cards.forEach((card) => {
+          const show = filter === "all" || card.dataset.category === filter;
+          card.hidden = !show;
+          card.style.display = show ? "" : "none";
+        });
+      });
+    });
+  });
 }

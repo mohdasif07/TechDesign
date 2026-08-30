@@ -1,0 +1,32 @@
+<section class="section blog-preview" id="blog">
+  <div class="container">
+    <div class="section-head compact reveal">
+      <div>
+        <div class="eyebrow"><span></span> Insights</div>
+        <h2>Latest from <em>the blog.</em></h2>
+      </div>
+      <p>Practical guides on interior design and IT development in Delhi NCR.</p>
+    </div>
+
+    <div class="blog-grid">
+      <% BlogPost.recent(3).each_with_index do |post, index| %>
+        <article class="blog-card reveal<%= " delay-#{index}" if index.positive? %>">
+          <span class="blog-category <%= post.interior? ? "interior-label" : "tech-label" %>"><%= post.category_label %></span>
+          <h3><%= link_to post.title, blog_post_path(post.slug) %></h3>
+          <p><%= post.excerpt %></p>
+          <div class="blog-meta">
+            <time datetime="<%= post.published_at %>"><%= post.formatted_date %></time>
+            <span><%= post.read_time %></span>
+          </div>
+          <%= link_to "Read article →", blog_post_path(post.slug), class: "blog-read-link" %>
+        </article>
+      <% end %>
+    </div>
+
+    <div class="section-cta reveal">
+      <%= link_to blog_path, class: "btn btn-dark-outline" do %>
+        View all articles <span aria-hidden="true">→</span>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -45,6 +45,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", defer: true %>
 
+    <%= render "shared/analytics" %>
+
     <% if content_for?(:structured_data) %>
       <%= yield :structured_data %>
     <% else %>
@@ -93,5 +95,7 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
     <%= render "shared/flash" %>
     <%= yield %>
+    <%= render "shared/whatsapp_float" %>
+    <%= render "shared/page_extras" unless content_for?(:skip_page_extras) %>
   </body>
 </html>

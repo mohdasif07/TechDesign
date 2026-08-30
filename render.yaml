@@ -28,6 +28,9 @@ services:
       # Recommended (free, works on Render): https://web3forms.com — use your Gmail to get access key
       - key: WEB3FORMS_ACCESS_KEY
         sync: false
+      # Optional: Google Analytics measurement ID (e.g. G-XXXXXXXXXX)
+      - key: GOOGLE_ANALYTICS_ID
+        sync: false
       # Optional Gmail SMTP (often blocked on Render — Web3Forms is easier):
       - key: SMTP_ADDRESS
         value: smtp.gmail.com
