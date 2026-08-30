@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arqvexa.onrender.com/sitemap.xml
+Sitemap: https://arqvexa.in/sitemap.xml

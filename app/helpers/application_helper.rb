@@ -19,8 +19,17 @@ module ApplicationHelper
     content_for?(:og_description) ? content_for(:og_description) : meta_description
   end
 
+  def primary_host
+    ENV.fetch("APP_HOST", "arqvexa.in")
+  end
+
+  def site_url(path = "/")
+    path = "/#{path.delete_prefix("/")}" unless path == "/"
+    "https://#{primary_host}#{path}"
+  end
+
   def canonical_url
-    content_for?(:canonical_url) ? content_for(:canonical_url) : request.original_url
+    content_for?(:canonical_url) ? content_for(:canonical_url) : site_url(request.path)
   end
 
   def home_page?

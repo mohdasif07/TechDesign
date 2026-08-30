@@ -2,7 +2,7 @@
 
 Rails website for **Arqvexa** with equal focus on **Interior Design** and **IT Development**, PWA support, and SEO-optimized service pages.
 
-**Live site:** https://arqvexa.onrender.com
+**Live site:** https://arqvexa.in
 
 ## Run locally
 
@@ -27,14 +27,14 @@ Open http://localhost:3000
 
 ## Deploy on Render
 
-Service name: **arqvexa** → https://arqvexa.onrender.com
+Service name: **arqvexa** → https://arqvexa.in (Render: `arqvexa.onrender.com` redirects here)
 
 Required environment variables:
 
 | Key | Value |
 |-----|--------|
 | `RAILS_MASTER_KEY` | From `config/master.key` |
-| `APP_HOST` | `arqvexa.onrender.com` |
+| `APP_HOST` | `arqvexa.in` |
 | `WEB3FORMS_ACCESS_KEY` | From [web3forms.com](https://web3forms.com) |
 | `MAILER_FROM` | `Arqvexa <mohdasif.dev01@gmail.com>` |
 | `CONTACT_EMAIL` | `mohdasif.dev01@gmail.com` |
@@ -44,15 +44,15 @@ Push to `main` triggers auto-deploy when connected to Render.
 
 ## SEO & Google Business Profile
 
-1. **Search Console** — add property https://arqvexa.onrender.com and submit `public/sitemap.xml`
+1. **Search Console** — add property https://arqvexa.in and submit `public/sitemap.xml`
 2. **Google Business Profile** — [business.google.com](https://business.google.com):
    - Business name: **Arqvexa**
    - Categories: *Interior designer* + *Software company* (or *Website designer*)
    - Service area: Delhi NCR (Delhi, Gurgaon, Noida)
    - Phone: +91 99176 39330
-   - Website: https://arqvexa.onrender.com
+   - Website: https://arqvexa.in
    - Add photos of interior and IT work when available
-3. Update `public/sitemap.xml` when you add a custom domain
+3. Custom domain DNS: A `@` → `216.24.57.1`, CNAME `www` → `arqvexa.onrender.com`
 
 ## Contact form email
 

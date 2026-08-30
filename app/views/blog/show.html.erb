@@ -1,6 +1,6 @@
 <% content_for :meta_title, "#{@post.title} | Arqvexa Blog" %>
 <% content_for :meta_description, @post.excerpt %>
-<% content_for :canonical_url, request.base_url + blog_post_path(@post.slug) %>
+<% content_for :canonical_url, site_url(blog_post_path(@post.slug)) %>
 
 <%= render "shared/navigation" %>
 

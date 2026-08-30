@@ -20,7 +20,7 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
       - key: APP_HOST
-        value: arqvexa.onrender.com
+        value: arqvexa.in
       - key: CONTACT_EMAIL
         value: mohdasif.dev01@gmail.com
       - key: MAILER_FROM
