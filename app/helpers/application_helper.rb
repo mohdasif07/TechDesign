@@ -28,6 +28,10 @@ module ApplicationHelper
     "https://#{primary_host}#{path}"
   end
 
+  def og_image_url
+    site_url("/brand/logo-cover-1200x628.png")
+  end
+
   def canonical_url
     content_for?(:canonical_url) ? content_for(:canonical_url) : site_url(request.path)
   end

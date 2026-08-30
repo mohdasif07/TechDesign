@@ -2,5 +2,6 @@
 
 User-agent: *
 Allow: /
+Disallow: /up
 
 Sitemap: https://arqvexa.in/sitemap.xml

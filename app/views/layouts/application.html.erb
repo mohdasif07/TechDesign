@@ -24,12 +24,15 @@
     <meta property="og:description" content="<%= og_description %>">
     <meta property="og:url" content="<%= canonical_url %>">
     <meta property="og:locale" content="en_IN">
-    <meta property="og:image" content="<%= request.base_url %>/icon.png">
+    <meta property="og:image" content="<%= og_image_url %>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:alt" content="Arqvexa — Interior Design and IT Development">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<%= og_title %>">
     <meta name="twitter:description" content="<%= og_description %>">
-    <meta name="twitter:image" content="<%= request.base_url %>/icon.png">
+    <meta name="twitter:image" content="<%= og_image_url %>">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -56,12 +59,12 @@
         "@graph": [
           {
             "@type": "LocalBusiness",
-            "@id": "<%= request.base_url %>/#business",
+            "@id": "<%= site_url("/#business") %>",
             "name": "Arqvexa",
             "description": "Interior design and IT development studio serving Delhi NCR and clients across India.",
-            "url": "<%= request.base_url %>",
-            "logo": "<%= request.base_url %>/icon.png",
-            "image": "<%= request.base_url %>/icon.png",
+            "url": "<%= site_url %>",
+            "logo": "<%= site_url("/icon.png") %>",
+            "image": "<%= og_image_url %>",
             "email": "mohdasif.dev01@gmail.com",
             "telephone": "+91-99176-39330",
             "areaServed": ["Delhi NCR", "Gurgaon", "Noida", "India"],
@@ -74,17 +77,17 @@
           {
             "@type": "Service",
             "name": "Interior Design",
-            "provider": { "@id": "<%= request.base_url %>/#business" },
+            "provider": { "@id": "<%= site_url("/#business") %>" },
             "areaServed": "Delhi NCR",
-            "url": "<%= request.base_url %><%= interior_design_path %>",
+            "url": "<%= site_url(interior_design_path) %>",
             "description": "Residential and commercial interior design, 3D visualization, modular kitchen and wardrobe design."
           },
           {
             "@type": "Service",
             "name": "IT Development",
-            "provider": { "@id": "<%= request.base_url %>/#business" },
+            "provider": { "@id": "<%= site_url("/#business") %>" },
             "areaServed": "India",
-            "url": "<%= request.base_url %><%= web_development_path %>",
+            "url": "<%= site_url(web_development_path) %>",
             "description": "Website development, mobile apps, e-commerce, CRM, custom software and AI automation."
           }
         ]
