@@ -1,7 +1,7 @@
 class SitemapBuilder
   class << self
     def urls
-      static_pages + service_pages + portfolio_pages + blog_pages
+      static_pages + tool_pages + service_pages + portfolio_pages + blog_pages
     end
 
     private
@@ -16,6 +16,15 @@ class SitemapBuilder
         entry("/portfolio", changefreq: "weekly", priority: "0.85", lastmod: today),
         entry("/blog", changefreq: "weekly", priority: "0.85", lastmod: today),
         entry("/privacy", changefreq: "yearly", priority: "0.4", lastmod: "2026-08-30")
+      ]
+    end
+
+    def tool_pages
+      [
+        entry("/interior-design/tools/modular-kitchen-calculator", changefreq: "monthly", priority: "0.75", lastmod: today),
+        entry("/interior-design/tools/3bhk-budget-estimator", changefreq: "monthly", priority: "0.75", lastmod: today),
+        entry("/it-development/tools/website-cost-calculator", changefreq: "monthly", priority: "0.75", lastmod: today),
+        entry("/it-development/tools/project-recommender", changefreq: "monthly", priority: "0.75", lastmod: today)
       ]
     end
 

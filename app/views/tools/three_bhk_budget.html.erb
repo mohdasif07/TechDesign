@@ -1,0 +1,80 @@
+<% seo_page(
+  title: "3BHK Interior Budget Estimator Delhi NCR | Arqvexa",
+  description: "Free 3BHK and 2BHK interior budget estimator for Delhi NCR — get indicative cost ranges by scope and city before your consultation.",
+  canonical: site_url(three_bhk_budget_estimator_path),
+  keywords: "3BHK interior cost Delhi NCR, home interior budget calculator, interior design cost Gurgaon"
+) %>
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "Interior Design", url: site_url(interior_design_path) },
+  { label: "3BHK Budget Estimator", url: site_url(three_bhk_budget_estimator_path) }
+) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero page-hero-interior page-hero-compact">
+    <div class="container reveal">
+      <div class="eyebrow"><span></span> Free tool · Interior</div>
+      <h1>3BHK Interior <em>Budget Estimator.</em></h1>
+      <p class="page-lead">Estimate a starting budget for full-home or major-room interiors in Delhi NCR. Scope and materials change the final quote.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container tool-layout">
+      <div class="tool-panel reveal" data-tool="bhk-calculator">
+        <form class="tool-form">
+          <div class="form-field">
+            <label for="bhk-size">Home size</label>
+            <select id="bhk-size" name="bhk" required>
+              <option value="2">2BHK</option>
+              <option value="3" selected>3BHK</option>
+              <option value="4">4BHK / large home</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="bhk-scope">Scope</label>
+            <select id="bhk-scope" name="scope" required>
+              <option value="essential">Essential rooms (living + bedrooms)</option>
+              <option value="standard" selected>Standard full home (incl. kitchen &amp; wardrobes)</option>
+              <option value="premium">Premium full home + décor &amp; upgrades</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="bhk-city">City</label>
+            <select id="bhk-city" name="city" required>
+              <option value="delhi">Delhi</option>
+              <option value="gurgaon" selected>Gurgaon</option>
+              <option value="noida">Noida</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Estimate budget</button>
+        </form>
+        <div class="tool-result" hidden>
+          <p class="tool-result-label">Estimated budget range</p>
+          <p class="tool-result-value" data-result-value></p>
+          <p class="tool-result-note" data-result-note></p>
+        </div>
+        <p class="tool-disclaimer">Indicative only. Civil work, appliances and premium finishes are scoped separately after site visit.</p>
+      </div>
+      <aside class="tool-aside reveal delay-1">
+        <h2>Typical full-home includes</h2>
+        <ul>
+          <li>Living, dining and bedroom layouts</li>
+          <li>Modular kitchen and wardrobes</li>
+          <li>2D planning and 3D visualization</li>
+          <li>Material selection and vendor coordination</li>
+        </ul>
+        <p><%= link_to "3BHK interior process guide", blog_post_path("3bhk-interior-design-delhi-ncr"), class: "text-link" %></p>
+        <p><%= link_to "Residential interior design", interior_service_path("residential-interior-design"), class: "text-link" %></p>
+      </aside>
+    </div>
+  </section>
+
+  <%= render "shared/tool_cta", service: "Interior Design" %>
+</main>
+
+<%= render "shared/footer" %>

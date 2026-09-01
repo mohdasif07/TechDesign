@@ -1,0 +1,89 @@
+<% seo_page(
+  title: "Modular Kitchen Cost Calculator Delhi NCR | Arqvexa",
+  description: "Free modular kitchen cost calculator for Delhi NCR — estimate budget by kitchen size, layout and finish. Indicative ranges only.",
+  canonical: site_url(modular_kitchen_calculator_path),
+  keywords: "modular kitchen cost calculator, kitchen budget Gurgaon, modular kitchen price Delhi NCR"
+) %>
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "Interior Design", url: site_url(interior_design_path) },
+  { label: "Kitchen Calculator", url: site_url(modular_kitchen_calculator_path) }
+) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero page-hero-interior page-hero-compact">
+    <div class="container reveal">
+      <div class="eyebrow"><span></span> Free tool · Interior</div>
+      <h1>Modular Kitchen <em>Cost Calculator.</em></h1>
+      <p class="page-lead">Plan a realistic budget for your modular kitchen in Delhi, Gurgaon or Noida. Ranges are indicative — we confirm after site visit and 3D layout.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container tool-layout">
+      <div class="tool-panel reveal" data-tool="kitchen-calculator">
+        <form class="tool-form">
+          <div class="form-field">
+            <label for="kitchen-size">Kitchen size (approx. sq ft)</label>
+            <select id="kitchen-size" name="size" required>
+              <option value="90">Compact (80–100 sq ft)</option>
+              <option value="135" selected>Standard (120–150 sq ft)</option>
+              <option value="170">Large (150+ sq ft)</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="kitchen-layout">Layout</label>
+            <select id="kitchen-layout" name="layout" required>
+              <option value="l" selected>L-shape</option>
+              <option value="u">U-shape</option>
+              <option value="parallel">Parallel / galley</option>
+              <option value="island">With island / premium</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="kitchen-finish">Shutter finish</label>
+            <select id="kitchen-finish" name="finish" required>
+              <option value="laminate" selected>Laminate</option>
+              <option value="acrylic">Acrylic</option>
+              <option value="pu">PU / premium</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="kitchen-city">City</label>
+            <select id="kitchen-city" name="city" required>
+              <option value="delhi">Delhi</option>
+              <option value="gurgaon" selected>Gurgaon</option>
+              <option value="noida">Noida</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Calculate budget</button>
+        </form>
+        <div class="tool-result" hidden>
+          <p class="tool-result-label">Estimated budget range</p>
+          <p class="tool-result-value" data-result-value></p>
+          <p class="tool-result-note" data-result-note></p>
+        </div>
+        <p class="tool-disclaimer">Indicative only. Final quote depends on measurements, appliances, chimney, countertop and hardware brand after site visit.</p>
+      </div>
+      <aside class="tool-aside reveal delay-1">
+        <h2>What affects kitchen cost?</h2>
+        <ul>
+          <li>Cabinet carcass material (MDF, HDHMR, plywood)</li>
+          <li>Shutter finish and hardware brand</li>
+          <li>Quartz vs granite countertop</li>
+          <li>Appliances, chimney and sink placement</li>
+        </ul>
+        <p><%= link_to "Read our Gurgaon kitchen cost guide", blog_post_path("modular-kitchen-cost-gurgaon"), class: "text-link" %></p>
+        <p><%= link_to "Modular kitchen design service", interior_service_path("modular-kitchen"), class: "text-link" %></p>
+      </aside>
+    </div>
+  </section>
+
+  <%= render "shared/tool_cta", service: "Interior Design" %>
+</main>
+
+<%= render "shared/footer" %>

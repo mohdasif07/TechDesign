@@ -1,0 +1,37 @@
+<% division = local_assigns.fetch(:division) %>
+<section class="section tools-hub">
+  <div class="container">
+    <div class="section-head compact reveal">
+      <div>
+        <div class="eyebrow"><span></span> Free tools</div>
+        <h2>Plan your <em>budget.</em></h2>
+      </div>
+      <p>Indicative calculators to help you plan — final quotes always follow a discovery call or site visit.</p>
+    </div>
+    <div class="tools-hub-grid reveal">
+      <% if division == :interior %>
+        <%= link_to modular_kitchen_calculator_path, class: "tools-hub-card tools-hub-card--interior" do %>
+          <strong>Modular Kitchen Cost Calculator</strong>
+          <span>Estimate budget by size, layout and finish in Delhi NCR.</span>
+          <em>Try tool →</em>
+        <% end %>
+        <%= link_to three_bhk_budget_estimator_path, class: "tools-hub-card tools-hub-card--interior" do %>
+          <strong>3BHK Interior Budget Estimator</strong>
+          <span>Get a starting range for full-home interiors.</span>
+          <em>Try tool →</em>
+        <% end %>
+      <% else %>
+        <%= link_to website_cost_calculator_path, class: "tools-hub-card tools-hub-card--tech" do %>
+          <strong>Website Cost Calculator</strong>
+          <span>Estimate a business website or store budget in India.</span>
+          <em>Try tool →</em>
+        <% end %>
+        <%= link_to project_recommender_path, class: "tools-hub-card tools-hub-card--tech" do %>
+          <strong>Project Type Recommender</strong>
+          <span>Not sure what you need? Answer 5 quick questions.</span>
+          <em>Try tool →</em>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

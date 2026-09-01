@@ -1,4 +1,5 @@
-<% contact_message = local_assigns[:contact_message].presence || ContactMessage.new(service: local_assigns[:default_service]) %>
+<% prefilled_service = params[:service].presence || local_assigns[:default_service] %>
+<% contact_message = local_assigns[:contact_message].presence || ContactMessage.new(service: prefilled_service) %>
 <% return_to = local_assigns.fetch(:return_to, request.path + "#contact") %>
 <% web3forms_key = ENV["WEB3FORMS_ACCESS_KEY"].presence %>
 

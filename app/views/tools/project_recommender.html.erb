@@ -1,0 +1,89 @@
+<% seo_page(
+  title: "IT Project Type Recommender | Website, App, CRM or AI | Arqvexa",
+  description: "Not sure whether you need a website, mobile app, CRM or AI chatbot? Answer 5 quick questions and get a clear starting recommendation from Arqvexa.",
+  canonical: site_url(project_recommender_path),
+  keywords: "website or app, CRM or website, IT project planning, software project recommender"
+) %>
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "IT Development", url: site_url(it_development_path) },
+  { label: "Project Recommender", url: site_url(project_recommender_path) }
+) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero page-hero-tech page-hero-compact">
+    <div class="container reveal">
+      <div class="eyebrow"><span></span> Free tool · IT</div>
+      <h1>Project Type <em>Recommender.</em></h1>
+      <p class="page-lead">Five quick questions to point you toward the right kind of digital project — website, app, store, CRM or automation.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container tool-layout tool-layout-single">
+      <div class="tool-panel reveal" data-tool="project-recommender">
+        <form class="tool-form tool-form-quiz">
+          <div class="form-field">
+            <label for="rec-goal">Primary goal</label>
+            <select id="rec-goal" name="goal" required>
+              <option value="leads">Get more enquiries / leads online</option>
+              <option value="sell">Sell products online</option>
+              <option value="operations">Manage team, leads or operations</option>
+              <option value="mobile">Offer a mobile experience to users</option>
+              <option value="support">Automate customer support / FAQs</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="rec-users">Who will use it most?</label>
+            <select id="rec-users" name="users" required>
+              <option value="public">Customers / public visitors</option>
+              <option value="team">Internal team</option>
+              <option value="both">Both customers and team</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="rec-complexity">How complex is the workflow?</label>
+            <select id="rec-complexity" name="complexity" required>
+              <option value="simple">Mostly information + contact</option>
+              <option value="medium">Forms, accounts or bookings</option>
+              <option value="complex">Custom workflows, roles and data</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="rec-timeline">Preferred timeline</label>
+            <select id="rec-timeline" name="timeline" required>
+              <option value="fast">2–4 weeks</option>
+              <option value="medium">1–3 months</option>
+              <option value="long">3+ months / phased build</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="rec-budget">Budget band (indicative)</label>
+            <select id="rec-budget" name="budget" required>
+              <option value="low">Under ₹50,000</option>
+              <option value="mid">₹50,000 – ₹2L</option>
+              <option value="high">₹2L – ₹5L</option>
+              <option value="enterprise">₹5L+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Get recommendation</button>
+        </form>
+        <div class="tool-result tool-result-recommend" hidden>
+          <p class="tool-result-label">Recommended starting point</p>
+          <p class="tool-result-value" data-result-value></p>
+          <p class="tool-result-note" data-result-note></p>
+          <p class="tool-result-link" data-result-link></p>
+        </div>
+        <p class="tool-disclaimer">Guidance only — we confirm scope on a free discovery call before any commitment.</p>
+      </div>
+    </div>
+  </section>
+
+  <%= render "shared/tool_cta", service: "IT Development" %>
+</main>
+
+<%= render "shared/footer" %>

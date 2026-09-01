@@ -1,0 +1,8 @@
+<% service = local_assigns.fetch(:service, "General enquiry") %>
+<section class="section tool-cta reveal">
+  <div class="container tool-cta-box">
+    <h2>Want an exact quote?</h2>
+    <p>These tools give indicative ranges only. Share your project details and we will reply within 24 hours.</p>
+    <%= link_to "Get a free quote", contact_page_path(anchor: "contact", service: service), class: "btn btn-primary" %>
+  </div>
+</section>

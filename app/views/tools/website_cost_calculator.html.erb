@@ -1,0 +1,79 @@
+<% seo_page(
+  title: "Website Cost Calculator India | Business Website Budget | Arqvexa",
+  description: "Free website cost calculator for businesses in India — estimate budget for landing pages, multi-page sites and e-commerce stores.",
+  canonical: site_url(website_cost_calculator_path),
+  keywords: "website cost calculator India, website development cost Delhi NCR, business website budget"
+) %>
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "IT Development", url: site_url(it_development_path) },
+  { label: "Website Cost Calculator", url: site_url(website_cost_calculator_path) }
+) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero page-hero-tech page-hero-compact">
+    <div class="container reveal">
+      <div class="eyebrow"><span></span> Free tool · IT</div>
+      <h1>Website <em>Cost Calculator.</em></h1>
+      <p class="page-lead">Estimate a realistic budget for a business website or online store in India. Final pricing follows discovery and feature scope.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container tool-layout">
+      <div class="tool-panel reveal" data-tool="website-calculator">
+        <form class="tool-form">
+          <div class="form-field">
+            <label for="website-type">Website type</label>
+            <select id="website-type" name="type" required>
+              <option value="landing">Single-page / landing site</option>
+              <option value="business" selected>Multi-page business website</option>
+              <option value="ecommerce">E-commerce store</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="website-pages">Approx. pages / products</label>
+            <select id="website-pages" name="pages" required>
+              <option value="small">Up to 5 pages / 25 products</option>
+              <option value="medium" selected>6–12 pages / 50 products</option>
+              <option value="large">13+ pages / 100+ products</option>
+            </select>
+          </div>
+          <div class="form-field tool-checkboxes">
+            <span class="tool-check-label">Extra features</span>
+            <label><input type="checkbox" name="feature" value="blog"> Blog / articles</label>
+            <label><input type="checkbox" name="feature" value="booking"> Booking / forms</label>
+            <label><input type="checkbox" name="feature" value="payments"> Payments integration</label>
+            <label><input type="checkbox" name="feature" value="crm"> CRM / lead dashboard</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Calculate budget</button>
+        </form>
+        <div class="tool-result" hidden>
+          <p class="tool-result-label">Estimated budget range</p>
+          <p class="tool-result-value" data-result-value></p>
+          <p class="tool-result-note" data-result-note></p>
+        </div>
+        <p class="tool-disclaimer">Indicative only. Custom apps, complex integrations and content creation are quoted separately.</p>
+      </div>
+      <aside class="tool-aside reveal delay-1">
+        <h2>Usually included</h2>
+        <ul>
+          <li>Mobile-first responsive design</li>
+          <li>Contact form and WhatsApp CTA</li>
+          <li>Basic SEO setup</li>
+          <li>Launch support and handover</li>
+        </ul>
+        <p><%= link_to "Website cost guide — Delhi NCR", blog_post_path("website-cost-delhi-ncr"), class: "text-link" %></p>
+        <p><%= link_to "Web development service", it_service_path("web-development"), class: "text-link" %></p>
+      </aside>
+    </div>
+  </section>
+
+  <%= render "shared/tool_cta", service: "IT Development" %>
+</main>
+
+<%= render "shared/footer" %>

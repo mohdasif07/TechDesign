@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   get "contact", to: "pages#contact", as: :contact_page
 
   get "interior-design", to: "pages#interior_design", as: :interior_design
+  get "interior-design/tools/modular-kitchen-calculator", to: "tools#modular_kitchen_calculator", as: :modular_kitchen_calculator
+  get "interior-design/tools/3bhk-budget-estimator", to: "tools#three_bhk_budget", as: :three_bhk_budget_estimator
   get "interior-design/:slug", to: "services#interior", as: :interior_service
 
   get "it-development", to: "pages#it_development", as: :it_development
+  get "it-development/tools/website-cost-calculator", to: "tools#website_cost_calculator", as: :website_cost_calculator
+  get "it-development/tools/project-recommender", to: "tools#project_recommender", as: :project_recommender
   get "web-development", to: redirect("/it-development", status: 301)
 
   get "it-development/:slug", to: "services#it", as: :it_service
