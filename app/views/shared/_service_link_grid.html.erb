@@ -1,0 +1,12 @@
+<% variant = local_assigns.fetch(:variant, "default") %>
+<div class="service-link-grid">
+  <% services.each_with_index do |service, index| %>
+    <% delay_class = index.positive? ? " delay-#{[index, 6].min}" : nil %>
+    <%= link_to service.path, class: ["service-link-card", "service-link-card--#{variant}", "reveal", delay_class].compact.join(" ").squeeze(" ") do %>
+      <span class="service-link-icon" aria-hidden="true"><%= service_page_icon(service.slug, service.division) %></span>
+      <strong><%= service.title %></strong>
+      <span class="service-link-desc"><%= service.intro.truncate(120) %></span>
+      <span class="service-link-arrow" aria-hidden="true">Explore <span>→</span></span>
+    <% end %>
+  <% end %>
+</div>

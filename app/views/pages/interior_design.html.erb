@@ -94,13 +94,8 @@
         </div>
         <p>End-to-end interior design for homes and businesses across Delhi NCR — led by co-founder Shalu with a focus on function, aesthetics and budget clarity.</p>
       </div>
-      <div class="service-link-grid reveal">
-        <% @interior_services.each do |service| %>
-          <%= link_to service.path, class: "service-link-card" do %>
-            <strong><%= service.title %></strong>
-            <span><%= service.intro.truncate(120) %></span>
-          <% end %>
-        <% end %>
+      <div class="service-link-section reveal">
+        <%= render "shared/service_link_grid", services: @interior_services, variant: "interior" %>
       </div>
     </div>
   </section>

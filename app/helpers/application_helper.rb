@@ -70,4 +70,28 @@ module ApplicationHelper
   def contact_phone_tel
     "+919917639330"
   end
+
+  def service_page_icon(slug, division)
+    icons = if division == "interior"
+      {
+        "residential-interior-design" => "⌂",
+        "modular-kitchen" => "◫",
+        "office-interior-design" => "▣",
+        "commercial-interior-design" => "◆",
+        "3d-visualization" => "◉",
+        "wardrobes-storage" => "▤"
+      }
+    else
+      {
+        "web-development" => "</>",
+        "ecommerce-development" => "🛒",
+        "mobile-app-development" => "📱",
+        "ai-development" => "✦",
+        "crm-development" => "📊",
+        "custom-software-development" => "⚙",
+        "api-development" => "⇄"
+      }
+    end
+    icons.fetch(slug, division == "interior" ? "⌂" : "</>")
+  end
 end

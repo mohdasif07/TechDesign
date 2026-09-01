@@ -121,10 +121,8 @@
         <div class="section-head compact reveal">
           <div><div class="eyebrow"><span></span> Related</div><h2>More <%= @service.hub_label.downcase %> <em>services.</em></h2></div>
         </div>
-        <div class="service-link-grid reveal">
-          <% @service.related_pages.each do |related| %>
-            <%= link_to related.title, related.path, class: "service-link-card" %>
-          <% end %>
+        <div class="service-link-section">
+          <%= render "shared/service_link_grid", services: @service.related_pages, variant: (@service.interior? ? "interior" : "tech") %>
         </div>
       </div>
     </section>

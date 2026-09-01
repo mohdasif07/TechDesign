@@ -83,6 +83,9 @@ img, svg { max-width: 100%; display: block; }
 .reveal.delay-1 { transition-delay: 0.1s; }
 .reveal.delay-2 { transition-delay: 0.2s; }
 .reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+.reveal.delay-5 { transition-delay: 0.5s; }
+.reveal.delay-6 { transition-delay: 0.6s; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -3164,53 +3167,136 @@ footer {
   text-decoration: underline;
 }
 
+.service-link-section {
+  margin-top: 8px;
+}
+
 .service-link-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 18px;
 }
 
 .service-link-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 20px;
-  border-radius: 18px;
+  gap: 10px;
+  min-height: 210px;
+  padding: 22px 22px 18px;
+  border-radius: 20px;
   background: #fff;
-  border: 1px solid rgba(11, 25, 48, 0.08);
+  border: 1px solid rgba(11, 25, 48, 0.1);
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, transform 0.2s;
+  overflow: hidden;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.service-link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--orange), #ffb07a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.service-link-card--tech::before {
+  background: linear-gradient(90deg, var(--navy), #2a5080);
+}
+
+.service-link-card--tech .service-link-icon {
+  background: rgba(11, 25, 48, 0.08);
+  color: var(--navy);
+}
+
+.service-link-card--interior .service-link-icon {
+  background: rgba(232, 121, 53, 0.12);
+  color: var(--orange-dark);
+}
+
+.service-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font: 700 18px/1 Manrope, sans-serif;
+  transition: transform var(--transition), background var(--transition);
 }
 
 .service-link-card strong {
   font: 700 18px/1.3 Manrope, sans-serif;
-  color: #0b1930;
+  color: var(--navy);
+  letter-spacing: -0.02em;
 }
 
-.service-link-card span {
+.service-link-desc {
+  flex: 1;
   font-size: 14px;
-  color: #5a6578;
-  line-height: 1.5;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
-.service-link-card:hover {
-  border-color: rgba(11, 25, 48, 0.2);
-  transform: translateY(-2px);
+.service-link-arrow {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange-dark);
+  transition: transform var(--transition), color var(--transition);
 }
 
+.service-link-card--tech .service-link-arrow {
+  color: var(--navy);
+}
+
+.service-link-arrow span {
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.service-link-card:hover,
+.service-link-card:focus-visible {
+  border-color: rgba(11, 25, 48, 0.18);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-link-card:hover::before,
+.service-link-card:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.service-link-card:hover .service-link-icon,
+.service-link-card:focus-visible .service-link-icon {
+  transform: scale(1.06);
+}
+
+.service-link-card:hover .service-link-arrow span,
+.service-link-card:focus-visible .service-link-arrow span {
+  transform: translateX(4px);
+}
+
+/* Legacy — only use on dark sections */
 .service-link-card-dark {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .service-link-card-dark strong,
-.service-link-card-dark span {
+.service-link-card-dark .service-link-desc {
   color: #fff;
 }
 
-.service-link-card-dark span {
-  opacity: 0.78;
+.service-link-card-dark .service-link-desc {
+  opacity: 0.82;
 }
 
 .service-benefits {
@@ -3239,6 +3325,14 @@ footer {
   border-radius: 18px;
   background: #fff;
   border: 1px solid rgba(11, 25, 48, 0.08);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.trust-signal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(11, 25, 48, 0.14);
 }
 
 .trust-signal-card h3 {

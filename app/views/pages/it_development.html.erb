@@ -102,13 +102,8 @@
         </div>
         <p>Full-stack IT development for startups, SMEs and established businesses — led by founder Asif with a focus on performance, maintainability and business outcomes.</p>
       </div>
-      <div class="service-link-grid reveal">
-        <% @it_services.each do |service| %>
-          <%= link_to service.path, class: "service-link-card service-link-card-dark" do %>
-            <strong><%= service.title %></strong>
-            <span><%= service.intro.truncate(120) %></span>
-          <% end %>
-        <% end %>
+      <div class="service-link-section reveal">
+        <%= render "shared/service_link_grid", services: @it_services, variant: "tech" %>
       </div>
     </div>
   </section>

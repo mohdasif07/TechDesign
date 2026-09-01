@@ -1,4 +1,4 @@
-const CACHE_NAME = "arqvexa-v4";
+const CACHE_NAME = "arqvexa-v5";
 const OFFLINE_URL = "/";
 
 const PRECACHE_URLS = [
