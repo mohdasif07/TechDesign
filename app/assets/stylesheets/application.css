@@ -3167,6 +3167,18 @@ footer {
   text-decoration: underline;
 }
 
+.contact-email-link {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.contact-email-link:hover,
+.contact-email-link:focus-visible {
+  color: var(--orange-dark);
+}
+
 .service-link-section {
   margin-top: 8px;
 }

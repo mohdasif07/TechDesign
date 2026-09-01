@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initServiceWorker();
   initInstallPrompt();
   initFlashBar();
+  initContactHashScroll();
   initContactForm();
   initPortfolioFilter();
 });
@@ -153,11 +154,18 @@ function initFlashBar() {
 
   closeBtn?.addEventListener("click", () => bar.remove());
 
-  if (window.location.hash === "#contact") {
-    document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
   window.setTimeout(() => bar.remove(), 8000);
+}
+
+function initContactHashScroll() {
+  if (window.location.hash !== "#contact") return;
+
+  const target = document.getElementById("contact-form") || document.getElementById("contact");
+  if (!target) return;
+
+  requestAnimationFrame(() => {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function initContactForm() {
@@ -234,9 +242,7 @@ function initContactForm() {
       } catch {
         showFormStatus(
           statusEl,
-          "Could not send your message right now. Please WhatsApp us or email " +
-            (document.querySelector('meta[name="contact-email"]')?.content || "hello@arqvexa.in") +
-            " directly.",
+          "Could not send your message right now. Please use the contact form below or WhatsApp us.",
           "error"
         );
       } finally {

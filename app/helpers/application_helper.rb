@@ -63,6 +63,20 @@ module ApplicationHelper
     ENV.fetch("CONTACT_EMAIL_INTERNAL", "mohdasif.dev01@gmail.com")
   end
 
+  def contact_form_path
+    if (controller_name == "home" && action_name == "index") ||
+       (controller_name == "pages" && action_name.in?(%w[interior_design it_development contact])) ||
+       controller_name == "services"
+      "#contact"
+    else
+      contact_page_path(anchor: "contact")
+    end
+  end
+
+  def contact_email_link(**options)
+    link_to contact_email, contact_form_path, options.reverse_merge(class: "contact-email-link")
+  end
+
   def contact_phone_display
     "+91 99176 39330"
   end
