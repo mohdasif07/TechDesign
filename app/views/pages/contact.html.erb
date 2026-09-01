@@ -1,0 +1,42 @@
+<% seo_page(
+  title: "Contact Arqvexa | Get a Quote",
+  description: "Contact Arqvexa for interior design in Delhi NCR or IT development across India. Email, phone, WhatsApp or use our enquiry form — we reply within 24 hours.",
+  canonical: site_url(contact_page_path)
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "Contact", url: site_url(contact_page_path) }
+) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero page-hero-light">
+    <div class="container">
+      <div class="eyebrow"><span></span> Contact</div>
+      <h1>Get a <em>quote.</em></h1>
+      <p class="page-lead">Interior design in Delhi NCR or IT development across India — tell us about your project and we'll reply within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="cta-section contact-page" id="contact">
+    <div class="container cta-box">
+      <div class="reveal">
+        <h2>Interior or IT — let's talk.</h2>
+        <ul class="contact-details">
+          <li><span>Interior</span> Delhi NCR · On-site visits</li>
+          <li><span>IT</span> India &amp; remote · Video calls</li>
+          <li><span>Email</span> <%= mail_to contact_email, contact_email %></li>
+          <li><span>Phone</span> <%= link_to contact_phone_display, "tel:#{contact_phone_tel}" %></li>
+          <li><span>WhatsApp</span> <%= link_to contact_phone_display, "https://wa.me/919917639330", target: "_blank", rel: "noopener noreferrer" %></li>
+        </ul>
+      </div>
+      <%= render "shared/contact_panel", return_to: contact_page_path(anchor: "contact") %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>

@@ -22,9 +22,11 @@ services:
       - key: APP_HOST
         value: arqvexa.in
       - key: CONTACT_EMAIL
+        value: hello@arqvexa.in
+      - key: CONTACT_EMAIL_INTERNAL
         value: mohdasif.dev01@gmail.com
       - key: MAILER_FROM
-        value: "Arqvexa <mohdasif.dev01@gmail.com>"
+        value: "Arqvexa <hello@arqvexa.in>"
       # Recommended (free, works on Render): https://web3forms.com — use your Gmail to get access key
       - key: WEB3FORMS_ACCESS_KEY
         sync: false

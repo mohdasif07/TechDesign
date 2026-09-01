@@ -1,0 +1,81 @@
+<% seo_page(
+  title: "About Arqvexa | Interior Design & IT Development Studio",
+  description: "Learn about Arqvexa — an umbrella studio combining interior design in Delhi NCR and IT development across India, founded by Asif and Shalu.",
+  canonical: site_url(about_path)
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "About", url: site_url(about_path) }
+) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero page-hero-light">
+    <div class="container">
+      <div class="eyebrow"><span></span> About</div>
+      <h1>Interior Design &amp; IT Development. <em>One Studio.</em></h1>
+      <p class="page-lead">Arqvexa is built on a simple idea: spaces and software both deserve the same level of craft — neither is an afterthought.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-badge reveal">
+        <div class="badge-ring">AV</div>
+        <span>Founded by<br><strong>Asif &amp; Shalu</strong></span>
+      </div>
+      <div class="content-prose reveal delay-1">
+        <h2>Our story</h2>
+        <p>Arqvexa started when two founders saw the same pattern: businesses and homeowners were juggling separate vendors for their physical spaces and digital presence — often with mismatched branding and duplicated effort.</p>
+        <p>Instead of treating interior design or IT as a side service, Arqvexa gives <strong>both divisions equal focus</strong> under one umbrella brand. Clients can hire one division or both, with one team that communicates clearly.</p>
+
+        <h2>What we do</h2>
+        <ul>
+          <li><strong>Interior Design</strong> — residential and commercial interiors, modular kitchens, 3D visualization and execution support across Delhi NCR.</li>
+          <li><strong>IT Development</strong> — websites, e-commerce, mobile apps, CRM, AI automation and custom software for clients across India and remotely.</li>
+        </ul>
+
+        <h2>Why both under one roof?</h2>
+        <p>A new office, showroom or clinic often needs interiors and a website at the same time. Arqvexa keeps layout, brand colours, photography and digital touchpoints aligned — without forcing you to repeat the same brief to unrelated agencies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container founders founders-page reveal">
+      <article class="founder-card">
+        <h2>Asif</h2>
+        <p class="founder-role">Founder · Technology &amp; Business</p>
+        <p>Asif leads Arqvexa's IT division — websites, web applications, mobile apps, CRM systems, AI chatbots and business software. He focuses on practical delivery: clear scope, maintainable code, SEO-ready marketing sites and tools teams actually use.</p>
+        <%= link_to "Explore IT Development", it_development_path, class: "text-link" %>
+      </article>
+      <article class="founder-card">
+        <h2>Shalu</h2>
+        <p class="founder-role">Co-Founder · Interior Design</p>
+        <p>Shalu leads interior design at Arqvexa — residential and commercial spaces, modular kitchens, wardrobes, 3D visualization and execution coordination across Delhi, Gurgaon and Noida.</p>
+        <%= link_to "Explore Interior Design", interior_design_path, class: "text-link" %>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-prose reveal">
+      <h2>Service areas</h2>
+      <p><strong>Interior Design:</strong> Delhi NCR — on-site visits, measurements and execution coordination in Delhi, Noida and Gurgaon.</p>
+      <p><strong>IT Development:</strong> India and remote — discovery calls, demos and delivery online for clients anywhere in the country.</p>
+
+      <h2>Contact</h2>
+      <p>
+        Email: <%= mail_to contact_email, contact_email %><br>
+        Phone / WhatsApp: <%= link_to contact_phone_display, "https://wa.me/919917639330", target: "_blank", rel: "noopener noreferrer" %>
+      </p>
+      <%= link_to "Get a quote", contact_page_path, class: "btn btn-primary" %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>

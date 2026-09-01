@@ -16,7 +16,7 @@ posts:
       <h2>What affects the price?</h2>
       <p>Cabinet material (HDHMR, plywood, MDF), finish (laminate, acrylic, PU), hardware (Hettich, Hafele), quartz vs granite countertop, and chimney/hob choices all shift the final quote.</p>
       <h2>How Arqvexa helps</h2>
-      <p>We start with a site visit, 2D layout and 3D visualization so you approve the design and budget before production begins. <a href="/#contact">Book a free consultation</a>.</p>
+      <p>We start with a site visit, 2D layout and 3D visualization so you approve the design and budget before production begins. <a href="/interior-design/modular-kitchen">Modular kitchen design</a> or <a href="/contact">book a consultation</a>.</p>
 
   - slug: website-cost-delhi-ncr
     title: "Website Development Cost in Delhi NCR — A Clear Guide"
@@ -37,7 +37,7 @@ posts:
       <p>A professional quote should cover design, mobile responsiveness, contact forms, basic SEO, hosting guidance and handover training. Ask about maintenance and content updates upfront.</p>
       <h2>Timeline</h2>
       <p>Most business websites take 2–4 weeks after content and design approval. E-commerce and custom software need a discovery call for an accurate timeline.</p>
-      <p><a href="/web-development">Explore our IT services</a> or <a href="/#contact">request a quote</a>.</p>
+      <p><a href="/it-development/web-development">Explore web development</a> or <a href="/contact">request a quote</a>.</p>
 
   - slug: 3bhk-interior-design-delhi-ncr
     title: "3BHK Interior Design in Delhi NCR — Process & Timeline"
@@ -55,4 +55,40 @@ posts:
       <p>Modular production, on-site work and vendor coordination. Regular updates with photos and milestone checks.</p>
       <h2>Step 4 — Deliver</h2>
       <p>Final styling, snag list closure and handover walkthrough. We stay available for post-handover support.</p>
-      <p><a href="/interior-design">View interior services</a> or <a href="/#contact">book a free consultation</a>.</p>
+      <p><a href="/interior-design/residential-interior-design">Residential interior design</a> or <a href="/contact">book a consultation</a>.</p>
+
+  - slug: modular-kitchen-cost-noida
+    title: "Modular Kitchen Cost in Noida — Budget Guide"
+    excerpt: "Planning a modular kitchen in Noida? Typical price ranges by layout, materials and apartment size."
+    category: interior
+    published_at: "2026-08-20"
+    read_time: "5 min"
+    body: |
+      <p>Modular kitchen costs in Noida follow similar drivers to Gurgaon and Delhi — layout size, shutter finish, hardware brand and countertop material.</p>
+      <h2>Typical ranges for Noida apartments</h2>
+      <ul>
+        <li><strong>Compact kitchen (70–90 sq ft):</strong> ₹1.5L – ₹3L</li>
+        <li><strong>Standard family kitchen:</strong> ₹3L – ₹5.5L</li>
+        <li><strong>Premium finishes with tall units:</strong> ₹5.5L – ₹10L+</li>
+      </ul>
+      <h2>Local considerations</h2>
+      <p>High-rise apartments in Noida often need careful planning for chimney ducting, gas line positions and service shaft access — we confirm these on the first site visit.</p>
+      <p><a href="/interior-design/modular-kitchen">Modular kitchen design at Arqvexa</a> · <a href="/blog/modular-kitchen-cost-gurgaon">Gurgaon cost guide</a></p>
+
+  - slug: mobile-app-development-cost-india
+    title: "Mobile App Development Cost in India — What to Expect"
+    excerpt: "A practical overview of mobile app budgets in India — MVP scope, platforms, integrations and timelines."
+    category: tech
+    published_at: "2026-08-18"
+    read_time: "6 min"
+    body: |
+      <p>Mobile app pricing depends less on "Android or iOS" alone and more on screens, roles, integrations and admin needs.</p>
+      <h2>Common app scopes</h2>
+      <ul>
+        <li><strong>Simple MVP (login + 3–5 core screens):</strong> often ₹1.5L – ₹3L</li>
+        <li><strong>Booking / marketplace flow with admin:</strong> ₹3L – ₹8L+</li>
+        <li><strong>Enterprise integrations (CRM, payments, maps):</strong> scoped after discovery</li>
+      </ul>
+      <h2>What affects timeline?</h2>
+      <p>Design approval speed, third-party APIs, app-store compliance and whether you need a web admin panel alongside the app.</p>
+      <p><a href="/it-development/mobile-app-development">Mobile app development</a> · <a href="/contact">Discuss your app idea</a></p>

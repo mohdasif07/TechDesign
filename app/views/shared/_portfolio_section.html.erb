@@ -16,7 +16,7 @@
 
     <div class="work-grid work-grid-3 portfolio-grid reveal">
       <% PortfolioItem.all.each do |item| %>
-        <%= render "shared/portfolio_card", item: item %>
+        <%= render "shared/portfolio_card", item: item, linked: true %>
       <% end %>
     </div>
 

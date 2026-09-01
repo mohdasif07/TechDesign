@@ -1,0 +1,86 @@
+<% seo_page(
+  title: "#{@item.title} | #{@item.category_label} Portfolio | Arqvexa",
+  description: @item.case_study_summary.presence || @item.description,
+  canonical: site_url(@item.path)
+) %>
+
+<% breadcrumbs(*@breadcrumb_items) %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero <%= @item.interior? ? "page-hero-interior" : "page-hero-tech" %>">
+    <div class="container reveal">
+      <p class="portfolio-type-label"><%= @item.case_study["type"] || "Project" %></p>
+      <span class="blog-category <%= @item.interior? ? "interior-label" : "tech-label" %>"><%= @item.category_label %></span>
+      <h1><%= @item.title %></h1>
+      <p class="page-lead"><%= @item.description %></p>
+      <% if @item.location.present? %>
+        <p class="portfolio-location-line">Location context: <%= @item.location %></p>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-prose reveal">
+      <% if @item.concept? %>
+        <p class="concept-notice"><strong>Note:</strong> This entry is a studio concept illustrating the type of work Arqvexa delivers — not a named client case study.</p>
+      <% end %>
+
+      <% if @item.case_study["summary"].present? %>
+        <h2>Overview</h2>
+        <p><%= @item.case_study["summary"] %></p>
+      <% end %>
+
+      <% if @item.case_study["problem"].present? %>
+        <h2>Challenge</h2>
+        <p><%= @item.case_study["problem"] %></p>
+      <% end %>
+
+      <% if @item.case_study["approach"].present? %>
+        <h2>Approach</h2>
+        <p><%= @item.case_study["approach"] %></p>
+      <% end %>
+
+      <% if @item.case_study["features"].present? %>
+        <h2><%= @item.tech? ? "Features" : "Design focus" %></h2>
+        <ul>
+          <% @item.case_study["features"].each do |feature| %>
+            <li><%= feature %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <% if @item.case_study["stack"].present? %>
+        <h2>Technology</h2>
+        <p><%= @item.case_study["stack"] %></p>
+      <% end %>
+
+      <% if @item.case_study["property_type"].present? %>
+        <h2>Property type</h2>
+        <p><%= @item.case_study["property_type"] %></p>
+      <% end %>
+
+      <% if @item.case_study["timeline"].present? %>
+        <h2>Timeline</h2>
+        <p><%= @item.case_study["timeline"] %></p>
+      <% end %>
+
+      <% if @item.case_study["note"].present? %>
+        <p><em><%= @item.case_study["note"] %></em></p>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="section cta-inline">
+    <div class="container cta-inline-box">
+      <h2><%= @item.interior? ? "Book an interior design consultation" : "Discuss your software project" %></h2>
+      <%= link_to "Get a quote", contact_page_path, class: "btn btn-primary" %>
+      <%= link_to "Back to portfolio", portfolio_path, class: "btn btn-dark-outline" %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>

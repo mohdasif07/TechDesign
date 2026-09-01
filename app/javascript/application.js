@@ -234,7 +234,9 @@ function initContactForm() {
       } catch {
         showFormStatus(
           statusEl,
-          "Could not send your message right now. Please WhatsApp us or email mohdasif.dev01@gmail.com directly.",
+          "Could not send your message right now. Please WhatsApp us or email " +
+            (document.querySelector('meta[name="contact-email"]')?.content || "hello@arqvexa.in") +
+            " directly.",
           "error"
         );
       } finally {

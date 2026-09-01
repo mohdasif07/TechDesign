@@ -1,0 +1,217 @@
+pages:
+  - slug: residential-interior-design
+    division: interior
+    title: Residential Interior Design
+    meta_title: Residential Interior Design Delhi NCR | 2BHK & 3BHK | Arqvexa
+    meta_description: Residential interior design in Delhi, Noida and Gurgaon — 2BHK, 3BHK and villa layouts, 3D views, modular elements and execution support across Delhi NCR.
+    meta_keywords: residential interior design Delhi NCR, 3BHK interior design Gurgaon, 2BHK interior Noida, home interior designer Delhi
+    h1: Residential Interior Design in Delhi NCR
+    intro: Arqvexa designs homes that work for real life — light, storage, circulation and finishes planned before anything is built. We serve Delhi, Noida, Gurgaon and nearby areas with site visits, 2D layouts, 3D visualization and execution coordination.
+    cta_label: Book an Interior Design Consultation
+    sections:
+      - heading: What we design for homes
+        body: |
+          <p>From compact <strong>2BHK apartments in Noida</strong> to larger <strong>3BHK homes in Gurgaon</strong>, we plan living rooms, bedrooms, kitchens, bathrooms and entry zones as one coherent story.</p>
+          <ul>
+            <li>Space planning and furniture layout</li>
+            <li>Storage, wardrobes and TV units</li>
+            <li>Material and colour palettes</li>
+            <li>Lighting layers and electrical planning guidance</li>
+            <li>Modular kitchen and wardrobe integration</li>
+          </ul>
+      - heading: Typical project scope
+        body: |
+          <p>Most residential projects include a site visit, measurements, concept layout, 3D renders for key rooms and a bill of materials so you can approve budget before production.</p>
+    benefits:
+      - One team for layout, 3D and modular coordination
+      - Designs tailored to Delhi NCR apartment sizes and building rules
+      - Clear milestones from concept to handover
+    process:
+      - { step: Site visit, detail: Measurements, lifestyle discussion and budget alignment in Delhi NCR. }
+      - { step: Layout & 3D, detail: 2D plans and 3D views for approval before procurement. }
+      - { step: Execution support, detail: Vendor coordination and site checks through handover. }
+    faqs:
+      - question: Do you take full-home and partial-room projects?
+        answer: Yes. We handle complete 3BHK/2BHK interiors as well as single-room upgrades such as a bedroom or living area.
+      - question: Which areas do you visit on site?
+        answer: Delhi, Gurgaon, Noida and the wider Delhi NCR region for measurements and execution coordination.
+    related_slugs:
+      - modular-kitchen
+      - 3d-visualization
+      - wardrobes-storage
+
+  - slug: modular-kitchen
+    division: interior
+    title: Modular Kitchen Design
+    meta_title: Modular Kitchen Design Delhi NCR | Gurgaon & Noida | Arqvexa
+    meta_description: Modular kitchen design in Delhi NCR — layout planning, cabinet design, material selection, 3D visualization and execution support in Delhi, Gurgaon and Noida.
+    meta_keywords: modular kitchen Delhi NCR, modular kitchen Gurgaon, kitchen designer Noida, kitchen interior design
+    h1: Modular Kitchen Design in Delhi NCR
+    intro: A well-planned modular kitchen saves daily effort. Arqvexa designs L-shape, U-shape, parallel and island kitchens with clear storage, ventilation and work-triangle logic — then helps you choose materials and finishes that match your budget.
+    cta_label: Book a Kitchen Design Consultation
+    sections:
+      - heading: Kitchen layouts we plan
+        body: |
+          <ul>
+            <li>L-shape and U-shape kitchens for apartments</li>
+            <li>Parallel and galley kitchens for compact spaces</li>
+            <li>Island or breakfast counter layouts where space allows</li>
+          </ul>
+      - heading: Materials and finishes
+        body: |
+          <p>We guide you through cabinet carcass options, shutter finishes (laminate, acrylic, PU), hardware brands, countertop choices and chimney/hob placement — with 3D views before you sign off.</p>
+    benefits:
+      - Optimized storage and workflow
+      - 3D visualization before production
+      - Vendor-ready drawings for Delhi NCR execution
+    process:
+      - { step: Measure & brief, detail: Site measurements, appliance list and style preferences. }
+      - { step: Design, detail: Layout, elevations, 3D renders and material board. }
+      - { step: Production & install, detail: Modular vendor coordination and snag closure. }
+    faqs:
+      - question: Can you design only the kitchen without full-home interiors?
+        answer: Yes. Kitchen-only projects are a common starting point for many homeowners.
+      - question: Do you provide cost guidance?
+        answer: We share realistic budget ranges after layout and material choices are defined. See our blog on modular kitchen costs in Gurgaon for general ranges.
+    related_slugs:
+      - residential-interior-design
+      - 3d-visualization
+      - wardrobes-storage
+
+  - slug: office-interior-design
+    division: interior
+    title: Office Interior Design
+    meta_title: Office Interior Design Delhi NCR | Workspace Design | Arqvexa
+    meta_description: Office interior design in Delhi NCR — productive workspaces, meeting rooms, reception areas and brand-led fit-outs in Delhi, Gurgaon and Noida.
+    meta_keywords: office interior design Delhi NCR, office designer Gurgaon, workspace design Noida, commercial office interiors
+    h1: Office Interior Design in Delhi NCR
+    intro: Your office should support focus, collaboration and brand impression. Arqvexa plans workstations, meeting zones, reception areas and breakout spaces for startups and growing teams across Delhi NCR.
+    cta_label: Discuss Your Office Project
+    sections:
+      - heading: Office spaces we design
+        body: |
+          <ul>
+            <li>Startup and SME offices</li>
+            <li>Co-working and managed office fit-outs</li>
+            <li>Reception, conference and client-facing zones</li>
+            <li>Storage, pantry and utility planning</li>
+          </ul>
+      - heading: Design + digital under one roof
+        body: |
+          <p>Many office clients also need a website or internal tool. Arqvexa can coordinate <a href="/it-development">IT development</a> alongside your fit-out so physical and digital touchpoints stay consistent.</p>
+    benefits:
+      - Layouts that scale with team growth
+      - Acoustic and lighting considerations
+      - Brand-consistent finishes and signage zones
+    process:
+      - { step: Brief & site survey, detail: Headcount, work styles, meeting needs and brand direction. }
+      - { step: Space plan & 3D, detail: Zoning, furniture plan and visual approval. }
+      - { step: Fit-out support, detail: Vendor coordination through handover. }
+    faqs:
+      - question: Do you handle small office spaces?
+        answer: Yes — from compact 500 sq ft offices to larger floors, scoped to your budget.
+    related_slugs:
+      - commercial-interior-design
+      - 3d-visualization
+
+  - slug: commercial-interior-design
+    division: interior
+    title: Commercial Interior Design
+    meta_title: Commercial Interior Design Delhi NCR | Retail & Showrooms | Arqvexa
+    meta_description: Commercial interior design in Delhi NCR — retail showrooms, clinics, salons and customer-facing spaces with layout, lighting and brand experience in mind.
+    meta_keywords: commercial interior design Delhi NCR, retail interior design, showroom design Gurgaon, shop interior Noida
+    h1: Commercial Interior Design in Delhi NCR
+    intro: Customer-facing spaces need clear circulation, display logic and brand presence. Arqvexa designs retail showrooms, service outlets and commercial interiors across Delhi NCR with 3D visualization before build.
+    cta_label: Start a Commercial Design Brief
+    sections:
+      - heading: Commercial project types
+        body: |
+          <ul>
+            <li>Retail showrooms and boutiques</li>
+            <li>Clinics, salons and service centres</li>
+            <li>Reception-led commercial suites</li>
+            <li>Display lighting and fixture planning</li>
+          </ul>
+    benefits:
+      - Customer flow and display planning
+      - Durable material choices for high-traffic areas
+      - 3D previews before capital spend
+    process:
+      - { step: Discovery, detail: Customer journey, inventory/display needs and compliance basics. }
+      - { step: Concept & 3D, detail: Layout, lighting intent and material boards. }
+      - { step: Execution, detail: Vendor coordination and handover walkthrough. }
+    faqs:
+      - question: Can you align interiors with our website or brand?
+        answer: Yes. We often pair commercial interiors with <a href="/it-development/web-development">web development</a> for a unified brand launch.
+    related_slugs:
+      - office-interior-design
+      - 3d-visualization
+
+  - slug: 3d-visualization
+    division: interior
+    title: 3D Interior Visualization
+    meta_title: 3D Interior Visualization Delhi NCR | Arqvexa
+    meta_description: 3D interior visualization in Delhi NCR — photorealistic renders and walkthrough-ready views so you approve layouts, materials and lighting before construction.
+    meta_keywords: 3D interior design Delhi NCR, 3D visualization Gurgaon, interior rendering Noida, 3D home design
+    h1: 3D Interior Visualization in Delhi NCR
+    intro: See your space before you commit. Arqvexa produces 3D interior views for homes, kitchens, offices and retail spaces — helping you judge proportions, materials and lighting with confidence.
+    cta_label: Request 3D Views for Your Project
+    sections:
+      - heading: What 3D visualization includes
+        body: |
+          <ul>
+            <li>Camera angles for key rooms or zones</li>
+            <li>Material and colour application on cabinets, walls and furniture</li>
+            <li>Lighting mood previews</li>
+            <li>Revision rounds until you sign off</li>
+          </ul>
+      - heading: When 3D is most useful
+        body: |
+          <p>3D is especially helpful for modular kitchens, living rooms, master bedrooms and commercial layouts where multiple stakeholders need to agree before ordering materials.</p>
+    benefits:
+      - Fewer on-site changes later
+      - Easier family or team approvals
+      - Clear reference for vendors and contractors
+    process:
+      - { step: Approved 2D layout, detail: Dimensions and design intent locked first. }
+      - { step: 3D modelling, detail: Materials, furniture and lighting applied. }
+      - { step: Revisions, detail: Feedback rounds until final sign-off. }
+    faqs:
+      - question: Can I get 3D without full execution support?
+        answer: Yes. Design and 3D-only packages are available for clients who manage their own contractors.
+    related_slugs:
+      - residential-interior-design
+      - modular-kitchen
+
+  - slug: wardrobes-storage
+    division: interior
+    title: Wardrobes & Storage Design
+    meta_title: Wardrobe & Storage Design Delhi NCR | Custom Storage | Arqvexa
+    meta_description: Wardrobe and storage design in Delhi NCR — bedroom wardrobes, walk-ins, TV units and built-in storage planned for Delhi, Gurgaon and Noida homes.
+    meta_keywords: wardrobe design Delhi NCR, custom wardrobe Gurgaon, storage design Noida, built-in wardrobe Delhi
+    h1: Wardrobes & Storage Design in Delhi NCR
+    intro: Storage should match how you actually live — not just fill a wall. Arqvexa designs wardrobes, walk-ins, TV units and room-wise storage with internal layouts tuned to clothing, luggage, documents and daily access.
+    cta_label: Plan Your Storage Layout
+    sections:
+      - heading: Storage solutions we design
+        body: |
+          <ul>
+            <li>Sliding and hinged wardrobes</li>
+            <li>Walk-in closets and dressing zones</li>
+            <li>TV units with concealed storage</li>
+            <li>Entryway, study and kids-room storage</li>
+          </ul>
+    benefits:
+      - Internal sections planned for your belongings
+      - Material options for every budget band
+      - Coordinated with wider home interior plans
+    process:
+      - { step: Inventory & measure, detail: What you store and where you need access. }
+      - { step: Internal layout, detail: Drawers, hanging, shelves and accessories. }
+      - { step: Production drawings, detail: Vendor-ready specs and finishes. }
+    faqs:
+      - question: Do you design wardrobes as standalone projects?
+        answer: Yes — many clients start with a bedroom wardrobe or kitchen plus storage upgrade.
+    related_slugs:
+      - residential-interior-design
+      - modular-kitchen

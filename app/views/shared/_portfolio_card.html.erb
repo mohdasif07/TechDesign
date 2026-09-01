@@ -20,5 +20,8 @@
     <% if item.location.present? %>
       <small class="portfolio-location"><%= item.location %></small>
     <% end %>
+    <% if local_assigns.fetch(:linked, false) %>
+      <%= link_to "View project", portfolio_item_path(item.id), class: "portfolio-view-link" %>
+    <% end %>
   </div>
 </article>

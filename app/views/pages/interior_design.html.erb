@@ -1,7 +1,14 @@
-<% content_for :meta_title, "Interior Design Delhi NCR | 3D Plans, Modular Kitchen | Arqvexa" %>
-<% content_for :meta_description, "Professional interior design in Delhi NCR — 3BHK, modular kitchen, office interiors, 3D visualization and execution. Serving Delhi, Gurgaon, Noida. Free consultation." %>
-<% content_for :meta_keywords, "interior designer Delhi NCR, interior design Gurgaon, modular kitchen design, 3BHK interior design, office interior design Noida, home interior designer near me, 3D interior visualization" %>
-<% content_for :canonical_url, site_url(interior_design_path) %>
+<% seo_page(
+  title: "Interior Design Delhi NCR | 3D Plans, Modular Kitchen | Arqvexa",
+  description: "Professional interior design in Delhi NCR — residential and commercial spaces, modular kitchens, 3D visualization and execution support in Delhi, Gurgaon and Noida.",
+  canonical: site_url(interior_design_path),
+  keywords: "interior designer Delhi NCR, interior design Gurgaon, modular kitchen design, 3BHK interior design, office interior design Noida, home interior designer near me, 3D interior visualization"
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "Interior Design", url: site_url(interior_design_path) }
+) %>
 
 <% content_for :structured_data do %>
   <script type="application/ld+json">
@@ -12,7 +19,7 @@
         "@type": "Service",
         "name": "Interior Design Services",
         "provider": {
-          "@type": "LocalBusiness",
+          "@type": "Organization",
           "name": "Arqvexa",
           "url": "<%= site_url %>"
         },
@@ -50,11 +57,14 @@
     ]
   }
   </script>
+  <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
 <% end %>
 
 <%= render "shared/navigation" %>
 
 <main id="main-content">
+  <%= render_breadcrumbs %>
+
   <section class="page-hero page-hero-interior">
     <div class="container page-hero-grid reveal">
       <div>
@@ -63,7 +73,7 @@
         <p class="page-hero-text">Residential and commercial spaces designed with clarity — from first layout to final execution. 3BHK homes, modular kitchens, office interiors and full 3D visualization.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Get a Free Consultation <span aria-hidden="true">→</span></a>
-          <%= link_to "View IT Development", web_development_path, class: "btn btn-ghost-light" %>
+          <%= link_to "View IT Development", it_development_path, class: "btn btn-ghost-light" %>
         </div>
         <ul class="page-hero-tags">
           <li>Delhi</li><li>Gurgaon</li><li>Noida</li><li>3D Plans</li><li>Modular Kitchen</li>
@@ -84,31 +94,13 @@
         </div>
         <p>End-to-end interior design for homes and businesses across Delhi NCR — led by co-founder Shalu with a focus on function, aesthetics and budget clarity.</p>
       </div>
-      <div class="feature-grid">
-        <article class="feature-card reveal">
-          <h3>Residential Interiors</h3>
-          <p>3BHK, 2BHK, villas and apartments — layouts optimized for light, storage and daily living.</p>
-        </article>
-        <article class="feature-card reveal delay-1">
-          <h3>Modular Kitchen</h3>
-          <p>Custom kitchen design with cabinet layouts, material selection and optimized work triangle.</p>
-        </article>
-        <article class="feature-card reveal delay-2">
-          <h3>Office &amp; Commercial</h3>
-          <p>Productive workspaces, reception areas and retail spaces that reflect your brand.</p>
-        </article>
-        <article class="feature-card reveal">
-          <h3>3D Visualization</h3>
-          <p>Photorealistic 3D renders so you see your space before a single nail is hammered.</p>
-        </article>
-        <article class="feature-card reveal delay-1">
-          <h3>Wardrobes &amp; Storage</h3>
-          <p>Built-in wardrobes, TV units and smart storage solutions for every room.</p>
-        </article>
-        <article class="feature-card reveal delay-2">
-          <h3>Execution Support</h3>
-          <p>Vendor coordination and site supervision to ensure the finished space matches the plan.</p>
-        </article>
+      <div class="service-link-grid reveal">
+        <% @interior_services.each do |service| %>
+          <%= link_to service.path, class: "service-link-card" do %>
+            <strong><%= service.title %></strong>
+            <span><%= service.intro.truncate(120) %></span>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -120,21 +112,12 @@
           <div class="eyebrow"><span></span> Portfolio</div>
           <h2>Interior <em>concepts.</em></h2>
         </div>
-        <p>Selected interior concepts across residential, commercial and modular kitchen projects in Delhi NCR.</p>
+        <p>Studio concept projects illustrating residential, commercial and kitchen design — <%= link_to "view full portfolio", portfolio_path %>.</p>
       </div>
       <div class="work-grid work-grid-3 reveal">
-        <article class="work-card work-room">
-          <div class="visual-room"><div class="v-window"></div><div class="v-sofa"></div><div class="v-table"></div><div class="v-light"></div></div>
-          <div class="work-meta"><span>Residential</span><b>Modern 3BHK</b><p>Warm neutrals, open layout, and smart storage for urban living.</p></div>
-        </article>
-        <article class="work-card work-office">
-          <div class="visual-office"><div class="desk"></div><div class="screen"></div><div class="plant2"></div><div class="chair"></div></div>
-          <div class="work-meta"><span>Commercial</span><b>Modern Office</b><p>Productive workspace with natural light and ergonomic flow.</p></div>
-        </article>
-        <article class="work-card work-kitchen">
-          <div class="visual-kitchen"><div class="k-counter"></div><div class="k-cabinets"></div><div class="k-hood"></div><div class="k-island"></div></div>
-          <div class="work-meta"><span>Modular Kitchen</span><b>Contemporary Kitchen</b><p>Handle-less cabinets, quartz top and optimized work triangle.</p></div>
-        </article>
+        <% PortfolioItem.by_category("interior").first(3).each do |item| %>
+          <%= render "shared/portfolio_card", item: item, linked: true %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -185,7 +168,7 @@
         </details>
         <details class="faq-item">
           <summary>Do you also offer IT and website services?</summary>
-          <p>Yes. <%= link_to "Our IT development division", web_development_path %> builds websites, apps and software — many clients use both services together.</p>
+          <p>Yes. <%= link_to "Our IT development division", it_development_path %> builds websites, apps and software — many clients use both services together.</p>
         </details>
       </div>
     </div>

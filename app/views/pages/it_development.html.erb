@@ -1,7 +1,14 @@
-<% content_for :meta_title, "Web Development & App Development Delhi | Websites, CRM, AI | Arqvexa" %>
-<% content_for :meta_description, "IT development company in Delhi NCR — business websites, e-commerce, mobile apps, CRM, AI chatbots and custom software. Remote delivery across India. Free consultation." %>
-<% content_for :meta_keywords, "web development Delhi, website design company Gurgaon, mobile app development India, IT company Delhi NCR, e-commerce development, CRM development, custom software development, AI chatbot development" %>
-<% content_for :canonical_url, site_url(web_development_path) %>
+<% seo_page(
+  title: "IT Development Company in Delhi NCR | Web, Mobile & AI | Arqvexa",
+  description: "Arqvexa provides web development, e-commerce, mobile apps, AI automation, CRM and custom software for businesses across India — with discovery-led delivery and clear communication.",
+  canonical: site_url(it_development_path),
+  keywords: "IT development company Delhi NCR, web development Delhi, mobile app development India, AI development, CRM development, custom software India"
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "IT Development", url: site_url(it_development_path) }
+) %>
 
 <% content_for :structured_data do %>
   <script type="application/ld+json">
@@ -12,11 +19,11 @@
         "@type": "Service",
         "name": "IT Development Services",
         "provider": {
-          "@type": "LocalBusiness",
+          "@type": "Organization",
           "name": "Arqvexa",
           "url": "<%= site_url %>"
         },
-        "url": "<%= site_url(web_development_path) %>",
+        "url": "<%= site_url(it_development_path) %>",
         "description": "Website development, mobile apps, e-commerce, CRM, AI chatbots and custom software development for businesses in India and internationally.",
         "areaServed": [
           { "@type": "Country", "name": "India" },
@@ -48,23 +55,26 @@
     ]
   }
   </script>
+  <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
 <% end %>
 
 <%= render "shared/navigation" %>
 
 <main id="main-content">
+  <%= render_breadcrumbs %>
+
   <section class="page-hero page-hero-tech">
     <div class="container page-hero-grid reveal">
       <div>
         <div class="eyebrow"><span></span> IT Development · India &amp; Remote</div>
-        <h1>Web &amp; App Development <em>Company.</em></h1>
+        <h1>IT Development Company in <em>Delhi NCR.</em></h1>
         <p class="page-hero-text">Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software — built for businesses that need results, not just a pretty homepage.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Start Your Project <span aria-hidden="true">→</span></a>
+          <a class="btn btn-primary" href="#contact">Discuss Your Software Project <span aria-hidden="true">→</span></a>
           <%= link_to "View Interior Design", interior_design_path, class: "btn btn-ghost-light" %>
         </div>
         <ul class="page-hero-tags">
-          <li>Websites</li><li>Mobile Apps</li><li>E-commerce</li><li>CRM</li><li>AI Bots</li>
+          <li>Websites</li><li>Mobile Apps</li><li>E-commerce</li><li>CRM</li><li>AI</li>
         </ul>
       </div>
       <div class="page-hero-visual">
@@ -92,31 +102,13 @@
         </div>
         <p>Full-stack IT development for startups, SMEs and established businesses — led by founder Asif with a focus on performance, maintainability and business outcomes.</p>
       </div>
-      <div class="feature-grid">
-        <article class="feature-card feature-card-dark reveal">
-          <h3>Business Websites</h3>
-          <p>Fast, mobile-first websites with SEO foundations, clear CTAs and lead capture.</p>
-        </article>
-        <article class="feature-card feature-card-dark reveal delay-1">
-          <h3>E-commerce Stores</h3>
-          <p>Online stores with product catalog, payments, order management and admin panel.</p>
-        </article>
-        <article class="feature-card feature-card-dark reveal delay-2">
-          <h3>Mobile Applications</h3>
-          <p>Cross-platform and native apps for Android and iOS — booking, delivery, SaaS and more.</p>
-        </article>
-        <article class="feature-card feature-card-dark reveal">
-          <h3>CRM &amp; Custom Software</h3>
-          <p>Lead tracking, pipeline management, internal tools and workflow automation.</p>
-        </article>
-        <article class="feature-card feature-card-dark reveal delay-1">
-          <h3>AI Chatbots</h3>
-          <p>Customer support bots, lead qualification and process automation powered by AI.</p>
-        </article>
-        <article class="feature-card feature-card-dark reveal delay-2">
-          <h3>API &amp; Integrations</h3>
-          <p>Connect your tools — payment gateways, WhatsApp, email, third-party SaaS and legacy systems.</p>
-        </article>
+      <div class="service-link-grid reveal">
+        <% @it_services.each do |service| %>
+          <%= link_to service.path, class: "service-link-card service-link-card-dark" do %>
+            <strong><%= service.title %></strong>
+            <span><%= service.intro.truncate(120) %></span>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -126,23 +118,14 @@
       <div class="section-head compact reveal">
         <div>
           <div class="eyebrow"><span></span> Portfolio</div>
-          <h2>Digital <em>products.</em></h2>
+          <h2>Digital <em>concepts.</em></h2>
         </div>
-        <p>Websites, apps and software built for businesses that need speed, clarity and measurable results.</p>
+        <p>Studio concept projects illustrating the types of websites, apps and software Arqvexa builds — explore full write-ups in our <%= link_to "portfolio", portfolio_path %>.</p>
       </div>
       <div class="work-grid work-grid-3 reveal">
-        <article class="work-card work-digital">
-          <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
-          <div class="work-meta"><span>Website</span><b>Business Website</b><p>Fast, mobile-first site with clear messaging and lead capture.</p></div>
-        </article>
-        <article class="work-card work-mobile">
-          <div class="visual-mobile"><div class="phone"><div class="phone-notch"></div><div class="phone-screen"><div class="app-bar"></div><div class="app-card"></div><div class="app-card short"></div></div></div></div>
-          <div class="work-meta"><span>Mobile App</span><b>Service Booking App</b><p>Cross-platform app with login, booking flow and notifications.</p></div>
-        </article>
-        <article class="work-card work-crm">
-          <div class="visual-crm"><div class="dashboard"><div class="dash-sidebar"></div><div class="dash-main"><div class="dash-stat"></div><div class="dash-stat"></div><div class="dash-chart"></div></div></div></div>
-          <div class="work-meta"><span>Custom Software</span><b>CRM Dashboard</b><p>Lead tracking, pipeline view and automated follow-ups for sales teams.</p></div>
-        </article>
+        <% PortfolioItem.by_category("tech").first(3).each do |item| %>
+          <%= render "shared/portfolio_card", item: item, linked: true %>
+        <% end %>
       </div>
     </div>
   </section>
@@ -163,9 +146,9 @@
 
   <section class="section content-block content-block-dark">
     <div class="container content-prose reveal">
-      <h2>Why choose Arqvexa for IT development in Delhi NCR?</h2>
-      <p>When you search for a <strong>web development company in Delhi</strong> or <strong>app developer in Gurgaon</strong>, you need a team that understands business — not just code. Arqvexa's IT division is led by founder <strong>Asif</strong>, who builds websites, apps and software with a focus on speed, SEO, conversion and long-term maintainability.</p>
-      <p>We serve clients across <strong>Delhi NCR</strong> and deliver projects <strong>remotely across India</strong> and internationally. Whether you need a landing page, an e-commerce store, a mobile app, a CRM or an AI chatbot — you get clear scope, transparent pricing and regular communication throughout.</p>
+      <h2>Why choose Arqvexa for IT development?</h2>
+      <p>When you search for a <strong>web development company in Delhi NCR</strong> or <strong>app developer in Gurgaon</strong>, you need a team that understands business — not just code. Arqvexa's IT division is led by founder <strong>Asif</strong>, who builds websites, apps and software with a focus on speed, SEO, conversion and long-term maintainability.</p>
+      <p>We serve clients across <strong>Delhi NCR</strong> and deliver projects <strong>remotely across India</strong>. Whether you need a landing page, an e-commerce store, a mobile app, a CRM or an AI chatbot — you get clear scope, transparent pricing and regular communication throughout.</p>
       <p>Many clients also use our <%= link_to "interior design services", interior_design_path %> when opening a new office or showroom — one studio for both your space and your digital presence.</p>
     </div>
   </section>
@@ -177,7 +160,7 @@
       <div class="faq-list">
         <details class="faq-item">
           <summary>How much does a business website cost in India?</summary>
-          <p>Depends on pages, features and integrations. We provide a clear quote after discovery — no vague estimates.</p>
+          <p>Depends on pages, features and integrations. We provide a clear quote after discovery — see our <%= link_to "website cost guide", blog_post_path("website-cost-delhi-ncr") %> for typical ranges.</p>
         </details>
         <details class="faq-item">
           <summary>Do you build mobile apps for Android and iOS?</summary>
@@ -208,7 +191,7 @@
       </div>
       <%= render "shared/contact_panel",
             default_service: "IT Development",
-            return_to: web_development_path(anchor: "contact") %>
+            return_to: it_development_path(anchor: "contact") %>
     </div>
   </section>
 </main>

@@ -1,0 +1,147 @@
+<% seo_page(
+  title: @service.meta_title,
+  description: @service.meta_description,
+  canonical: site_url(@service.path),
+  keywords: @service.meta_keywords
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: @service.hub_label, url: site_url(@service.hub_path) },
+  { label: @service.title, url: site_url(@service.path) }
+) %>
+
+<% content_for :structured_data do %>
+  <script type="application/ld+json"><%= service_schema_json(@service) %></script>
+  <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
+  <% if @service.faqs.any? %>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        <% @service.faqs.each_with_index do |faq, index| %>
+        {
+          "@type": "Question",
+          "name": <%= faq["question"].to_json %>,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": <%= faq["answer"].to_json %>
+          }
+        }<%= "," unless index == @service.faqs.length - 1 %>
+        <% end %>
+      ]
+    }
+    </script>
+  <% end %>
+<% end %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero <%= @service.interior? ? "page-hero-interior" : "page-hero-tech" %>">
+    <div class="container reveal">
+      <div class="eyebrow"><span></span> <%= @service.hub_label %><%= " · Delhi NCR" if @service.interior? %></div>
+      <h1><%= @service.h1.html_safe %></h1>
+      <p class="page-lead"><%= @service.intro %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact"><%= @service.cta_text %> <span aria-hidden="true">→</span></a>
+        <%= link_to @service.interior? ? "IT Development" : "Interior Design",
+              @service.interior? ? it_development_path : interior_design_path,
+              class: "btn #{@service.interior? ? "btn-ghost-light" : "btn-ghost-light"}" %>
+      </div>
+    </div>
+  </section>
+
+  <% @service.sections.each do |section| %>
+    <section class="section">
+      <div class="container content-prose reveal">
+        <h2><%= section["heading"] %></h2>
+        <%= section["body"].html_safe %>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @service.benefits.any? %>
+    <section class="section">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Benefits</div><h2>Why work with <em>Arqvexa.</em></h2></div>
+        </div>
+        <ul class="service-benefits reveal">
+          <% @service.benefits.each do |benefit| %>
+            <li><%= benefit %></li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @service.process.any? %>
+    <section class="section process">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Process</div><h2>How we <em>deliver.</em></h2></div>
+        </div>
+        <div class="steps steps-4">
+          <% @service.process.each_with_index do |step, index| %>
+            <div class="step reveal<%= " delay-#{index}" if index.positive? %>">
+              <span><%= format("%02d", index + 1) %></span>
+              <h3><%= step["step"] %></h3>
+              <p><%= step["detail"] %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @service.faqs.any? %>
+    <section class="section faq" id="faq">
+      <div class="container faq-single reveal">
+        <div class="eyebrow"><span></span> FAQ</div>
+        <h2>Common <em>questions.</em></h2>
+        <div class="faq-list">
+          <% @service.faqs.each do |faq| %>
+            <details class="faq-item">
+              <summary><%= faq["question"] %></summary>
+              <p><%= faq["answer"].html_safe %></p>
+            </details>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @service.related_pages.any? %>
+    <section class="section">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Related</div><h2>More <%= @service.hub_label.downcase %> <em>services.</em></h2></div>
+        </div>
+        <div class="service-link-grid reveal">
+          <% @service.related_pages.each do |related| %>
+            <%= link_to related.title, related.path, class: "service-link-card" %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <section class="cta-section" id="contact">
+    <div class="container cta-box">
+      <div class="reveal">
+        <div class="eyebrow"><span></span> Get started</div>
+        <h2><%= @service.interior? ? "Book a consultation" : "Start your project" %></h2>
+        <p>Tell us about your requirements. We reply within 24 hours with clear next steps.</p>
+      </div>
+      <%= render "shared/contact_panel",
+            default_service: @service.contact_service_label,
+            return_to: "#{@service.path}#contact" %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>

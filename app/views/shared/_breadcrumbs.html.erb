@@ -1,0 +1,14 @@
+<nav class="breadcrumbs container" aria-label="Breadcrumb">
+  <ol>
+    <% items.each_with_index do |item, index| %>
+      <% label, url = item.is_a?(Hash) ? [item[:label], item[:url]] : item %>
+      <li>
+        <% if index == items.length - 1 %>
+          <span aria-current="page"><%= label %></span>
+        <% else %>
+          <%= link_to label, url %>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</nav>

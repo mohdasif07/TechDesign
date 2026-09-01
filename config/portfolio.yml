@@ -6,6 +6,19 @@ items:
     description: Fast, mobile-first site with clear messaging and lead capture.
     visual: digital
     location: Remote
+    case_study:
+      type: Studio concept
+      summary: A reference concept for a service-business website with SEO foundations, service pages and a contact funnel.
+      problem: Many small businesses need a credible online presence but struggle with slow templates, unclear messaging and forms that never reach their inbox.
+      approach: Plan information architecture around two service divisions, write unique page copy, implement mobile-first layout, canonical URLs, sitemap and a reliable contact path.
+      features:
+        - Service hub and dedicated sub-pages
+        - Contact form with spam protection
+        - WhatsApp and email CTAs
+        - SEO metadata and structured data
+      stack: Ruby on Rails, semantic HTML, performance-conscious CSS
+      timeline: Typical delivery 2–4 weeks after content approval
+      note: This portfolio entry describes a studio concept — not a named client engagement.
 
   - id: service-booking-app
     category: tech
@@ -14,6 +27,19 @@ items:
     description: Cross-platform app with login, booking flow and notifications.
     visual: mobile
     location: Delhi
+    case_study:
+      type: Studio concept
+      summary: Concept for a booking app with authentication, slot selection and push notification hooks.
+      problem: Service providers often rely on phone calls and spreadsheets to manage appointments.
+      approach: Map the booking journey, design core screens, and structure an API-ready architecture for schedules, users and notifications.
+      features:
+        - User login and profile
+        - Service catalog and slot booking
+        - Booking history
+        - Notification integration points
+      stack: Mobile-friendly API design, cross-platform client architecture
+      timeline: MVP scope typically 6–10 weeks depending on integrations
+      note: Studio concept illustrating app delivery capabilities.
 
   - id: crm-dashboard
     category: tech
@@ -22,6 +48,19 @@ items:
     description: Lead tracking, pipeline view and automated follow-ups for sales teams.
     visual: crm
     location: Gurgaon
+    case_study:
+      type: Studio concept
+      summary: Concept CRM dashboard for lead capture, pipeline stages and follow-up reminders.
+      problem: Teams outgrow spreadsheets when leads arrive from websites, WhatsApp and referrals in parallel.
+      approach: Model pipeline stages to match how the team actually sells, then build role-based views and activity history.
+      features:
+        - Lead inbox from web forms
+        - Pipeline board by stage
+        - Follow-up reminders
+        - Simple reporting widgets
+      stack: Custom web application with API integrations
+      timeline: MVP often 4–8 weeks after process mapping
+      note: Studio concept — not a published client case study.
 
   - id: ecommerce-store
     category: tech
@@ -30,6 +69,19 @@ items:
     description: Product catalog, cart, payments and order management for a retail brand.
     visual: digital
     location: India
+    case_study:
+      type: Studio concept
+      summary: Concept e-commerce flow covering catalog browsing, cart, checkout and admin order management.
+      problem: Retail brands need a storefront that works on mobile and connects cleanly to payments and fulfilment.
+      approach: Design category structure, product detail templates, checkout steps and an admin panel for catalogue updates.
+      features:
+        - Product catalog and search
+        - Cart and checkout
+        - Payment gateway integration point
+        - Admin order list
+      stack: E-commerce web platform with payment API integration
+      timeline: Depends on catalog size — often 6–12 weeks
+      note: Studio concept for e-commerce delivery scope.
 
   - id: modern-3bhk
     category: interior
@@ -38,6 +90,18 @@ items:
     description: Warm neutrals, open layout, and smart storage for urban living.
     visual: room
     location: Gurgaon
+    case_study:
+      type: Studio concept
+      summary: Concept layout for a 3BHK apartment with open living-dining, balanced storage and warm neutral finishes.
+      problem: Urban 3BHK homes often lack dedicated storage and clear zoning for work-from-home corners.
+      approach: Zoning plan with 2D layout, 3D views for living and master bedroom, and wardrobe integration in secondary rooms.
+      features:
+        - Living-dining layout with TV unit storage
+        - Master bedroom wardrobe plan
+        - Material palette for low-maintenance finishes
+      property_type: 3BHK apartment
+      timeline: Design phase typically 2–4 weeks before execution
+      note: Concept design — not a specific client property.
 
   - id: modern-office
     category: interior
@@ -46,6 +110,18 @@ items:
     description: Productive workspace with natural light and ergonomic flow.
     visual: office
     location: Noida
+    case_study:
+      type: Studio concept
+      summary: Concept office layout balancing focus desks, collaboration zone and client-facing reception.
+      problem: Growing teams need an office that supports both focused work and quick stand-ups without a full rebuild.
+      approach: Plan desk clusters, meeting nook and reception sightlines with lighting and acoustic considerations.
+      features:
+        - Workstation zoning
+        - Meeting / collaboration area
+        - Reception and waiting zone
+      property_type: Commercial office suite
+      timeline: Design 2–3 weeks; fit-out depends on scope
+      note: Studio concept for commercial interior planning.
 
   - id: contemporary-kitchen
     category: interior
@@ -54,6 +130,18 @@ items:
     description: Handle-less cabinets, quartz top and optimized work triangle.
     visual: kitchen
     location: Delhi
+    case_study:
+      type: Studio concept
+      summary: L-shape modular kitchen concept with handle-less shutters, quartz countertop and appliance wall planning.
+      problem: Kitchens fail daily when storage, chimney placement and work triangle are decided after cabinetry is ordered.
+      approach: Finalize layout, internal accessories and elevation views in 3D before production drawings go to the vendor.
+      features:
+        - L-shape layout with tall unit
+        - Quartz countertop specification
+        - Hob, chimney and sink alignment
+      property_type: Apartment kitchen
+      timeline: Design 1–2 weeks; production/install varies by vendor
+      note: Concept modular kitchen — illustrative materials and layout.
 
   - id: boutique-showroom
     category: interior
@@ -62,3 +150,15 @@ items:
     description: Brand-led retail interior with display lighting and customer flow.
     visual: office
     location: Delhi NCR
+    case_study:
+      type: Studio concept
+      summary: Retail showroom concept with entry focal point, circulation loop and display lighting layers.
+      problem: Small retail spaces need clear customer flow and flexible display walls without feeling cluttered.
+      approach: Customer journey mapping, display module rhythm and lighting plan for product focus.
+      features:
+        - Entry feature and circulation loop
+        - Modular display wall concept
+        - Accent lighting plan
+      property_type: Boutique retail unit
+      timeline: Concept design 2–3 weeks
+      note: Studio concept — not a named retail client.

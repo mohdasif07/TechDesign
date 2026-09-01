@@ -1,7 +1,9 @@
-<% content_for :meta_title, "Arqvexa | Interior Design & IT Development in Delhi NCR" %>
-<% content_for :meta_description, "Arqvexa — equal focus on interior design in Delhi NCR and IT development across India. Websites, apps, CRM, AI automation, modular kitchens, 3BHK design and more." %>
-<% content_for :meta_keywords, "interior design Delhi NCR, web development Delhi, IT company Gurgaon, website design Noida, modular kitchen, mobile app development, interior designer near me" %>
-<% content_for :canonical_url, site_url(root_path) %>
+<% seo_page(
+  title: "Arqvexa | Interior Design & IT Development in Delhi NCR",
+  description: "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India.",
+  canonical: site_url(root_path),
+  keywords: "interior design Delhi NCR, web development Delhi, IT company Gurgaon, website design Noida, modular kitchen, mobile app development, interior designer near me"
+) %>
 
 <%= render "shared/navigation" %>
 
@@ -18,7 +20,7 @@
           <%= link_to interior_design_path, class: "btn btn-primary" do %>
             Interior Design <span aria-hidden="true">→</span>
           <% end %>
-          <%= link_to web_development_path, class: "btn btn-ghost" do %>
+          <%= link_to it_development_path, class: "btn btn-ghost" do %>
             IT Development <span aria-hidden="true">→</span>
           <% end %>
         </div>
@@ -64,7 +66,7 @@
         <p>Homes, offices, modular kitchens, 3D plans and full execution in Delhi NCR.</p>
         <span class="path-link">Explore interiors <span aria-hidden="true">→</span></span>
       <% end %>
-      <%= link_to web_development_path, class: "path-card path-tech" do %>
+      <%= link_to it_development_path, class: "path-card path-tech" do %>
         <span class="path-icon" aria-hidden="true">&lt;/&gt;</span>
         <h2>IT Development</h2>
         <p>Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software.</p>
@@ -124,7 +126,7 @@
             <li>CRM &amp; Custom Software</li>
             <li>API Integration &amp; Support</li>
           </ul>
-          <%= link_to web_development_path do %>View IT services <span aria-hidden="true">→</span><% end %>
+          <%= link_to it_development_path do %>View IT services <span aria-hidden="true">→</span><% end %>
         </article>
       </div>
     </div>
@@ -167,31 +169,36 @@
     </div>
   </section>
 
-  <section class="section testimonials" id="testimonials">
+  <section class="section trust-signals" id="trust">
     <div class="container">
       <div class="section-head compact reveal">
         <div>
-          <div class="eyebrow"><span></span> Client trust</div>
-          <h2>Trusted for <em>both.</em></h2>
+          <div class="eyebrow"><span></span> Why Arqvexa</div>
+          <h2>One studio. <em>Two strengths.</em></h2>
         </div>
+        <p>Clear process, honest scoping and dedicated divisions for interiors and technology — without treating either as an add-on.</p>
       </div>
-      <div class="testimonial-grid testimonial-grid-4">
-        <blockquote class="testimonial-card reveal">
-          <p>"Our new site loads fast, looks professional on mobile, and actually brings in enquiries."</p>
-          <footer><strong>Small Business Owner</strong><span>IT Development · Remote</span></footer>
-        </blockquote>
-        <blockquote class="testimonial-card reveal delay-1">
-          <p>"The CRM they built cut our follow-up time in half. Clean dashboard, exactly what we needed."</p>
-          <footer><strong>Operations Manager</strong><span>IT Development · Delhi</span></footer>
-        </blockquote>
-        <blockquote class="testimonial-card reveal delay-2">
-          <p>"Clear process from 3D layout to final execution. Every detail was thought through before we started."</p>
-          <footer><strong>Homeowner</strong><span>Interior Design · Gurgaon</span></footer>
-        </blockquote>
-        <blockquote class="testimonial-card reveal delay-3">
-          <p>"One team for both our office redesign and company website — saved time and kept the vision consistent."</p>
-          <footer><strong>Startup Founder</strong><span>Both · Delhi NCR</span></footer>
-        </blockquote>
+      <div class="trust-signal-grid reveal">
+        <article class="trust-signal-card">
+          <h3>Interior · Delhi NCR</h3>
+          <p>Site visits, 2D layouts, 3D visualization and execution support across Delhi, Gurgaon and Noida.</p>
+          <%= link_to "Interior services", interior_design_path %>
+        </article>
+        <article class="trust-signal-card">
+          <h3>IT · India &amp; remote</h3>
+          <p>Websites, apps, e-commerce, CRM and AI automation with discovery-led delivery and regular demos.</p>
+          <%= link_to "IT services", it_development_path %>
+        </article>
+        <article class="trust-signal-card">
+          <h3>Transparent process</h3>
+          <p>Discovery, design, build and handover — with milestones you can track whether the project is a home or a product.</p>
+          <%= link_to "About Arqvexa", about_path %>
+        </article>
+        <article class="trust-signal-card">
+          <h3>Direct contact</h3>
+          <p>Reach us by form, email or WhatsApp. We reply within 24 hours with next steps.</p>
+          <%= link_to "Get a quote", contact_page_path %>
+        </article>
       </div>
     </div>
   </section>
@@ -248,7 +255,7 @@
               <p>Yes. We offer support plans for updates, hosting guidance, bug fixes and feature additions after go-live.</p>
             </details>
           </div>
-          <%= link_to "More IT FAQs →", web_development_path(anchor: "faq"), class: "faq-page-link" %>
+          <%= link_to "More IT FAQs →", it_development_path(anchor: "faq"), class: "faq-page-link" %>
         </div>
       </div>
     </div>

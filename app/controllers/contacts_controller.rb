@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
     end
 
     unless ContactNotifier.configured?
-      redirect_to redirect_path, alert: "Email is not configured yet. Please WhatsApp us or email mohdasif.dev01@gmail.com directly."
+      redirect_to redirect_path, alert: "Email is not configured yet. Please WhatsApp us or email #{contact_email} directly."
       return
     end
 
@@ -26,7 +26,7 @@ class ContactsController < ApplicationController
     redirect_to redirect_path, notice: "Message sent successfully! We will reply within 24 hours."
   rescue ContactNotifier::DeliveryError, StandardError => e
     Rails.logger.error("[ContactNotifier] #{e.class}: #{e.message}")
-    redirect_to redirect_path, alert: "Could not send your message right now. Please WhatsApp us or email mohdasif.dev01@gmail.com directly."
+    redirect_to redirect_path, alert: "Could not send your message right now. Please WhatsApp us or email #{helpers.contact_email} directly."
   end
 
   private

@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def meta_description
-    content_for?(:meta_description) ? content_for(:meta_description) : "Arqvexa offers interior design in Delhi NCR and IT development across India — websites, apps, CRM, AI automation, and beautiful spaces."
+    content_for?(:meta_description) ? content_for(:meta_description) : "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India."
   end
 
   def meta_keywords
@@ -56,7 +56,11 @@ module ApplicationHelper
   end
 
   def contact_email
-    ENV.fetch("CONTACT_EMAIL", "mohdasif.dev01@gmail.com")
+    ENV.fetch("CONTACT_EMAIL", "hello@arqvexa.in")
+  end
+
+  def contact_email_internal
+    ENV.fetch("CONTACT_EMAIL_INTERNAL", "mohdasif.dev01@gmail.com")
   end
 
   def contact_phone_display

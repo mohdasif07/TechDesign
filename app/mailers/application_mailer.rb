@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV.fetch("MAILER_FROM", "Arqvexa <mohdasif.dev01@gmail.com>")
+  default from: ENV.fetch("MAILER_FROM", "Arqvexa <hello@arqvexa.in>")
   layout "mailer"
 end

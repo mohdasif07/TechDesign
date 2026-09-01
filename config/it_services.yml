@@ -1,0 +1,236 @@
+pages:
+  - slug: web-development
+    division: it
+    title: Web Development
+    meta_title: Web Development Company Delhi NCR | Business Websites | Arqvexa
+    meta_description: Business website development in Delhi NCR and across India — mobile-first, SEO-ready sites with clear messaging, fast performance and lead capture.
+    meta_keywords: web development Delhi NCR, website design company Gurgaon, business website Noida, website developer India
+    h1: Web Development in Delhi NCR
+    intro: Arqvexa builds business websites that load fast, read clearly on mobile and turn visitors into enquiries. We work with startups and SMEs across Delhi NCR and deliver remotely across India.
+    cta_label: Discuss Your Website Project
+    sections:
+      - heading: Website types we build
+        body: |
+          <ul>
+            <li>Multi-page company and service websites</li>
+            <li>SEO landing pages for local and national reach</li>
+            <li>Portfolio and case-study driven sites</li>
+            <li>Contact forms, WhatsApp CTAs and analytics-ready setup</li>
+          </ul>
+      - heading: What you can expect
+        body: |
+          <p>Clear information architecture, accessible markup, performance-conscious assets and a CMS or update path that fits your team. We use modern stacks including <strong>Ruby on Rails</strong> where maintainability and SEO matter.</p>
+    benefits:
+      - Mobile-first responsive design
+      - SEO foundations — titles, meta, schema, sitemap
+      - Fast hosting guidance and launch support
+    process:
+      - { step: Discovery, detail: Goals, pages, content and timeline agreed upfront. }
+      - { step: Design, detail: Wireframes and UI before development. }
+      - { step: Build & launch, detail: Development, testing, deployment and handover. }
+    faqs:
+      - question: How long does a business website take?
+        answer: Most multi-page sites take 2–4 weeks after content and design approval.
+      - question: Do you work remotely outside Delhi NCR?
+        answer: Yes. IT projects are delivered remotely with video calls and shared demos.
+    related_slugs:
+      - ecommerce-development
+      - api-development
+
+  - slug: ecommerce-development
+    division: it
+    title: E-commerce Development
+    meta_title: E-commerce Development Delhi NCR | Online Stores | Arqvexa
+    meta_description: E-commerce website development in India — product catalogs, cart, payments, order management and admin panels for retail brands.
+    meta_keywords: e-commerce development Delhi NCR, online store development India, ecommerce website Gurgaon
+    h1: E-commerce Development
+    intro: Sell online with a store that handles catalog browsing, cart, checkout and order management cleanly. Arqvexa builds e-commerce experiences tailored to your product range and operations.
+    cta_label: Discuss Your Online Store
+    sections:
+      - heading: E-commerce capabilities
+        body: |
+          <ul>
+            <li>Product catalog and category structure</li>
+            <li>Cart, checkout and payment gateway integration</li>
+            <li>Order management and customer notifications</li>
+            <li>Admin panel for products, orders and content</li>
+          </ul>
+    benefits:
+      - Mobile shopping experience
+      - Payment and shipping workflow planning
+      - Room to grow with integrations and automation
+    process:
+      - { step: Scope, detail: Catalog size, payments, shipping and admin needs. }
+      - { step: UX & build, detail: Storefront and admin developed in sprints. }
+      - { step: Launch, detail: Payment testing, training and go-live support. }
+    faqs:
+      - question: Which payment gateways can you integrate?
+        answer: Common Indian gateways and international options depending on your business setup.
+    related_slugs:
+      - web-development
+      - api-development
+
+  - slug: mobile-app-development
+    division: it
+    title: Mobile App Development
+    meta_title: Mobile App Development India | Android & iOS | Arqvexa
+    meta_description: Mobile app development in India — Android and iOS apps for booking, service delivery, SaaS and business workflows with clear UX and maintainable code.
+    meta_keywords: mobile app development India, app developer Delhi NCR, Android iOS app development
+    h1: Mobile App Development
+    intro: When your users live on their phones, your product should too. Arqvexa builds mobile applications for booking flows, service marketplaces, internal tools and customer-facing apps.
+    cta_label: Discuss Your App Idea
+    sections:
+      - heading: App types we develop
+        body: |
+          <ul>
+            <li>Service booking and appointment apps</li>
+            <li>Customer portals and membership apps</li>
+            <li>Field team and operations apps</li>
+            <li>Companion apps for existing web platforms</li>
+          </ul>
+    benefits:
+      - Cross-platform or native approach based on scope
+      - Authentication, notifications and offline-aware flows where needed
+      - API-first architecture for future integrations
+    process:
+      - { step: Product brief, detail: Users, core flows and MVP scope. }
+      - { step: Prototype, detail: Key screens and interaction design. }
+      - { step: Build & release, detail: Development, testing and store/deployment guidance. }
+    faqs:
+      - question: Do you build for both Android and iOS?
+        answer: Yes. We recommend the right approach after reviewing timeline, budget and feature list.
+    related_slugs:
+      - web-development
+      - api-development
+
+  - slug: ai-development
+    division: it
+    title: AI Development
+    meta_title: AI Development & Automation India | Arqvexa
+    meta_description: AI development and automation for businesses in India — practical AI features, chatbots, workflow automation and integrations without unnecessary complexity.
+    meta_keywords: AI development India, AI automation Delhi NCR, AI integration company
+    h1: AI Development & Automation
+    intro: AI should solve a real workflow problem — not become a buzzword slide. Arqvexa helps businesses add practical AI features such as chatbots, document assistance, lead qualification and process automation.
+    cta_label: Explore AI for Your Business
+    sections:
+      - heading: Practical AI use cases
+        body: |
+          <ul>
+            <li>Customer support and FAQ chatbots</li>
+            <li>Lead qualification on websites and WhatsApp</li>
+            <li>Internal knowledge assistants for teams</li>
+            <li>Automation between CRM, email and spreadsheets</li>
+          </ul>
+    benefits:
+      - Scoped pilots before large investment
+      - Integration with your existing website or CRM
+      - Human handoff where automation should stop
+    process:
+      - { step: Use-case workshop, detail: Identify one workflow worth automating first. }
+      - { step: Pilot build, detail: Small release to validate accuracy and ROI. }
+      - { step: Expand, detail: Iterate based on real usage data. }
+    faqs:
+      - question: Do I need a large dataset to start?
+        answer: Not always. Many chatbot and automation projects start with structured FAQs and existing business documents.
+    related_slugs:
+      - crm-development
+      - custom-software-development
+
+  - slug: crm-development
+    division: it
+    title: CRM Development
+    meta_title: CRM Development India | Custom Sales Dashboards | Arqvexa
+    meta_description: Custom CRM development in India — lead tracking, pipeline views, follow-up automation and sales dashboards built around how your team actually works.
+    meta_keywords: CRM development India, custom CRM Delhi NCR, sales dashboard development
+    h1: CRM Development
+    intro: Off-the-shelf CRMs do not always match your sales process. Arqvexa builds custom CRM dashboards for lead capture, pipeline tracking, follow-ups and reporting — integrated with your website and communication channels.
+    cta_label: Discuss Your CRM Requirements
+    sections:
+      - heading: CRM features we commonly build
+        body: |
+          <ul>
+            <li>Lead capture from website forms and WhatsApp</li>
+            <li>Pipeline stages and assignment rules</li>
+            <li>Follow-up reminders and activity history</li>
+            <li>Role-based views for sales and operations</li>
+          </ul>
+    benefits:
+      - Built around your process — not the other way around
+      - Integrations with email, WhatsApp and payment tools
+      - Scales as your team grows
+    process:
+      - { step: Process mapping, detail: How leads arrive and move today. }
+      - { step: MVP CRM, detail: Core pipeline and user roles first. }
+      - { step: Integrations, detail: Connect channels and reporting needs. }
+    faqs:
+      - question: Can you integrate with our existing website?
+        answer: Yes. We commonly connect CRMs to contact forms, landing pages and third-party APIs.
+    related_slugs:
+      - custom-software-development
+      - api-development
+
+  - slug: custom-software-development
+    division: it
+    title: Custom Software Development
+    meta_title: Custom Software Development India | Arqvexa
+    meta_description: Custom software development in India — internal tools, dashboards, workflows and business applications scoped for clarity, maintainability and long-term use.
+    meta_keywords: custom software development India, business software Delhi NCR, bespoke software development
+    h1: Custom Software Development
+    intro: When spreadsheets and generic tools stop scaling, custom software fills the gap. Arqvexa builds internal dashboards, operations tools and business applications with clear scope and maintainable architecture.
+    cta_label: Discuss Your Software Project
+    sections:
+      - heading: Custom software examples
+        body: |
+          <ul>
+            <li>Operations and inventory dashboards</li>
+            <li>Booking and scheduling systems</li>
+            <li>Client portals and document workflows</li>
+            <li>Reporting tools connected to your data sources</li>
+          </ul>
+    benefits:
+      - Discovery-first scoping
+      - Iterative delivery with demos
+      - Documentation and handover for your team
+    process:
+      - { step: Discovery, detail: Problem, users, constraints and success metrics. }
+      - { step: MVP, detail: Smallest useful version shipped first. }
+      - { step: Iterate, detail: Features added based on real usage. }
+    faqs:
+      - question: Which technologies do you use?
+        answer: We choose stacks based on maintainability and project needs — including Ruby on Rails, modern JavaScript and API-driven architectures.
+    related_slugs:
+      - crm-development
+      - api-development
+
+  - slug: api-development
+    division: it
+    title: API Development & Integrations
+    meta_title: API Development & Integrations India | Arqvexa
+    meta_description: API development and third-party integrations in India — connect websites, apps, CRMs, payment gateways, WhatsApp and business tools securely.
+    meta_keywords: API development India, software integration Delhi NCR, third party API integration
+    h1: API Development & Integrations
+    intro: Modern businesses run on connected tools. Arqvexa builds and integrates APIs so your website, app, CRM, payments and messaging platforms share data reliably and securely.
+    cta_label: Discuss Your Integration Needs
+    sections:
+      - heading: Integration work we handle
+        body: |
+          <ul>
+            <li>REST and webhook-based integrations</li>
+            <li>Payment gateway and checkout flows</li>
+            <li>WhatsApp and email automation hooks</li>
+            <li>CRM, ERP and third-party SaaS connections</li>
+          </ul>
+    benefits:
+      - Secure credential handling
+      - Error monitoring and retry patterns
+      - Documentation for future developers
+    process:
+      - { step: Audit, detail: Systems involved and data flows mapped. }
+      - { step: Build, detail: API endpoints or middleware implemented. }
+      - { step: Test & monitor, detail: Staging tests before production cutover. }
+    faqs:
+      - question: Can you connect legacy systems?
+        answer: Often yes — we assess what APIs, exports or middleware options exist before committing to scope.
+    related_slugs:
+      - web-development
+      - crm-development

@@ -9,6 +9,7 @@ class PortfolioItem
   attribute :description, :string
   attribute :visual, :string
   attribute :location, :string
+  attribute :case_study, default: -> { {} }
 
   CATEGORIES = %w[tech interior].freeze
 
@@ -27,6 +28,10 @@ class PortfolioItem
       all.find { |item| item.id == id }
     end
 
+    def find!(id)
+      find(id) || raise(NotFound, id)
+    end
+
     private
 
     def load_items
@@ -34,6 +39,8 @@ class PortfolioItem
       data.fetch("items", []).map { |attrs| new(attrs) }
     end
   end
+
+  class NotFound < StandardError; end
 
   def interior?
     category == "interior"
@@ -49,5 +56,17 @@ class PortfolioItem
 
   def work_card_class
     "work-#{visual}"
+  end
+
+  def path
+    "/portfolio/#{id}"
+  end
+
+  def concept?
+    case_study["type"].to_s.downcase.include?("concept")
+  end
+
+  def case_study_summary
+    case_study["summary"]
   end
 end
