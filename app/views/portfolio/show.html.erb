@@ -4,7 +4,11 @@
   canonical: site_url(@item.path)
 ) %>
 
-<% breadcrumbs(*@breadcrumb_items) %>
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "Portfolio", url: site_url(portfolio_path) },
+  { label: @item.title, url: site_url(@item.path) }
+) %>
 
 <%= render "shared/navigation" %>
 
