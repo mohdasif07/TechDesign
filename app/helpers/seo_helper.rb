@@ -12,22 +12,22 @@ module SeoHelper
   end
 
   def breadcrumbs(*crumbs)
-    content_for :breadcrumbs, crumbs
+    @breadcrumb_items = crumbs.flatten
   end
 
   def breadcrumb_items
-    content_for?(:breadcrumbs) ? content_for(:breadcrumbs) : []
+    Array(@breadcrumb_items)
   end
 
   def render_breadcrumbs
     items = breadcrumb_items
-    return if items.blank?
+    return if items.empty?
 
     render partial: "shared/breadcrumbs", locals: { items: items }
   end
 
-  def breadcrumb_json_ld(items)
-    list = items.each_with_index.map do |item, index|
+  def breadcrumb_json_ld(items = nil)
+    list = normalize_breadcrumb_items(items || breadcrumb_items).each_with_index.map do |item, index|
       label, url = item.is_a?(Hash) ? [item[:label], item[:url]] : item
       {
         "@type" => "ListItem",
@@ -42,6 +42,13 @@ module SeoHelper
       "@type" => "BreadcrumbList",
       "itemListElement" => list
     }.to_json
+  end
+
+  def normalize_breadcrumb_items(items)
+    case items
+    when Array then items
+    else []
+    end
   end
 
   def service_schema_json(service)
