@@ -2088,12 +2088,12 @@ footer {
 
 .content-block-dark .content-prose p { color: #aebbd0; }
 
-.content-prose a {
+.content-prose a:not(.btn) {
   color: var(--orange);
   font-weight: 700;
 }
 
-.content-block-dark .content-prose a { color: #ffb07a; }
+.content-block-dark .content-prose a:not(.btn) { color: #ffb07a; }
 
 .faq-single h2 {
   font: 800 42px Manrope, sans-serif;
@@ -3064,7 +3064,7 @@ footer {
   padding-left: 20px;
 }
 
-.prose a {
+.prose a:not(.btn) {
   color: #e87935;
   font-weight: 600;
 }
@@ -3486,11 +3486,6 @@ footer {
   font: 700 11px Manrope, sans-serif;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-}
-
-.portfolio-badge--real {
-  background: rgba(232, 121, 53, 0.12);
-  color: #c45f1f;
 }
 
 .portfolio-badge--concept {
