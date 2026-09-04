@@ -17,6 +17,11 @@
     <span><%= item.tag %></span>
     <b><%= item.title %></b>
     <p><%= item.description %></p>
+    <% if item.real_project? %>
+      <small class="portfolio-badge portfolio-badge--real">Real project</small>
+    <% elsif item.concept? %>
+      <small class="portfolio-badge portfolio-badge--concept">Concept</small>
+    <% end %>
     <% if item.location.present? %>
       <small class="portfolio-location"><%= item.location %></small>
     <% end %>

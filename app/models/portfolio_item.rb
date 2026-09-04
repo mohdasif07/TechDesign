@@ -66,7 +66,27 @@ class PortfolioItem
     case_study["type"].to_s.downcase.include?("concept")
   end
 
+  def real_project?
+    !concept?
+  end
+
   def case_study_summary
     case_study["summary"]
+  end
+
+  def case_study_role
+    case_study["role"]
+  end
+
+  def case_study_contributions
+    Array(case_study["contributions"])
+  end
+
+  def case_study_challenges
+    Array(case_study["challenges"])
+  end
+
+  def case_study_stack
+    case_study["stack"].is_a?(Hash) ? case_study["stack"] : {}
   end
 end

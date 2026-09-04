@@ -21,6 +21,9 @@
       <span class="blog-category <%= @item.interior? ? "interior-label" : "tech-label" %>"><%= @item.category_label %></span>
       <h1><%= @item.title %></h1>
       <p class="page-lead"><%= @item.description %></p>
+      <% if @item.case_study_role.present? %>
+        <p class="portfolio-role-line"><strong>Role:</strong> <%= @item.case_study_role %></p>
+      <% end %>
       <% if @item.location.present? %>
         <p class="portfolio-location-line">Location context: <%= @item.location %></p>
       <% end %>
@@ -48,8 +51,17 @@
         <p><%= @item.case_study["approach"] %></p>
       <% end %>
 
+      <% if @item.case_study_contributions.any? %>
+        <h2>Key contributions</h2>
+        <ul>
+          <% @item.case_study_contributions.each do |contribution| %>
+            <li><%= contribution %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <% if @item.case_study["features"].present? %>
-        <h2><%= @item.tech? ? "Features" : "Design focus" %></h2>
+        <h2><%= @item.tech? ? "Key features" : "Design focus" %></h2>
         <ul>
           <% @item.case_study["features"].each do |feature| %>
             <li><%= feature %></li>
@@ -57,9 +69,36 @@
         </ul>
       <% end %>
 
-      <% if @item.case_study["stack"].present? %>
+      <% if @item.case_study_stack.any? %>
+        <h2>Technology stack</h2>
+        <dl class="portfolio-stack">
+          <% @item.case_study_stack.each do |label, value| %>
+            <div class="portfolio-stack-row">
+              <dt><%= label.to_s.humanize %></dt>
+              <dd><%= value %></dd>
+            </div>
+          <% end %>
+        </dl>
+      <% elsif @item.case_study["stack"].present? && @item.case_study["stack"].is_a?(String) %>
         <h2>Technology</h2>
         <p><%= @item.case_study["stack"] %></p>
+      <% end %>
+
+      <% if @item.case_study_challenges.any? %>
+        <h2>Technical challenges</h2>
+        <div class="portfolio-challenges">
+          <% @item.case_study_challenges.each do |challenge| %>
+            <article class="portfolio-challenge">
+              <h3><%= challenge["title"] %></h3>
+              <% if challenge["problem"].present? %>
+                <p><strong>Problem:</strong> <%= challenge["problem"] %></p>
+              <% end %>
+              <% if challenge["solution"].present? %>
+                <p><strong>Solution:</strong> <%= challenge["solution"] %></p>
+              <% end %>
+            </article>
+          <% end %>
+        </div>
       <% end %>
 
       <% if @item.case_study["property_type"].present? %>
@@ -73,7 +112,7 @@
       <% end %>
 
       <% if @item.case_study["note"].present? %>
-        <p><em><%= @item.case_study["note"] %></em></p>
+        <p class="portfolio-note"><em><%= @item.case_study["note"] %></em></p>
       <% end %>
     </div>
   </section>

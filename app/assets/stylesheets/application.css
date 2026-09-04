@@ -3472,6 +3472,102 @@ footer {
   margin-bottom: 8px;
 }
 
+.portfolio-role-line {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #475569;
+}
+
+.portfolio-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font: 700 11px Manrope, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.portfolio-badge--real {
+  background: rgba(232, 121, 53, 0.12);
+  color: #c45f1f;
+}
+
+.portfolio-badge--concept {
+  background: rgba(11, 25, 48, 0.08);
+  color: #475569;
+}
+
+.portfolio-stack {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.portfolio-stack-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 160px) 1fr;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #e8e0d4;
+  border-radius: 12px;
+  background: #faf8f5;
+}
+
+.portfolio-stack-row dt {
+  font: 700 13px Manrope, sans-serif;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.portfolio-stack-row dd {
+  margin: 0;
+  color: #0b1930;
+  line-height: 1.5;
+}
+
+.portfolio-challenges {
+  display: grid;
+  gap: 16px;
+}
+
+.portfolio-challenge {
+  padding: 18px 20px;
+  border: 1px solid #e8e0d4;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.portfolio-challenge h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #0b1930;
+}
+
+.portfolio-challenge p {
+  margin: 0 0 8px;
+}
+
+.portfolio-challenge p:last-child {
+  margin-bottom: 0;
+}
+
+.portfolio-note {
+  margin-top: 24px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .portfolio-stack-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
 @media (max-width: 900px) {
   .service-link-grid,
   .founders-page,

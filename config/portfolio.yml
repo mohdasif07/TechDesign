@@ -1,87 +1,224 @@
 items:
-  - id: business-website
+  - id: ncml-storeman
     category: tech
-    tag: Website
-    title: Business Website
-    description: Fast, mobile-first site with clear messaging and lead capture.
-    visual: digital
-    location: Remote
-    case_study:
-      type: Studio concept
-      summary: A reference concept for a service-business website with SEO foundations, service pages and a contact funnel.
-      problem: Many small businesses need a credible online presence but struggle with slow templates, unclear messaging and forms that never reach their inbox.
-      approach: Plan information architecture around two service divisions, write unique page copy, implement mobile-first layout, canonical URLs, sitemap and a reliable contact path.
-      features:
-        - Service hub and dedicated sub-pages
-        - Contact form with spam protection
-        - WhatsApp and email CTAs
-        - SEO metadata and structured data
-      stack: Ruby on Rails, semantic HTML, performance-conscious CSS
-      timeline: Typical delivery 2–4 weeks after content approval
-      note: This portfolio entry describes a studio concept — not a named client engagement.
-
-  - id: service-booking-app
-    category: tech
-    tag: Mobile App
-    title: Service Booking App
-    description: Cross-platform app with login, booking flow and notifications.
-    visual: mobile
-    location: Delhi
-    case_study:
-      type: Studio concept
-      summary: Concept for a booking app with authentication, slot selection and push notification hooks.
-      problem: Service providers often rely on phone calls and spreadsheets to manage appointments.
-      approach: Map the booking journey, design core screens, and structure an API-ready architecture for schedules, users and notifications.
-      features:
-        - User login and profile
-        - Service catalog and slot booking
-        - Booking history
-        - Notification integration points
-      stack: Mobile-friendly API design, cross-platform client architecture
-      timeline: MVP scope typically 6–10 weeks depending on integrations
-      note: Studio concept illustrating app delivery capabilities.
-
-  - id: crm-dashboard
-    category: tech
-    tag: Custom Software
-    title: CRM Dashboard
-    description: Lead tracking, pipeline view and automated follow-ups for sales teams.
+    tag: Enterprise Platform
+    title: NCML Storeman — Warehouse Management
+    description: Legacy .NET warehouse platform modernized to Ruby on Rails + React with contracts, orders, weighbridge, approvals and Business Central integration.
     visual: crm
-    location: Gurgaon
+    location: India
     case_study:
-      type: Studio concept
-      summary: Concept CRM dashboard for lead capture, pipeline stages and follow-up reminders.
-      problem: Teams outgrow spreadsheets when leads arrive from websites, WhatsApp and referrals in parallel.
-      approach: Model pipeline stages to match how the team actually sells, then build role-based views and activity history.
+      type: Real project
+      role: Software Developer — Backend & Full Stack
+      summary: Enterprise warehouse management platform modernized from a legacy .NET ecosystem to Ruby on Rails APIs and React-based interfaces. The system supports warehouse operations, contracts, deposits, vendors, delivery and release orders, weighbridge workflows, approvals, reporting, and Microsoft Dynamics 365 Business Central integration.
+      problem: The organization needed to move off a legacy .NET stack without disrupting day-to-day warehouse, commodity, and contract workflows used across operations teams.
+      approach: Contributed to a phased modernization — building REST APIs and React interfaces module by module while preserving existing business rules, approval flows, and ERP integration requirements.
+      contributions:
+        - Contributed to modernization of legacy .NET Storeman modules into Ruby on Rails APIs and React-based interfaces
+        - Developed and enhanced REST APIs for warehouse and operational workflows
+        - Implemented business logic for Delivery Orders, Release Orders, Contracts, Deposits, Vendors, and Weighbridge modules
+        - Worked on approval workflow changes and configurable approval-related business rules
+        - Developed and enhanced MIS and Control Reports with filtering, pagination, and export requirements
+        - Worked on database schema changes, migrations, validations, indexes, and production database troubleshooting
+        - Supported production deployment and troubleshooting using Ubuntu, Nginx, Puma, Docker, and SSL/Certbot
+        - Investigated and resolved production issues involving APIs, database configuration, migrations, assets, and server connectivity
       features:
-        - Lead inbox from web forms
-        - Pipeline board by stage
-        - Follow-up reminders
-        - Simple reporting widgets
-      stack: Custom web application with API integrations
-      timeline: MVP often 4–8 weeks after process mapping
-      note: Studio concept — not a published client case study.
+        - Warehouse and godown management
+        - Commodity and variety management
+        - Vendor management
+        - Delivery Orders and Release Orders
+        - Deposit contracts
+        - Weighbridge management
+        - Approval workflows
+        - MIS and Control Reports
+        - Business Central integration
+        - Document and PDF generation
+        - Authentication and API-based communication
+      stack:
+        frontend: React.js, JavaScript, Bootstrap, Tailwind CSS
+        backend: Ruby on Rails, Ruby, REST APIs
+        database: MySQL
+        infrastructure: Ubuntu, Nginx, Puma, Docker, SSL/Certbot
+        integrations: Microsoft Dynamics 365 Business Central (OData)
+      challenges:
+        - title: Legacy system modernization
+          problem: Existing .NET workflows had to continue while functionality moved to Rails and React.
+          solution: Module-by-module migration while preserving business rules and operational flow.
+        - title: Business Central integration
+          problem: Master and operational data needed to stay aligned between Storeman and Business Central.
+          solution: OData API consumption, entity mapping, and integration debugging on the Rails backend.
+        - title: Production troubleshooting
+          problem: Issues across Nginx routing, Puma, SSL, database configuration, migrations, and API connectivity.
+          solution: Log analysis, server configuration review, and targeted fixes in production environments.
+      timeline: Ongoing enterprise modernization engagement
+      note: Hands-on development work on a production warehouse management platform. Specific client workflows and credentials are not disclosed publicly.
 
-  - id: ecommerce-store
+  - id: warehouse-geofencing
     category: tech
-    tag: E-commerce
-    title: Online Store
-    description: Product catalog, cart, payments and order management for a retail brand.
+    tag: Geolocation
+    title: Warehouse Monitoring & Geofencing
+    description: GPS-based geofenced clock-in/out and warehouse presence monitoring to help identify unmanned godown situations.
+    visual: mobile
+    location: India
+    case_study:
+      type: Real project
+      role: Backend / Full Stack Developer
+      summary: Functionality for monitoring warehouse presence and identifying potentially unmanned warehouses through employee geolocation and geofenced attendance tied to warehouse boundaries.
+      problem: Operations teams needed visibility into whether required staff were physically present at mapped warehouse locations.
+      approach: Built location-based validation against warehouse boundaries with Rails backend APIs supporting clock-in, clock-out, and presence monitoring logic.
+      contributions:
+        - Contributed to business logic for warehouse presence monitoring
+        - Worked on geofenced employee check-in and check-out
+        - Implemented location-based validation against warehouse boundaries
+        - Worked on employee-to-godown mapping and geolocation-related functionality
+        - Contributed to logic for identifying warehouses without required personnel presence
+        - Built and supported Rails backend APIs for location and attendance workflows
+      features:
+        - Geofenced clock-in and clock-out
+        - GPS coordinate capture
+        - Warehouse boundary validation
+        - Employee and godown mapping
+        - Warehouse presence monitoring
+        - Unmanned warehouse detection logic
+      stack:
+        frontend: React
+        backend: Ruby on Rails
+        database: MySQL
+        infrastructure: Linux, Nginx, Puma
+        integrations: GPS / Geolocation services
+      challenges:
+        - title: Location accuracy vs business rules
+          problem: GPS data can be inconsistent while attendance rules still need to be enforceable.
+          solution: Geofence validation against defined warehouse boundaries with backend rule checks.
+      timeline: Feature development within warehouse operations platform
+      note: Part of the broader NCML Storeman warehouse platform.
+
+  - id: business-central-integration
+    category: tech
+    tag: ERP Integration
+    title: Business Central Integration
+    description: OData integration between Storeman and Microsoft Dynamics 365 Business Central for master and operational data exchange.
     visual: digital
     location: India
     case_study:
-      type: Studio concept
-      summary: Concept e-commerce flow covering catalog browsing, cart, checkout and admin order management.
-      problem: Retail brands need a storefront that works on mobile and connects cleanly to payments and fulfilment.
-      approach: Design category structure, product detail templates, checkout steps and an admin panel for catalogue updates.
+      type: Real project
+      role: Backend / Integration Developer
+      summary: Integration layer between the Storeman application and Microsoft Dynamics 365 Business Central to exchange master and operational data through OData-based APIs.
+      problem: Warehouse operations and ERP master data had to stay synchronized without manual re-entry or inconsistent records across systems.
+      approach: Implemented authenticated OData integrations with explicit entity mapping, request/response handling, and iterative debugging of sync failures.
+      contributions:
+        - Developed backend API integration with Business Central
+        - Worked with OData endpoints for retrieving and synchronizing business data
+        - Implemented authentication and authorization for API communication
+        - Mapped Storeman entities with Business Central entities
+        - Worked on commodity, vendor, location, and other master-data integration requirements
+        - Debugged API requests, responses, and integration failures
+        - Updated application business logic based on Business Central requirements
       features:
-        - Product catalog and search
-        - Cart and checkout
-        - Payment gateway integration point
-        - Admin order list
-      stack: E-commerce web platform with payment API integration
-      timeline: Depends on catalog size — often 6–12 weeks
-      note: Studio concept for e-commerce delivery scope.
+        - OData-based ERP integration
+        - Master data synchronization
+        - Bearer-token authenticated API communication
+        - Entity mapping between Storeman and Business Central
+        - Integration failure debugging and recovery
+      stack:
+        backend: Ruby on Rails
+        database: MySQL
+        integrations: Microsoft Dynamics 365 Business Central, OData APIs
+        other: Bearer-token authentication, API testing tools
+      challenges:
+        - title: Cross-system data mapping
+          problem: Storeman and Business Central use different entity structures for the same business concepts.
+          solution: Explicit field mapping and validation on the Rails integration layer.
+        - title: Integration failure debugging
+          problem: OData failures required careful inspection of auth, payloads, and endpoint behaviour.
+          solution: Request/response analysis and targeted fixes across commodity, vendor, and location workflows.
+      timeline: Integration work across multiple release cycles
+      note: Enterprise ERP integration — no credentials or private endpoints are published.
+
+  - id: enterprise-mis-reports
+    category: tech
+    tag: Reporting
+    title: Enterprise MIS & Control Reports
+    description: Rails reporting services with filters, validations, pagination, and CSV export for warehouse operational and management data.
+    visual: crm
+    location: India
+    case_study:
+      type: Real project
+      role: Backend / Full Stack Developer
+      summary: Reporting functionality for operational and management information systems, allowing users to filter, process, paginate, and export business data for control and monitoring.
+      problem: Operations and management teams needed reliable reports over large warehouse datasets with business-specific filters and export options.
+      approach: Built service-based reporting architecture in Rails with validation layers, pagination, and export pipelines tuned for operational queries.
+      contributions:
+        - Developed service-based reporting architecture in Rails
+        - Implemented report filters and business validations
+        - Added business-specific data processing and mapping
+        - Implemented pagination for large datasets
+        - Worked on CSV and export requirements
+        - Added warehouse and godown identification to reports
+        - Worked on commodity mapping and invoice monitoring report requirements
+        - Debugged report data issues and database queries
+      features:
+        - MIS and Control Reports
+        - Advanced filtering and validation
+        - Pagination for large datasets
+        - CSV export
+        - Warehouse and godown identification in reports
+        - Commodity mapping and invoice monitoring reports
+      stack:
+        frontend: React
+        backend: Ruby on Rails
+        database: MySQL
+        other: CSV report output
+      challenges:
+        - title: Large dataset performance
+          problem: Operational reports over warehouse data could become slow without careful query design.
+          solution: Service-layer reporting, pagination, and targeted query debugging.
+      timeline: Iterative report module development
+      note: Reporting module within enterprise warehouse platform.
+
+  - id: rails-production-devops
+    category: tech
+    tag: DevOps
+    title: Rails Production Deployment
+    description: Production deployment and support for Rails apps on Ubuntu with Nginx, Puma, Docker, MySQL migrations, SSL, and troubleshooting.
+    visual: digital
+    location: India
+    case_study:
+      type: Real project
+      role: Software Developer / Deployment & Production Support
+      summary: Deployment and maintenance of Ruby on Rails applications on Linux infrastructure including web servers, application servers, SSL certificates, databases, and containers.
+      problem: Enterprise Rails applications required stable production hosting, controlled migrations, and fast diagnosis when server or application issues affected users.
+      approach: Hands-on deployment using Nginx reverse proxy, Puma, Docker services, Certbot SSL, Git-based workflows, and log-driven production troubleshooting.
+      contributions:
+        - Deployed and maintained Ruby on Rails applications on Ubuntu servers
+        - Configured and troubleshot Nginx reverse proxy configurations
+        - Managed Rails application processes using Puma
+        - Worked with Docker-based services and application infrastructure
+        - Configured and troubleshot SSL certificates using Let's Encrypt and Certbot
+        - Performed production database migrations and troubleshooting
+        - Investigated Rails production logs and server errors
+        - Worked with Git branches, commits, merges, and deployment workflows
+        - Diagnosed networking, firewall, port, and reverse-proxy issues
+      features:
+        - Linux server deployment
+        - Nginx and Puma application stack
+        - Docker container usage
+        - SSL/TLS with Certbot
+        - Production migrations and log analysis
+        - Git-based deployment workflows
+      stack:
+        backend: Ruby on Rails
+        database: MySQL
+        infrastructure: Ubuntu, Nginx, Puma, Docker, Let's Encrypt, Certbot
+        other: Git, Linux shell, Rails production environment
+      challenges:
+        - title: Reverse proxy and app server coordination
+          problem: Misconfigured Nginx or Puma caused routing failures and downtime.
+          solution: Configuration review, socket and port alignment, and log-driven fixes.
+        - title: SSL and deployment failures
+          problem: Certificate, environment, or migration issues could break production releases.
+          solution: Certbot troubleshooting, environment checks, and controlled migration runs.
+      timeline: Ongoing production support alongside feature development
+      note: Infrastructure work supporting enterprise Rails applications.
 
   - id: modern-3bhk
     category: interior
@@ -121,7 +258,7 @@ items:
         - Reception and waiting zone
       property_type: Commercial office suite
       timeline: Design 2–3 weeks; fit-out depends on scope
-      note: Studio concept for commercial interior planning.
+      note: Concept design for commercial interior planning.
 
   - id: contemporary-kitchen
     category: interior
@@ -161,4 +298,4 @@ items:
         - Accent lighting plan
       property_type: Boutique retail unit
       timeline: Concept design 2–3 weeks
-      note: Studio concept — not a named retail client.
+      note: Concept design — not a named retail client.
