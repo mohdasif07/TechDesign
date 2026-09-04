@@ -79,10 +79,13 @@
   </section>
 
   <section class="section cta-inline">
-    <div class="container cta-inline-box">
-      <h2><%= @item.interior? ? "Book an interior design consultation" : "Discuss your software project" %></h2>
-      <%= link_to "Get a quote", contact_page_path, class: "btn btn-primary" %>
-      <%= link_to "Back to portfolio", portfolio_path, class: "btn btn-dark-outline" %>
+    <div class="container">
+      <%= render "shared/cta_banner",
+            title: (@item.interior? ? "Book an interior design consultation" : "Discuss your software project"),
+            button_label: "Get a quote",
+            button_url: contact_page_path(anchor: "contact"),
+            secondary_label: "Back to portfolio",
+            secondary_url: portfolio_path %>
     </div>
   </section>
 </main>

@@ -1,0 +1,36 @@
+<%#
+  title: required heading
+  text: optional supporting copy
+  button_label: defaults to "Get a free quote"
+  button_url: link target (service param used when service: is set)
+  service: pre-fills contact form service dropdown
+  centered: true for stacked centered layout (tool pages)
+  secondary_label / secondary_url: optional second button
+%>
+<% title = local_assigns.fetch(:title) %>
+<% text = local_assigns[:text] %>
+<% button_label = local_assigns.fetch(:button_label, "Get a free quote") %>
+<% service = local_assigns[:service] %>
+<% centered = local_assigns.fetch(:centered, false) %>
+<% button_url = if service.present?
+     contact_page_path(anchor: "contact", service: service)
+   else
+     local_assigns.fetch(:button_url, contact_page_path(anchor: "contact"))
+   end %>
+<% secondary_label = local_assigns[:secondary_label] %>
+<% secondary_url = local_assigns[:secondary_url] %>
+
+<div class="cta-banner<%= " cta-banner--centered" if centered %>">
+  <div class="cta-banner-text">
+    <h2><%= title %></h2>
+    <% if text.present? %>
+      <p><%= text %></p>
+    <% end %>
+  </div>
+  <div class="cta-banner-actions">
+    <%= link_to button_label, button_url, class: "btn btn-primary" %>
+    <% if secondary_label.present? && secondary_url.present? %>
+      <%= link_to secondary_label, secondary_url, class: "btn btn-outline" %>
+    <% end %>
+  </div>
+</div>

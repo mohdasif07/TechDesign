@@ -38,9 +38,11 @@
   </section>
 
   <section class="section cta-inline">
-    <div class="container cta-inline-box">
-      <h2>Have a similar project in mind?</h2>
-      <%= link_to "Start a conversation", root_path(anchor: "contact"), class: "btn btn-primary" %>
+    <div class="container">
+      <%= render "shared/cta_banner",
+            title: "Have a similar project in mind?",
+            button_label: "Start a conversation",
+            button_url: contact_page_path(anchor: "contact") %>
     </div>
   </section>
 </main>

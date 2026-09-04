@@ -52,8 +52,10 @@
       <%= @post.body.html_safe %>
     </div>
     <footer class="container blog-article-footer">
-      <p>Ready to start your project?</p>
-      <%= link_to "Get a free quote", root_path(anchor: "contact"), class: "btn btn-primary" %>
+      <%= render "shared/cta_banner",
+            title: "Ready to start your project?",
+            text: "Tell us about your requirements and we will reply within 24 hours.",
+            button_url: contact_page_path(anchor: "contact") %>
     </footer>
   </article>
 </main>
