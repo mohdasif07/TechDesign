@@ -509,6 +509,28 @@ function initPortfolioGallery() {
 
     gallery.addEventListener("mouseenter", () => clearInterval(timer));
     gallery.addEventListener("mouseleave", restartAutoplay);
+
+    let touchStartX = 0;
+    gallery.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0]?.screenX || 0;
+      },
+      { passive: true }
+    );
+    gallery.addEventListener(
+      "touchend",
+      (event) => {
+        const touchEndX = event.changedTouches[0]?.screenX || 0;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) < 45) return;
+        if (diff < 0) next();
+        else prev();
+        restartAutoplay();
+      },
+      { passive: true }
+    );
+
     gallery.addEventListener("keydown", (event) => {
       if (event.key === "ArrowRight") {
         next();

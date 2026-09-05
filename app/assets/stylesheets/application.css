@@ -3813,6 +3813,10 @@ footer {
   margin-bottom: 28px;
 }
 
+.portfolio-gallery:focus {
+  outline: none;
+}
+
 .portfolio-gallery-main {
   position: relative;
   overflow: hidden;
@@ -4090,28 +4094,117 @@ footer {
 
 @media (max-width: 900px) {
   .portfolio-stats,
-  .portfolio-showcase-grid,
-  .portfolio-gallery-thumbs {
+  .portfolio-showcase-grid {
     grid-template-columns: 1fr 1fr;
   }
 
   .portfolio-gallery-thumbs {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    grid-template-columns: unset;
+  }
+
+  .portfolio-gallery-thumb {
+    flex: 0 0 92px;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-showcase-head {
+    padding: 16px 0 20px;
+  }
+
+  .portfolio-showcase-head h1 {
+    font-size: clamp(28px, 7.5vw, 40px);
+    line-height: 1.12;
+  }
+
+  .portfolio-showcase-hero .portfolio-gallery {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .portfolio-gallery-main {
+    border-radius: 0;
+  }
+
+  .portfolio-gallery-track {
+    aspect-ratio: 4 / 3;
+    min-height: 220px;
+  }
+
+  .portfolio-gallery-caption {
+    font-size: 13px;
+    padding: 34px 16px 14px;
+  }
+
+  .portfolio-gallery-prev { left: 10px; }
+  .portfolio-gallery-next { right: 10px; }
+
+  .portfolio-gallery-dots {
+    bottom: 12px;
+  }
+
+  .portfolio-stat dd {
+    font-size: 18px;
+  }
+
+  .portfolio-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-budget-card strong {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 640px) {
   .portfolio-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .portfolio-stat {
+    padding: 14px 12px;
+  }
+
+  .portfolio-stat dd {
+    font-size: 16px;
   }
 
   .portfolio-gallery-thumbs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .portfolio-gallery-thumb {
+    flex-basis: 76px;
   }
 
   .portfolio-gallery-nav {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .portfolio-gallery-dot.is-active {
+    width: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .portfolio-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-gallery-track {
+    aspect-ratio: 1 / 1;
+    min-height: 200px;
   }
 }
 

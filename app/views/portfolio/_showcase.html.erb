@@ -89,9 +89,15 @@
         <% end %>
 
         <div class="portfolio-aside-cta reveal delay-3">
-          <p>Planning a similar home in Gurgaon or Delhi NCR?</p>
-          <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
-          <%= link_to "Modular kitchen calculator", modular_kitchen_calculator_path, class: "text-link" %>
+          <% if item.tag.to_s.include?("Commercial") %>
+            <p>Planning an office fit-out in Noida or Delhi NCR?</p>
+            <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
+            <%= link_to "Office interior design service", interior_service_path("office-interior-design"), class: "text-link" %>
+          <% else %>
+            <p>Planning a similar home in Gurgaon or Delhi NCR?</p>
+            <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
+            <%= link_to "Modular kitchen calculator", modular_kitchen_calculator_path, class: "text-link" %>
+          <% end %>
         </div>
       </aside>
     <% end %>

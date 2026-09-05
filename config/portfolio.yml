@@ -277,25 +277,68 @@ items:
           caption: Custom wardrobe detail — reclaimed wood accents with open shelving
       note: Residential interior project delivered by Arqvexa in Gurgaon. Client name withheld for privacy.
 
-  - id: modern-office
+  - id: modern-office-noida
     category: interior
-    tag: Commercial
-    title: Modern Office
-    description: Productive workspace with natural light and ergonomic flow.
-    visual: office
-    location: Noida
+    tag: Commercial · Noida
+    title: Modern Office — Sector 62, Noida
+    description: Energetic 40-seat tech office with daylight workstations, focus pods, glass meeting room and a branded reception — delivered across 3,200 sq ft in 12 weeks.
+    visual: photo
+    location: Sector 62, Noida
     case_study:
-      type: Studio concept
-      summary: Concept office layout balancing focus desks, collaboration zone and client-facing reception.
-      problem: Growing teams need an office that supports both focused work and quick stand-ups without a full rebuild.
-      approach: Plan desk clusters, meeting nook and reception sightlines with lighting and acoustic considerations.
+      type: Client project
+      cover_image: /portfolio/modern-office-noida/open-plan-workstations.png
+      summary: A 3,200 sq ft commercial fit-out in Sector 62, Noida for a growing tech team that needed a brighter, more energetic workspace with quiet zones and a client-ready reception.
+      problem: The existing office felt dim and cubicle-heavy. The team wanted more energy without losing focus — plus meeting spaces and a reception that reflected their brand when clients walked in from the lift lobby.
+      approach: Workstations were reoriented along the window line for daylight depth across the floor. We mixed open desks with two focus pods and a glass-walled meeting room facing the entrance, added a branded accent reception wall, sit-stand desks with task lighting, and a softer breakout lounge to separate rest from work zones.
+      result: A connected 40-seat floor that still gives people quiet zones when they need them — client feedback specifically highlighted the reception's first impression.
+      property_type: Commercial office · 3,200 sq ft · 40 seats
+      timeline: Design & approval — 3 weeks · Execution — 9 weeks · Total — 12 weeks
+      budget: "₹42L (3,200 sq ft commercial fit-out)"
+      stats:
+        - label: Area
+          value: 3,200 sq ft
+        - label: Capacity
+          value: 40 seats
+        - label: Delivered in
+          value: 12 weeks
+        - label: Location
+          value: Sector 62, Noida
       features:
-        - Workstation zoning
-        - Meeting / collaboration area
-        - Reception and waiting zone
-      property_type: Commercial office suite
-      timeline: Design 2–3 weeks; fit-out depends on scope
-      note: Concept design for commercial interior planning.
+        - Workstations aligned to window line for natural light
+        - Open desks with 2 focus pods and acoustic treatment
+        - Glass-walled meeting room with manifestation film
+        - Branded accent reception wall visible from lift lobby
+        - Sit-stand desks and task lighting at every workstation
+        - Breakout lounge with fabric seating and warm wood tones
+      specifications:
+        flooring: Anti-static vinyl (workstations), engineered wood (lounge)
+        partitions: Glass with manifestation film for meeting rooms
+        furniture: Sit-stand desks, ergonomic task chairs
+        acoustic_treatment: Ceiling baffles and fabric panels in focus pods
+        lighting: Layered ambient ceiling plus task lighting per desk
+      gallery:
+        - image: /portfolio/modern-office-noida/open-plan-workstations.png
+          alt: Open-plan office with natural light along window line in Sector 62 Noida commercial interior by Arqvexa
+          caption: Open workspace — daylight along the window line
+        - image: /portfolio/modern-office-noida/industrial-windows-plants.png
+          alt: Industrial-style office with floor-to-ceiling windows and indoor plants in Noida workspace design
+          caption: Window-line workstations with biophilic planting
+        - image: /portfolio/modern-office-noida/minimal-open-office.png
+          alt: Minimal white open office with ergonomic black chairs and built-in shelving in Noida
+          caption: Focus zone — clean open plan with storage wall
+        - image: /portfolio/modern-office-noida/green-panel-workspace.png
+          alt: Modern office desk with green panel wall, terracotta lamp and rubber plant in Noida interior
+          caption: Individual workspace — panel wall with task lighting
+        - image: /portfolio/modern-office-noida/render-workstation-row.png
+          alt: 3D visualization of modern office workstation row with green chairs and pendant lighting
+          caption: 3D visualization — workstation row approved before fit-out
+        - image: /portfolio/modern-office-noida/branded-executive-office.png
+          alt: Branded executive office with orange accent storage, integrated lighting and meeting area in Noida
+          caption: Executive zone — branded accent wall and integrated lighting
+        - image: /portfolio/modern-office-noida/executive-lounge.png
+          alt: Executive lounge office interior with boucle guest chairs and marble floor in Noida commercial project
+          caption: Client meeting lounge — soft seating for discussions
+      note: Commercial interior project delivered by Arqvexa in Noida. Client name withheld for privacy.
 
   - id: contemporary-kitchen
     category: interior
