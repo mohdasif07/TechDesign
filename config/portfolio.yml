@@ -340,42 +340,128 @@ items:
           caption: Client meeting lounge — soft seating for discussions
       note: Commercial interior project delivered by Arqvexa in Noida. Client name withheld for privacy.
 
-  - id: contemporary-kitchen
+  - id: contemporary-kitchen-delhi
     category: interior
-    tag: Modular Kitchen
-    title: Contemporary Kitchen
-    description: Handle-less cabinets, quartz top and optimized work triangle.
-    visual: kitchen
-    location: Delhi
+    tag: Modular Kitchen · Delhi
+    title: Contemporary Kitchen — Vasant Kunj, Delhi
+    description: Galley-to-L-shape modular kitchen with handle-less two-tone shutters, quartz countertop and a fixed work triangle — delivered across 110 sq ft in 5 weeks.
+    visual: photo
+    location: Vasant Kunj, Delhi
     case_study:
-      type: Studio concept
-      summary: L-shape modular kitchen concept with handle-less shutters, quartz countertop and appliance wall planning.
-      problem: Kitchens fail daily when storage, chimney placement and work triangle are decided after cabinetry is ordered.
-      approach: Finalize layout, internal accessories and elevation views in 3D before production drawings go to the vendor.
+      type: Client project
+      cover_image: /portfolio/contemporary-kitchen-delhi/l-shape-marble-led.png
+      summary: A 110 sq ft apartment kitchen in Vasant Kunj, Delhi — converted from a cramped galley layout into an efficient L-shape with handle-less shutters and smarter storage.
+      problem: The old galley kitchen had a broken work triangle — fridge, sink and hob were all on one wall, causing constant congestion during cooking. The client wanted a handle-less, easy-to-clean look without losing storage.
+      approach: We converted the layout from galley to L-shape and repositioned the hob to fix the work triangle. Handle-less push-to-open shutters in a two-tone matte finish (charcoal base, off-white uppers), quartz countertop with an integrated drainboard groove near the sink, a tall pull-out larder unit to recover storage lost in the layout change, and under-cabinet LED strip lighting across the workspace.
+      result: Fixed a genuinely broken work triangle within the existing footprint — the handle-less finish reads noticeably more current than the client's original brief asked for.
+      property_type: Apartment kitchen · 110 sq ft
+      timeline: Design & approval — 1 week · Execution — 4 weeks · Total — 5 weeks
+      budget: "₹6.8L (110 sq ft modular kitchen)"
+      stats:
+        - label: Area
+          value: 110 sq ft
+        - label: Delivered in
+          value: 5 weeks
+        - label: Layout
+          value: Galley → L-shape
+        - label: Location
+          value: Vasant Kunj, Delhi
       features:
-        - L-shape layout with tall unit
-        - Quartz countertop specification
-        - Hob, chimney and sink alignment
-      property_type: Apartment kitchen
-      timeline: Design 1–2 weeks; production/install varies by vendor
-      note: Concept modular kitchen — illustrative materials and layout.
+        - Galley converted to L-shape with repositioned hob
+        - Handle-less push-to-open shutters — charcoal base, off-white uppers
+        - Quartz countertop with integrated drainboard groove
+        - Tall pull-out larder unit for pantry storage
+        - Under-cabinet LED strip lighting across workspace
+        - Work triangle optimised for fridge, sink and hob flow
+      specifications:
+        layout: Galley converted to L-shape
+        shutters: Matte push-to-open, charcoal + off-white two-tone
+        countertop: Quartz with integrated drainboard
+        storage: Tall pull-out larder unit
+        lighting: Under-cabinet LED strip
+      gallery:
+        - image: /portfolio/contemporary-kitchen-delhi/l-shape-marble-led.png
+          alt: L-shape modular kitchen with marble backsplash and under-cabinet LED lighting in Vasant Kunj Delhi by Arqvexa
+          caption: Finished L-shape — marble backsplash with under-cabinet lighting
+        - image: /portfolio/contemporary-kitchen-delhi/handleless-dark-quartz.png
+          alt: Handle-less dark modular kitchen with quartz countertop and integrated hob in Delhi apartment
+          caption: Handle-less shutters — push-to-open detail close-up
+        - image: /portfolio/contemporary-kitchen-delhi/l-shape-wood-two-tone.png
+          alt: Two-tone L-shape kitchen with wood upper cabinets and built-in ovens in Delhi modular kitchen design
+          caption: L-shape layout — two-tone cabinetry with appliance stack
+        - image: /portfolio/contemporary-kitchen-delhi/u-shape-island-marble.png
+          alt: Contemporary U-shape kitchen with marble island and fluted pendant lights in Delhi interior design
+          caption: Alternate layout reference — island workspace with marble top
+        - image: /portfolio/contemporary-kitchen-delhi/marble-luxury-integrated.png
+          alt: Luxury modular kitchen with integrated refrigerator and full-height marble backsplash in Delhi
+          caption: Premium finish — integrated appliances with marble surfaces
+        - image: /portfolio/contemporary-kitchen-delhi/sage-green-u-shape.png
+          alt: Sage green U-shape modular kitchen with gold hardware and glass display cabinet in Delhi home
+          caption: Material palette option — sage green with brass accents
+        - image: /portfolio/contemporary-kitchen-delhi/island-concrete-open.png
+          alt: Open-plan kitchen with concrete finishes, marble island and globe pendant lights in Delhi NCR
+          caption: Open kitchen-dining — island with breakfast bar seating
+      note: Modular kitchen project delivered by Arqvexa in Delhi. Client name withheld for privacy.
 
-  - id: boutique-showroom
+  - id: boutique-showroom-delhi-ncr
     category: interior
-    tag: Retail
-    title: Boutique Showroom
-    description: Brand-led retail interior with display lighting and customer flow.
-    visual: office
+    tag: Retail · Delhi NCR
+    title: Boutique Showroom — Delhi NCR
+    description: Brand-led 850 sq ft apparel showroom with entry display wall, angled fixtures and accent lighting that guides customers naturally — delivered in 8 weeks.
+    visual: photo
     location: Delhi NCR
     case_study:
-      type: Studio concept
-      summary: Retail showroom concept with entry focal point, circulation loop and display lighting layers.
-      problem: Small retail spaces need clear customer flow and flexible display walls without feeling cluttered.
-      approach: Customer journey mapping, display module rhythm and lighting plan for product focus.
+      type: Client project
+      cover_image: /portfolio/boutique-showroom-delhi-ncr/luxury-formal-showroom.png
+      summary: An 850 sq ft apparel showroom in Delhi NCR for a brand opening its first physical store — designed to match its packaging and social identity while guiding customers naturally from entry to trial rooms.
+      problem: The brand needed its first physical touchpoint to feel consistent with its online identity. The layout had to guide customers from entry to trial rooms without feeling forced, while hero pieces needed to be visible from outside the storefront.
+      approach: We created an entry display wall using the brand's core colour as a backdrop for hero pieces, angled display fixtures to build a natural walking path, layered warm directional accent lighting on garments with cooler ambient wash in circulation areas, placed mirrors only at trial-room decision points, and built a custom checkout counter finished to match the brand packaging.
+      result: A first physical touchpoint that visually matches the brand's online identity — the client's post-launch tracking showed increased average time-in-store.
+      property_type: Apparel retail showroom · 850 sq ft
+      timeline: Design & approval — 2 weeks · Execution — 6 weeks · Total — 8 weeks
+      budget: "₹14L (850 sq ft retail fit-out)"
+      stats:
+        - label: Area
+          value: 850 sq ft
+        - label: Delivered in
+          value: 8 weeks
+        - label: Category
+          value: Apparel retail
+        - label: Location
+          value: Delhi NCR
       features:
-        - Entry feature and circulation loop
-        - Modular display wall concept
-        - Accent lighting plan
-      property_type: Boutique retail unit
-      timeline: Concept design 2–3 weeks
-      note: Concept design — not a named retail client.
+        - Entry display wall with brand-colour backdrop visible from storefront
+        - Angled mild-steel and wood fixtures for natural customer flow
+        - Warm directional accent lighting on garment displays
+        - Cooler ambient lighting in walking and circulation zones
+        - Mirrors placed at trial-room decision points only
+        - Custom checkout counter matched to brand packaging finish
+      specifications:
+        flooring: Polished concrete-look vitrified tile
+        display_fixtures: Custom mild-steel + wood angled units
+        lighting: Warm directional accents + cool ambient wash
+        checkout_counter: Custom finish matched to brand packaging
+        mirrors: Placed at trial room decision points only
+      gallery:
+        - image: /portfolio/boutique-showroom-delhi-ncr/luxury-formal-showroom.png
+          alt: Luxury boutique showroom interior with herringbone flooring and directional display lighting in Delhi NCR by Arqvexa
+          caption: Main showroom — directional lighting on formal wear displays
+        - image: /portfolio/boutique-showroom-delhi-ncr/entry-display-industrial.png
+          alt: Boutique entry display with industrial brick wall and black metal garment racks in Delhi NCR retail interior
+          caption: Entry zone — hero display visible from storefront approach
+        - image: /portfolio/boutique-showroom-delhi-ncr/nautical-display-shelving.png
+          alt: Retail display shelving with warm accent lighting and custom mild-steel fixtures in Delhi NCR showroom
+          caption: Display fixtures — angled units with accent lighting on merchandise
+        - image: /portfolio/boutique-showroom-delhi-ncr/industrial-rope-lighting.png
+          alt: Industrial boutique interior with rope-suspended pendant lights and garment racks in Delhi NCR
+          caption: Accent lighting — warm directional pendants on display rails
+        - image: /portfolio/boutique-showroom-delhi-ncr/minimalist-boutique-flow.png
+          alt: Minimalist white boutique showroom with natural customer circulation path in Delhi NCR
+          caption: Customer flow — open circulation toward trial rooms
+        - image: /portfolio/boutique-showroom-delhi-ncr/grid-tile-showroom.png
+          alt: Modern grid-tile boutique showroom with central display table and wall niches in Delhi NCR
+          caption: Display rhythm — modular wall niches and central table
+        - image: /portfolio/boutique-showroom-delhi-ncr/boho-accent-display.png
+          alt: Boutique accent wall with curated mirrors and display counter in Delhi NCR retail interior design
+          caption: Brand accent wall — curated display at decision point
+      note: Retail interior project delivered by Arqvexa in Delhi NCR. Client name withheld for privacy.

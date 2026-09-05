@@ -460,6 +460,8 @@ function initPortfolioGallery() {
     const thumbs = [...gallery.querySelectorAll("[data-gallery-thumb]")];
     const prevBtn = gallery.querySelector("[data-gallery-prev]");
     const nextBtn = gallery.querySelector("[data-gallery-next]");
+    const counter = gallery.querySelector("[data-gallery-counter]");
+    const progressBar = gallery.querySelector("[data-gallery-progress]");
     if (!slides.length) return;
 
     let current = 0;
@@ -474,7 +476,16 @@ function initPortfolioGallery() {
         dot.classList.toggle("is-active", i === current);
         dot.setAttribute("aria-selected", i === current ? "true" : "false");
       });
-      thumbs.forEach((thumb, i) => thumb.classList.toggle("is-active", i === current));
+      thumbs.forEach((thumb, i) => {
+        thumb.classList.toggle("is-active", i === current);
+        if (i === current) {
+          thumb.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "nearest", inline: "center" });
+        }
+      });
+      if (counter) counter.textContent = `${current + 1} / ${slides.length}`;
+      if (progressBar) {
+        progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
+      }
     };
 
     const next = () => setSlide(current + 1);

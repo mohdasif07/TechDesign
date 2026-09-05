@@ -104,6 +104,39 @@ module ApplicationHelper
     "+919917639330"
   end
 
+  def portfolio_image_base(path)
+    path.to_s.sub(/\.(png|jpe?g|webp)$/i, "")
+  end
+
+  def portfolio_image_file(path, suffix: nil, format: "webp")
+    base = portfolio_image_base(path)
+    name = File.basename(base)
+    dir = File.dirname(base)
+    filename = suffix ? "#{name}-#{suffix}.#{format}" : "#{name}.#{format}"
+    candidate = "#{dir}/#{filename}"
+    public_path = Rails.root.join("public", candidate.delete_prefix("/"))
+    File.exist?(public_path) ? candidate : path
+  end
+
+  def portfolio_picture_tag(path, alt:, variant: :full, **html_options)
+    base = portfolio_image_base(path)
+    webp_src = portfolio_image_file(path, format: "webp")
+    jpg_src = portfolio_image_file(path, format: "jpg")
+    css_class = html_options.delete(:class)
+
+    if variant == :thumb
+      thumb_src = portfolio_image_file(path, suffix: "thumb", format: "webp")
+      return image_tag(thumb_src, alt: alt, class: css_class, loading: "lazy", decoding: "async", **html_options)
+    end
+
+    content_tag(:picture) do
+      safe_join([
+        tag.source(srcset: webp_src, type: "image/webp"),
+        image_tag(jpg_src, alt: alt, class: css_class, loading: html_options.delete(:loading) || "lazy", decoding: "async", **html_options)
+      ])
+    end
+  end
+
   def service_page_icon(slug, division)
     icons = if division == "interior"
       {

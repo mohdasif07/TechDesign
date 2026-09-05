@@ -2,7 +2,7 @@
   title: "#{@item.title} | #{@item.category_label} Portfolio | Arqvexa",
   description: @item.case_study_summary.presence || @item.description,
   canonical: site_url(@item.path),
-  og_image: (@item.cover_image.present? ? site_url(@item.cover_image) : nil)
+  og_image: (@item.cover_image.present? ? site_url(portfolio_image_file(@item.cover_image, format: "jpg")) : nil)
 ) %>
 
 <% breadcrumbs(
@@ -24,7 +24,7 @@
         <% @item.gallery.each_with_index do |slide, index| %>
         {
           "@type": "ImageObject",
-          "contentUrl": "<%= site_url(slide["image"]) %>",
+          "contentUrl": "<%= site_url(portfolio_image_file(slide["image"], format: "jpg")) %>",
           "caption": <%= slide["caption"].to_json %>,
           "description": <%= slide["alt"].to_json %>
         }<%= "," unless index == @item.gallery.size - 1 %>

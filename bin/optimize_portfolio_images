@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+PORTFOLIO_DIR="$ROOT/public/portfolio"
+
+if ! command -v convert >/dev/null 2>&1; then
+  echo "ImageMagick (convert) is required." >&2
+  exit 1
+fi
+
+find "$PORTFOLIO_DIR" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) ! -name "*-thumb*" | while read -r src; do
+  dir=$(dirname "$src")
+  base=$(basename "$src" | sed 's/\.[^.]*$//')
+  echo "Optimizing $base..."
+  convert "$src" -strip -quality 88 -interlace Plane "$dir/${base}.jpg"
+  convert "$src" -strip -quality 85 -define webp:method=6 "$dir/${base}.webp"
+  convert "$src" -strip -resize 360x270^ -gravity center -extent 360x270 -quality 80 "$dir/${base}-thumb.webp"
+done
+
+echo "Done. Portfolio assets in $PORTFOLIO_DIR"

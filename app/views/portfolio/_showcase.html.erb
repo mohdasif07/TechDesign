@@ -93,6 +93,14 @@
             <p>Planning an office fit-out in Noida or Delhi NCR?</p>
             <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
             <%= link_to "Office interior design service", interior_service_path("office-interior-design"), class: "text-link" %>
+          <% elsif item.tag.to_s.include?("Modular Kitchen") || item.title.to_s.downcase.include?("kitchen") %>
+            <p>Planning a kitchen renovation in Delhi NCR?</p>
+            <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
+            <%= link_to "Modular kitchen calculator", modular_kitchen_calculator_path, class: "text-link" %>
+          <% elsif item.tag.to_s.include?("Retail") %>
+            <p>Opening a retail store in Delhi NCR?</p>
+            <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
+            <%= link_to "Commercial interior design", interior_service_path("commercial-interior-design"), class: "text-link" %>
           <% else %>
             <p>Planning a similar home in Gurgaon or Delhi NCR?</p>
             <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
