@@ -3,5 +3,6 @@
 User-agent: *
 Allow: /
 Disallow: /up
+Disallow: /rails/
 
 Sitemap: https://arqvexa.in/sitemap.xml

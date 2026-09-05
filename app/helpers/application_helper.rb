@@ -1,10 +1,10 @@
 module ApplicationHelper
   def meta_title
-    content_for?(:meta_title) ? content_for(:meta_title) : "Arqvexa | Interior Design & IT Development in Delhi NCR"
+    content_for?(:meta_title) ? content_for(:meta_title) : "Arqvexa | Interior Design & Technology"
   end
 
   def meta_description
-    content_for?(:meta_description) ? content_for(:meta_description) : "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India."
+    content_for?(:meta_description) ? content_for(:meta_description) : "Arqvexa combines interior design and technology to create modern, functional and innovative spaces for homes and businesses across Delhi NCR and India."
   end
 
   def meta_keywords
@@ -33,7 +33,26 @@ module ApplicationHelper
   end
 
   def canonical_url
-    content_for?(:canonical_url) ? content_for(:canonical_url) : site_url(request.path)
+    raw = content_for?(:canonical_url) ? content_for(:canonical_url) : site_url(canonical_path)
+    normalize_canonical_url(raw)
+  end
+
+  def canonical_path
+    path = request.path.to_s
+    path = "/" if path.blank?
+    path
+  end
+
+  def normalize_canonical_url(url)
+    uri = URI.parse(url.to_s)
+    uri.fragment = nil
+    uri.query = nil
+    normalized_path = uri.path.presence || "/"
+    normalized_path = "/" if normalized_path.blank?
+    uri.path = normalized_path
+    uri.to_s
+  rescue URI::InvalidURIError
+    site_url("/")
   end
 
   def home_page?
