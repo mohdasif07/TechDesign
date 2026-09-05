@@ -462,12 +462,53 @@ function initPortfolioGallery() {
     const nextBtn = gallery.querySelector("[data-gallery-next]");
     const counter = gallery.querySelector("[data-gallery-counter]");
     const progressBar = gallery.querySelector("[data-gallery-progress]");
+    const backdrop = gallery.querySelector("[data-gallery-backdrop]");
+    const track = gallery.querySelector("[data-gallery-track]");
     if (!slides.length) return;
 
     let current = 0;
     let timer = null;
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const autoplayMs = prefersReduced ? 0 : 5500;
+
+    const slideImage = (index) => slides[index]?.querySelector(".portfolio-gallery-image");
+
+    const fitTrack = (index) => {
+      if (!track) return;
+      const img = slideImage(index);
+      if (!img?.naturalWidth) return;
+
+      const ratio = img.naturalWidth / img.naturalHeight;
+      track.classList.remove("is-portrait", "is-square");
+
+      if (ratio < 0.92) {
+        track.classList.add("is-portrait");
+      } else if (ratio < 1.08) {
+        track.classList.add("is-square");
+      }
+    };
+
+    const updateBackdrop = (index) => {
+      if (!backdrop) return;
+      const img = slideImage(index);
+      const src = img?.currentSrc || img?.src;
+      if (src) backdrop.style.backgroundImage = `url("${src}")`;
+    };
+
+    const bindImageFit = (slide, index) => {
+      const img = slideImage(index);
+      if (!img) return;
+      const onReady = () => {
+        if (index === current) {
+          fitTrack(index);
+          updateBackdrop(index);
+        }
+      };
+      if (img.complete) onReady();
+      else img.addEventListener("load", onReady, { once: true });
+    };
+
+    slides.forEach((slide, index) => bindImageFit(slide, index));
 
     const setSlide = (index) => {
       current = (index + slides.length) % slides.length;
@@ -486,6 +527,8 @@ function initPortfolioGallery() {
       if (progressBar) {
         progressBar.style.width = `${((current + 1) / slides.length) * 100}%`;
       }
+      fitTrack(current);
+      updateBackdrop(current);
     };
 
     const next = () => setSlide(current + 1);
@@ -553,6 +596,7 @@ function initPortfolioGallery() {
       }
     });
 
+    setSlide(0);
     restartAutoplay();
   });
 }

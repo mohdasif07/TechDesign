@@ -6,11 +6,15 @@
     <p class="page-lead"><%= item.description %></p>
   </div>
 
-  <%= render "portfolio/gallery", slides: item.gallery %>
+  <div class="portfolio-gallery-stage">
+    <div class="container">
+      <%= render "portfolio/gallery", slides: item.gallery %>
+    </div>
+  </div>
 
   <% if item.case_study_stats.any? %>
     <div class="container">
-      <dl class="portfolio-stats reveal">
+      <dl class="portfolio-stats portfolio-stats--showcase reveal">
         <% item.case_study_stats.each do |stat| %>
           <div class="portfolio-stat">
             <dt><%= stat["label"] %></dt>

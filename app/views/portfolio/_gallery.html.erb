@@ -1,6 +1,8 @@
 <% slides = Array(local_assigns.fetch(:slides)) %>
 <section class="portfolio-gallery reveal" data-portfolio-gallery aria-label="Project photo gallery" tabindex="0">
   <div class="portfolio-gallery-main">
+    <div class="portfolio-gallery-backdrop" data-gallery-backdrop aria-hidden="true"></div>
+
     <div class="portfolio-gallery-progress" aria-hidden="true">
       <span class="portfolio-gallery-progress-bar" data-gallery-progress></span>
     </div>
@@ -11,16 +13,19 @@
       </div>
     <% end %>
 
-    <div class="portfolio-gallery-track">
+    <div class="portfolio-gallery-track" data-gallery-track>
       <% slides.each_with_index do |slide, index| %>
         <figure class="portfolio-gallery-slide<%= " is-active" if index.zero? %>" data-slide="<%= index %>">
-          <%= portfolio_picture_tag slide["image"],
-                alt: slide["alt"],
-                class: "portfolio-gallery-image",
-                loading: index.zero? ? "eager" : "lazy",
-                fetchpriority: index.zero? ? "high" : "auto" %>
+          <div class="portfolio-gallery-foreground">
+            <%= portfolio_picture_tag slide["image"],
+                  alt: slide["alt"],
+                  class: "portfolio-gallery-image",
+                  loading: index.zero? ? "eager" : "lazy",
+                  fetchpriority: index.zero? ? "high" : "auto" %>
+          </div>
           <% if slide["caption"].present? %>
             <figcaption class="portfolio-gallery-caption">
+              <span class="portfolio-gallery-caption-label">View</span>
               <span class="portfolio-gallery-caption-text"><%= slide["caption"] %></span>
             </figcaption>
           <% end %>
@@ -39,7 +44,7 @@
           <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <div class="portfolio-gallery-dots" role="tablist" aria-label="Gallery slides">
+      <div class="portfolio-gallery-dots portfolio-gallery-dots--mobile" role="tablist" aria-label="Gallery slides">
         <% slides.each_with_index do |slide, index| %>
           <button type="button"
                   class="portfolio-gallery-dot<%= " is-active" if index.zero? %>"
@@ -61,7 +66,6 @@
                 role="listitem"
                 aria-label="View <%= slide["caption"].presence || "photo #{index + 1}" %>">
           <%= portfolio_picture_tag slide["image"], alt: "", variant: :thumb %>
-          <span class="portfolio-gallery-thumb-index"><%= index + 1 %></span>
         </button>
       <% end %>
     </div>
