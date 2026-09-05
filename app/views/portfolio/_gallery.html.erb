@@ -1,0 +1,49 @@
+<% slides = Array(local_assigns.fetch(:slides)) %>
+<section class="portfolio-gallery reveal" data-portfolio-gallery aria-label="Project photo gallery">
+  <div class="portfolio-gallery-main">
+    <div class="portfolio-gallery-track">
+      <% slides.each_with_index do |slide, index| %>
+        <figure class="portfolio-gallery-slide<%= " is-active" if index.zero? %>" data-slide="<%= index %>">
+          <%= image_tag slide["image"],
+                alt: slide["alt"],
+                class: "portfolio-gallery-image",
+                loading: index.zero? ? "eager" : "lazy",
+                decoding: "async" %>
+          <% if slide["caption"].present? %>
+            <figcaption class="portfolio-gallery-caption"><%= slide["caption"] %></figcaption>
+          <% end %>
+        </figure>
+      <% end %>
+    </div>
+    <% if slides.size > 1 %>
+      <button type="button" class="portfolio-gallery-nav portfolio-gallery-prev" aria-label="Previous photo" data-gallery-prev>
+        <span aria-hidden="true">←</span>
+      </button>
+      <button type="button" class="portfolio-gallery-nav portfolio-gallery-next" aria-label="Next photo" data-gallery-next>
+        <span aria-hidden="true">→</span>
+      </button>
+      <div class="portfolio-gallery-dots" role="tablist" aria-label="Gallery slides">
+        <% slides.each_with_index do |slide, index| %>
+          <button type="button"
+                  class="portfolio-gallery-dot<%= " is-active" if index.zero? %>"
+                  role="tab"
+                  aria-selected="<%= index.zero? %>"
+                  aria-label="Show photo <%= index + 1 %> of <%= slides.size %>"
+                  data-gallery-dot="<%= index %>"></button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <% if slides.size > 1 %>
+    <div class="portfolio-gallery-thumbs">
+      <% slides.each_with_index do |slide, index| %>
+        <button type="button"
+                class="portfolio-gallery-thumb<%= " is-active" if index.zero? %>"
+                data-gallery-thumb="<%= index %>"
+                aria-label="View <%= slide["caption"].presence || "photo #{index + 1}" %>">
+          <%= image_tag slide["image"], alt: "", loading: "lazy", decoding: "async" %>
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+</section>

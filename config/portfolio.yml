@@ -220,25 +220,62 @@ items:
       timeline: Ongoing production support alongside feature development
       note: Infrastructure work supporting enterprise Rails applications.
 
-  - id: modern-3bhk
+  - id: modern-3bhk-gurgaon
     category: interior
-    tag: Residential
-    title: Modern 3BHK
-    description: Warm neutrals, open layout, and smart storage for urban living.
-    visual: room
-    location: Gurgaon
+    tag: Residential · Gurgaon
+    title: Modern 3BHK — Sector 57, Gurgaon
+    description: Open, calm 3BHK with warm neutrals, smart storage and an open kitchen-dining zone — delivered in 10 weeks across 1,450 sq ft.
+    visual: photo
+    location: Sector 57, Gurgaon
     case_study:
-      type: Studio concept
-      summary: Concept layout for a 3BHK apartment with open living-dining, balanced storage and warm neutral finishes.
-      problem: Urban 3BHK homes often lack dedicated storage and clear zoning for work-from-home corners.
-      approach: Zoning plan with 2D layout, 3D views for living and master bedroom, and wardrobe integration in secondary rooms.
+      type: Client project
+      cover_image: /portfolio/modern-3bhk-gurgaon/bedroom-tufted-headboard.png
+      summary: A 1,450 sq ft 3BHK in Sector 57, Gurgaon — designed for a young working couple who wanted an open, calm and low-maintenance home with smart storage and natural light throughout.
+      problem: The apartment had no store room, so every bedroom and common area needed thoughtful storage without making rooms feel bulky. The couple also wanted a flexible layout for guests and a kitchen connected to daily life, not closed off from the dining space.
+      approach: We opened the kitchen to the dining area with a peninsula counter, used a warm neutral palette with brass accents, and planned full-height wardrobes with mixed open shelving and lift-up storage in both bedrooms. False ceiling lighting was zoned separately for living, dining and a study nook.
+      result: An open, light-filled home with the storage capacity of a much larger apartment — delivered in 10 weeks without heavy carving, dark wood or finishes that would date quickly.
+      property_type: 3BHK apartment · 1,450 sq ft
+      timeline: Design & 3D approval — 2 weeks · Execution — 8 weeks · Total — 10 weeks
+      budget: "₹9.5L (Full 3BHK tier)"
+      stats:
+        - label: Area
+          value: 1,450 sq ft
+        - label: Delivered in
+          value: 10 weeks
+        - label: Location
+          value: Sector 57, Gurgaon
+        - label: Budget band
+          value: ₹9.5L
       features:
-        - Living-dining layout with TV unit storage
-        - Master bedroom wardrobe plan
-        - Material palette for low-maintenance finishes
-      property_type: 3BHK apartment
-      timeline: Design phase typically 2–4 weeks before execution
-      note: Concept design — not a specific client property.
+        - Open kitchen-dining with peninsula bar seating
+        - Warm neutral palette — ivory, sand and walnut veneer with brass accents
+        - Full-height wardrobes with open shelving and lift-up storage
+        - False ceiling with cove and zoned spot lighting
+        - Modular kitchen in matte laminate with quartz countertop
+        - Engineered wood flooring in bedrooms, vitrified tiles in common areas
+      specifications:
+        flooring: Engineered wood (bedrooms), vitrified tiles (common areas)
+        countertops: Quartz
+        cabinetry: Matte laminate with brass hardware
+        lighting: Cove + zoned spot lighting with false ceiling
+        storage: Full-height wardrobes, lift-up units, open shelving
+      gallery:
+        - image: /portfolio/modern-3bhk-gurgaon/bedroom-tufted-headboard.png
+          alt: Master bedroom with tufted headboard and full-height grey wardrobe in Gurgaon 3BHK interior by Arqvexa
+          caption: Master bedroom — tufted headboard with stone-finish wardrobe wall
+        - image: /portfolio/modern-3bhk-gurgaon/bedroom-minimal-white.png
+          alt: Minimal guest bedroom with white full-height wardrobe and warm accent bedding in Gurgaon apartment
+          caption: Guest bedroom — clean white wardrobe with warm accent tones
+        - image: /portfolio/modern-3bhk-gurgaon/bedroom-purple-accent.png
+          alt: Secondary bedroom with purple accent wall and marble-finish wardrobe in Sector 57 Gurgaon home
+          caption: Secondary bedroom — accent wall with marble-finish wardrobe
+        - image: /portfolio/modern-3bhk-gurgaon/bedroom-modern-render.png
+          alt: 3D interior visualization of modern bedroom with terracotta accents and integrated storage
+          caption: 3D visualization — bedroom layout approved before execution
+        - image: /portfolio/modern-3bhk-gurgaon/bedroom-rustic-wood.png
+          alt: Bedroom with reclaimed wood barn-style wardrobe and custom shelving in Gurgaon residential interior
+          caption: Custom wardrobe detail — reclaimed wood accents with open shelving
+      note: Residential interior project delivered by Arqvexa in Gurgaon. Client name withheld for privacy.
 
   - id: modern-office
     category: interior

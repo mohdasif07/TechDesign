@@ -1,7 +1,8 @@
 <% seo_page(
   title: "#{@item.title} | #{@item.category_label} Portfolio | Arqvexa",
   description: @item.case_study_summary.presence || @item.description,
-  canonical: site_url(@item.path)
+  canonical: site_url(@item.path),
+  og_image: (@item.cover_image.present? ? site_url(@item.cover_image) : nil)
 ) %>
 
 <% breadcrumbs(
@@ -10,112 +11,141 @@
   { label: @item.title, url: site_url(@item.path) }
 ) %>
 
+<% if @item.has_gallery? %>
+  <% content_for :structured_data do %>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": <%= @item.title.to_json %>,
+      "description": <%= (@item.case_study_summary || @item.description).to_json %>,
+      "url": "<%= site_url(@item.path) %>",
+      "image": [
+        <% @item.gallery.each_with_index do |slide, index| %>
+        {
+          "@type": "ImageObject",
+          "contentUrl": "<%= site_url(slide["image"]) %>",
+          "caption": <%= slide["caption"].to_json %>,
+          "description": <%= slide["alt"].to_json %>
+        }<%= "," unless index == @item.gallery.size - 1 %>
+        <% end %>
+      ]
+    }
+    </script>
+    <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
+  <% end %>
+<% end %>
+
 <%= render "shared/navigation" %>
 
 <main id="main-content" class="page-main">
   <%= render_breadcrumbs %>
 
-  <section class="page-hero <%= @item.interior? ? "page-hero-interior" : "page-hero-tech" %>">
-    <div class="container reveal">
-      <p class="portfolio-type-label"><%= @item.case_study["type"] || "Project" %></p>
-      <span class="blog-category <%= @item.interior? ? "interior-label" : "tech-label" %>"><%= @item.category_label %></span>
-      <h1><%= @item.title %></h1>
-      <p class="page-lead"><%= @item.description %></p>
-      <% if @item.case_study_role.present? %>
-        <p class="portfolio-role-line"><strong>Role:</strong> <%= @item.case_study_role %></p>
-      <% end %>
-      <% if @item.location.present? %>
-        <p class="portfolio-location-line">Location context: <%= @item.location %></p>
-      <% end %>
-    </div>
-  </section>
+  <% if @item.has_gallery? %>
+    <%= render "portfolio/showcase", item: @item %>
+  <% else %>
+    <section class="page-hero <%= @item.interior? ? "page-hero-interior" : "page-hero-tech" %>">
+      <div class="container reveal">
+        <p class="portfolio-type-label"><%= @item.case_study["type"] || "Project" %></p>
+        <span class="blog-category <%= @item.interior? ? "interior-label" : "tech-label" %>"><%= @item.category_label %></span>
+        <h1><%= @item.title %></h1>
+        <p class="page-lead"><%= @item.description %></p>
+        <% if @item.case_study_role.present? %>
+          <p class="portfolio-role-line"><strong>Role:</strong> <%= @item.case_study_role %></p>
+        <% end %>
+        <% if @item.location.present? %>
+          <p class="portfolio-location-line">Location context: <%= @item.location %></p>
+        <% end %>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="container content-prose reveal">
-      <% if @item.concept? %>
-        <p class="concept-notice"><strong>Note:</strong> This entry is a studio concept illustrating the type of work Arqvexa delivers — not a named client case study.</p>
-      <% end %>
+    <section class="section">
+      <div class="container content-prose reveal">
+        <% if @item.concept? %>
+          <p class="concept-notice"><strong>Note:</strong> This entry is a studio concept illustrating the type of work Arqvexa delivers — not a named client case study.</p>
+        <% end %>
 
-      <% if @item.case_study["summary"].present? %>
-        <h2>Overview</h2>
-        <p><%= @item.case_study["summary"] %></p>
-      <% end %>
+        <% if @item.case_study["summary"].present? %>
+          <h2>Overview</h2>
+          <p><%= @item.case_study["summary"] %></p>
+        <% end %>
 
-      <% if @item.case_study["problem"].present? %>
-        <h2>Challenge</h2>
-        <p><%= @item.case_study["problem"] %></p>
-      <% end %>
+        <% if @item.case_study["problem"].present? %>
+          <h2>Challenge</h2>
+          <p><%= @item.case_study["problem"] %></p>
+        <% end %>
 
-      <% if @item.case_study["approach"].present? %>
-        <h2>Approach</h2>
-        <p><%= @item.case_study["approach"] %></p>
-      <% end %>
+        <% if @item.case_study["approach"].present? %>
+          <h2>Approach</h2>
+          <p><%= @item.case_study["approach"] %></p>
+        <% end %>
 
-      <% if @item.case_study_contributions.any? %>
-        <h2>Key contributions</h2>
-        <ul>
-          <% @item.case_study_contributions.each do |contribution| %>
-            <li><%= contribution %></li>
-          <% end %>
-        </ul>
-      <% end %>
+        <% if @item.case_study_contributions.any? %>
+          <h2>Key contributions</h2>
+          <ul>
+            <% @item.case_study_contributions.each do |contribution| %>
+              <li><%= contribution %></li>
+            <% end %>
+          </ul>
+        <% end %>
 
-      <% if @item.case_study["features"].present? %>
-        <h2><%= @item.tech? ? "Key features" : "Design focus" %></h2>
-        <ul>
-          <% @item.case_study["features"].each do |feature| %>
-            <li><%= feature %></li>
-          <% end %>
-        </ul>
-      <% end %>
+        <% if @item.case_study["features"].present? %>
+          <h2><%= @item.tech? ? "Key features" : "Design focus" %></h2>
+          <ul>
+            <% @item.case_study["features"].each do |feature| %>
+              <li><%= feature %></li>
+            <% end %>
+          </ul>
+        <% end %>
 
-      <% if @item.case_study_stack.any? %>
-        <h2>Technology stack</h2>
-        <dl class="portfolio-stack">
-          <% @item.case_study_stack.each do |label, value| %>
-            <div class="portfolio-stack-row">
-              <dt><%= label.to_s.humanize %></dt>
-              <dd><%= value %></dd>
-            </div>
-          <% end %>
-        </dl>
-      <% elsif @item.case_study["stack"].present? && @item.case_study["stack"].is_a?(String) %>
-        <h2>Technology</h2>
-        <p><%= @item.case_study["stack"] %></p>
-      <% end %>
+        <% if @item.case_study_stack.any? %>
+          <h2>Technology stack</h2>
+          <dl class="portfolio-stack">
+            <% @item.case_study_stack.each do |label, value| %>
+              <div class="portfolio-stack-row">
+                <dt><%= label.to_s.humanize %></dt>
+                <dd><%= value %></dd>
+              </div>
+            <% end %>
+          </dl>
+        <% elsif @item.case_study["stack"].present? && @item.case_study["stack"].is_a?(String) %>
+          <h2>Technology</h2>
+          <p><%= @item.case_study["stack"] %></p>
+        <% end %>
 
-      <% if @item.case_study_challenges.any? %>
-        <h2>Technical challenges</h2>
-        <div class="portfolio-challenges">
-          <% @item.case_study_challenges.each do |challenge| %>
-            <article class="portfolio-challenge">
-              <h3><%= challenge["title"] %></h3>
-              <% if challenge["problem"].present? %>
-                <p><strong>Problem:</strong> <%= challenge["problem"] %></p>
-              <% end %>
-              <% if challenge["solution"].present? %>
-                <p><strong>Solution:</strong> <%= challenge["solution"] %></p>
-              <% end %>
-            </article>
-          <% end %>
-        </div>
-      <% end %>
+        <% if @item.case_study_challenges.any? %>
+          <h2>Technical challenges</h2>
+          <div class="portfolio-challenges">
+            <% @item.case_study_challenges.each do |challenge| %>
+              <article class="portfolio-challenge">
+                <h3><%= challenge["title"] %></h3>
+                <% if challenge["problem"].present? %>
+                  <p><strong>Problem:</strong> <%= challenge["problem"] %></p>
+                <% end %>
+                <% if challenge["solution"].present? %>
+                  <p><strong>Solution:</strong> <%= challenge["solution"] %></p>
+                <% end %>
+              </article>
+            <% end %>
+          </div>
+        <% end %>
 
-      <% if @item.case_study["property_type"].present? %>
-        <h2>Property type</h2>
-        <p><%= @item.case_study["property_type"] %></p>
-      <% end %>
+        <% if @item.case_study["property_type"].present? %>
+          <h2>Property type</h2>
+          <p><%= @item.case_study["property_type"] %></p>
+        <% end %>
 
-      <% if @item.case_study["timeline"].present? %>
-        <h2>Timeline</h2>
-        <p><%= @item.case_study["timeline"] %></p>
-      <% end %>
+        <% if @item.case_study["timeline"].present? %>
+          <h2>Timeline</h2>
+          <p><%= @item.case_study["timeline"] %></p>
+        <% end %>
 
-      <% if @item.case_study["note"].present? %>
-        <p class="portfolio-note"><em><%= @item.case_study["note"] %></em></p>
-      <% end %>
-    </div>
-  </section>
+        <% if @item.case_study["note"].present? %>
+          <p class="portfolio-note"><em><%= @item.case_study["note"] %></em></p>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
 
   <section class="section cta-inline">
     <div class="container">

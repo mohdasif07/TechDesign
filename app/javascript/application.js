@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initPortfolioFilter();
   initTools();
+  initPortfolioGallery();
 });
 
 function initNavigation() {
@@ -449,6 +450,77 @@ function initProjectRecommender() {
     if (linkEl) {
       linkEl.innerHTML = `<a href="${rec.path}" class="text-link">Learn about ${rec.title.toLowerCase()} →</a>`;
     }
+  });
+}
+
+function initPortfolioGallery() {
+  document.querySelectorAll("[data-portfolio-gallery]").forEach((gallery) => {
+    const slides = [...gallery.querySelectorAll(".portfolio-gallery-slide")];
+    const dots = [...gallery.querySelectorAll("[data-gallery-dot]")];
+    const thumbs = [...gallery.querySelectorAll("[data-gallery-thumb]")];
+    const prevBtn = gallery.querySelector("[data-gallery-prev]");
+    const nextBtn = gallery.querySelector("[data-gallery-next]");
+    if (!slides.length) return;
+
+    let current = 0;
+    let timer = null;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const autoplayMs = prefersReduced ? 0 : 5500;
+
+    const setSlide = (index) => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle("is-active", i === current));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === current);
+        dot.setAttribute("aria-selected", i === current ? "true" : "false");
+      });
+      thumbs.forEach((thumb, i) => thumb.classList.toggle("is-active", i === current));
+    };
+
+    const next = () => setSlide(current + 1);
+    const prev = () => setSlide(current - 1);
+
+    const restartAutoplay = () => {
+      if (!autoplayMs || slides.length < 2) return;
+      clearInterval(timer);
+      timer = window.setInterval(next, autoplayMs);
+    };
+
+    nextBtn?.addEventListener("click", () => {
+      next();
+      restartAutoplay();
+    });
+    prevBtn?.addEventListener("click", () => {
+      prev();
+      restartAutoplay();
+    });
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        setSlide(Number(dot.dataset.galleryDot));
+        restartAutoplay();
+      });
+    });
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        setSlide(Number(thumb.dataset.galleryThumb));
+        restartAutoplay();
+      });
+    });
+
+    gallery.addEventListener("mouseenter", () => clearInterval(timer));
+    gallery.addEventListener("mouseleave", restartAutoplay);
+    gallery.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") {
+        next();
+        restartAutoplay();
+      }
+      if (event.key === "ArrowLeft") {
+        prev();
+        restartAutoplay();
+      }
+    });
+
+    restartAutoplay();
   });
 }
 

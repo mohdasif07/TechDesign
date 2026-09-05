@@ -1,4 +1,9 @@
 <article class="work-card portfolio-card <%= item.work_card_class %>" data-category="<%= item.category %>">
+  <% if item.cover_image.present? %>
+    <div class="portfolio-card-photo">
+      <%= image_tag item.cover_image, alt: "#{item.title} — #{item.tag}", loading: "lazy", decoding: "async" %>
+    </div>
+  <% else %>
   <% case item.visual %>
   <% when "digital" %>
     <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
@@ -12,6 +17,7 @@
     <div class="visual-office"><div class="desk"></div><div class="screen"></div><div class="plant2"></div><div class="chair"></div></div>
   <% when "kitchen" %>
     <div class="visual-kitchen"><div class="k-counter"></div><div class="k-cabinets"></div><div class="k-hood"></div><div class="k-island"></div></div>
+  <% end %>
   <% end %>
   <div class="work-meta">
     <span><%= item.tag %></span>

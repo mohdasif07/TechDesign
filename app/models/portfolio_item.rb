@@ -89,4 +89,24 @@ class PortfolioItem
   def case_study_stack
     case_study["stack"].is_a?(Hash) ? case_study["stack"] : {}
   end
+
+  def gallery
+    Array(case_study["gallery"])
+  end
+
+  def has_gallery?
+    gallery.any?
+  end
+
+  def cover_image
+    case_study["cover_image"].presence || gallery.dig(0, "image")
+  end
+
+  def case_study_stats
+    Array(case_study["stats"])
+  end
+
+  def case_study_specifications
+    case_study["specifications"].is_a?(Hash) ? case_study["specifications"] : {}
+  end
 end

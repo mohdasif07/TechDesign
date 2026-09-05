@@ -1,0 +1,99 @@
+<section class="portfolio-showcase-hero">
+  <div class="container portfolio-showcase-head reveal">
+    <p class="portfolio-type-label"><%= item.case_study["type"] %></p>
+    <span class="blog-category interior-label"><%= item.category_label %></span>
+    <h1><%= item.title %></h1>
+    <p class="page-lead"><%= item.description %></p>
+  </div>
+
+  <%= render "portfolio/gallery", slides: item.gallery %>
+
+  <% if item.case_study_stats.any? %>
+    <div class="container">
+      <dl class="portfolio-stats reveal">
+        <% item.case_study_stats.each do |stat| %>
+          <div class="portfolio-stat">
+            <dt><%= stat["label"] %></dt>
+            <dd><%= stat["value"] %></dd>
+          </div>
+        <% end %>
+      </dl>
+    </div>
+  <% end %>
+</section>
+
+<section class="section portfolio-showcase-body">
+  <div class="container portfolio-showcase-grid reveal">
+    <div class="portfolio-showcase-main content-prose">
+      <% if item.case_study["summary"].present? %>
+        <h2>Overview</h2>
+        <p><%= item.case_study["summary"] %></p>
+      <% end %>
+
+      <% if item.case_study["problem"].present? %>
+        <h2>Client brief</h2>
+        <p><%= item.case_study["problem"] %></p>
+      <% end %>
+
+      <% if item.case_study["approach"].present? %>
+        <h2>Design approach</h2>
+        <p><%= item.case_study["approach"] %></p>
+      <% end %>
+
+      <% if item.case_study["features"].present? %>
+        <h2>Design focus</h2>
+        <ul>
+          <% item.case_study["features"].each do |feature| %>
+            <li><%= feature %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <% if item.case_study["result"].present? %>
+        <h2>Result</h2>
+        <p><%= item.case_study["result"] %></p>
+      <% end %>
+
+      <% if item.case_study["timeline"].present? %>
+        <h2>Timeline</h2>
+        <p><%= item.case_study["timeline"] %></p>
+      <% end %>
+
+      <% if item.case_study["note"].present? %>
+        <p class="portfolio-note"><em><%= item.case_study["note"] %></em></p>
+      <% end %>
+    </div>
+
+    <% if item.case_study_specifications.any? || item.case_study["budget"].present? %>
+      <aside class="portfolio-showcase-aside">
+        <% if item.case_study_specifications.any? %>
+          <div class="portfolio-spec-card reveal delay-1">
+            <h2>Materials &amp; specifications</h2>
+            <dl class="portfolio-spec-list">
+              <% item.case_study_specifications.each do |label, value| %>
+                <div class="portfolio-spec-row">
+                  <dt><%= label.to_s.humanize %></dt>
+                  <dd><%= value %></dd>
+                </div>
+              <% end %>
+            </dl>
+          </div>
+        <% end %>
+
+        <% if item.case_study["budget"].present? %>
+          <div class="portfolio-budget-card reveal delay-2">
+            <span class="portfolio-budget-label">Budget band</span>
+            <strong><%= item.case_study["budget"] %></strong>
+            <p>Indicative project tier — final quote depends on scope, materials and site conditions.</p>
+          </div>
+        <% end %>
+
+        <div class="portfolio-aside-cta reveal delay-3">
+          <p>Planning a similar home in Gurgaon or Delhi NCR?</p>
+          <%= link_to "Book a consultation", contact_page_path(anchor: "contact", service: "Interior Design"), class: "btn btn-primary btn-block" %>
+          <%= link_to "Modular kitchen calculator", modular_kitchen_calculator_path, class: "text-link" %>
+        </div>
+      </aside>
+    <% end %>
+  </div>
+</section>
