@@ -40,13 +40,17 @@
               <p><%= review.quote %></p>
             </blockquote>
 
-            <footer class="client-review-author">
+            <div class="client-review-author">
               <span class="client-review-avatar" aria-hidden="true"><%= review.initials %></span>
               <div class="client-review-author-text">
                 <strong><%= review.name %></strong>
-                <span><%= review.role %> · <%= review.location %></span>
+                <div class="client-review-author-meta">
+                  <span class="client-review-role"><%= review.role %></span>
+                  <span class="client-review-sep" aria-hidden="true"></span>
+                  <span class="client-review-location"><%= review.location %></span>
+                </div>
               </div>
-            </footer>
+            </div>
           </div>
         </article>
       <% end %>
