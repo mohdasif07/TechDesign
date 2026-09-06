@@ -56,6 +56,7 @@
   }
   </script>
   <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+  <%= json_ld_script({ "@context" => "https://schema.org", "@graph" => client_reviews_schema(ClientReview.for_division(:it), service_name: "IT Development Services") }) %>
 <% end %>
 
 <%= render "shared/navigation" %>
@@ -139,6 +140,8 @@
       </div>
     </div>
   </section>
+
+  <%= render "shared/client_reviews", division: :it %>
 
   <section class="section content-block content-block-dark">
     <div class="container content-prose reveal">

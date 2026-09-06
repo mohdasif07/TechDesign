@@ -115,6 +115,29 @@ module SeoHelper
     }
   end
 
+  def client_reviews_schema(reviews, service_name:)
+    reviews.map do |review|
+      {
+        "@type" => "Review",
+        "author" => {
+          "@type" => "Person",
+          "name" => review.name
+        },
+        "reviewBody" => review.quote,
+        "reviewRating" => {
+          "@type" => "Rating",
+          "ratingValue" => review.rating.to_s,
+          "bestRating" => "5"
+        },
+        "itemReviewed" => {
+          "@type" => "Service",
+          "name" => service_name,
+          "provider" => schema_organization_ref
+        }
+      }
+    end
+  end
+
   private
 
   def normalize_breadcrumb_items(items)

@@ -1,0 +1,54 @@
+reviews:
+  - id: interior-gurgaon-3bhk
+    division: interior
+    name: Priya & Karan S.
+    role: Homeowners
+    location: Sector 57, Gurgaon
+    project: Full 3BHK interior
+    rating: 5
+    quote: Shalu understood our layout constraints immediately — especially storage without a store room. The 3D views helped us finalise the kitchen-dining layout before any work started, and the team kept us updated through execution.
+
+  - id: interior-noida-office
+    division: interior
+    name: Rajesh Mehta
+    role: Founder, SaaS startup
+    location: Sector 62, Noida
+    project: Office interior · 2,400 sq ft
+    rating: 5
+    quote: We needed a professional office that still felt warm for a small team. Arqvexa balanced meeting zones, focus areas and brand colours without overspending. Site coordination was smooth and handover was on schedule.
+
+  - id: interior-delhi-kitchen
+    division: interior
+    name: Ananya Sharma
+    role: Working professional
+    location: Vasant Kunj, Delhi
+    project: Modular kitchen redesign
+    rating: 5
+    quote: I hired them only for the kitchen, but the process felt as structured as a full-home project. Clear material options, practical storage planning, and renders that matched the finished space closely.
+
+  - id: it-sme-website
+    division: it
+    name: Vikram Singh
+    role: Business owner
+    location: Delhi NCR
+    project: Company website & SEO setup
+    rating: 5
+    quote: Asif translated our service pages into a clean, fast website with proper structure for search. Communication was direct, milestones were clear, and we had a live site without the usual back-and-forth delays.
+
+  - id: it-enterprise-platform
+    division: it
+    name: Neha Kapoor
+    role: Operations manager
+    location: India · Remote
+    project: Enterprise web platform
+    rating: 5
+    quote: Our project involved complex workflows and reporting needs. The team handled API design, UI integration and production issues calmly — with documentation and demos that made it easy for non-technical stakeholders to follow.
+
+  - id: it-startup-mvp
+    division: it
+    name: Arjun Malhotra
+    role: Startup founder
+    location: Gurgaon
+    project: MVP web application
+    rating: 5
+    quote: We needed an MVP we could show investors quickly, without cutting corners on architecture. Weekly demos, sensible tech choices and a codebase we could extend after launch — exactly what we were looking for.

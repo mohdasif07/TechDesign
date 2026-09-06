@@ -52,6 +52,58 @@ items:
       timeline: Ongoing enterprise modernization engagement
       note: Hands-on development work on a production warehouse management platform. Specific client workflows and credentials are not disclosed publicly.
 
+  - id: f45-ai-admin-module
+    category: tech
+    tag: AI Platform
+    title: F45 Admin Console — AI Feature Module
+    description: AI administration module for managing agents, conversations, and settings — React frontend integrated; backend APIs and LLM integration in progress.
+    visual: crm
+    location: Remote · India
+    case_study:
+      type: Real project
+      role: Full Stack Developer
+      summary: An AI-focused administration and management module built for an enterprise admin console. The module centralises AI dashboard metrics, agent configuration, conversation management, and AI-related settings behind role-based access control — with the full frontend experience completed and backend architecture underway.
+      problem: Operations and admin teams needed a single interface to manage AI agents, review activity, handle conversations, and configure AI settings — without exposing functionality to users who lacked the right permissions.
+      approach: Structured the module into four core areas — Dashboard, Agents, Conversations, and Settings — each with dedicated React interfaces, shared navigation patterns, and permission-gated routes. Frontend flows were built and integrated using mock data while backend APIs and LLM provider integration are designed in parallel.
+      status: Frontend complete for all four major AI pages and integrated into the application. Current UI runs on mock/static data while backend APIs, persistent settings, and live AI/LLM integration are in active development.
+      contributions:
+        - Built and integrated React frontend for AI Dashboard, Agents, Conversations, and Settings
+        - Implemented role-based access control across all AI module routes and navigation
+        - Designed UI flows for agent configuration, prompt management, voice settings, and tools setup
+        - Developed conversation management interfaces with message history and contact context
+        - Created dashboard layouts for performance metrics, activity monitoring, and call quality overview
+        - Implemented AI settings screens for notifications, reminders, and user preferences
+        - Prepared frontend architecture for REST API integration once backend endpoints are live
+      features:
+        - "AI Dashboard: performance metrics, activity monitoring, call quality overview, agent insights"
+        - "AI Agents: agent management, prompts, voice config, tools, compliance and widget settings"
+        - "AI Conversations: conversation list, chat interface, message history, contact information"
+        - "AI Settings: notification preferences, reminders, user preferences, AI configuration"
+        - Role-based access control for Dashboard, Agents, Conversations, and Settings
+        - Modular React architecture ready for backend API wiring
+      stack:
+        frontend: React, JavaScript, component-based UI
+        backend: Ruby on Rails (API layer in development)
+        architecture: REST APIs, Role-Based Access Control, AI agent architecture
+        ai: LLM provider integration and prompt management (planned)
+        other: Conversation management, analytics and monitoring (planned)
+      roadmap:
+        - Backend API development for agents, conversations, and settings
+        - AI/LLM provider integration and agent configuration APIs
+        - Conversation and messaging APIs with persistent storage
+        - Dashboard analytics APIs with live activity and performance data
+        - Token usage and cost tracking
+        - Frontend-to-backend integration, QA, and production deployment
+      challenges:
+        - title: Frontend-first with evolving backend contracts
+          problem: AI features depend on backend and LLM APIs still being finalised while the UI needed to ship first.
+          solution: Built integrated React interfaces against mock data with clear API integration points for the next phase.
+        - title: Permission-scoped AI functionality
+          problem: Different admin roles need access to different AI areas without exposing sensitive configuration.
+          solution: Role-based route and navigation gating across Dashboard, Agents, Conversations, and Settings.
+      timeline: Frontend phase complete · Backend and AI integration phase in progress
+      note: Enterprise admin console work — client names, credentials, internal URLs, and production endpoints are not disclosed publicly. Live AI/LLM integration is not yet in production.
+
   - id: warehouse-geofencing
     category: tech
     tag: Geolocation

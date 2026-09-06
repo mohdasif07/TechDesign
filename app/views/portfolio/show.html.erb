@@ -115,6 +115,20 @@
           <p><%= @item.case_study["property_type"] %></p>
         <% end %>
 
+        <% if @item.case_study["status"].present? %>
+          <h2>Current status</h2>
+          <p><%= @item.case_study["status"] %></p>
+        <% end %>
+
+        <% if Array(@item.case_study["roadmap"]).any? %>
+          <h2>Roadmap</h2>
+          <ul>
+            <% @item.case_study["roadmap"].each do |roadmap_item| %>
+              <li><%= roadmap_item %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
         <% if @item.case_study["timeline"].present? %>
           <h2>Timeline</h2>
           <p><%= @item.case_study["timeline"] %></p>

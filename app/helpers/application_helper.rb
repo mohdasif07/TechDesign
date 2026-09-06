@@ -160,4 +160,17 @@ module ApplicationHelper
     end
     icons.fetch(slug, division == "interior" ? "⌂" : "◆")
   end
+
+  def review_stars(rating, max: 5)
+    full = rating.to_i.clamp(0, max)
+    empty = max - full
+    label = "#{full} out of #{max} stars"
+
+    content_tag(:div, class: "review-stars", role: "img", aria: { label: label }) do
+      safe_join([
+        content_tag(:span, "★" * full, class: "review-stars-filled", aria: { hidden: true }),
+        (empty.positive? ? content_tag(:span, "★" * empty, class: "review-stars-empty", aria: { hidden: true }) : nil)
+      ].compact)
+    end
+  end
 end
