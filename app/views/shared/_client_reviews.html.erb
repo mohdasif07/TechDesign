@@ -5,42 +5,33 @@
 <% variant = division == "interior" ? "interior" : "tech" %>
 <% lead =
      if variant == "interior"
-       "Feedback from residential and commercial interior clients across Delhi NCR."
+       "What residential and commercial clients across Delhi NCR say about working with us."
      else
-       "Feedback from businesses we have helped with websites, apps and custom software."
+       "What founders and teams say about our websites, apps and custom software work."
      end %>
 
 <section class="section client-reviews client-reviews--<%= variant %>" id="reviews" aria-labelledby="client-reviews-heading-<%= variant %>">
   <div class="container">
-    <div class="client-reviews-layout reveal">
-      <div class="client-reviews-intro">
+    <div class="section-head compact client-reviews-head reveal">
+      <div>
         <div class="eyebrow"><span></span> Client reviews</div>
         <h2 id="client-reviews-heading-<%= variant %>">
           <% if variant == "interior" %>
-            Trusted by <em>homeowners &amp; businesses.</em>
+            Loved by <em>homeowners &amp; businesses.</em>
           <% else %>
             Trusted by <em>founders &amp; teams.</em>
           <% end %>
         </h2>
-        <p><%= lead %></p>
-
-        <div class="client-reviews-trust" aria-hidden="true">
-          <div class="client-reviews-trust-item">
-            <strong><%= reviews.size %></strong>
-            <span>Featured reviews</span>
-          </div>
-          <div class="client-reviews-trust-item">
-            <strong>5★</strong>
-            <span>Client satisfaction</span>
-          </div>
-        </div>
       </div>
+      <p><%= lead %></p>
+    </div>
 
-      <div class="client-reviews-grid">
-        <% reviews.each_with_index do |review, index| %>
-          <% delay_class = index.positive? ? " delay-#{[index, 3].min}" : nil %>
-          <article class="client-review-card reveal <%= delay_class %>">
-            <div class="client-review-top">
+    <div class="client-reviews-grid reveal">
+      <% reviews.each_with_index do |review, index| %>
+        <% delay_class = index.positive? ? " delay-#{[index, 3].min}" : nil %>
+        <article class="client-review-card <%= delay_class %>">
+          <div class="client-review-card-inner">
+            <div class="client-review-meta">
               <%= review_stars(review.rating) %>
               <span class="client-review-project"><%= review.project %></span>
             </div>
@@ -51,14 +42,14 @@
 
             <footer class="client-review-author">
               <span class="client-review-avatar" aria-hidden="true"><%= review.initials %></span>
-              <div>
+              <div class="client-review-author-text">
                 <strong><%= review.name %></strong>
                 <span><%= review.role %> · <%= review.location %></span>
               </div>
             </footer>
-          </article>
-        <% end %>
-      </div>
+          </div>
+        </article>
+      <% end %>
     </div>
   </div>
 </section>
