@@ -36,8 +36,9 @@ Required environment variables:
 | `RAILS_MASTER_KEY` | From `config/master.key` |
 | `APP_HOST` | `arqvexa.in` |
 | `WEB3FORMS_ACCESS_KEY` | From [web3forms.com](https://web3forms.com) |
-| `MAILER_FROM` | `Arqvexa <mohdasif.dev01@gmail.com>` |
-| `CONTACT_EMAIL` | `mohdasif.dev01@gmail.com` |
+| `MAILER_FROM` | `Arqvexa <hello@arqvexa.in>` |
+| `CONTACT_EMAIL` | `hello@arqvexa.in` (public) |
+| `CONTACT_EMAIL_INTERNAL` | Internal delivery inbox (e.g. Gmail for form notifications) |
 | `GOOGLE_ANALYTICS_ID` | Optional — GA4 measurement ID |
 
 Push to `main` triggers auto-deploy when connected to Render.
@@ -56,7 +57,7 @@ Push to `main` triggers auto-deploy when connected to Render.
 
 ## Contact form email
 
-Enquiries go to **mohdasif.dev01@gmail.com** via Web3Forms (browser-side).
+Enquiries are delivered to the internal inbox configured in Web3Forms / `CONTACT_EMAIL_INTERNAL`. Public-facing contact details use **hello@arqvexa.in**.
 
 1. Open [https://web3forms.com](https://web3forms.com)
 2. Enter email → Create Access Key

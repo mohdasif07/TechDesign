@@ -12,27 +12,10 @@
 ) %>
 
 <% content_for :structured_data do %>
-  <script type="application/ld+json"><%= service_schema_json(@service) %></script>
-  <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
+  <%= json_ld_script(service_schema(@service)) %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
   <% if @service.faqs.any? %>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        <% @service.faqs.each_with_index do |faq, index| %>
-        {
-          "@type": "Question",
-          "name": <%= faq["question"].to_json %>,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": <%= faq["answer"].to_json %>
-          }
-        }<%= "," unless index == @service.faqs.length - 1 %>
-        <% end %>
-      ]
-    }
-    </script>
+    <%= json_ld_script(faq_page_schema(@service.faqs)) %>
   <% end %>
 <% end %>
 

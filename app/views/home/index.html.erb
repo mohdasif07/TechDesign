@@ -1,6 +1,6 @@
 <% seo_page(
-  title: "Arqvexa | Interior Design & Technology",
-  description: "Arqvexa combines interior design and technology to create modern, functional and innovative spaces for homes and businesses across Delhi NCR and India.",
+  title: "Arqvexa | Interior Design & IT Development in Delhi NCR",
+  description: "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India.",
   canonical: site_url("/"),
   keywords: "interior design Delhi NCR, web development Delhi, IT company Gurgaon, website design Noida, modular kitchen, mobile app development, interior designer near me"
 ) %>
@@ -39,8 +39,8 @@
               <span></span><span></span><span></span>
               <div class="browser-title">Build. Ship. Scale.</div>
               <div class="browser-lines"></div>
-              <div class="code-snippet">
-                <span class="code-kw">const</span> app = <span class="code-fn">launch</span>();
+              <div class="browser-status" aria-hidden="true">
+                <span class="status-dot"></span> Production ready
               </div>
             </div>
           </div>
@@ -67,7 +67,7 @@
         <span class="path-link">Explore interiors <span aria-hidden="true">→</span></span>
       <% end %>
       <%= link_to it_development_path, class: "path-card path-tech" do %>
-        <span class="path-icon" aria-hidden="true">&lt;/&gt;</span>
+        <%= render "shared/icon_tech" %>
         <h2>IT Development</h2>
         <p>Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software.</p>
         <span class="path-link">Explore technology <span aria-hidden="true">→</span></span>
@@ -115,7 +115,7 @@
         </article>
 
         <article class="service-card tech reveal delay-1">
-          <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+          <div class="service-icon icon-tech-wrap" aria-hidden="true"><%= render "shared/icon_tech" %></div>
           <div class="service-no">02</div>
           <h3>IT Development</h3>
           <p>Digital products and automation that help businesses look better and work smarter.</p>
@@ -236,7 +236,7 @@
           <%= link_to "More interior FAQs →", interior_design_path(anchor: "faq"), class: "faq-page-link" %>
         </div>
         <div class="faq-column">
-          <h3 class="faq-column-title tech-label">&lt;/&gt; IT Development</h3>
+          <h3 class="faq-column-title tech-label">IT Development</h3>
           <div class="faq-list">
             <details class="faq-item">
               <summary>Do you work with clients outside Delhi NCR?</summary>

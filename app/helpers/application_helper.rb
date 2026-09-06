@@ -1,10 +1,10 @@
 module ApplicationHelper
   def meta_title
-    content_for?(:meta_title) ? content_for(:meta_title) : "Arqvexa | Interior Design & Technology"
+    content_for?(:meta_title) ? content_for(:meta_title) : "Arqvexa | Interior Design & IT Development in Delhi NCR"
   end
 
   def meta_description
-    content_for?(:meta_description) ? content_for(:meta_description) : "Arqvexa combines interior design and technology to create modern, functional and innovative spaces for homes and businesses across Delhi NCR and India."
+    content_for?(:meta_description) ? content_for(:meta_description) : "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India."
   end
 
   def meta_keywords
@@ -149,7 +149,7 @@ module ApplicationHelper
       }
     else
       {
-        "web-development" => "</>",
+        "web-development" => "◆",
         "ecommerce-development" => "🛒",
         "mobile-app-development" => "📱",
         "ai-development" => "✦",
@@ -158,6 +158,6 @@ module ApplicationHelper
         "api-development" => "⇄"
       }
     end
-    icons.fetch(slug, division == "interior" ? "⌂" : "</>")
+    icons.fetch(slug, division == "interior" ? "⌂" : "◆")
   end
 end

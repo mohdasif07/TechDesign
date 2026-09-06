@@ -1,10 +1,23 @@
-<% content_for :meta_title, "Blog | Interior Design & IT Guides | Arqvexa" %>
-<% content_for :meta_description, "Practical articles on modular kitchen costs, website pricing, 3BHK interior design and IT development in Delhi NCR by Arqvexa." %>
-<% content_for :canonical_url, site_url(blog_path) %>
+<% seo_page(
+  title: "Interior Design & IT Development Blog | Arqvexa",
+  description: "Practical guides on interior design, modular kitchens, website development, mobile apps, AI, software and technology.",
+  canonical: site_url(blog_path)
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "Blog", url: site_url(blog_path) }
+) %>
+
+<% content_for :structured_data do %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+<% end %>
 
 <%= render "shared/navigation" %>
 
 <main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
   <section class="page-hero page-hero-light">
     <div class="container">
       <div class="eyebrow"><span></span> Blog</div>

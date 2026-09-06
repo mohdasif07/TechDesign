@@ -1640,6 +1640,43 @@ footer {
   color: #9eb3d0;
 }
 
+.browser-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(15, 30, 51, 0.88);
+  font: 600 11px/1 Manrope, sans-serif;
+  color: #b8c9e0;
+}
+
+.browser-status .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #3ecf8e;
+  box-shadow: 0 0 0 3px rgba(62, 207, 142, 0.18);
+}
+
+.icon-tech {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.icon-tech-wrap .icon-tech svg {
+  width: 28px;
+  height: 28px;
+}
+
+.path-card .icon-tech svg {
+  width: 34px;
+  height: 34px;
+}
+
 .code-kw { color: #e87935; }
 .code-fn { color: #7ec8ff; }
 

@@ -1,6 +1,6 @@
 <% seo_page(
-  title: "Contact Arqvexa | Get a Quote",
-  description: "Contact Arqvexa for interior design in Delhi NCR or IT development across India. Email, phone, WhatsApp or use our enquiry form — we reply within 24 hours.",
+  title: "Contact Arqvexa | Interior Design & IT Development",
+  description: "Contact Arqvexa for interior design in Delhi NCR or IT development across India. Email hello@arqvexa.in, phone +91 99176 39330, WhatsApp or our enquiry form.",
   canonical: site_url(contact_page_path)
 ) %>
 
@@ -8,6 +8,10 @@
   { label: "Home", url: site_url },
   { label: "Contact", url: site_url(contact_page_path) }
 ) %>
+
+<% content_for :structured_data do %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+<% end %>
 
 <%= render "shared/navigation" %>
 

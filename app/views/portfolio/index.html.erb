@@ -1,10 +1,24 @@
-<% content_for :meta_title, "Portfolio | Interior & IT Projects | Arqvexa" %>
-<% content_for :meta_description, "Explore Arqvexa portfolio — interior design projects in Delhi NCR and IT development work across India." %>
-<% content_for :canonical_url, site_url(portfolio_path) %>
+<% seo_page(
+  title: "Interior Design & IT Portfolio | Arqvexa",
+  description: "Explore Arqvexa interior design projects and IT development work including websites, software, integrations, warehouse platforms and digital products.",
+  canonical: site_url(portfolio_path),
+  robots: (@category == "all" ? nil : "noindex, follow")
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "Portfolio", url: site_url(portfolio_path) }
+) %>
+
+<% content_for :structured_data do %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+<% end %>
 
 <%= render "shared/navigation" %>
 
 <main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
   <section class="page-hero page-hero-light">
     <div class="container">
       <div class="eyebrow"><span></span> Portfolio</div>
@@ -16,13 +30,21 @@
   <section class="section portfolio-page" data-portfolio-filter>
     <div class="container">
       <div class="portfolio-filters reveal" role="tablist" aria-label="Filter portfolio">
-        <% [["all", "All"], ["interior", "⌂ Interior"], ["tech", "<\/> IT"]].each do |cat, label| %>
-          <%= link_to label,
-                portfolio_path(category: (cat == "all" ? nil : cat)),
-                class: ["portfolio-filter", ("is-active" if @category == cat)].compact.join(" "),
-                role: "tab",
-                aria: { selected: (@category == cat).to_s } %>
-        <% end %>
+        <%= link_to "All",
+              portfolio_path,
+              class: ["portfolio-filter", ("is-active" if @category == "all")].compact.join(" "),
+              role: "tab",
+              aria: { selected: (@category == "all").to_s } %>
+        <%= link_to "Interior",
+              portfolio_path(category: "interior"),
+              class: ["portfolio-filter", ("is-active" if @category == "interior")].compact.join(" "),
+              role: "tab",
+              aria: { selected: (@category == "interior").to_s } %>
+        <%= link_to "IT Development",
+              portfolio_path(category: "tech"),
+              class: ["portfolio-filter", ("is-active" if @category == "tech")].compact.join(" "),
+              role: "tab",
+              aria: { selected: (@category == "tech").to_s } %>
       </div>
 
       <div class="work-grid work-grid-3 portfolio-grid reveal">

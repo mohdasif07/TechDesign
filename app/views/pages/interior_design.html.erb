@@ -1,6 +1,6 @@
 <% seo_page(
-  title: "Interior Design Delhi NCR | 3D Plans, Modular Kitchen | Arqvexa",
-  description: "Professional interior design in Delhi NCR — residential and commercial spaces, modular kitchens, 3D visualization and execution support in Delhi, Gurgaon and Noida.",
+  title: "Interior Design Company in Delhi NCR | Arqvexa",
+  description: "Arqvexa provides residential and commercial interior design, modular kitchens, wardrobes, 3D visualization and execution support across Delhi NCR.",
   canonical: site_url(interior_design_path),
   keywords: "interior designer Delhi NCR, interior design Gurgaon, modular kitchen design, 3BHK interior design, office interior design Noida, home interior designer near me, 3D interior visualization"
 ) %>
@@ -57,7 +57,7 @@
     ]
   }
   </script>
-  <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
 <% end %>
 
 <%= render "shared/navigation" %>

@@ -1,6 +1,6 @@
 <% seo_page(
-  title: "IT Development Company in Delhi NCR | Web, Mobile & AI | Arqvexa",
-  description: "Arqvexa provides web development, e-commerce, mobile apps, AI automation, CRM and custom software for businesses across India — with discovery-led delivery and clear communication.",
+  title: "IT Development Company in Delhi NCR | Arqvexa",
+  description: "Arqvexa builds websites, e-commerce platforms, mobile apps, CRM systems, AI automation, APIs and custom software for businesses across India.",
   canonical: site_url(it_development_path),
   keywords: "IT development company Delhi NCR, web development Delhi, mobile app development India, AI development, CRM development, custom software India"
 ) %>
@@ -55,7 +55,7 @@
     ]
   }
   </script>
-  <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
 <% end %>
 
 <%= render "shared/navigation" %>
@@ -83,9 +83,8 @@
             <span></span><span></span><span></span>
             <div class="browser-title">Build. Ship. Scale.</div>
             <div class="browser-lines"></div>
-            <div class="code-snippet">
-              <span class="code-kw">const</span> app = <span class="code-fn">launch</span>();<br>
-              <span class="code-kw">await</span> app.<span class="code-fn">deploy</span>();
+            <div class="browser-status" aria-hidden="true">
+              <span class="status-dot"></span> Deployed &amp; live
             </div>
           </div>
         </div>

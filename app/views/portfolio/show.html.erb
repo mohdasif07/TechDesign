@@ -11,29 +11,9 @@
   { label: @item.title, url: site_url(@item.path) }
 ) %>
 
-<% if @item.has_gallery? %>
-  <% content_for :structured_data do %>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ImageGallery",
-      "name": <%= @item.title.to_json %>,
-      "description": <%= (@item.case_study_summary || @item.description).to_json %>,
-      "url": "<%= site_url(@item.path) %>",
-      "image": [
-        <% @item.gallery.each_with_index do |slide, index| %>
-        {
-          "@type": "ImageObject",
-          "contentUrl": "<%= site_url(portfolio_image_file(slide["image"], format: "jpg")) %>",
-          "caption": <%= slide["caption"].to_json %>,
-          "description": <%= slide["alt"].to_json %>
-        }<%= "," unless index == @item.gallery.size - 1 %>
-        <% end %>
-      ]
-    }
-    </script>
-    <script type="application/ld+json"><%= breadcrumb_json_ld(breadcrumb_items) %></script>
-  <% end %>
+<% content_for :structured_data do %>
+  <%= json_ld_script(portfolio_page_schema(@item)) %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
 <% end %>
 
 <%= render "shared/navigation" %>
@@ -138,6 +118,11 @@
         <% if @item.case_study["timeline"].present? %>
           <h2>Timeline</h2>
           <p><%= @item.case_study["timeline"] %></p>
+        <% end %>
+
+        <% if @item.case_study["result"].present? %>
+          <h2>Result</h2>
+          <p><%= @item.case_study["result"] %></p>
         <% end %>
 
         <% if @item.case_study["note"].present? %>

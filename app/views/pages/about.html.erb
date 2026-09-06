@@ -1,6 +1,6 @@
 <% seo_page(
-  title: "About Arqvexa | Interior Design & IT Development Studio",
-  description: "Learn about Arqvexa — an umbrella studio combining interior design in Delhi NCR and IT development across India, founded by Asif and Shalu.",
+  title: "About Arqvexa | Interior Design & IT Development",
+  description: "Learn about Arqvexa, a studio combining interior design and IT development with dedicated expertise across Delhi NCR and India.",
   canonical: site_url(about_path)
 ) %>
 
@@ -8,6 +8,10 @@
   { label: "Home", url: site_url },
   { label: "About", url: site_url(about_path) }
 ) %>
+
+<% content_for :structured_data do %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+<% end %>
 
 <%= render "shared/navigation" %>
 

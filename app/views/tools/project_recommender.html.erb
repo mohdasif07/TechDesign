@@ -10,6 +10,10 @@
   { label: "Project Recommender", url: site_url(project_recommender_path) }
 ) %>
 
+<% content_for :structured_data do %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+<% end %>
+
 <%= render "shared/navigation" %>
 
 <main id="main-content" class="page-main">
