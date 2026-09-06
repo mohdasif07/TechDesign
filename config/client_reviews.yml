@@ -37,7 +37,7 @@ reviews:
 
   - id: it-enterprise-platform
     division: it
-    name: Neha Kapoor
+    name: Neha Paul
     role: Operations manager
     location: India · Remote
     project: Enterprise web platform
@@ -46,7 +46,7 @@ reviews:
 
   - id: it-startup-mvp
     division: it
-    name: Arjun Malhotra
+    name: Antony Purkayastha
     role: Startup founder
     location: Gurgaon
     project: MVP web application
