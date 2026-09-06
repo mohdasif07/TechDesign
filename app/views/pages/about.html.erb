@@ -11,6 +11,25 @@
 
 <% content_for :structured_data do %>
   <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+  <%= json_ld_script({
+    "@context" => "https://schema.org",
+    "@graph" => [
+      {
+        "@type" => "Person",
+        "name" => "Asif",
+        "jobTitle" => "Founder — Technology & Business",
+        "worksFor" => { "@type" => "Organization", "name" => "Arqvexa" },
+        "image" => site_url("/team/asif.jpg")
+      },
+      {
+        "@type" => "Person",
+        "name" => "Shalu",
+        "jobTitle" => "Co-Founder — Interior Design",
+        "worksFor" => { "@type" => "Organization", "name" => "Arqvexa" },
+        "image" => site_url("/team/shalu.jpg")
+      }
+    ]
+  }) %>
 <% end %>
 
 <%= render "shared/navigation" %>
@@ -49,20 +68,16 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container founders founders-page reveal">
-      <article class="founder-card">
-        <h2>Asif</h2>
-        <p class="founder-role">Founder · Technology &amp; Business</p>
-        <p>Asif leads Arqvexa's IT division — websites, web applications, mobile apps, CRM systems, AI chatbots and business software. He focuses on practical delivery: clear scope, maintainable code, SEO-ready marketing sites and tools teams actually use.</p>
-        <%= link_to "Explore IT Development", it_development_path, class: "text-link" %>
-      </article>
-      <article class="founder-card">
-        <h2>Shalu</h2>
-        <p class="founder-role">Co-Founder · Interior Design</p>
-        <p>Shalu leads interior design at Arqvexa — residential and commercial spaces, modular kitchens, wardrobes, 3D visualization and execution coordination across Delhi, Gurgaon and Noida.</p>
-        <%= link_to "Explore Interior Design", interior_design_path, class: "text-link" %>
-      </article>
+  <section class="section founders-section">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div>
+          <div class="eyebrow"><span></span> Leadership</div>
+          <h2>Meet the <em>founders.</em></h2>
+        </div>
+        <p>Two dedicated divisions — technology and interior design — led by founders who work directly with clients.</p>
+      </div>
+      <%= render "shared/founder_cards" %>
     </div>
   </section>
 
