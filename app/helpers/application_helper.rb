@@ -82,6 +82,10 @@ module ApplicationHelper
     ENV.fetch("CONTACT_EMAIL_INTERNAL", "mohdasif.dev01@gmail.com")
   end
 
+  def google_review_url
+    ENV["GOOGLE_REVIEW_URL"].presence
+  end
+
   def contact_form_path
     if (controller_name == "home" && action_name == "index") ||
        (controller_name == "pages" && action_name.in?(%w[interior_design it_development contact])) ||

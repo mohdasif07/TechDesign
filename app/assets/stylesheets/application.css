@@ -1418,6 +1418,48 @@ img, svg { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
+.google-review-cta {
+  margin-top: 40px;
+}
+
+.google-review-cta-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  text-align: center;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(11, 25, 48, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.client-reviews--tech + .google-review-cta .google-review-cta-inner,
+.client-reviews .google-review-cta-inner {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+}
+
+.google-review-cta-title {
+  margin: 0 0 8px;
+  font: 800 22px/1.2 Manrope, sans-serif;
+  color: var(--ink);
+}
+
+.google-review-cta-text {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.google-review-btn span {
+  color: #f5a623;
+}
+
+.contact-page + .google-review-cta,
+main .google-review-cta:last-child {
+  padding-bottom: 80px;
+}
+
 /* FAQ */
 .faq { background: #fff; }
 

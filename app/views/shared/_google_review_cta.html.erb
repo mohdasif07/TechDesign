@@ -1,0 +1,11 @@
+<% return unless google_review_url.present? %>
+
+<div class="google-review-cta reveal">
+  <div class="google-review-cta-inner">
+    <p class="google-review-cta-title">Worked with Arqvexa?</p>
+    <p class="google-review-cta-text">Share your experience on Google — it helps other clients find us and takes less than a minute.</p>
+    <%= link_to google_review_url, class: "btn btn-primary google-review-btn", target: "_blank", rel: "noopener noreferrer" do %>
+      Leave a Google Review <span aria-hidden="true">★</span>
+    <% end %>
+  </div>
+</div>

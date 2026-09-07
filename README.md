@@ -40,6 +40,7 @@ Required environment variables:
 | `CONTACT_EMAIL` | `hello@arqvexa.in` (public) |
 | `CONTACT_EMAIL_INTERNAL` | Internal delivery inbox (e.g. Gmail for form notifications) |
 | `GOOGLE_ANALYTICS_ID` | Optional — GA4 measurement ID |
+| `GOOGLE_REVIEW_URL` | Optional — Google review link from Business Profile (shows “Leave a review” on site) |
 
 Push to `main` triggers auto-deploy when connected to Render.
 
@@ -53,7 +54,8 @@ Push to `main` triggers auto-deploy when connected to Render.
    - Phone: +91 99176 39330
    - Website: https://arqvexa.in
    - Add photos of interior and IT work when available
-3. Custom domain DNS: A `@` → `216.24.57.1`, CNAME `www` → `arqvexa.onrender.com`
+3. **Google reviews (free)** — in Business Profile click **Ask for reviews** → copy link → set `GOOGLE_REVIEW_URL` on Render. Or share the **Google QR** with clients on WhatsApp after project delivery.
+4. Custom domain DNS: A `@` → `216.24.57.1`, CNAME `www` → `arqvexa.onrender.com`
 
 ## Contact form email
 

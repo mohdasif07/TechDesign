@@ -41,6 +41,14 @@
       <%= render "shared/contact_panel", return_to: contact_page_path(anchor: "contact") %>
     </div>
   </section>
+
+  <% if google_review_url.present? %>
+    <section class="section">
+      <div class="container">
+        <%= render "shared/google_review_cta" %>
+      </div>
+    </section>
+  <% end %>
 </main>
 
 <%= render "shared/footer" %>
