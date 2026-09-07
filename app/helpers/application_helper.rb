@@ -86,6 +86,22 @@ module ApplicationHelper
     ENV["GOOGLE_REVIEW_URL"].presence
   end
 
+  def team_photo_path(filename)
+    path = Rails.public_path.join("team", filename)
+    base = "/team/#{filename}"
+    return base unless File.exist?(path)
+
+    "#{base}?v=#{File.mtime(path).to_i}"
+  end
+
+  def team_photo_tag(filename, **options)
+    image_tag team_photo_path(filename), options
+  end
+
+  def team_photo_url(filename)
+    site_url(team_photo_path(filename))
+  end
+
   def contact_form_path
     if (controller_name == "home" && action_name == "index") ||
        (controller_name == "pages" && action_name.in?(%w[interior_design it_development contact])) ||
