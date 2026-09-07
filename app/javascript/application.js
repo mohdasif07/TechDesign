@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initPortfolioFilter();
   initTools();
   initPortfolioGallery();
+  initHeroCube();
+  initHeroExperience();
 });
 
 function initNavigation() {
@@ -628,4 +630,514 @@ function initPortfolioFilter() {
       });
     });
   });
+}
+
+// Homepage — split interior/tech 3D cube hero
+function initHeroCube() {
+  const scene = document.querySelector("[data-hero-cube]");
+  if (!scene) return;
+
+  const cube = scene.querySelector("[data-cube]");
+  const faces = scene.querySelectorAll(".hero-cube-face");
+  if (!cube || !faces.length) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const textureUrl = buildCubeSplitTexture();
+
+  faces.forEach((face) => {
+    face.style.backgroundImage = `url(${textureUrl})`;
+  });
+
+  let rotX = -12;
+  let rotY = 28;
+  let autoY = 0;
+  let dragging = false;
+  let lastX = 0;
+  let lastY = 0;
+  let rafId = null;
+
+  const tick = () => {
+    if (!dragging && !prefersReduced) autoY += 0.12;
+    cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY + autoY}deg)`;
+    rafId = requestAnimationFrame(tick);
+  };
+
+  const onPointerDown = (event) => {
+    dragging = true;
+    lastX = event.clientX;
+    lastY = event.clientY;
+    scene.setPointerCapture(event.pointerId);
+    scene.classList.add("is-dragging");
+  };
+
+  const onPointerMove = (event) => {
+    if (!dragging) return;
+    const dx = event.clientX - lastX;
+    const dy = event.clientY - lastY;
+    lastX = event.clientX;
+    lastY = event.clientY;
+    rotY += dx * 0.45;
+    rotX = cubeClamp(rotX - dy * 0.35, -28, 28);
+  };
+
+  const onPointerUp = (event) => {
+    dragging = false;
+    scene.releasePointerCapture(event.pointerId);
+    scene.classList.remove("is-dragging");
+  };
+
+  scene.addEventListener("pointerdown", onPointerDown);
+  scene.addEventListener("pointermove", onPointerMove);
+  scene.addEventListener("pointerup", onPointerUp);
+  scene.addEventListener("pointercancel", onPointerUp);
+
+  tick();
+
+  return () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    scene.removeEventListener("pointerdown", onPointerDown);
+    scene.removeEventListener("pointermove", onPointerMove);
+    scene.removeEventListener("pointerup", onPointerUp);
+    scene.removeEventListener("pointercancel", onPointerUp);
+  };
+}
+
+function cubeClamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function buildCubeSplitTexture() {
+  const size = 1024;
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d");
+  const mid = size / 2;
+
+  ctx.fillStyle = "#0b1930";
+  ctx.fillRect(0, 0, size, size);
+
+  drawCubeInteriorHalf(ctx, size);
+  drawCubeTechHalf(ctx, size);
+  drawCubeCenterSeam(ctx, size, mid);
+  drawCubeVignette(ctx, size);
+
+  return canvas.toDataURL("image/png");
+}
+
+function drawCubeInteriorHalf(ctx, size) {
+  const mid = size / 2;
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(0, 0, mid, size);
+  ctx.clip();
+
+  const wall = ctx.createLinearGradient(0, 0, 0, size);
+  wall.addColorStop(0, "#3d2e24");
+  wall.addColorStop(0.55, "#2a211a");
+  wall.addColorStop(1, "#1a1410");
+  ctx.fillStyle = wall;
+  ctx.fillRect(0, 0, mid, size);
+
+  const floor = ctx.createLinearGradient(0, size * 0.58, mid, size);
+  floor.addColorStop(0, "#6b4f3a");
+  floor.addColorStop(0.4, "#8b6848");
+  floor.addColorStop(1, "#4a3628");
+  ctx.fillStyle = floor;
+  ctx.beginPath();
+  ctx.moveTo(0, size * 0.62);
+  ctx.lineTo(mid, size * 0.52);
+  ctx.lineTo(mid, size);
+  ctx.lineTo(0, size);
+  ctx.closePath();
+  ctx.fill();
+
+  for (let i = 0; i < 8; i += 1) {
+    const y = size * 0.64 + i * 18;
+    ctx.strokeStyle = `rgba(0,0,0,${0.08 + i * 0.015})`;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(mid, y - 28);
+    ctx.stroke();
+  }
+
+  const rim = ctx.createRadialGradient(mid * 0.15, size * 0.2, 0, mid * 0.15, size * 0.2, mid * 0.9);
+  rim.addColorStop(0, "rgba(255, 196, 120, 0.35)");
+  rim.addColorStop(0.45, "rgba(255, 170, 80, 0.12)");
+  rim.addColorStop(1, "rgba(255, 170, 80, 0)");
+  ctx.fillStyle = rim;
+  ctx.fillRect(0, 0, mid, size);
+
+  ctx.fillStyle = "#5c4638";
+  cubeRoundRect(ctx, mid * 0.08, size * 0.54, mid * 0.72, size * 0.22, 18);
+  ctx.fill();
+
+  ctx.fillStyle = "#7a5e4c";
+  cubeRoundRect(ctx, mid * 0.1, size * 0.5, mid * 0.68, size * 0.12, 14);
+  ctx.fill();
+
+  ctx.fillStyle = "#c4a574";
+  cubeRoundRect(ctx, mid * 0.22, size * 0.68, mid * 0.38, size * 0.06, 6);
+  ctx.fill();
+
+  ctx.fillStyle = "#2f5a32";
+  ctx.beginPath();
+  ctx.ellipse(mid * 0.18, size * 0.46, 28, 36, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(mid * 0.24, size * 0.42, 22, 30, -0.4, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(mid * 0.12, size * 0.43, 18, 24, 0.5, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.strokeStyle = "#6b4a2e";
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.moveTo(mid * 0.18, size * 0.48);
+  ctx.lineTo(mid * 0.18, size * 0.62);
+  ctx.stroke();
+
+  ctx.fillStyle = "rgba(255, 220, 170, 0.25)";
+  ctx.beginPath();
+  ctx.arc(mid * 0.72, size * 0.24, 80, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.restore();
+}
+
+function drawCubeTechHalf(ctx, size) {
+  const mid = size / 2;
+
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(mid, 0, mid, size);
+  ctx.clip();
+
+  ctx.fillStyle = "#0b1930";
+  ctx.fillRect(mid, 0, mid, size);
+
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.12)";
+  ctx.lineWidth = 1;
+  const grid = 48;
+  for (let x = mid; x <= size; x += grid) {
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, size);
+    ctx.stroke();
+  }
+  for (let y = 0; y <= size; y += grid) {
+    ctx.beginPath();
+    ctx.moveTo(mid, y);
+    ctx.lineTo(size, y);
+    ctx.stroke();
+  }
+
+  const glow = ctx.createRadialGradient(size * 0.78, size * 0.35, 0, size * 0.78, size * 0.35, mid * 0.95);
+  glow.addColorStop(0, "rgba(34, 211, 238, 0.28)");
+  glow.addColorStop(0.5, "rgba(56, 189, 248, 0.08)");
+  glow.addColorStop(1, "rgba(56, 189, 248, 0)");
+  ctx.fillStyle = glow;
+  ctx.fillRect(mid, 0, mid, size);
+
+  drawCubePanel(ctx, mid + 36, 72, mid - 72, size * 0.38, "Dashboard", true);
+  drawCubePanel(ctx, mid + 36, size * 0.46, mid * 0.46, size * 0.22, "Analytics", false);
+  drawCubePanel(ctx, mid + mid * 0.52, size * 0.46, mid * 0.46, size * 0.22, "API", false);
+
+  ctx.font = "500 18px DM Sans, sans-serif";
+  ctx.fillStyle = "rgba(125, 211, 252, 0.75)";
+  [
+    "GET /api/v1/status",
+    "200 OK · 24ms",
+    "{ agents: 12, live: true }",
+    "deploy · production",
+  ].forEach((line, index) => {
+    ctx.fillText(line, mid + 52, size * 0.78 + index * 34);
+  });
+
+  ctx.strokeStyle = "rgba(34, 211, 238, 0.55)";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(mid + 40, size * 0.72);
+  ctx.lineTo(size - 40, size * 0.72);
+  ctx.stroke();
+
+  ctx.restore();
+}
+
+function drawCubePanel(ctx, x, y, w, h, title, primary) {
+  ctx.save();
+  ctx.shadowColor = primary ? "rgba(34, 211, 238, 0.45)" : "rgba(56, 189, 248, 0.2)";
+  ctx.shadowBlur = primary ? 28 : 14;
+  ctx.fillStyle = primary ? "rgba(15, 40, 68, 0.92)" : "rgba(12, 32, 56, 0.82)";
+  cubeRoundRect(ctx, x, y, w, h, 16);
+  ctx.fill();
+  ctx.shadowBlur = 0;
+
+  ctx.strokeStyle = primary ? "rgba(34, 211, 238, 0.55)" : "rgba(56, 189, 248, 0.25)";
+  ctx.lineWidth = 1.5;
+  cubeRoundRect(ctx, x, y, w, h, 16);
+  ctx.stroke();
+
+  ctx.fillStyle = "rgba(186, 230, 253, 0.95)";
+  ctx.font = "700 20px Manrope, sans-serif";
+  ctx.fillText(title, x + 20, y + 36);
+
+  for (let i = 0; i < (primary ? 4 : 2); i += 1) {
+    const barW = w * (0.35 + i * 0.12);
+    ctx.fillStyle = `rgba(34, 211, 238, ${0.25 + i * 0.08})`;
+    cubeRoundRect(ctx, x + 20, y + 58 + i * 28, barW, 10, 5);
+    ctx.fill();
+  }
+
+  if (primary) {
+    ctx.strokeStyle = "rgba(34, 211, 238, 0.35)";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x + 20, y + h - 36);
+    ctx.lineTo(x + w * 0.7, y + h - 70);
+    ctx.lineTo(x + w - 20, y + h - 36);
+    ctx.stroke();
+  }
+
+  ctx.restore();
+}
+
+function drawCubeCenterSeam(ctx, size, mid) {
+  const seam = ctx.createLinearGradient(mid - 8, 0, mid + 8, size);
+  seam.addColorStop(0, "rgba(255, 196, 120, 0)");
+  seam.addColorStop(0.35, "rgba(255, 196, 120, 0.55)");
+  seam.addColorStop(0.5, "rgba(255, 255, 255, 0.85)");
+  seam.addColorStop(0.65, "rgba(34, 211, 238, 0.55)");
+  seam.addColorStop(1, "rgba(34, 211, 238, 0)");
+  ctx.fillStyle = seam;
+  ctx.fillRect(mid - 3, 0, 6, size);
+
+  ctx.strokeStyle = "rgba(255, 255, 255, 0.18)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(mid, size * 0.06);
+  ctx.lineTo(mid, size * 0.94);
+  ctx.stroke();
+}
+
+function drawCubeVignette(ctx, size) {
+  const vignette = ctx.createRadialGradient(size / 2, size / 2, size * 0.25, size / 2, size / 2, size * 0.72);
+  vignette.addColorStop(0, "rgba(0,0,0,0)");
+  vignette.addColorStop(1, "rgba(0,0,0,0.45)");
+  ctx.fillStyle = vignette;
+  ctx.fillRect(0, 0, size, size);
+}
+
+function cubeRoundRect(ctx, x, y, w, h, r) {
+  const radius = Math.min(r, w / 2, h / 2);
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.lineTo(x + w - radius, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + radius);
+  ctx.lineTo(x + w, y + h - radius);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - radius, y + h);
+  ctx.lineTo(x + radius, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - radius);
+  ctx.lineTo(x, y + radius);
+  ctx.quadraticCurveTo(x, y, x + radius, y);
+  ctx.closePath();
+}
+
+// Lusion-inspired immersive hero — decorative only; SEO content stays in HTML
+function initHeroExperience() {
+  initHeroAmbient();
+  initHeroParallax();
+  initHeroSpotlight();
+  initTiltCards();
+  initScrollCue();
+}
+
+function initHeroAmbient() {
+  const hero = document.querySelector(".hero-immersive");
+  const canvas = hero?.querySelector("[data-hero-ambient]");
+  if (!hero || !canvas) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced) return;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const particles = [];
+  const particleCount = 72;
+  let width = 0;
+  let height = 0;
+  let mouseX = 0.5;
+  let mouseY = 0.5;
+  let rafId = null;
+  let visible = true;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      visible = entries[0]?.isIntersecting ?? false;
+      if (visible && !rafId) rafId = requestAnimationFrame(tick);
+    },
+    { threshold: 0.05 }
+  );
+  observer.observe(hero);
+
+  const resize = () => {
+    width = canvas.clientWidth;
+    height = canvas.clientHeight;
+    canvas.width = Math.floor(width * devicePixelRatio);
+    canvas.height = Math.floor(height * devicePixelRatio);
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  };
+
+  const seedParticles = () => {
+    particles.length = 0;
+    for (let i = 0; i < particleCount; i += 1) {
+      particles.push({
+        x: Math.random(),
+        y: Math.random(),
+        z: Math.random(),
+        tone: Math.random() > 0.5 ? "warm" : "cool",
+        speed: 0.00015 + Math.random() * 0.00035,
+      });
+    }
+  };
+
+  const drawGrid = () => {
+    const horizon = height * 0.58;
+    ctx.strokeStyle = "rgba(56, 189, 248, 0.07)";
+    ctx.lineWidth = 1;
+
+    for (let i = -8; i <= 8; i += 1) {
+      ctx.beginPath();
+      ctx.moveTo(width * 0.5 + i * 28, horizon);
+      ctx.lineTo(width * 0.5 + i * 120, height);
+      ctx.stroke();
+    }
+
+    for (let j = 0; j < 8; j += 1) {
+      const y = horizon + (j / 8) * (height - horizon);
+      ctx.beginPath();
+      ctx.moveTo(width * 0.08, y);
+      ctx.lineTo(width * 0.92, y);
+      ctx.stroke();
+    }
+  };
+
+  const drawParticles = () => {
+    particles.forEach((p) => {
+      p.y -= p.speed;
+      if (p.y < 0) p.y = 1;
+
+      const parallaxX = (mouseX - 0.5) * 40 * (1 - p.z);
+      const parallaxY = (mouseY - 0.5) * 24 * (1 - p.z);
+      const x = p.x * width + parallaxX;
+      const y = p.y * height + parallaxY;
+      const size = 1.2 + (1 - p.z) * 2.8;
+      const alpha = 0.12 + (1 - p.z) * 0.55;
+
+      ctx.beginPath();
+      ctx.fillStyle = p.tone === "warm"
+        ? `rgba(255, 186, 100, ${alpha})`
+        : `rgba(34, 211, 238, ${alpha * 0.85})`;
+      ctx.arc(x, y, size, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  };
+
+  const tick = () => {
+    rafId = null;
+    if (!visible) return;
+
+    ctx.clearRect(0, 0, width, height);
+    drawGrid();
+    drawParticles();
+    rafId = requestAnimationFrame(tick);
+  };
+
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    mouseX = (event.clientX - rect.left) / rect.width;
+    mouseY = (event.clientY - rect.top) / rect.height;
+  }, { passive: true });
+
+  window.addEventListener("resize", () => {
+    resize();
+    seedParticles();
+  }, { passive: true });
+
+  resize();
+  seedParticles();
+  rafId = requestAnimationFrame(tick);
+}
+
+function initHeroParallax() {
+  const hero = document.querySelector(".hero-immersive");
+  if (!hero) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced) return;
+
+  const copy = hero.querySelector(".hero-copy");
+  const cube = hero.querySelector("[data-hero-cube]");
+  const cue = hero.querySelector(".hero-scroll-cue");
+
+  const onScroll = () => {
+    const offset = Math.min(window.scrollY, hero.offsetHeight);
+    const progress = offset / hero.offsetHeight;
+    if (copy) copy.style.transform = `translate3d(0, ${offset * 0.07}px, 0)`;
+    if (cube) cube.style.transform = `translate3d(0, ${offset * -0.05}px, 0)`;
+    if (cue) cue.style.opacity = String(Math.max(0, 1 - progress * 2.5));
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+function initHeroSpotlight() {
+  const hero = document.querySelector(".hero-immersive");
+  const spotlight = hero?.querySelector("[data-hero-spotlight]");
+  if (!hero || !spotlight) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced || window.matchMedia("(pointer: coarse)").matches) return;
+
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    spotlight.style.setProperty("--spot-x", `${x}%`);
+    spotlight.style.setProperty("--spot-y", `${y}%`);
+  }, { passive: true });
+}
+
+function initTiltCards() {
+  const cards = document.querySelectorAll("[data-tilt-card]");
+  if (!cards.length) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced || window.matchMedia("(pointer: coarse)").matches) return;
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `perspective(900px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg) translateY(-6px)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+}
+
+function initScrollCue() {
+  const cue = document.querySelector(".hero-scroll-cue");
+  if (!cue) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReduced) cue.hidden = true;
 }

@@ -8,7 +8,9 @@
 <%= render "shared/navigation" %>
 
 <main id="main-content">
-  <section class="hero" id="home">
+  <section class="hero hero-immersive" id="home">
+    <canvas class="hero-ambient-canvas" data-hero-ambient width="1920" height="1080" aria-hidden="true"></canvas>
+    <div class="hero-spotlight" data-hero-spotlight aria-hidden="true"></div>
     <div class="hero-glow glow-one" aria-hidden="true"></div>
     <div class="hero-glow glow-two" aria-hidden="true"></div>
     <div class="container hero-grid hero-balanced">
@@ -31,42 +33,42 @@
         </div>
       </div>
 
-      <div class="hero-split-art reveal delay-1" aria-label="Interior design and IT development visuals">
-        <div class="split-panel split-tech">
-          <div class="split-label">IT Development</div>
-          <div class="visual-digital compact">
-            <div class="browser">
-              <span></span><span></span><span></span>
-              <div class="browser-title">Build. Ship. Scale.</div>
-              <div class="browser-lines"></div>
-              <div class="browser-status" aria-hidden="true">
-                <span class="status-dot"></span> Production ready
-              </div>
-            </div>
+      <div class="hero-cube-scene reveal delay-1" data-hero-cube aria-label="Rotating cube showing interior design and IT development">
+        <div class="hero-cube-glow hero-cube-glow--warm" aria-hidden="true"></div>
+        <div class="hero-cube-glow hero-cube-glow--cool" aria-hidden="true"></div>
+        <div class="hero-cube-viewport">
+          <div class="hero-cube" data-cube>
+            <div class="hero-cube-face hero-cube-face--front"></div>
+            <div class="hero-cube-face hero-cube-face--back"></div>
+            <div class="hero-cube-face hero-cube-face--right"></div>
+            <div class="hero-cube-face hero-cube-face--left"></div>
+            <div class="hero-cube-face hero-cube-face--top"></div>
+            <div class="hero-cube-face hero-cube-face--bottom"></div>
           </div>
         </div>
-        <div class="split-panel split-interior">
-          <div class="split-label">Interior Design</div>
-          <div class="mini-room">
-            <div class="wall"></div><div class="floor"></div><div class="window"></div>
-            <div class="sofa"></div><div class="table"></div>
-            <div class="plant"><i></i><i></i><i></i></div>
-          </div>
+        <div class="hero-cube-labels" aria-hidden="true">
+          <span class="hero-cube-label hero-cube-label--interior">Interior</span>
+          <span class="hero-cube-label hero-cube-label--tech">Technology</span>
         </div>
-        <div class="split-connector">×</div>
+        <p class="hero-cube-hint" aria-hidden="true">Drag to rotate</p>
       </div>
+    </div>
+
+    <div class="hero-scroll-cue reveal delay-2" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <span class="hero-scroll-line"></span>
     </div>
   </section>
 
   <section class="path-selector">
     <div class="container path-grid reveal">
-      <%= link_to interior_design_path, class: "path-card path-interior" do %>
+      <%= link_to interior_design_path, class: "path-card path-interior", data: { tilt_card: true } do %>
         <span class="path-icon" aria-hidden="true">⌂</span>
         <h2>Interior Design</h2>
         <p>Homes, offices, modular kitchens, 3D plans and full execution in Delhi NCR.</p>
         <span class="path-link">Explore interiors <span aria-hidden="true">→</span></span>
       <% end %>
-      <%= link_to it_development_path, class: "path-card path-tech" do %>
+      <%= link_to it_development_path, class: "path-card path-tech", data: { tilt_card: true } do %>
         <%= render "shared/icon_tech" %>
         <h2>IT Development</h2>
         <p>Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software.</p>
