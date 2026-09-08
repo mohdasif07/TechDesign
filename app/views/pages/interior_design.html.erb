@@ -29,7 +29,10 @@
           { "@type": "City", "name": "Delhi" },
           { "@type": "City", "name": "Gurgaon" },
           { "@type": "City", "name": "Noida" },
-          { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+          { "@type": "AdministrativeArea", "name": "Delhi NCR" },
+          { "@type": "City", "name": "Budaun", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } },
+          { "@type": "City", "name": "Bareilly", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } },
+          { "@type": "City", "name": "Aligarh", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } }
         ],
         "serviceType": ["Residential Interior Design", "Commercial Interior Design", "Modular Kitchen Design", "3D Visualization"]
       },
@@ -136,6 +139,8 @@
 
   <%= render "shared/client_reviews", division: :interior %>
 
+  <%= render "shared/service_areas" %>
+
   <section class="section content-block">
     <div class="container content-prose reveal">
       <h2>Why choose Arqvexa for interior design in Delhi NCR?</h2>
@@ -156,7 +161,7 @@
         </details>
         <details class="faq-item">
           <summary>Which areas do you serve?</summary>
-          <p>Delhi, Gurgaon, Noida and the wider Delhi NCR region for site visits and execution coordination.</p>
+          <p>Delhi, Gurgaon, Noida and the wider Delhi NCR region for site visits and execution. We also serve <%= link_to "Budaun", interior_location_path(city: "budaun") %>, <%= link_to "Bareilly", interior_location_path(city: "bareilly") %> and <%= link_to "Aligarh", interior_location_path(city: "aligarh") %> in Uttar Pradesh.</p>
         </details>
         <details class="faq-item">
           <summary>Do you provide 3D visualization before construction?</summary>

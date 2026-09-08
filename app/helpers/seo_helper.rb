@@ -66,6 +66,26 @@ module SeoHelper
     }
   end
 
+  def location_schema(location)
+    {
+      "@context" => "https://schema.org",
+      "@type" => "Service",
+      "name" => location.h1,
+      "description" => location.meta_description,
+      "url" => site_url(location.path),
+      "provider" => schema_organization_ref,
+      "areaServed" => {
+        "@type" => "City",
+        "name" => location.city,
+        "containedInPlace" => {
+          "@type" => "State",
+          "name" => location.state
+        }
+      },
+      "serviceType" => location.interior? ? "Interior Design" : "Web Development"
+    }
+  end
+
   def faq_page_schema(faqs)
     {
       "@context" => "https://schema.org",

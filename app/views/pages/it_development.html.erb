@@ -27,7 +27,10 @@
         "description": "Website development, mobile apps, e-commerce, CRM, AI chatbots and custom software development for businesses in India and internationally.",
         "areaServed": [
           { "@type": "Country", "name": "India" },
-          { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+          { "@type": "AdministrativeArea", "name": "Delhi NCR" },
+          { "@type": "City", "name": "Budaun", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } },
+          { "@type": "City", "name": "Bareilly", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } },
+          { "@type": "City", "name": "Aligarh", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } }
         ],
         "serviceType": ["Web Development", "Mobile App Development", "E-commerce Development", "CRM Development", "AI Automation"]
       },
@@ -143,6 +146,8 @@
 
   <%= render "shared/client_reviews", division: :it %>
 
+  <%= render "shared/service_areas" %>
+
   <section class="section content-block content-block-dark">
     <div class="container content-prose reveal">
       <h2>Why choose Arqvexa for IT development?</h2>
@@ -167,7 +172,7 @@
         </details>
         <details class="faq-item">
           <summary>Can you work remotely outside Delhi NCR?</summary>
-          <p>Absolutely. Most IT projects are delivered remotely with video calls, shared demos and async updates.</p>
+          <p>Absolutely. Most IT projects are delivered remotely with video calls, shared demos and async updates — including clients in <%= link_to "Budaun", web_location_path(city: "budaun") %>, <%= link_to "Bareilly", web_location_path(city: "bareilly") %> and <%= link_to "Aligarh", web_location_path(city: "aligarh") %>.</p>
         </details>
         <details class="faq-item">
           <summary>Do you provide maintenance after launch?</summary>

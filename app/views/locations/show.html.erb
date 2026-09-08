@@ -1,0 +1,169 @@
+<% seo_page(
+  title: @location.meta_title,
+  description: @location.meta_description,
+  canonical: site_url(@location.path),
+  keywords: @location.meta_keywords
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: @location.hub_label, url: site_url(@location.hub_url_path) },
+  { label: @location.city, url: site_url(@location.path) }
+) %>
+
+<% content_for :structured_data do %>
+  <%= json_ld_script(location_schema(@location)) %>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+  <% if @location.faqs.any? %>
+    <%= json_ld_script(faq_page_schema(@location.faqs)) %>
+  <% end %>
+<% end %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content" class="page-main">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero <%= @location.interior? ? "page-hero-interior" : "page-hero-tech" %>">
+    <div class="container reveal">
+      <div class="eyebrow"><span></span> <%= @location.hub_label %> · <%= @location.city %></div>
+      <h1><%= @location.h1 %></h1>
+      <p class="page-lead"><%= @location.intro %></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact"><%= @location.cta_text %> <span aria-hidden="true">→</span></a>
+        <%= link_to @location.hub_label, @location.hub_url_path, class: "btn btn-ghost-light" %>
+        <%= link_to "Portfolio", portfolio_path, class: "btn btn-ghost-light" %>
+      </div>
+    </div>
+  </section>
+
+  <% @location.sections.each do |section| %>
+    <section class="section">
+      <div class="container content-prose reveal">
+        <h2><%= section["heading"] %></h2>
+        <%= section["body"].html_safe %>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @location.benefits.any? %>
+    <section class="section">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Benefits</div><h2>Why work with <em>Arqvexa.</em></h2></div>
+        </div>
+        <ul class="service-benefits reveal">
+          <% @location.benefits.each do |benefit| %>
+            <li><%= benefit %></li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @location.process.any? %>
+    <section class="section process">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Process</div><h2>How we <em>deliver.</em></h2></div>
+        </div>
+        <div class="steps steps-4">
+          <% @location.process.each_with_index do |step, index| %>
+            <div class="step reveal<%= " delay-#{index}" if index.positive? %>">
+              <span><%= format("%02d", index + 1) %></span>
+              <h3><%= step["step"] %></h3>
+              <p><%= step["detail"] %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @location.faqs.any? %>
+    <section class="section faq" id="faq">
+      <div class="container faq-single reveal">
+        <div class="eyebrow"><span></span> FAQ</div>
+        <h2>Common <em>questions.</em></h2>
+        <div class="faq-list">
+          <% @location.faqs.each do |faq| %>
+            <details class="faq-item">
+              <summary><%= faq["question"] %></summary>
+              <p><%= faq["answer"].html_safe %></p>
+            </details>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% related_portfolio = @location.related_portfolio_items %>
+  <% if related_portfolio.any? %>
+    <section class="section">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Portfolio</div><h2>Projects in <em><%= @location.city %>.</em></h2></div>
+        </div>
+        <div class="work-grid-3 reveal">
+          <% related_portfolio.each do |item| %>
+            <%= link_to item.path, class: "work-card" do %>
+              <strong><%= item.title %></strong>
+              <span><%= item.location %></span>
+            <% end %>
+          <% end %>
+        </div>
+        <%= link_to "View full portfolio →", portfolio_path, class: "faq-page-link reveal" %>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @location.related_services.any? %>
+    <section class="section">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Related</div><h2>More <%= @location.hub_label.downcase %> <em>services.</em></h2></div>
+        </div>
+        <div class="service-link-section">
+          <%= render "shared/service_link_grid", services: @location.related_services, variant: (@location.interior? ? "interior" : "tech") %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @location.related_cities.any? %>
+    <section class="section">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Nearby areas</div><h2>Also serving <em>Uttar Pradesh.</em></h2></div>
+        </div>
+        <ul class="service-area-links reveal">
+          <% @location.related_cities.each do |city_page| %>
+            <li>
+              <%= link_to "#{@location.hub_label} in #{city_page.city}", city_page.path %>
+            </li>
+          <% end %>
+          <% if @location.interior? %>
+            <li><%= link_to "Interior Design in Delhi NCR", interior_design_path %></li>
+          <% else %>
+            <li><%= link_to "IT Development across India", it_development_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+  <% end %>
+
+  <section class="cta-section" id="contact">
+    <div class="container cta-box">
+      <div class="reveal">
+        <div class="eyebrow"><span></span> Get started</div>
+        <h2><%= @location.interior? ? "Book a consultation" : "Start your project" %></h2>
+        <p>Tell us about your requirements in <%= @location.city %>. We reply within 24 hours with clear next steps.</p>
+      </div>
+      <%= render "shared/contact_panel",
+            default_service: @location.contact_service_label,
+            return_to: "#{@location.path}#contact" %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>

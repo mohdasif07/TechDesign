@@ -1,7 +1,7 @@
 class SitemapBuilder
   class << self
     def urls
-      static_pages + tool_pages + service_pages + portfolio_pages + blog_pages
+      static_pages + tool_pages + service_pages + location_pages + portfolio_pages + blog_pages
     end
 
     private
@@ -31,6 +31,12 @@ class SitemapBuilder
     def service_pages
       ServicePage.all.map do |page|
         entry(page.path, changefreq: "monthly", priority: "0.85", lastmod: today)
+      end
+    end
+
+    def location_pages
+      LocationPage.all.map do |page|
+        entry(page.path, changefreq: "monthly", priority: "0.82", lastmod: today)
       end
     end
 

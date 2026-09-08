@@ -21,6 +21,23 @@
       <%= link_to "Contact", contact_page_path %>
       <%= link_to "Privacy", privacy_path %>
     </div>
+    <div class="footer-service-areas">
+      <strong>Service Areas</strong>
+      <div class="footer-area-group">
+        <span>Interior:</span>
+        <%= link_to "Delhi NCR", interior_design_path %>
+        <% LocationPage.for_division(:interior).each do |page| %>
+          <%= link_to page.city, page.path %>
+        <% end %>
+      </div>
+      <div class="footer-area-group">
+        <span>Web:</span>
+        <%= link_to "India", it_development_path %>
+        <% LocationPage.for_division(:web).each do |page| %>
+          <%= link_to page.city, page.path %>
+        <% end %>
+      </div>
+    </div>
     <div class="copyright">
       <div>© <%= Time.current.year %> Arqvexa. All rights reserved.</div>
       <%= link_to "Privacy Policy", privacy_path, class: "footer-legal-link" %>
