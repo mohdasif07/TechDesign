@@ -4,57 +4,81 @@
   canonical: site_url("/"),
   keywords: "interior design Delhi NCR, web development Delhi, IT company Gurgaon, website design Noida, modular kitchen, mobile app development, interior designer near me"
 ) %>
+<% content_for :division, "studio" %>
+<% content_for :body_class, "page-home" %>
 
 <%= render "shared/navigation" %>
 
 <main id="main-content">
-  <section class="hero hero-immersive" id="home">
-    <canvas class="hero-ambient-canvas" data-hero-ambient width="1920" height="1080" aria-hidden="true"></canvas>
-    <div class="hero-spotlight" data-hero-spotlight aria-hidden="true"></div>
-    <div class="hero-glow glow-one" aria-hidden="true"></div>
-    <div class="hero-glow glow-two" aria-hidden="true"></div>
-    <div class="container hero-grid hero-balanced">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span></span> Delhi NCR • Remote India</div>
-        <h1>Interior Design<br>&amp; <em>IT Development.</em><br>One Studio.</h1>
-        <p class="hero-text">Whether you need a modular kitchen in Gurgaon or a business website that converts — Arqvexa delivers both with the same care and expertise.</p>
-        <div class="hero-actions hero-actions-split">
-          <%= link_to interior_design_path, class: "btn btn-primary" do %>
-            Interior Design <span aria-hidden="true">→</span>
-          <% end %>
-          <%= link_to it_development_path, class: "btn btn-ghost" do %>
-            IT Development <span aria-hidden="true">→</span>
-          <% end %>
-        </div>
-        <div class="hero-proof">
-          <div><strong>50/50</strong><span>Two Equal<br>Divisions</span></div>
-          <div><strong>2</strong><span>Expert<br>Founders</span></div>
-          <div><strong>∞</strong><span>Spaces &amp;<br>Software</span></div>
-        </div>
-      </div>
-
-      <div class="hero-cube-scene reveal delay-1" data-hero-cube aria-label="Rotating cube showing interior design and IT development">
-        <div class="hero-cube-glow hero-cube-glow--warm" aria-hidden="true"></div>
-        <div class="hero-cube-glow hero-cube-glow--cool" aria-hidden="true"></div>
-        <div class="hero-cube-viewport">
-          <div class="hero-cube" data-cube>
-            <div class="hero-cube-face hero-cube-face--front"></div>
-            <div class="hero-cube-face hero-cube-face--back"></div>
-            <div class="hero-cube-face hero-cube-face--right"></div>
-            <div class="hero-cube-face hero-cube-face--left"></div>
-            <div class="hero-cube-face hero-cube-face--top"></div>
-            <div class="hero-cube-face hero-cube-face--bottom"></div>
-          </div>
-        </div>
-        <div class="hero-cube-labels" aria-hidden="true">
-          <span class="hero-cube-label hero-cube-label--interior">Interior</span>
-          <span class="hero-cube-label hero-cube-label--tech">Technology</span>
-        </div>
-        <p class="hero-cube-hint" aria-hidden="true">Drag to rotate</p>
+  <section class="hero hero-immersive hero-split" id="home" data-hero-split>
+    <div class="hero-split-bg" aria-hidden="true">
+      <div class="hero-waves" data-hero-waves>
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C9A87C" stop-opacity="0.35"/>
+              <stop offset="45%" stop-color="#00D9FF" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.35"/>
+            </linearGradient>
+            <filter id="waveBlur">
+              <feGaussianBlur stdDeviation="28"/>
+            </filter>
+          </defs>
+          <path class="wave-path" fill="url(#waveGrad)" filter="url(#waveBlur)" d="M0,400 C240,280 480,520 720,400 C960,280 1200,520 1440,380 L1440,900 L0,900 Z"/>
+          <path class="wave-path wave-path--2" fill="url(#waveGrad)" filter="url(#waveBlur)" opacity="0.5" d="M0,520 C300,400 540,640 780,520 C1020,400 1260,620 1440,500 L1440,900 L0,900 Z"/>
+        </svg>
       </div>
     </div>
 
-    <div class="hero-scroll-cue reveal delay-2" aria-hidden="true">
+    <div class="hero-split-panels" aria-hidden="true">
+      <div class="hero-panel hero-panel-interior">
+        <div class="hero-panel-media" role="img" aria-label="Cinematic interior design photography"></div>
+        <div class="hero-panel-overlay"></div>
+        <span class="hero-panel-label">Spaces</span>
+      </div>
+      <div class="hero-panel hero-panel-tech">
+        <div class="hero-panel-media"></div>
+        <div class="hero-panel-overlay"></div>
+        <div class="digital-network">
+          <svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice">
+            <g stroke="rgba(0,217,255,0.35)" stroke-width="1" fill="none">
+              <circle cx="80" cy="120" r="3" fill="#00D9FF"/>
+              <circle cx="200" cy="80" r="3" fill="#4267FF"/>
+              <circle cx="320" cy="140" r="3" fill="#7C3AED"/>
+              <circle cx="140" cy="280" r="3" fill="#00D9FF"/>
+              <circle cx="280" cy="320" r="3" fill="#4267FF"/>
+              <circle cx="200" cy="420" r="3" fill="#7C3AED"/>
+              <path d="M80 120 L200 80 L320 140 M200 80 L140 280 M320 140 L280 320 M140 280 L200 420 L280 320"/>
+            </g>
+          </svg>
+        </div>
+        <span class="hero-panel-label">Systems</span>
+      </div>
+    </div>
+
+    <div class="hero-split-center" aria-hidden="true"></div>
+
+    <div class="hero-split-content">
+      <div class="eyebrow reveal"><span></span> Delhi NCR • Remote India</div>
+      <h1 class="reveal delay-1">Interior Design<br><span class="hero-amp">&amp;</span><br>IT Development.<br>One Studio.</h1>
+      <p class="hero-subhead reveal delay-2"><strong>Spaces for people.</strong><br>Systems for business.</p>
+      <p class="hero-text reveal delay-2">Whether you need a modular kitchen in Gurgaon or a business website that converts — Arqvexa delivers both with the same care and expertise.</p>
+      <div class="hero-actions hero-actions-split reveal delay-3">
+        <%= link_to interior_design_path, class: "btn btn-primary", data: { magnetic: true } do %>
+          Interior Design <span aria-hidden="true">→</span>
+        <% end %>
+        <%= link_to it_development_path, class: "btn btn-ghost", data: { magnetic: true } do %>
+          IT Development <span aria-hidden="true">→</span>
+        <% end %>
+      </div>
+      <div class="hero-proof reveal delay-4">
+        <div><strong>50/50</strong><span>Two Equal<br>Divisions</span></div>
+        <div><strong>2</strong><span>Expert<br>Founders</span></div>
+        <div><strong>∞</strong><span>Spaces &amp;<br>Software</span></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-cue reveal delay-5" aria-hidden="true">
       <span>Scroll to explore</span>
       <span class="hero-scroll-line"></span>
     </div>
@@ -89,6 +113,122 @@
       <span>Office Interiors</span>
     </div>
   </div>
+
+  <%# Two Worlds — immersive scroll storytelling %>
+  <section class="worlds-section" id="two-worlds" aria-label="Interior Design and IT Development experiences">
+    <div class="world-block world-block-interior" data-world="interior">
+      <div class="arch-grid" aria-hidden="true"></div>
+      <div class="container world-grid">
+        <div class="world-copy reveal">
+          <div class="eyebrow"><span></span> Interior Design</div>
+          <h2>Spaces designed around how you live.</h2>
+          <p>From floor plan to finished room — layouts, materials, lighting and execution across Delhi NCR.</p>
+          <div class="world-links">
+            <%= link_to "Residential", interior_service_path("residential-interior-design") %>
+            <%= link_to "Modular Kitchen", interior_service_path("modular-kitchen") %>
+            <%= link_to "Office", interior_service_path("office-interior-design") %>
+            <%= link_to "3D Visualization", interior_service_path("3d-visualization") %>
+          </div>
+          <div class="hero-actions" style="margin-top: 28px;">
+            <%= link_to interior_design_path, class: "btn btn-primary" do %>
+              Explore Interior Design <span aria-hidden="true">→</span>
+            <% end %>
+          </div>
+        </div>
+        <div class="reveal delay-1">
+          <div class="world-stages" data-world-stages="interior">
+            <div class="world-stage is-active" data-stage="0"
+                 style="background-image: linear-gradient(180deg,rgba(5,8,22,.2),rgba(5,8,22,.55)), url('/portfolio/modern-3bhk-gurgaon/bedroom-minimal-white.webp');"
+                 role="img" aria-label="Floor plan inspired interior layout"></div>
+            <div class="world-stage" data-stage="1"
+                 style="background-image: linear-gradient(180deg,rgba(5,8,22,.15),rgba(5,8,22,.5)), url('/portfolio/modern-office-noida/minimal-open-office.webp');"
+                 role="img" aria-label="3D interior visualization"></div>
+            <div class="world-stage" data-stage="2"
+                 style="background-image: linear-gradient(180deg,rgba(5,8,22,.1),rgba(5,8,22,.45)), url('/portfolio/contemporary-kitchen-delhi/marble-luxury-integrated.webp');"
+                 role="img" aria-label="Finished interior living space"></div>
+            <span class="world-stage-caption" data-stage-caption>Floor plan → 3D → Finished</span>
+          </div>
+          <div class="world-progress" role="tablist" aria-label="Interior design stages">
+            <button type="button" class="is-active" data-stage-btn="0" aria-label="Floor plan stage"></button>
+            <button type="button" data-stage-btn="1" aria-label="3D visualization stage"></button>
+            <button type="button" data-stage-btn="2" aria-label="Finished interior stage"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding: 20px 0;">
+      <%= render "shared/signature_line" %>
+    </div>
+
+    <div class="world-block world-block-tech" data-world="tech">
+      <div class="container world-grid">
+        <div class="reveal">
+          <div class="world-stages" data-world-stages="tech">
+            <div class="world-stage is-active" data-stage="0"
+                 style="background: linear-gradient(145deg,#0a1228,#142050);">
+              <div class="digital-network" style="opacity:1;position:absolute;inset:0;">
+                <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice">
+                  <g stroke="rgba(0,217,255,0.4)" fill="none" stroke-width="1.2">
+                    <circle cx="100" cy="80" r="5" fill="#00D9FF"/><text x="115" y="85" fill="#A7ADBD" font-size="11" font-family="Outfit,sans-serif">Website</text>
+                    <circle cx="300" cy="60" r="5" fill="#4267FF"/><text x="315" y="65" fill="#A7ADBD" font-size="11" font-family="Outfit,sans-serif">API</text>
+                    <circle cx="480" cy="100" r="5" fill="#7C3AED"/><text x="420" y="120" fill="#A7ADBD" font-size="11" font-family="Outfit,sans-serif">CRM</text>
+                    <circle cx="160" cy="220" r="5" fill="#00D9FF"/><text x="175" y="225" fill="#A7ADBD" font-size="11" font-family="Outfit,sans-serif">Database</text>
+                    <circle cx="360" cy="240" r="5" fill="#4267FF"/><text x="375" y="245" fill="#A7ADBD" font-size="11" font-family="Outfit,sans-serif">AI</text>
+                    <circle cx="280" cy="360" r="5" fill="#7C3AED"/><text x="295" y="365" fill="#A7ADBD" font-size="11" font-family="Outfit,sans-serif">Mobile App</text>
+                    <path d="M100 80 L300 60 L480 100 M300 60 L160 220 M300 60 L360 240 M160 220 L280 360 L360 240 L480 100"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="world-stage" data-stage="1"
+                 style="background: linear-gradient(160deg,#081020 0%,#101838 50%,#1a1040 100%);">
+              <div style="position:absolute;inset:12%;border:1px solid rgba(0,217,255,.25);border-radius:12px;background:rgba(5,8,22,.6);padding:16px;">
+                <div style="height:10px;width:40%;background:rgba(0,217,255,.35);border-radius:4px;margin-bottom:12px;"></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                  <div style="height:60px;background:rgba(66,103,255,.2);border-radius:8px;"></div>
+                  <div style="height:60px;background:rgba(124,58,237,.2);border-radius:8px;"></div>
+                  <div style="height:60px;background:rgba(0,217,255,.15);border-radius:8px;grid-column:span 2;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="world-stage" data-stage="2"
+                 style="background: radial-gradient(circle at 30% 30%,rgba(0,217,255,.2),transparent 50%),linear-gradient(145deg,#050816,#0C1638);">
+              <div style="position:absolute;inset:10%;display:grid;place-items:center;text-align:center;">
+                <div>
+                  <div style="font:700 28px Syne,sans-serif;background:linear-gradient(135deg,#00D9FF,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent;">BUILD. SHIP. SCALE.</div>
+                  <p style="color:#A7ADBD;font-size:14px;margin-top:12px;">Finished digital product</p>
+                </div>
+              </div>
+            </div>
+            <span class="world-stage-caption" data-stage-caption>Wireframe → Interface → Product</span>
+          </div>
+          <div class="world-progress" role="tablist" aria-label="IT development stages">
+            <button type="button" class="is-active" data-stage-btn="0" aria-label="System network stage"></button>
+            <button type="button" data-stage-btn="1" aria-label="Interface stage"></button>
+            <button type="button" data-stage-btn="2" aria-label="Finished product stage"></button>
+          </div>
+        </div>
+        <div class="world-copy reveal delay-1">
+          <div class="eyebrow"><span></span> IT Development</div>
+          <h2>Digital products designed around how your business works.</h2>
+          <p>Websites, dashboards, mobile apps, CRM and AI — wired into one coherent system.</p>
+          <div class="world-links">
+            <%= link_to "Web", it_service_path("web-development") %>
+            <%= link_to "E-commerce", it_service_path("ecommerce-development") %>
+            <%= link_to "Mobile Apps", it_service_path("mobile-app-development") %>
+            <%= link_to "AI", it_service_path("ai-development") %>
+            <%= link_to "CRM", it_service_path("crm-development") %>
+          </div>
+          <div class="hero-actions" style="margin-top: 28px;">
+            <%= link_to it_development_path, class: "btn btn-primary" do %>
+              Explore IT Development <span aria-hidden="true">→</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section services" id="services">
     <div class="container">

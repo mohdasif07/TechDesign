@@ -62,17 +62,35 @@
   <%= json_ld_script({ "@context" => "https://schema.org", "@graph" => client_reviews_schema(ClientReview.for_division(:it), service_name: "IT Development Services") }) %>
 <% end %>
 
+<% content_for :division, "it" %>
+
 <%= render "shared/navigation" %>
 
 <main id="main-content">
   <%= render_breadcrumbs %>
 
-  <section class="page-hero page-hero-tech">
+  <section class="page-hero page-hero-tech page-hero-cinematic" data-it-hero>
+    <div class="digital-network" aria-hidden="true" style="opacity:0.35;">
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+        <g stroke="rgba(0,217,255,0.3)" stroke-width="1" fill="none">
+          <circle cx="180" cy="120" r="4" fill="#00D9FF"/>
+          <circle cx="420" cy="80" r="4" fill="#4267FF"/>
+          <circle cx="700" cy="140" r="4" fill="#7C3AED"/>
+          <circle cx="980" cy="100" r="4" fill="#00D9FF"/>
+          <circle cx="300" cy="320" r="4" fill="#4267FF"/>
+          <circle cx="600" cy="280" r="4" fill="#7C3AED"/>
+          <circle cx="900" cy="340" r="4" fill="#00D9FF"/>
+          <path d="M180 120 L420 80 L700 140 L980 100 M420 80 L300 320 M700 140 L600 280 M980 100 L900 340 M300 320 L600 280 L900 340"/>
+        </g>
+      </svg>
+    </div>
     <div class="container page-hero-grid reveal">
       <div>
         <div class="eyebrow"><span></span> IT Development · India &amp; Remote</div>
+        <p class="it-hero-kicker" aria-hidden="true">BUILD. SHIP. SCALE.</p>
         <h1>IT Development Company in <em>Delhi NCR.</em></h1>
         <p class="page-hero-text">Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software — built for businesses that need results, not just a pretty homepage.</p>
+        <p class="page-hero-text" style="margin-top:-8px;opacity:0.85;">Digital products and automation that help businesses work smarter.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Discuss Your Software Project <span aria-hidden="true">→</span></a>
           <%= link_to "View Interior Design", interior_design_path, class: "btn btn-ghost-light" %>
@@ -81,16 +99,27 @@
           <li>Websites</li><li>Mobile Apps</li><li>E-commerce</li><li>CRM</li><li>AI</li>
         </ul>
       </div>
-      <div class="page-hero-visual">
-        <div class="visual-digital tall">
-          <div class="browser">
-            <span></span><span></span><span></span>
-            <div class="browser-title">Build. Ship. Scale.</div>
-            <div class="browser-lines"></div>
-            <div class="browser-status" aria-hidden="true">
-              <span class="status-dot"></span> Deployed &amp; live
-            </div>
-          </div>
+      <div class="page-hero-visual reveal delay-1">
+        <div class="it-system-viz" data-it-network aria-label="Arqvexa digital system visualization">
+          <svg viewBox="0 0 420 360" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="itNodeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D9FF"/><stop offset="100%" stop-color="#7C3AED"/>
+              </linearGradient>
+            </defs>
+            <g class="it-links" stroke="url(#itNodeGlow)" stroke-width="1.2" fill="none" opacity="0.55">
+              <path d="M80 80 L210 50 L340 90"/><path d="M210 50 L120 180"/><path d="M210 50 L300 190"/>
+              <path d="M120 180 L210 280 L300 190"/><path d="M340 90 L300 190"/>
+            </g>
+            <g font-family="Outfit,sans-serif" font-size="11" fill="#A7ADBD">
+              <circle cx="80" cy="80" r="6" fill="#00D9FF"/><text x="95" y="84">Website</text>
+              <circle cx="210" cy="50" r="6" fill="#4267FF"/><text x="225" y="54">API</text>
+              <circle cx="340" cy="90" r="6" fill="#7C3AED"/><text x="300" y="115">CRM</text>
+              <circle cx="120" cy="180" r="6" fill="#00D9FF"/><text x="135" y="184">Database</text>
+              <circle cx="300" cy="190" r="6" fill="#4267FF"/><text x="315" y="194">AI</text>
+              <circle cx="210" cy="280" r="6" fill="#7C3AED"/><text x="225" y="284">Mobile App</text>
+            </g>
+          </svg>
         </div>
       </div>
     </div>

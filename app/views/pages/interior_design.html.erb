@@ -64,12 +64,17 @@
   <%= json_ld_script({ "@context" => "https://schema.org", "@graph" => client_reviews_schema(ClientReview.for_division(:interior), service_name: "Interior Design Services") }) %>
 <% end %>
 
+<% content_for :division, "interior" %>
+
 <%= render "shared/navigation" %>
 
 <main id="main-content">
   <%= render_breadcrumbs %>
 
-  <section class="page-hero page-hero-interior">
+  <section class="page-hero page-hero-interior page-hero-cinematic" data-interior-hero>
+    <div class="arch-grid" aria-hidden="true"></div>
+    <div class="page-hero-photo" aria-hidden="true"
+         style="background-image: linear-gradient(105deg, rgba(18,16,12,0.92) 0%, rgba(18,16,12,0.55) 45%, rgba(5,8,22,0.35) 100%), url('/portfolio/modern-3bhk-gurgaon/bedroom-modern-render.webp');"></div>
     <div class="container page-hero-grid reveal">
       <div>
         <div class="eyebrow"><span></span> Interior Design · Delhi NCR</div>
@@ -83,8 +88,13 @@
           <li>Delhi</li><li>Gurgaon</li><li>Noida</li><li>3D Plans</li><li>Modular Kitchen</li>
         </ul>
       </div>
-      <div class="page-hero-visual">
-        <div class="visual-room tall"><div class="v-window"></div><div class="v-sofa"></div><div class="v-table"></div><div class="v-light"></div></div>
+      <div class="page-hero-visual page-hero-visual--photo reveal delay-1">
+        <div class="room-reveal" data-room-reveal aria-hidden="true">
+          <div class="room-reveal-layer room-reveal-blueprint"></div>
+          <div class="room-reveal-layer room-reveal-wire"></div>
+          <div class="room-reveal-layer room-reveal-photo"
+               style="background-image: url('/portfolio/contemporary-kitchen-delhi/marble-luxury-integrated.webp');"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -100,6 +110,29 @@
       </div>
       <div class="service-link-section reveal">
         <%= render "shared/service_link_grid", services: @interior_services, variant: "interior" %>
+      </div>
+    </div>
+  </section>
+
+  <section class="materials-section" data-materials aria-label="Interior materials">
+    <div class="container">
+      <div class="section-head compact reveal">
+        <div>
+          <div class="eyebrow"><span></span> Materials</div>
+          <h2>Atmosphere you can <em>feel.</em></h2>
+        </div>
+        <p>Explore finishes — hover or tap a material to shift the mood.</p>
+      </div>
+      <div class="materials-grid reveal" role="list">
+        <button type="button" class="material-swatch is-active" data-material="wood" role="listitem"><span>Wood</span></button>
+        <button type="button" class="material-swatch" data-material="stone" role="listitem"><span>Stone</span></button>
+        <button type="button" class="material-swatch" data-material="marble" role="listitem"><span>Marble</span></button>
+        <button type="button" class="material-swatch" data-material="fabric" role="listitem"><span>Fabric</span></button>
+        <button type="button" class="material-swatch" data-material="glass" role="listitem"><span>Glass</span></button>
+        <button type="button" class="material-swatch" data-material="metal" role="listitem"><span>Metal</span></button>
+      </div>
+      <div class="materials-atmosphere reveal delay-1" data-materials-atmosphere data-active="wood">
+        Warm oak and walnut tones — grounding residential spaces with natural texture.
       </div>
     </div>
   </section>

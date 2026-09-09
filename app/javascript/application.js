@@ -14,6 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initPortfolioGallery();
   initHeroCube();
   initHeroExperience();
+  initHeroSplit();
+  initWorldStages();
+  initSignatureLines();
+  initPageTransitions();
+  initMaterials();
+  initWaveMotion();
+  initRoomReveal();
+  initCinematicHero();
 });
 
 function initNavigation() {
@@ -1140,4 +1148,245 @@ function initScrollCue() {
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReduced) cue.hidden = true;
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function initHeroSplit() {
+  const hero = document.querySelector("[data-hero-split]");
+  if (!hero) return;
+
+  if (prefersReducedMotion()) {
+    hero.dataset.blend = "balanced";
+    return;
+  }
+
+  const isCoarse = window.matchMedia("(pointer: coarse)").matches;
+
+  if (isCoarse) {
+    // Mobile: scroll-driven blend between panels
+    const onScroll = () => {
+      const rect = hero.getBoundingClientRect();
+      const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)));
+      hero.dataset.blend = progress < 0.45 ? "interior" : "tech";
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return;
+  }
+
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width;
+    if (x < 0.42) hero.dataset.blend = "interior";
+    else if (x > 0.58) hero.dataset.blend = "tech";
+    else hero.dataset.blend = "balanced";
+  }, { passive: true });
+
+  hero.addEventListener("pointerleave", () => {
+    hero.dataset.blend = "balanced";
+  });
+}
+
+function initWorldStages() {
+  document.querySelectorAll("[data-world-stages]").forEach((stageRoot) => {
+    const stages = [...stageRoot.querySelectorAll(".world-stage")];
+    const progress = stageRoot.parentElement?.querySelector(".world-progress");
+    const buttons = progress ? [...progress.querySelectorAll("[data-stage-btn]")] : [];
+    if (!stages.length) return;
+
+    let index = 0;
+    let timer = null;
+
+    const activate = (next) => {
+      index = ((next % stages.length) + stages.length) % stages.length;
+      stages.forEach((el, i) => el.classList.toggle("is-active", i === index));
+      buttons.forEach((btn, i) => btn.classList.toggle("is-active", i === index));
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activate(Number(btn.dataset.stageBtn));
+        restart();
+      });
+    });
+
+    const restart = () => {
+      if (timer) clearInterval(timer);
+      if (prefersReducedMotion()) return;
+      timer = setInterval(() => activate(index + 1), 3200);
+    };
+
+    // Scroll-triggered advance when block enters view
+    const block = stageRoot.closest(".world-block");
+    if (block && !prefersReducedMotion() && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) restart();
+            else if (timer) clearInterval(timer);
+          });
+        },
+        { threshold: 0.35 }
+      );
+      observer.observe(block);
+    } else {
+      restart();
+    }
+  });
+}
+
+function initSignatureLines() {
+  const lines = document.querySelectorAll("[data-signature-line]");
+  if (!lines.length) return;
+
+  if (prefersReducedMotion()) {
+    lines.forEach((line) => line.classList.add("is-drawn"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-drawn");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  lines.forEach((line) => observer.observe(line));
+}
+
+function initPageTransitions() {
+  const overlay = document.querySelector("[data-page-transition]");
+  if (!overlay || prefersReducedMotion()) return;
+
+  document.querySelectorAll('a[href^="/interior-design"], a[href^="/it-development"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      // Allow modified clicks / new tabs
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === "_blank") return;
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+
+      overlay.classList.add("is-active");
+      window.setTimeout(() => overlay.classList.remove("is-active"), 280);
+    });
+  });
+}
+
+function initMaterials() {
+  const section = document.querySelector("[data-materials]");
+  if (!section) return;
+
+  const atmosphere = section.querySelector("[data-materials-atmosphere]");
+  const swatches = section.querySelectorAll("[data-material]");
+  const copy = {
+    wood: "Warm oak and walnut tones — grounding residential spaces with natural texture.",
+    stone: "Cool neutrals and tactile stone — calm, architectural, enduring.",
+    marble: "Veined luxury surfaces — light-catching drama for kitchens and feature walls.",
+    fabric: "Soft textiles and upholstery — comfort layered into living and lounge zones.",
+    glass: "Clarity and reflection — opening sightlines between rooms and daylight.",
+    metal: "Brushed brass and steel accents — precise edges and modern hardware."
+  };
+
+  const setActive = (key) => {
+    swatches.forEach((el) => el.classList.toggle("is-active", el.dataset.material === key));
+    if (atmosphere) {
+      atmosphere.dataset.active = key;
+      atmosphere.textContent = copy[key] || "";
+    }
+  };
+
+  swatches.forEach((swatch) => {
+    const activate = () => setActive(swatch.dataset.material);
+    swatch.addEventListener("mouseenter", activate);
+    swatch.addEventListener("focus", activate);
+    swatch.addEventListener("click", activate);
+  });
+
+  setActive("wood");
+}
+
+function initWaveMotion() {
+  const waves = document.querySelector("[data-hero-waves]");
+  if (!waves || prefersReducedMotion()) return;
+
+  const paths = waves.querySelectorAll(".wave-path");
+  if (!paths.length) return;
+
+  let frame = 0;
+  let raf = null;
+
+  const tick = () => {
+    frame += 0.008;
+    paths.forEach((path, i) => {
+      const y = Math.sin(frame + i) * 12;
+      path.style.transform = `translateY(${y}px)`;
+    });
+    raf = requestAnimationFrame(tick);
+  };
+
+  // Only animate when hero is in view
+  const hero = document.querySelector("[data-hero-split]");
+  if (!hero || !("IntersectionObserver" in window)) {
+    raf = requestAnimationFrame(tick);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !raf) raf = requestAnimationFrame(tick);
+        else if (!entry.isIntersecting && raf) {
+          cancelAnimationFrame(raf);
+          raf = null;
+        }
+      });
+    },
+    { threshold: 0.05 }
+  );
+  observer.observe(hero);
+}
+
+function initRoomReveal() {
+  const room = document.querySelector("[data-room-reveal]");
+  if (!room) return;
+
+  if (prefersReducedMotion()) {
+    room.classList.add("is-revealed");
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          room.classList.add("is-revealed");
+          observer.unobserve(room);
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+  observer.observe(room);
+}
+
+function initCinematicHero() {
+  const heroes = document.querySelectorAll(".page-hero-cinematic");
+  if (!heroes.length || prefersReducedMotion()) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-inview", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.2 }
+  );
+  heroes.forEach((hero) => observer.observe(hero));
 }

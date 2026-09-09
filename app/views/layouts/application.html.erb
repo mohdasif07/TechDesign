@@ -7,8 +7,8 @@
     <meta name="description" content="<%= meta_description %>">
     <meta name="keywords" content="<%= meta_keywords %>">
     <meta name="author" content="Arqvexa">
-    <meta name="theme-color" content="#0b1930">
-    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#050816">
+    <meta name="color-scheme" content="dark">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Arqvexa">
@@ -104,11 +104,12 @@
       </script>
     <% end %>
   </head>
-  <body>
+  <body class="<%= [content_for?(:body_class) ? content_for(:body_class) : nil, ("page-#{controller_name}-#{action_name}")].compact.join(" ") %>" data-division="<%= content_for?(:division) ? content_for(:division) : "studio" %>">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <%= render "shared/flash" %>
     <%= yield %>
     <%= render "shared/whatsapp_float" %>
     <%= render "shared/page_extras" unless content_for?(:skip_page_extras) %>
+    <div class="page-transition" data-page-transition aria-hidden="true"></div>
   </body>
 </html>
