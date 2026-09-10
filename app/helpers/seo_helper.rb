@@ -123,7 +123,7 @@ module SeoHelper
         "name" => "Arqvexa",
         "logo" => {
           "@type" => "ImageObject",
-          "url" => site_url("/icon.png")
+          "url" => site_url("/icon.png?v=20260910")
         }
       },
       "mainEntityOfPage" => {

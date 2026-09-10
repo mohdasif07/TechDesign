@@ -1,11 +1,13 @@
-const CACHE_NAME = "arqvexa-v5";
+const CACHE_NAME = "arqvexa-v6";
 const OFFLINE_URL = "/";
 
 const PRECACHE_URLS = [
   OFFLINE_URL,
   "/icon.png",
   "/icon-192.png",
-  "/icon.svg"
+  "/icon.svg",
+  "/apple-touch-icon.png",
+  "/favicon.ico"
 ];
 
 self.addEventListener("install", (event) => {
