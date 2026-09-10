@@ -1,40 +1,41 @@
-<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa cover">
+<svg width="1200" height="628" viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa — Interior Design and IT Development">
   <defs>
-    <linearGradient id="cover-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#081428"/>
-      <stop offset="45%" stop-color="#0f2440"/>
-      <stop offset="100%" stop-color="#16345c"/>
+    <linearGradient id="og-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="50%" stop-color="#080B1A"/>
+      <stop offset="100%" stop-color="#0C1638"/>
     </linearGradient>
-    <linearGradient id="cover-accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e87935"/>
-      <stop offset="100%" stop-color="#ffb07a"/>
+    <linearGradient id="og-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
     </linearGradient>
-    <radialGradient id="cover-glow" cx="22%" cy="40%" r="45%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="cover-glow-2" cx="88%" cy="70%" r="35%">
-      <stop offset="0%" stop-color="#e87935" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#e87935" stop-opacity="0"/>
-    </radialGradient>
   </defs>
-  <rect width="1200" height="628" fill="url(#cover-bg)"/>
-  <rect width="1200" height="628" fill="url(#cover-glow)"/>
-  <rect width="1200" height="628" fill="url(#cover-glow-2)"/>
-  <g transform="translate(210 314)">
-    <path d="M0 -118 L102 136 H68 L0 16 L-68 136 H-102 Z" fill="none" stroke="#ffffff" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="M-68 76 H68" fill="none" stroke="#ffffff" stroke-width="22" stroke-linecap="round"/>
-    <path d="M68 -8 V136" fill="none" stroke="url(#cover-accent)" stroke-width="14" stroke-linecap="round" stroke-dasharray="0 24"/>
-    <circle cy="-92" r="26" fill="url(#cover-accent)"/>
-    <circle cy="-92" r="11" fill="#fff" opacity="0.9"/>
-    <path d="M-86 152 H86" stroke="url(#cover-accent)" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="-62" cy="152" r="7" fill="#ffb07a"/>
-    <circle cx="0" cy="152" r="7" fill="#ffb07a"/>
-    <circle cx="62" cy="152" r="7" fill="#ffb07a"/>
+  <rect width="1200" height="628" fill="url(#og-bg)"/>
+
+  <!-- AX mark -->
+  <g transform="translate(460 90)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="16" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M40 220 L140 40 L240 220"/>
+      <path d="M78 140 H202"/>
+      <path d="M70 70 L210 200"/>
+      <path d="M210 70 L70 200"/>
+    </g>
+    <circle cx="140" cy="40" r="11" fill="url(#og-accent)"/>
+    <circle cx="140" cy="140" r="7" fill="#00D9FF"/>
+    <circle cx="78" cy="140" r="6" fill="#00D9FF"/>
+    <circle cx="202" cy="140" r="6" fill="#7C3AED"/>
   </g>
-  <text x="430" y="280" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="800" fill="#ffffff" letter-spacing="-2">Arq<tspan fill="url(#cover-accent)">vexa</tspan></text>
-  <text x="430" y="340" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#aebbd0" letter-spacing="5">INTERIOR DESIGN | IT DEVELOPMENT</text>
-  <text x="430" y="385" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" fill="#8fa0b8">Delhi NCR | India</text>
-  <rect x="430" y="410" width="220" height="6" rx="3" fill="url(#cover-accent)"/>
-  <text x="430" y="455" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" fill="#c5ceda">Spaces and software. One studio.</text>
+
+  <text x="600" y="400" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="72" font-weight="700"
+        fill="#F7F7F2" letter-spacing="0.18em">ARQVEXA</text>
+  <text x="600" y="460" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="20" font-weight="600"
+        fill="#A7ADBD" letter-spacing="0.32em">ARCHITECTURE + TECHNOLOGY</text>
+  <text x="600" y="510" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="16" font-weight="500"
+        fill="#6B7289" letter-spacing="0.2em">INTERIOR DESIGN  ·  IT DEVELOPMENT</text>
 </svg>

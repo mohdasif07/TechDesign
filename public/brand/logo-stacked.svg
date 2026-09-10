@@ -1,0 +1,33 @@
+<svg width="400" height="420" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa stacked logo">
+  <defs>
+    <linearGradient id="st-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="st-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="116" y="24" width="168" height="168" rx="40" fill="url(#st-bg)"/>
+  <g fill="none" stroke="#F7F7F2" stroke-width="7.5" stroke-linecap="square" stroke-linejoin="miter" transform="translate(136 44)">
+    <path d="M24 108 L64 18 L104 108"/>
+    <path d="M38 68 H90"/>
+    <path d="M32 32 L96 96"/>
+    <path d="M96 32 L32 96"/>
+  </g>
+  <circle cx="200" cy="62" r="5" fill="url(#st-accent)"/>
+  <circle cx="200" cy="112" r="3.5" fill="#00D9FF"/>
+  <circle cx="174" cy="112" r="2.8" fill="#00D9FF"/>
+  <circle cx="226" cy="112" r="2.8" fill="#7C3AED"/>
+
+  <text x="200" y="280" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="48" font-weight="700"
+        fill="#0b1930" letter-spacing="0.16em">ARQVEXA</text>
+  <text x="200" y="320" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="13" font-weight="600"
+        fill="#6B7289" letter-spacing="0.28em">ARCHITECTURE + TECHNOLOGY</text>
+</svg>

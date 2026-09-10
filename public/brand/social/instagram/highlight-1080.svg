@@ -1,0 +1,26 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa Instagram highlight">
+  <defs>
+    <linearGradient id="igh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="igh-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#igh-bg)"/>
+  <!-- Centered AX for circular highlight crop -->
+  <g transform="translate(290 290)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="24" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M60 400 L250 70 L440 400"/>
+      <path d="M125 250 H375"/>
+      <path d="M105 130 L395 360"/>
+      <path d="M395 130 L105 360"/>
+    </g>
+    <circle cx="250" cy="70" r="18" fill="url(#igh-accent)"/>
+    <circle cx="250" cy="250" r="12" fill="#00D9FF"/>
+    <circle cx="125" cy="250" r="10" fill="#00D9FF"/>
+    <circle cx="375" cy="250" r="10" fill="#7C3AED"/>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<svg width="1128" height="191" viewBox="0 0 1128 191" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa LinkedIn company cover">
+  <defs>
+    <linearGradient id="lic-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="lic-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1128" height="191" fill="url(#lic-bg)"/>
+  <g transform="translate(48 28)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M16 120 L70 20 L124 120"/>
+      <path d="M36 74 H104"/>
+      <path d="M30 36 L110 108"/>
+      <path d="M110 36 L30 108"/>
+    </g>
+    <circle cx="70" cy="20" r="5" fill="url(#lic-accent)"/>
+    <circle cx="70" cy="74" r="3.5" fill="#00D9FF"/>
+  </g>
+  <text x="210" y="100"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="42" font-weight="700" fill="#F7F7F2" letter-spacing="0.14em">ARQVEXA</text>
+  <text x="210" y="140"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="14" font-weight="600" fill="#A7ADBD" letter-spacing="0.2em">ARCHITECTURE + TECHNOLOGY</text>
+</svg>

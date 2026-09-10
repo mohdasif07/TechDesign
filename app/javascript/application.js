@@ -34,6 +34,7 @@ function initNavigation() {
     menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
     document.body.classList.toggle("menu-open", Boolean(isOpen));
+    document.documentElement.classList.toggle("menu-open", Boolean(isOpen));
   });
 
   const closeMenu = () => {
@@ -41,6 +42,7 @@ function initNavigation() {
     menuBtn?.setAttribute("aria-expanded", "false");
     menuBtn?.setAttribute("aria-label", "Open menu");
     document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
   };
 
   document.querySelectorAll(".nav-links a, .footer-links a").forEach((link) => {
@@ -890,7 +892,7 @@ function drawCubePanel(ctx, x, y, w, h, title, primary) {
   ctx.stroke();
 
   ctx.fillStyle = "rgba(186, 230, 253, 0.95)";
-  ctx.font = "700 20px Manrope, sans-serif";
+  ctx.font = "700 20px 'Plus Jakarta Sans', sans-serif";
   ctx.fillText(title, x + 20, y + 36);
 
   for (let i = 0; i < (primary ? 4 : 2); i += 1) {

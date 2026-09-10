@@ -1,0 +1,25 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa LinkedIn profile">
+  <defs>
+    <linearGradient id="li-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="li-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="40" fill="url(#li-bg)"/>
+  <g transform="translate(160 150)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M60 400 L240 60 L420 400"/>
+      <path d="M120 250 H360"/>
+      <path d="M100 120 L380 360"/>
+      <path d="M380 120 L100 360"/>
+    </g>
+    <circle cx="240" cy="60" r="16" fill="url(#li-accent)"/>
+    <circle cx="240" cy="250" r="11" fill="#00D9FF"/>
+    <circle cx="120" cy="250" r="9" fill="#00D9FF"/>
+    <circle cx="360" cy="250" r="9" fill="#7C3AED"/>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa Instagram story">
+  <defs>
+    <linearGradient id="igs-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="50%" stop-color="#080B1A"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="igs-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#igs-bg)"/>
+  <!-- Safe zone: keep content away from top/bottom UI (approx 250px) -->
+  <g transform="translate(290 620)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M50 380 L250 60 L450 380"/>
+      <path d="M115 230 H385"/>
+      <path d="M100 120 L400 340"/>
+      <path d="M400 120 L100 340"/>
+    </g>
+    <circle cx="250" cy="60" r="16" fill="url(#igs-accent)"/>
+    <circle cx="250" cy="230" r="11" fill="#00D9FF"/>
+    <circle cx="115" cy="230" r="9" fill="#00D9FF"/>
+    <circle cx="385" cy="230" r="9" fill="#7C3AED"/>
+  </g>
+  <text x="540" y="1180" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="72" font-weight="700" fill="#F7F7F2" letter-spacing="0.16em">ARQVEXA</text>
+  <text x="540" y="1260" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="22" font-weight="600" fill="#A7ADBD" letter-spacing="0.26em">SPACES + SYSTEMS</text>
+  <text x="540" y="1580" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="18" font-weight="500" fill="#6B7289" letter-spacing="0.2em">arqvexa.in</text>
+</svg>

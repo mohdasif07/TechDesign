@@ -1,0 +1,26 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa Instagram profile">
+  <defs>
+    <linearGradient id="ig-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="ig-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#ig-bg)"/>
+  <!-- Safe circle area for IG avatar crop -->
+  <g transform="translate(240 220)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="28" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M80 480 L300 80 L520 480"/>
+      <path d="M155 300 H445"/>
+      <path d="M130 150 L470 440"/>
+      <path d="M470 150 L130 440"/>
+    </g>
+    <circle cx="300" cy="80" r="22" fill="url(#ig-accent)"/>
+    <circle cx="300" cy="300" r="14" fill="#00D9FF"/>
+    <circle cx="155" cy="300" r="12" fill="#00D9FF"/>
+    <circle cx="445" cy="300" r="12" fill="#7C3AED"/>
+  </g>
+</svg>

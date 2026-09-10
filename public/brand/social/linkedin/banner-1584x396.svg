@@ -1,0 +1,36 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa LinkedIn banner">
+  <defs>
+    <linearGradient id="lib-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="55%" stop-color="#080B1A"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="lib-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1584" height="396" fill="url(#lib-bg)"/>
+  <!-- Left safe: profile photo overlaps ~ left 180px on personal pages -->
+  <g transform="translate(220 70)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M24 200 L120 30 L216 200"/>
+      <path d="M58 120 H182"/>
+      <path d="M48 55 L192 175"/>
+      <path d="M192 55 L48 175"/>
+    </g>
+    <circle cx="120" cy="30" r="8" fill="url(#lib-accent)"/>
+    <circle cx="120" cy="120" r="5.5" fill="#00D9FF"/>
+    <circle cx="58" cy="120" r="4.5" fill="#00D9FF"/>
+    <circle cx="182" cy="120" r="4.5" fill="#7C3AED"/>
+  </g>
+  <text x="520" y="195"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="64" font-weight="700" fill="#F7F7F2" letter-spacing="0.14em">ARQVEXA</text>
+  <text x="520" y="250"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="22" font-weight="600" fill="#A7ADBD" letter-spacing="0.22em">ARCHITECTURE + TECHNOLOGY</text>
+  <text x="520" y="300"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="16" font-weight="500" fill="#6B7289" letter-spacing="0.16em">INTERIOR DESIGN  �  IT DEVELOPMENT  �  DELHI NCR</text>
+</svg>

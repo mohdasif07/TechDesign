@@ -1,0 +1,35 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa Instagram post">
+  <defs>
+    <linearGradient id="igp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="55%" stop-color="#080B1A"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="igp-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#igp-bg)"/>
+  <g transform="translate(340 180)">
+    <g fill="none" stroke="#F7F7F2" stroke-width="20" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M40 340 L200 50 L360 340"/>
+      <path d="M95 200 H305"/>
+      <path d="M80 100 L320 300"/>
+      <path d="M320 100 L80 300"/>
+    </g>
+    <circle cx="200" cy="50" r="14" fill="url(#igp-accent)"/>
+    <circle cx="200" cy="200" r="10" fill="#00D9FF"/>
+    <circle cx="95" cy="200" r="8" fill="#00D9FF"/>
+    <circle cx="305" cy="200" r="8" fill="#7C3AED"/>
+  </g>
+  <text x="540" y="680" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="78" font-weight="700" fill="#F7F7F2" letter-spacing="0.16em">ARQVEXA</text>
+  <text x="540" y="750" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="22" font-weight="600" fill="#A7ADBD" letter-spacing="0.28em">ARCHITECTURE + TECHNOLOGY</text>
+  <text x="540" y="820" text-anchor="middle"
+        font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif"
+        font-size="18" font-weight="500" fill="#6B7289" letter-spacing="0.18em">INTERIOR DESIGN  �  IT DEVELOPMENT</text>
+</svg>

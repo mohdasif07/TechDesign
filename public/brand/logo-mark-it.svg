@@ -1,0 +1,25 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arqvexa IT mark">
+  <defs>
+    <linearGradient id="it-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050816"/>
+      <stop offset="100%" stop-color="#0C1638"/>
+    </linearGradient>
+    <linearGradient id="it-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="55%" stop-color="#4267FF"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="72" fill="url(#it-bg)"/>
+  <g fill="none" stroke="#F7F7F2" stroke-width="14" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M78 246 L160 64 L242 246"/>
+    <path d="M108 168 H212"/>
+    <path d="M100 96 L220 224"/>
+    <path d="M220 96 L100 224"/>
+  </g>
+  <circle cx="160" cy="64" r="9" fill="url(#it-accent)"/>
+  <circle cx="160" cy="168" r="6" fill="#00D9FF"/>
+  <circle cx="108" cy="168" r="5" fill="#00D9FF"/>
+  <circle cx="212" cy="168" r="5" fill="#7C3AED"/>
+  <circle cx="160" cy="160" r="4" fill="#F7F7F2"/>
+</svg>

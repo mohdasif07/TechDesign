@@ -1,0 +1,6 @@
+/* Site font — Plus Jakarta Sans (loaded via Google Fonts in layout) */
+
+:root {
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}

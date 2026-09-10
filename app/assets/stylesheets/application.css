@@ -4,7 +4,7 @@
  */
 
 /* Arqvexa 2026 — Architecture meets Technology */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+/* Plus Jakarta Sans via Google Fonts + CSS variables */
 
 :root {
   /* Core palette */
@@ -57,8 +57,9 @@
   --nav-height: 72px;
   --transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --font-display: "Syne", system-ui, sans-serif;
-  --font-body: "Outfit", system-ui, sans-serif;
+  /* Display & body = Plus Jakarta Sans. */
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
   --focus-ring: 0 0 0 2px var(--bg-dark), 0 0 0 4px var(--cyan);
 }
 
@@ -73,6 +74,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
+  font-weight: 400;
   color: var(--text-primary);
   background: var(--bg-dark);
   line-height: 1.65;
@@ -95,7 +97,23 @@ body::before {
 }
 
 body.menu-open {
-  overflow: hidden;
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+html.menu-open {
+  overflow: hidden !important;
+}
+
+/* When menu is open, drop backdrop-filter so position:fixed
+   is relative to the viewport (not trapped inside the sticky nav). */
+body.menu-open .nav-wrap {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+  z-index: 200;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -521,7 +539,7 @@ img, svg { max-width: 100%; display: block; }
   gap: 10px;
   border-radius: 100px;
   padding: 14px 22px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   font-family: var(--font-body);
   border: none;
@@ -605,7 +623,7 @@ img, svg { max-width: 100%; display: block; }
 }
 
 .hero-proof strong {
-  font: 800 28px Manrope, sans-serif;
+  font: 800 28px "Plus Jakarta Sans", sans-serif;
 }
 
 .hero-proof span {
@@ -806,7 +824,7 @@ img, svg { max-width: 100%; display: block; }
   background: var(--orange);
   display: grid;
   place-items: center;
-  font: 800 21px Manrope, sans-serif;
+  font: 800 21px "Plus Jakarta Sans", sans-serif;
   box-shadow: 0 20px 45px rgba(232, 121, 53, 0.4);
   animation: bob 4s ease-in-out infinite reverse;
 }
@@ -939,12 +957,12 @@ img, svg { max-width: 100%; display: block; }
   position: absolute;
   right: 40px;
   top: 42px;
-  font: 700 12px Manrope, sans-serif;
+  font: 700 12px "Plus Jakarta Sans", sans-serif;
   opacity: 0.5;
 }
 
 .service-card h3 {
-  font: 800 34px Manrope, sans-serif;
+  font: 800 34px "Plus Jakarta Sans", sans-serif;
   letter-spacing: -1px;
   margin: 55px 0 10px;
 }
@@ -1121,7 +1139,7 @@ img, svg { max-width: 100%; display: block; }
 }
 
 .browser-title {
-  font: 800 26px Manrope, sans-serif;
+  font: 800 26px "Plus Jakarta Sans", sans-serif;
   margin-top: 50px;
   max-width: 250px;
 }
@@ -1147,7 +1165,7 @@ img, svg { max-width: 100%; display: block; }
 
 .work-meta b {
   display: block;
-  font: 800 19px Manrope, sans-serif;
+  font: 800 19px "Plus Jakarta Sans", sans-serif;
   margin-top: 5px;
 }
 
@@ -1194,7 +1212,7 @@ img, svg { max-width: 100%; display: block; }
   display: grid;
   place-items: center;
   background: #ede8de;
-  font: 800 64px Manrope, sans-serif;
+  font: 800 64px "Plus Jakarta Sans", sans-serif;
   color: var(--navy);
   box-shadow: inset 0 0 0 18px #e5dfd3;
 }
@@ -1305,14 +1323,14 @@ img, svg { max-width: 100%; display: block; }
 .testimonial-card p::before {
   content: "\201C";
   color: var(--orange);
-  font: 800 36px/0 Manrope, sans-serif;
+  font: 800 36px/0 "Plus Jakarta Sans", sans-serif;
   display: block;
   margin-bottom: 12px;
 }
 
 .testimonial-card footer strong {
   display: block;
-  font: 800 15px Manrope, sans-serif;
+  font: 800 15px "Plus Jakarta Sans", sans-serif;
 }
 
 .testimonial-card footer span {
@@ -1324,12 +1342,12 @@ img, svg { max-width: 100%; display: block; }
 .client-reviews {
   padding-top: 88px;
   padding-bottom: 88px;
-  background: var(--cream);
+  background: var(--bg-dark);
 }
 
 .client-reviews--interior,
 .client-reviews--tech {
-  background: var(--cream);
+  background: var(--bg-dark);
 }
 
 .client-reviews-head {
@@ -1338,7 +1356,10 @@ img, svg { max-width: 100%; display: block; }
 }
 
 .client-reviews-head h2 {
+  font-family: var(--font-display), sans-serif;
   font-size: clamp(34px, 4vw, 48px);
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
 .client-reviews-grid {
@@ -1359,12 +1380,12 @@ img, svg { max-width: 100%; display: block; }
   flex-direction: column;
   padding: 28px 28px 24px;
   border-radius: 22px;
-  background: #fff;
-  border: 1px solid rgba(16, 24, 39, 0.08);
-  box-shadow: 0 8px 30px rgba(11, 25, 48, 0.05);
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  box-shadow: none;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .client-reviews--interior .client-review-card-inner::before,
@@ -1374,20 +1395,21 @@ img, svg { max-width: 100%; display: block; }
   inset: 0 auto 0 0;
   width: 4px;
   border-radius: 22px 0 0 22px;
+  z-index: 1;
 }
 
 .client-reviews--interior .client-review-card-inner::before {
-  background: linear-gradient(180deg, #c8895d 0%, #e87935 100%);
+  background: linear-gradient(180deg, var(--interior-champagne) 0%, var(--interior-copper) 100%);
 }
 
 .client-reviews--tech .client-review-card-inner::before {
-  background: linear-gradient(180deg, #2a4a73 0%, var(--navy) 100%);
+  background: var(--gradient-primary);
 }
 
 .client-review-card:hover .client-review-card-inner {
   transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(11, 25, 48, 0.1);
-  border-color: rgba(16, 24, 39, 0.12);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0, 217, 255, 0.22);
 }
 
 .client-review-meta {
@@ -1402,13 +1424,15 @@ img, svg { max-width: 100%; display: block; }
 .review-stars {
   display: inline-flex;
   gap: 1px;
-  line-height: 1;
+  line-height: 1.2;
+  overflow: visible;
 }
 
 .review-stars-filled,
 .review-stars-empty {
   font-size: 13px;
   letter-spacing: 0.5px;
+  line-height: 1.4;
 }
 
 .review-stars-filled {
@@ -1416,35 +1440,41 @@ img, svg { max-width: 100%; display: block; }
 }
 
 .review-stars-empty {
-  color: #e4e7ec;
+  color: rgba(247, 247, 242, 0.2);
 }
 
 .client-review-project {
+  font-family: var(--font-display), sans-serif;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2px;
-  color: var(--muted);
-  padding: 5px 10px;
+  color: var(--text-secondary);
+  padding: 6px 12px;
   border-radius: 999px;
-  background: #f2f4f7;
-  border: 1px solid #eaecf0;
+  background: rgba(247, 247, 242, 0.06);
+  border: 1px solid var(--line);
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible;
   text-overflow: ellipsis;
   max-width: 100%;
+  line-height: 1.4;
 }
 
 .client-review-card blockquote {
   margin: 0 0 24px;
   flex: 1;
   position: relative;
+  overflow: visible;
 }
 
 .client-review-card blockquote p {
   margin: 0;
+  font-family: var(--font-display), sans-serif;
   font-size: 15px;
-  line-height: 1.72;
-  color: #344054;
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  overflow: visible;
 }
 
 .client-review-card blockquote p::before {
@@ -1458,18 +1488,19 @@ img, svg { max-width: 100%; display: block; }
   margin-top: auto;
   padding: 14px 16px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #f8fafb 0%, #f1f4f8 100%);
-  border: 1px solid #e7ebf0;
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  overflow: visible;
 }
 
 .client-reviews--interior .client-review-author {
-  background: linear-gradient(135deg, #fbf8f5 0%, #f3ece4 100%);
-  border-color: #e8dfd4;
+  background: rgba(201, 168, 124, 0.08);
+  border-color: rgba(201, 168, 124, 0.22);
 }
 
 .client-reviews--tech .client-review-author {
-  background: linear-gradient(135deg, #f5f8fc 0%, #e9f0f8 100%);
-  border-color: #d9e4f0;
+  background: rgba(0, 217, 255, 0.06);
+  border-color: rgba(0, 217, 255, 0.18);
 }
 
 .client-review-avatar {
@@ -1479,27 +1510,29 @@ img, svg { max-width: 100%; display: block; }
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font: 700 13px/1 Manrope, sans-serif;
+  font: 700 13px/1.2 var(--font-display), sans-serif;
   color: #fff;
   background: linear-gradient(145deg, #9a7b68 0%, #c8895d 100%);
   box-shadow: 0 4px 14px rgba(154, 123, 104, 0.35);
-  border: 2px solid #fff;
+  border: 2px solid rgba(247, 247, 242, 0.12);
 }
 
 .client-reviews--tech .client-review-avatar {
-  background: linear-gradient(145deg, #1e3554 0%, #3d6a9e 100%);
-  box-shadow: 0 4px 14px rgba(30, 53, 84, 0.3);
+  background: linear-gradient(145deg, #1e3554 0%, #4267FF 100%);
+  box-shadow: 0 4px 14px rgba(66, 103, 255, 0.3);
 }
 
 .client-review-author-text {
   min-width: 0;
+  overflow: visible;
 }
 
 .client-review-author-text strong {
   display: block;
-  font: 700 15px/1.25 Manrope, sans-serif;
-  color: var(--ink);
+  font: 700 15px/1.45 var(--font-display), sans-serif;
+  color: var(--text-primary);
   margin-bottom: 5px;
+  overflow: visible;
 }
 
 .client-review-author-meta {
@@ -1507,21 +1540,24 @@ img, svg { max-width: 100%; display: block; }
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
+  overflow: visible;
 }
 
 .client-review-role,
 .client-review-location {
+  font-family: var(--font-display), sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #667085;
-  line-height: 1.3;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  overflow: visible;
 }
 
 .client-review-sep {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c8d0da;
+  background: rgba(247, 247, 242, 0.25);
   flex-shrink: 0;
 }
 
@@ -1547,7 +1583,7 @@ img, svg { max-width: 100%; display: block; }
 
 .google-review-cta-title {
   margin: 0 0 8px;
-  font: 800 22px/1.2 Manrope, sans-serif;
+  font: 800 22px/1.2 "Plus Jakarta Sans", sans-serif;
   color: var(--ink);
 }
 
@@ -1619,7 +1655,7 @@ main .google-review-cta:last-child {
 
 .faq-item summary::after {
   content: "+";
-  font: 800 20px Manrope, sans-serif;
+  font: 800 20px "Plus Jakarta Sans", sans-serif;
   color: var(--orange);
   flex-shrink: 0;
 }
@@ -1674,10 +1710,12 @@ main .google-review-cta:last-child {
 }
 
 .contact-panel {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(165deg, rgba(16, 22, 46, 0.98), rgba(10, 14, 32, 0.98));
+  border: 1px solid rgba(0, 217, 255, 0.14);
   border-radius: 24px;
   padding: 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
 }
 
 .contact-actions {
@@ -1824,7 +1862,7 @@ footer.site-footer {
 .install-banner p {
   margin: 0;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .install-actions {
@@ -2094,7 +2132,7 @@ footer.site-footer {
   right: 20px;
   margin: 0;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.3px;
   color: rgba(255, 255, 255, 0.45);
   pointer-events: none;
@@ -2176,7 +2214,7 @@ footer.site-footer {
   background: var(--orange);
   display: grid;
   place-items: center;
-  font: 800 18px Manrope, sans-serif;
+  font: 800 18px "Plus Jakarta Sans", sans-serif;
   color: #fff;
   box-shadow: 0 10px 30px rgba(232, 121, 53, 0.45);
   z-index: 3;
@@ -2187,7 +2225,7 @@ footer.site-footer {
   padding: 12px 14px;
   background: #0f1e33;
   border-radius: 10px;
-  font: 600 12px/1.6 "DM Sans", monospace;
+  font: 600 12px/1.6 "Plus Jakarta Sans", sans-serif;
   color: #9eb3d0;
 }
 
@@ -2199,7 +2237,7 @@ footer.site-footer {
   padding: 8px 12px;
   border-radius: 999px;
   background: rgba(15, 30, 51, 0.88);
-  font: 600 11px/1 Manrope, sans-serif;
+  font: 600 11px/1 "Plus Jakarta Sans", sans-serif;
   color: #b8c9e0;
 }
 
@@ -2278,7 +2316,7 @@ footer.site-footer {
 .path-tech .path-icon { background: #1b3455; }
 
 .path-card h2 {
-  font: 800 28px Manrope, sans-serif;
+  font: 800 28px "Plus Jakarta Sans", sans-serif;
   letter-spacing: -1px;
   margin: 0 0 10px;
 }
@@ -2308,7 +2346,7 @@ footer.site-footer {
 }
 
 .work-category-label {
-  font: 800 22px Manrope, sans-serif;
+  font: 800 22px "Plus Jakarta Sans", sans-serif;
   margin: 0;
   letter-spacing: -0.5px;
 }
@@ -2485,7 +2523,7 @@ footer.site-footer {
 }
 
 .faq-column-title {
-  font: 800 20px Manrope, sans-serif;
+  font: 800 20px "Plus Jakarta Sans", sans-serif;
   margin: 0 0 16px;
 }
 
@@ -2544,7 +2582,7 @@ footer.site-footer {
 }
 
 .page-hero h1 {
-  font: 800 clamp(38px, 5vw, 62px)/1.05 Manrope, sans-serif;
+  font: 800 clamp(38px, 5vw, 62px)/1.05 "Plus Jakarta Sans", sans-serif;
   letter-spacing: -2px;
   margin: 0;
 }
@@ -2638,7 +2676,7 @@ footer.site-footer {
 }
 
 .feature-card h3 {
-  font: 800 20px Manrope, sans-serif;
+  font: 800 20px "Plus Jakarta Sans", sans-serif;
   margin: 0 0 8px;
 }
 
@@ -2663,12 +2701,16 @@ footer.site-footer {
 }
 
 .content-prose h2 {
-  font: 800 36px Manrope, sans-serif;
-  letter-spacing: -1px;
-  margin: 0 0 20px;
-}
+    font: 800 36px/1.2 var(--font-display) !important;
+    letter-spacing: -1px;
+    margin: 0 0 20px;
+  }
 
-.content-block-dark .content-prose h2 { color: #fff; }
+  .content-prose h3 {
+    font-family: var(--font-display) !important;
+  }
+
+  .content-block-dark .content-prose h2 { color: #fff; }
 
 .content-prose p {
   color: var(--muted);
@@ -2686,7 +2728,7 @@ footer.site-footer {
 .content-block-dark .content-prose a:not(.btn) { color: #ffb07a; }
 
 .faq-single h2 {
-  font: 800 42px Manrope, sans-serif;
+  font: 800 42px "Plus Jakarta Sans", sans-serif;
   letter-spacing: -1px;
   margin: 0 0 24px;
 }
@@ -3197,89 +3239,109 @@ footer.site-footer {
 
 /* Contact form */
 .contact-form-title {
-  font: 800 22px Manrope, sans-serif;
-  margin: 0 0 8px;
-  color: #fff;
+  font: 800 22px var(--font-display), sans-serif;
+  margin: 0 0 6px;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .contact-form-lead {
-  margin: 0 0 20px;
+  margin: 0 0 28px;
   font-size: 14px;
-  color: #aebbd0;
+  line-height: 1.55;
+  color: var(--text-secondary);
 }
 
 .contact-form {
   display: grid;
-  gap: 14px;
+  gap: 18px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 
 .contact-form .form-field {
   display: grid;
-  gap: 6px;
+  gap: 8px;
 }
 
 .contact-form .form-field label {
-  font-size: 12px;
-  font-weight: 700;
-  color: #d5deea;
-  letter-spacing: 0.3px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
 }
 
 .contact-form .form-field input,
 .contact-form .form-field select,
 .contact-form .form-field textarea {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border-radius: 12px;
-  padding: 13px 14px;
+  border: 1px solid rgba(247, 247, 242, 0.18);
+  background-color: rgba(5, 8, 22, 0.55);
+  color: var(--text-primary);
+  border-radius: 14px;
+  padding: 14px 16px;
   font: inherit;
-  font-size: 14px;
-  transition: border-color var(--transition), background var(--transition);
+  font-size: 15px;
+  line-height: 1.4;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .form-field input:hover,
+.contact-form .form-field select:hover,
+.contact-form .form-field textarea:hover {
+  border-color: rgba(247, 247, 242, 0.3);
 }
 
 .contact-form .form-field input::placeholder,
 .contact-form .form-field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(167, 173, 189, 0.72);
 }
 
 .contact-form .form-field input:focus,
 .contact-form .form-field select:focus,
 .contact-form .form-field textarea:focus {
   outline: none;
-  border-color: var(--orange);
-  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 217, 255, 0.55);
+  background-color: rgba(5, 8, 22, 0.78);
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.14);
 }
 
 .contact-form .form-field select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23aebbd0' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23A7ADBD' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
+  background-position: right 16px center;
+  padding-right: 42px;
 }
 
 .contact-form .form-field select option {
-  color: var(--ink);
-  background: #fff;
+  color: var(--text-primary);
+  background: #10162e;
 }
 
 .contact-form .form-field textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 132px;
 }
 
 .form-submit {
-  margin-top: 4px;
+  margin-top: 6px;
   cursor: pointer;
   border: none;
+  min-height: 52px;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 28px rgba(66, 103, 255, 0.28);
+}
+
+.form-submit:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
 }
 
 .form-honeypot {
@@ -3291,44 +3353,57 @@ footer.site-footer {
 }
 
 .form-status {
-  margin: 0 0 14px;
+  margin: 0;
   padding: 12px 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 14px;
   line-height: 1.45;
 }
 
 .form-status--success {
   background: rgba(34, 197, 94, 0.12);
-  color: #166534;
+  color: #86efac;
   border: 1px solid rgba(34, 197, 94, 0.35);
 }
 
 .form-status--error {
-  background: rgba(239, 68, 68, 0.1);
-  color: #991b1b;
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
   border: 1px solid rgba(239, 68, 68, 0.35);
 }
 
 .form-status--info {
-  background: rgba(59, 130, 246, 0.1);
-  color: #1e40af;
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: rgba(0, 217, 255, 0.1);
+  color: #7dd3fc;
+  border: 1px solid rgba(0, 217, 255, 0.28);
 }
 
 .contact-or {
   text-align: center;
-  margin: 18px 0 14px;
-  font-size: 12px;
+  margin: 22px 0 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #7a8aa3;
+  color: var(--text-muted);
 }
 
 .contact-actions-inline {
   display: grid;
   gap: 10px;
+}
+
+.contact-actions-inline .btn-outline {
+  min-height: 48px;
+  border-color: rgba(247, 247, 242, 0.22);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+}
+
+.contact-actions-inline .btn-outline:hover {
+  border-color: rgba(37, 211, 102, 0.55);
+  background: rgba(37, 211, 102, 0.1);
+  color: #fff;
 }
 
 /* Flash messages */
@@ -3362,7 +3437,7 @@ footer.site-footer {
 .flash-inner p {
   margin: 0;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .flash-close {
@@ -3409,7 +3484,7 @@ footer.site-footer {
   background: #25d366;
   color: #fff;
   text-decoration: none;
-  font: 700 14px Manrope, sans-serif;
+  font: 700 14px "Plus Jakarta Sans", sans-serif;
   box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -3456,7 +3531,7 @@ footer.site-footer {
   color: #0b1930;
   border-radius: 999px;
   padding: 10px 18px;
-  font: 700 13px Manrope, sans-serif;
+  font: 700 13px "Plus Jakarta Sans", sans-serif;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -3514,7 +3589,7 @@ footer.site-footer {
 }
 
 .pricing-badge {
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -3526,7 +3601,7 @@ footer.site-footer {
 
 .pricing-amount {
   margin: 0;
-  font: 800 28px Manrope, sans-serif;
+  font: 800 28px "Plus Jakarta Sans", sans-serif;
   color: #0b1930;
   letter-spacing: -0.5px;
 }
@@ -3562,7 +3637,7 @@ footer.site-footer {
 }
 
 .pricing-link {
-  font: 700 14px Manrope, sans-serif;
+  font: 700 14px "Plus Jakarta Sans", sans-serif;
   color: #0b1930;
   text-decoration: none;
 }
@@ -3589,7 +3664,7 @@ footer.site-footer {
 .blog-card h3,
 .blog-list-item h2 {
   margin: 10px 0;
-  font: 700 22px/1.35 Manrope, sans-serif;
+  font: 700 22px/1.35 "Plus Jakarta Sans", sans-serif;
   letter-spacing: -0.3px;
 }
 
@@ -3607,7 +3682,7 @@ footer.site-footer {
 
 .blog-category {
   display: inline-block;
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -3623,7 +3698,7 @@ footer.site-footer {
 .blog-read-link {
   display: inline-block;
   margin-top: 14px;
-  font: 700 14px Manrope, sans-serif;
+  font: 700 14px "Plus Jakarta Sans", sans-serif;
   color: #0b1930;
   text-decoration: none;
 }
@@ -3645,7 +3720,7 @@ footer.site-footer {
 .page-hero-light h1 {
   font-size: clamp(36px, 5vw, 56px);
   margin: 12px 0;
-  font: 800 clamp(36px, 5vw, 56px)/1.08 Manrope, sans-serif;
+  font: 800 clamp(36px, 5vw, 56px)/1.08 "Plus Jakarta Sans", sans-serif;
   letter-spacing: -1.5px;
 }
 
@@ -3669,7 +3744,7 @@ footer.site-footer {
   display: inline-block;
   margin-bottom: 16px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: #667085;
   text-decoration: none;
 }
@@ -3702,7 +3777,7 @@ footer.site-footer {
 
 .prose a:not(.btn) {
   color: #e87935;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .legal-prose {
@@ -3753,7 +3828,7 @@ footer.site-footer {
 
 .cta-banner-text h2 {
   margin: 0 0 8px;
-  font: 700 clamp(22px, 3vw, 28px)/1.25 Manrope, sans-serif;
+  font: 700 clamp(22px, 3vw, 28px)/1.25 "Plus Jakarta Sans", sans-serif;
   letter-spacing: -0.5px;
   color: #fff;
 }
@@ -3794,7 +3869,7 @@ footer.site-footer {
 
 .cta-inline-box h2 {
   margin: 0;
-  font: 700 clamp(20px, 3vw, 26px)/1.3 Manrope, sans-serif;
+  font: 700 clamp(20px, 3vw, 26px)/1.3 "Plus Jakarta Sans", sans-serif;
   letter-spacing: -0.3px;
   color: #fff;
 }
@@ -3868,7 +3943,7 @@ footer.site-footer {
 }
 
 .contact-email-link {
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color var(--transition);
@@ -3897,7 +3972,7 @@ footer.site-footer {
 }
 
 .service-areas-title {
-  font: 800 18px Manrope, sans-serif;
+  font: 800 18px "Plus Jakarta Sans", sans-serif;
   margin: 0 0 12px;
 }
 
@@ -3958,7 +4033,7 @@ footer.site-footer {
 
 .service-link-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -3966,16 +4041,18 @@ footer.site-footer {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-height: 210px;
-  padding: 22px 22px 18px;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 0;
+  height: auto;
+  padding: 24px;
   border-radius: 20px;
-  background: #fff;
-  border: 1px solid rgba(11, 25, 48, 0.1);
-  box-shadow: var(--shadow-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  box-shadow: none;
   text-decoration: none;
-  color: inherit;
-  overflow: hidden;
+  color: var(--text-primary);
+  overflow: visible;
   transition:
     border-color var(--transition),
     transform var(--transition),
@@ -3986,25 +4063,30 @@ footer.site-footer {
   content: "";
   position: absolute;
   inset: 0 0 auto;
-  height: 4px;
-  background: linear-gradient(90deg, var(--orange), #ffb07a);
+  height: 3px;
+  background: var(--gradient-primary);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition);
+  border-radius: 20px 20px 0 0;
 }
 
 .service-link-card--tech::before {
-  background: linear-gradient(90deg, var(--navy), #2a5080);
+  background: var(--gradient-primary);
+}
+
+.service-link-card--interior::before {
+  background: linear-gradient(90deg, var(--interior-sand), var(--interior-copper));
 }
 
 .service-link-card--tech .service-link-icon {
-  background: rgba(11, 25, 48, 0.08);
-  color: var(--navy);
+  background: rgba(0, 217, 255, 0.12);
+  color: var(--cyan);
 }
 
 .service-link-card--interior .service-link-icon {
-  background: rgba(232, 121, 53, 0.12);
-  color: var(--orange-dark);
+  background: rgba(201, 168, 124, 0.15);
+  color: var(--interior-champagne);
 }
 
 .service-link-icon {
@@ -4014,32 +4096,45 @@ footer.site-footer {
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  font: 700 18px/1 Manrope, sans-serif;
+  font: 700 18px/1.2 "Plus Jakarta Sans", sans-serif;
   transition: transform var(--transition), background var(--transition);
 }
 
-.service-link-card strong {
-  font: 700 18px/1.3 Manrope, sans-serif;
-  color: var(--navy);
+.service-link-card strong,
+.service-link-title {
+  display: block;
+  font: 700 18px/1.35 "Plus Jakarta Sans", sans-serif;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
+  margin: 0;
 }
 
 .service-link-desc {
-  flex: 1;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.55;
+  display: block;
+  flex: 1 1 auto;
+  font: 700 14px/1.65 "Plus Jakarta Sans", sans-serif;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: normal;
+  overflow: visible;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .service-link-arrow {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--orange-dark);
+  font: 700 13px/1.45 "Plus Jakarta Sans", sans-serif;
+  color: var(--cyan);
+  margin-top: auto;
+  padding-top: 4px;
   transition: transform var(--transition), color var(--transition);
 }
 
 .service-link-card--tech .service-link-arrow {
-  color: var(--navy);
+  color: var(--cyan);
+}
+
+.service-link-card--interior .service-link-arrow {
+  color: var(--interior-champagne);
 }
 
 .service-link-arrow span {
@@ -4049,9 +4144,14 @@ footer.site-footer {
 
 .service-link-card:hover,
 .service-link-card:focus-visible {
-  border-color: rgba(11, 25, 48, 0.18);
-  transform: translateY(-6px);
+  border-color: rgba(0, 217, 255, 0.35);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+}
+
+.service-link-card--interior:hover,
+.service-link-card--interior:focus-visible {
+  border-color: rgba(201, 168, 124, 0.4);
 }
 
 .service-link-card:hover::before,
@@ -4135,7 +4235,7 @@ footer.site-footer {
 }
 
 .trust-signal-card a {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--cyan);
 }
 
@@ -4232,7 +4332,7 @@ footer.site-footer {
 
 .founder-card h2 {
   margin: 0 0 6px;
-  font: 800 30px/1.1 Manrope, sans-serif;
+  font: 800 30px/1.1 "Plus Jakarta Sans", sans-serif;
   letter-spacing: -0.5px;
   color: var(--ink);
 }
@@ -4240,7 +4340,7 @@ footer.site-footer {
 .founder-role {
   color: var(--muted);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2px;
   margin: 0 0 14px;
 }
@@ -4285,15 +4385,18 @@ footer.site-footer {
 
 .portfolio-view-link {
   display: inline-block;
-  margin-top: 10px;
-  font-weight: 600;
+  margin-top: 12px;
+  font-weight: 700;
   font-size: 14px;
-  color: #0b1930;
+  color: var(--cyan);
   text-decoration: none;
+  letter-spacing: 0.01em;
 }
 
 .portfolio-view-link:hover {
+  color: #fff;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .portfolio-type-label {
@@ -4315,7 +4418,7 @@ footer.site-footer {
   margin-top: 8px;
   padding: 4px 10px;
   border-radius: 999px;
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -4342,7 +4445,7 @@ footer.site-footer {
 }
 
 .portfolio-stack-row dt {
-  font: 700 13px Manrope, sans-serif;
+  font: 700 13px "Plus Jakarta Sans", sans-serif;
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -4417,7 +4520,7 @@ footer.site-footer {
 
 .text-link {
   display: inline-block;
-  font: 700 14px Manrope, sans-serif;
+  font: 700 14px "Plus Jakarta Sans", sans-serif;
   color: #e87935;
   text-decoration: none;
 }
@@ -4446,7 +4549,7 @@ footer.site-footer {
 }
 
 .tools-hub-card strong {
-  font: 700 18px Manrope, sans-serif;
+  font: 700 18px "Plus Jakarta Sans", sans-serif;
   color: #0b1930;
 }
 
@@ -4458,7 +4561,7 @@ footer.site-footer {
 
 .tools-hub-card em {
   margin-top: auto;
-  font: 700 14px Manrope, sans-serif;
+  font: 700 14px "Plus Jakarta Sans", sans-serif;
   font-style: normal;
 }
 
@@ -4502,42 +4605,49 @@ footer.site-footer {
 }
 
 .tool-panel .form-field > label {
-  font: 600 13px Manrope, sans-serif;
-  color: #334155;
+  font: 600 13px var(--font-body), sans-serif;
+  color: var(--text-primary);
   letter-spacing: 0.02em;
 }
 
-.tool-panel .form-field select {
+.tool-panel .form-field select,
+.tool-panel .form-field input {
   width: 100%;
   appearance: none;
-  border: 1px solid #d4c9b8;
-  background-color: #fff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23475569' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  color: #0b1930;
-  border-radius: 12px;
-  padding: 14px 40px 14px 14px;
+  border: 1px solid rgba(247, 247, 242, 0.18);
+  background-color: rgba(5, 8, 22, 0.55);
+  color: var(--text-primary);
+  border-radius: 14px;
+  padding: 14px 16px;
   font: inherit;
   font-size: 15px;
   line-height: 1.4;
   cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.tool-panel .form-field select:hover {
-  border-color: #b8a992;
+.tool-panel .form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23A7ADBD' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 42px;
 }
 
-.tool-panel .form-field select:focus {
+.tool-panel .form-field select:hover,
+.tool-panel .form-field input:hover {
+  border-color: rgba(247, 247, 242, 0.3);
+}
+
+.tool-panel .form-field select:focus,
+.tool-panel .form-field input:focus {
   outline: none;
-  border-color: #e87935;
-  box-shadow: 0 0 0 3px rgba(232, 121, 53, 0.15);
+  border-color: rgba(0, 217, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.14);
 }
 
 .tool-panel .form-field select option {
-  color: #0b1930;
-  background: #fff;
+  color: var(--text-primary);
+  background: #10162e;
 }
 
 .tool-checkboxes {
@@ -4546,16 +4656,16 @@ footer.site-footer {
 }
 
 .tool-check-label {
-  font: 600 14px Manrope, sans-serif;
-  color: #334155;
+  font: 600 14px var(--font-body), sans-serif;
+  color: var(--text-primary);
 }
 
 .tool-checkboxes label {
   display: flex;
   align-items: center;
   gap: 10px;
-  font: 500 15px Manrope, sans-serif;
-  color: #475569;
+  font: 600 15px var(--font-body), sans-serif;
+  color: var(--text-secondary);
   cursor: pointer;
 }
 
@@ -4582,7 +4692,7 @@ footer.site-footer {
 }
 
 .tool-result-value {
-  font: 800 clamp(24px, 3vw, 32px) Manrope, sans-serif;
+  font: 800 clamp(24px, 3vw, 32px) "Plus Jakarta Sans", sans-serif;
   color: #0b1930;
   margin-bottom: 8px;
 }
@@ -4723,7 +4833,7 @@ footer.site-footer {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.16);
   color: #fff;
-  font: 700 12px/1 Manrope, sans-serif;
+  font: 700 12px/1 "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -4808,7 +4918,7 @@ footer.site-footer {
 }
 
 .portfolio-gallery-caption-label {
-  font: 700 10px/1 Manrope, sans-serif;
+  font: 700 10px/1 "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(232, 121, 53, 0.95);
@@ -4824,7 +4934,7 @@ footer.site-footer {
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: #fff;
-  font: 600 14px/1.5 Manrope, sans-serif;
+  font: 600 14px/1.5 "Plus Jakarta Sans", sans-serif;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
 }
 
@@ -4971,7 +5081,7 @@ footer.site-footer {
 }
 
 .portfolio-stat dt {
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #64748b;
@@ -4980,7 +5090,7 @@ footer.site-footer {
 
 .portfolio-stat dd {
   margin: 0;
-  font: 800 20px Manrope, sans-serif;
+  font: 800 20px "Plus Jakarta Sans", sans-serif;
   color: #0b1930;
 }
 
@@ -5030,7 +5140,7 @@ footer.site-footer {
 }
 
 .portfolio-spec-row dt {
-  font: 700 12px Manrope, sans-serif;
+  font: 700 12px "Plus Jakarta Sans", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #64748b;
@@ -5050,7 +5160,7 @@ footer.site-footer {
 
 .portfolio-budget-label {
   display: block;
-  font: 700 11px Manrope, sans-serif;
+  font: 700 11px "Plus Jakarta Sans", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.72);
@@ -5059,7 +5169,7 @@ footer.site-footer {
 
 .portfolio-budget-card strong {
   display: block;
-  font: 800 28px Manrope, sans-serif;
+  font: 800 28px "Plus Jakarta Sans", sans-serif;
   margin-bottom: 8px;
 }
 
@@ -5463,21 +5573,21 @@ footer.site-footer {
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(247, 247, 242, 0.12);
+  background-color: rgba(5, 8, 22, 0.55);
+  border: 1px solid rgba(247, 247, 242, 0.18);
   color: var(--text-primary);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
-  border-color: var(--cyan);
+  border-color: rgba(0, 217, 255, 0.55);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.14);
 }
 
 .contact-form label {
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 /* Footer */
@@ -5721,13 +5831,13 @@ footer.site-footer {
   color: var(--text-secondary);
   margin: 0 auto;
   max-width: 420px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
 .hero-subhead strong {
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .hero-split .hero-actions {
@@ -5777,7 +5887,8 @@ footer.site-footer {
   min-height: 85vh;
   display: grid;
   align-items: center;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   padding: 100px 0;
 }
 
@@ -5801,9 +5912,12 @@ footer.site-footer {
 }
 
 .world-copy h2 {
-  font: 800 clamp(36px, 5vw, 64px)/1.05 var(--font-display);
-  letter-spacing: -0.04em;
+  font: 700 clamp(32px, 5vw, 56px)/1.22 var(--font-display), sans-serif;
+  letter-spacing: -0.02em;
   margin: 0 0 16px;
+  color: var(--text-primary);
+  overflow: visible;
+  padding-bottom: 0.12em;
 }
 
 .world-copy p {
@@ -5848,7 +5962,7 @@ footer.site-footer {
   background: rgba(5, 8, 22, 0.72);
   backdrop-filter: blur(8px);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-secondary);
@@ -6254,13 +6368,15 @@ footer.site-footer {
 .room-reveal.is-revealed .room-reveal-photo { opacity: 1; transform: scale(1); }
 
 .it-hero-kicker {
-  font: 700 clamp(28px, 4vw, 42px)/1 var(--font-display);
+  font: 700 clamp(28px, 4vw, 42px)/1.2 var(--font-display);
   letter-spacing: 0.08em;
   margin: 0 0 12px;
   color: transparent;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
+  overflow: visible;
+  padding-bottom: 0.1em;
 }
 
 .it-system-viz {
@@ -6277,73 +6393,9 @@ footer.site-footer {
   display: block;
 }
 
-/* Service link cards — large visual modules */
-.service-link-grid {
-  display: grid;
-  gap: 14px;
-}
+/* Service link cards — superseded by final polish block below */
+.service-link-grid--legacy-note { display: none; }
 
-.service-link-grid[data-variant="interior"] .service-link-card,
-.service-link-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 20px;
-  padding: 28px 32px;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--bg-elevated);
-  transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.service-link-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.service-link-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 217, 255, 0.35);
-  box-shadow: var(--shadow-md);
-}
-
-.service-link-card:hover::before {
-  opacity: 1;
-}
-
-[data-variant="interior"] .service-link-card:hover {
-  border-color: rgba(201, 168, 124, 0.4);
-}
-
-[data-variant="interior"] .service-link-card::before {
-  background: linear-gradient(180deg, var(--interior-sand), var(--interior-copper));
-}
-
-.service-link-card h3 {
-  font: 700 22px/1.2 var(--font-display);
-  margin: 0 0 6px;
-}
-
-.service-link-card p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 14px;
-}
-
-.service-link-card .arrow {
-  font-size: 22px;
-  color: var(--cyan);
-  transition: transform var(--transition);
-}
 
 .service-link-card:hover .arrow {
   transform: translateX(6px);
@@ -6841,13 +6893,23 @@ h1, h2, h3, h4 {
 .tool-shell select,
 .tool-panel input,
 .tool-panel select {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(247, 247, 242, 0.14) !important;
+  background-color: rgba(5, 8, 22, 0.55) !important;
+  border: 1px solid rgba(247, 247, 242, 0.18) !important;
   color: var(--text-primary) !important;
 }
 
-.contact-form label,
-.contact-form-title,
+.contact-form select,
+.tool-panel select,
+.tool-shell select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23A7ADBD' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+}
+
+.contact-form label {
+  color: var(--text-primary) !important;
+}
+
 .contact-form-lead {
   color: var(--text-secondary) !important;
 }
@@ -7469,7 +7531,7 @@ h1, h2, h3, h4 {
   line-height: 1;
 }
 
-/* Unify ALL major headings to homepage Syne style */
+/* Unify ALL major headings to homepage display style */
 .page-hero h1,
 .page-hero-light h1,
 .section-head h2,
@@ -7480,8 +7542,8 @@ h1, h2, h3, h4 {
 .hero-split h1,
 .blog-article-body h1,
 .portfolio-showcase-head h1 {
-  font-family: var(--font-display), sans-serif !important;
-  font-weight: 700 !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-weight: 800 !important;
   letter-spacing: -0.025em !important;
   line-height: 1.12 !important;
   color: var(--text-primary) !important;
@@ -7513,16 +7575,21 @@ h1, h2, h3, h4 {
   background: var(--gradient-primary) !important;
   color: #fff !important;
   border: none !important;
+  box-shadow: 0 10px 28px rgba(66, 103, 255, 0.28) !important;
 }
 
 .contact-form .btn-light:hover {
   filter: brightness(1.08);
+  transform: translateY(-1px);
 }
 
 .contact-panel {
-  padding: 28px !important;
+  padding: 32px !important;
   border-radius: var(--radius-lg) !important;
-  border: 1px solid var(--line) !important;
+  border: 1px solid rgba(0, 217, 255, 0.14) !important;
+  background:
+    linear-gradient(165deg, rgba(16, 22, 46, 0.98), rgba(10, 14, 32, 0.98)) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28) !important;
 }
 
 /* Benefits list — premium dark chips, not white bars */
@@ -7610,5 +7677,678 @@ h2 .hero-amp {
 @media (max-width: 700px) {
   .brand-hero-title {
     font-size: clamp(28px, 8.5vw, 38px) !important;
+  }
+}
+
+/* ============================================================
+   FONT + DESCENDER + REVIEW CONTRAST LOCK
+   ============================================================ */
+
+html, body, button, input, select, textarea {
+  font-family: var(--font-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.brand-name,
+.brand-hero-title {
+  font-family: var(--font-display) !important;
+}
+
+.nav-links,
+.btn,
+.eyebrow,
+.page-lead,
+p, li, a, span, strong, label, summary {
+  font-family: var(--font-body) !important;
+}
+
+/* Stop "g / y / p / q" bottom clipping site-wide */
+p, li, span, strong, a, label, summary, h1, h2, h3, h4,
+.client-review-card blockquote p,
+.client-review-author-text strong,
+.client-review-role,
+.client-review-location,
+.client-review-project,
+.service-benefits li,
+.founders span,
+.founders strong {
+  line-height: 1.55 !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+h1, h2, .brand-hero-title, .hero-split h1, .page-hero h1 {
+  line-height: 1.18 !important;
+}
+
+/* Review quote must be light on dark */
+.client-review-card blockquote p,
+.client-review-card-inner,
+.client-review-card-inner p {
+  color: var(--text-secondary) !important;
+}
+
+.client-review-author-text strong {
+  color: var(--text-primary) !important;
+}
+
+.client-review-role,
+.client-review-location,
+.client-review-project {
+  color: var(--text-secondary) !important;
+}
+
+.client-review-author {
+  background: var(--bg-surface) !important;
+  border-color: var(--line) !important;
+}
+
+.client-review-card-inner {
+  background: var(--bg-elevated) !important;
+  overflow: visible !important;
+}
+
+.client-reviews--interior .client-review-author {
+  background: rgba(201, 168, 124, 0.1) !important;
+}
+
+.client-reviews--tech .client-review-author {
+  background: rgba(0, 217, 255, 0.08) !important;
+}
+
+/* Project badge — no overflow clip on descenders */
+.client-review-project {
+  overflow: visible !important;
+  line-height: 1.45 !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+}
+
+/* Google review CTA contrast */
+.google-review-cta-inner {
+  background: var(--bg-elevated) !important;
+  border-color: var(--line) !important;
+  color: var(--text-primary) !important;
+}
+
+.google-review-cta-inner h3,
+.google-review-cta-inner p,
+.google-review-cta-inner a {
+  color: var(--text-primary) !important;
+}
+
+.google-review-cta-inner h3 {
+  font-family: var(--font-display) !important;
+}
+
+.google-review-cta-inner p,
+.google-review-cta-inner a {
+  font-family: var(--font-body) !important;
+}
+
+.google-review-cta-inner p {
+  color: var(--text-secondary) !important;
+}
+
+/* ============================================================
+   FINAL POLISH — font, services, headlines, mobile
+   ============================================================ */
+
+/* Headings & body = Plus Jakarta Sans. */
+html, body {
+  font-family: var(--font-body) !important;
+}
+
+/* Headlines — room for descenders (g, y, p) */
+h1, h2, h3,
+.brand-hero-title,
+.hero-split h1,
+.page-hero h1,
+.section-head h2,
+.world-copy h2,
+.cta-section h2,
+.about h2,
+.faq h2 {
+  line-height: 1.25 !important;
+  overflow: visible !important;
+  padding-bottom: 0.08em !important;
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.world-copy h2 {
+  font-size: clamp(30px, 4.8vw, 52px) !important;
+  color: var(--text-primary) !important;
+}
+
+.path-card h2 {
+  font: 700 26px/1.25 "Plus Jakarta Sans", sans-serif !important;
+  color: inherit !important;
+  overflow: visible !important;
+}
+
+/* Service cards — clean 3-col modules, full text, no truncate */
+.service-link-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+.service-link-grid .service-link-card,
+.service-link-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  grid-template-columns: unset !important;
+  gap: 12px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 22px !important;
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 18px !important;
+  overflow: visible !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
+}
+
+.service-link-icon {
+  margin-bottom: 2px;
+}
+
+.service-link-title,
+.service-link-card strong {
+  font: 700 17px/1.35 "Plus Jakarta Sans", sans-serif !important;
+  color: var(--text-primary) !important;
+  overflow: visible !important;
+}
+
+.service-link-desc {
+  display: block !important;
+  font: 700 14px/1.65 "Plus Jakarta Sans", sans-serif !important;
+  color: var(--text-secondary) !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  max-height: none !important;
+}
+
+.service-link-arrow {
+  font: 700 13px/1.45 "Plus Jakarta Sans", sans-serif !important;
+  margin-top: auto !important;
+}
+
+.service-link-card--interior .service-link-arrow { color: var(--interior-champagne) !important; }
+.service-link-card--tech .service-link-arrow { color: var(--cyan) !important; }
+
+/* Path selector cards */
+.path-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+}
+
+.path-card {
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.path-card p,
+.path-link {
+  overflow: visible !important;
+  line-height: 1.55 !important;
+}
+
+/* Worlds section */
+.world-block {
+  overflow: visible !important;
+  min-height: auto !important;
+  padding: 80px 0 !important;
+}
+
+.world-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1.05fr !important;
+  gap: 40px !important;
+  align-items: center !important;
+}
+
+/* ========== MOBILE / TABLET ========== */
+@media (max-width: 1024px) {
+  .service-link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .world-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .client-reviews-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 28px, 1160px) !important;
+  }
+
+  .service-link-grid,
+  .path-grid,
+  .service-grid,
+  .pricing-grid,
+  .work-grid,
+  .work-grid-3,
+  .portfolio-grid,
+  .trust-signal-grid,
+  .faq-columns,
+  .founders-page,
+  .about-grid,
+  .page-hero-grid,
+  .cta-box,
+  .client-reviews-grid,
+  .steps,
+  .steps-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-head {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .section-head h2,
+  .world-copy h2,
+  .page-hero h1,
+  .brand-hero-title {
+    font-size: clamp(26px, 7.2vw, 34px) !important;
+    line-height: 1.22 !important;
+  }
+
+  .path-selector {
+    margin-top: 0 !important;
+    padding: 24px 0 !important;
+  }
+
+  .path-card {
+    padding: 22px !important;
+  }
+
+  .path-card h2 {
+    font-size: 22px !important;
+  }
+
+  .hero-split-content {
+    text-align: left !important;
+    padding: 56px 0 64px !important;
+  }
+
+  .hero-split h1 {
+    font-size: clamp(30px, 9vw, 40px) !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+  }
+
+  .world-block {
+    padding: 48px 0 !important;
+  }
+
+  .world-stages {
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .materials-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .service-link-card {
+    padding: 18px !important;
+  }
+
+  .nav-links.open {
+    position: fixed !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: rgba(5, 8, 22, 0.98) !important;
+    padding: calc(var(--nav-height) + 24px) 24px 40px !important;
+    z-index: 45 !important;
+    overflow-y: auto !important;
+  }
+
+  .nav-links.open a {
+    font-size: 22px !important;
+    padding: 14px 0 !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  /* Kill horizontal scroll */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .hero-split,
+  .world-block,
+  .section,
+  .page-hero,
+  main {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .materials-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .hero-proof {
+    gap: 14px !important;
+  }
+
+  .trust-inner {
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 10px 14px !important;
+  }
+}
+
+/* CTA buttons — never clip label text */
+.btn,
+.btn-ghost-light,
+.btn-primary,
+.btn-ghost,
+.hero-actions .btn {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  flex-shrink: 0 !important;
+  max-width: none !important;
+}
+
+.hero-actions,
+.page-hero .hero-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
+}
+
+.page-hero-grid > div:first-child {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-actions .btn,
+  .page-hero .hero-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+/* ============================================================
+   FONT LOCK — Plus Jakarta Sans site-wide
+     (matches homepage hero hierarchy; do not force one weight site-wide)
+   ============================================================ */
+html, body {
+  font-family: var(--font-body) !important;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6,
+.brand-name,
+.hero-split h1,
+.page-hero h1,
+.page-hero-light h1,
+.section-head h2,
+.about h2,
+.faq h2,
+.faq-single h2,
+.cta-section h2,
+.blog-article-body h1,
+.portfolio-showcase-head h1,
+.work-card h3,
+.portfolio-card h3,
+.founder-name,
+.pricing-amount,
+.brand-hero-title,
+.content-prose h2,
+.content-prose h3 {
+  font-family: var(--font-display) !important;
+}
+
+svg text,
+svg tspan {
+  font-family: var(--font-display) !important;
+}
+
+/* ============================================================
+   PORTFOLIO CONTRAST FIX — dark cards + readable text/links
+   ============================================================ */
+.portfolio-view-link {
+  color: var(--cyan) !important;
+}
+
+.portfolio-view-link:hover {
+  color: #fff !important;
+}
+
+.portfolio-stats .portfolio-stat,
+.portfolio-stats--showcase .portfolio-stat {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+
+.portfolio-stat dt {
+  color: var(--text-muted) !important;
+}
+
+.portfolio-stat dd {
+  color: var(--text-primary) !important;
+}
+
+.portfolio-spec-card,
+.portfolio-aside-cta {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text-primary) !important;
+}
+
+.portfolio-spec-card h2,
+.portfolio-aside-cta p:first-child {
+  color: var(--text-primary) !important;
+}
+
+.portfolio-spec-row {
+  border-bottom-color: rgba(247, 247, 242, 0.1) !important;
+}
+
+.portfolio-spec-row dt {
+  color: var(--text-muted) !important;
+}
+
+.portfolio-spec-row dd {
+  color: var(--text-primary) !important;
+}
+
+.portfolio-budget-card {
+  background: linear-gradient(145deg, #0A1028, #121A3A) !important;
+  border: 1px solid rgba(0, 217, 255, 0.14) !important;
+  color: #fff !important;
+}
+
+.portfolio-budget-card strong {
+  color: #fff !important;
+}
+
+.portfolio-budget-card p,
+.portfolio-budget-label {
+  color: rgba(247, 247, 242, 0.72) !important;
+}
+
+.portfolio-challenge {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text-primary) !important;
+}
+
+.portfolio-challenge h3 {
+  color: var(--text-primary) !important;
+}
+
+.portfolio-challenge p,
+.portfolio-challenge strong {
+  color: var(--text-secondary) !important;
+}
+
+.portfolio-challenge strong {
+  color: var(--cyan) !important;
+}
+
+.portfolio-stack-row {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--line) !important;
+}
+
+.portfolio-stack-row dt {
+  color: var(--text-muted) !important;
+}
+
+.portfolio-stack-row dd {
+  color: var(--text-primary) !important;
+}
+
+.portfolio-note {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ============================================================
+   MOBILE NAV — fullscreen menu (overrides conflicting rules)
+   ============================================================ */
+@media (max-width: 900px) {
+  .menu-btn {
+    display: grid !important;
+    place-items: center !important;
+    color: var(--text-primary) !important;
+    position: relative !important;
+    z-index: 220 !important;
+  }
+
+  .brand {
+    position: relative !important;
+    z-index: 220 !important;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding:
+      calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 16px)
+      24px
+      calc(28px + env(safe-area-inset-bottom, 0px))
+      !important;
+    background: #050816 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    z-index: 210 !important;
+  }
+
+  .nav-links.open a {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 52px !important;
+    padding: 14px 4px !important;
+    font-size: 22px !important;
+    font-family: var(--font-display), sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    color: var(--text-primary) !important;
+    opacity: 1 !important;
+    border-bottom: 1px solid rgba(247, 247, 242, 0.1) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .nav-links.open a::after {
+    display: none !important;
+  }
+
+  .nav-links.open a:hover,
+  .nav-links.open a:focus-visible {
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: #fff !important;
+  }
+
+  .nav-links.open .nav-cta {
+    margin-top: 20px !important;
+    justify-content: center !important;
+    min-height: 52px !important;
+    padding: 14px 22px !important;
+    font-size: 15px !important;
+    font-family: var(--font-body), sans-serif !important;
+    border: none !important;
+    border-radius: 100px !important;
+    background: var(--gradient-primary) !important;
+    color: #fff !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu-btn {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+
+  .nav-links.open {
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
   }
 }
