@@ -1782,6 +1782,51 @@ footer.site-footer {
   color: #fff;
 }
 
+.footer-msme {
+  margin-top: 14px;
+}
+
+.footer-msme-logo {
+  display: block;
+  width: 72px;
+  height: auto;
+  max-width: min(72px, 100%);
+  object-fit: contain;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: #c5ceda;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: #fff;
+}
+
+.footer-social a:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.footer-social svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
 .footer-legal-link {
   display: inline-block;
   margin-top: 8px;
@@ -3171,6 +3216,14 @@ footer.site-footer {
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px 18px;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-msme-logo {
+    margin-inline: auto;
   }
 
   .copyright {
@@ -7150,6 +7203,14 @@ h1, h2, h3, h4 {
   .footer-links {
     flex-direction: column;
     gap: 10px !important;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-msme-logo {
+    margin-inline: auto;
   }
 
   .footer-service-areas {
