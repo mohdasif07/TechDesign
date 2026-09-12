@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   post "contact", to: "contacts#create", as: :contact
 
   get "sitemap.xml", to: "sitemap#index", as: :sitemap
+  get "robots.txt", to: "robots#show"
 
   get "up" => "rails/health#show", as: :rails_health_check
 
