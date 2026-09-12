@@ -1680,8 +1680,9 @@ main .google-review-cta:last-child {
 .cta-box {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 50px;
+  gap: 40px;
   align-items: center;
+  padding: 40px 44px;
 }
 
 .cta-section h2 { font-size: 56px; }
@@ -2512,6 +2513,537 @@ footer.site-footer {
   border: 1px solid #e8ebef;
 }
 
+/* IT portfolio visuals — project-specific mock UIs */
+.visual-tech {
+  height: 330px;
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.tech-panel {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(165deg, rgba(16, 22, 46, 0.98), rgba(8, 12, 28, 0.98));
+  border: 1px solid rgba(0, 217, 255, 0.16);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-topbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(5, 8, 22, 0.72);
+  border-bottom: 1px solid rgba(247, 247, 242, 0.08);
+}
+
+.tech-topbar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(247, 247, 242, 0.22);
+}
+
+.tech-topbar span:nth-child(1) { background: #ff5f57; }
+.tech-topbar span:nth-child(2) { background: #febc2e; }
+.tech-topbar span:nth-child(3) { background: #28c840; }
+
+.tech-topbar b {
+  margin-left: 8px;
+  font: 700 11px/1 var(--font-body), sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Warehouse / WMS */
+.visual-warehouse {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 217, 255, 0.14), transparent 45%),
+    linear-gradient(145deg, #0a1228, #061018);
+}
+
+.wh-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 14px;
+}
+
+.wh-bay {
+  border-radius: 10px;
+  border: 1px dashed rgba(0, 217, 255, 0.28);
+  background: rgba(0, 217, 255, 0.04);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 10px;
+  align-content: center;
+}
+
+.wh-bay.filled {
+  border-style: solid;
+  background: rgba(0, 217, 255, 0.08);
+}
+
+.wh-bay i {
+  display: block;
+  height: 18px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(201, 168, 124, 0.75), rgba(184, 115, 51, 0.55));
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wh-bay:not(.filled) i:last-child {
+  opacity: 0.25;
+}
+
+.wh-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 0 14px 14px;
+}
+
+.wh-stats span {
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(66, 103, 255, 0.16);
+  border: 1px solid rgba(66, 103, 255, 0.22);
+}
+
+.wh-stats span:nth-child(2) {
+  background: rgba(0, 217, 255, 0.14);
+  border-color: rgba(0, 217, 255, 0.25);
+}
+
+/* AI Admin */
+.visual-ai {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.28), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(0, 217, 255, 0.16), transparent 42%),
+    linear-gradient(145deg, #0c1028, #12081f);
+}
+
+.ai-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 10px;
+  padding: 12px;
+  min-height: 0;
+}
+
+.ai-agents {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.ai-agent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(247, 247, 242, 0.04);
+  border: 1px solid rgba(247, 247, 242, 0.08);
+}
+
+.ai-agent.on {
+  border-color: rgba(124, 58, 237, 0.45);
+  background: rgba(124, 58, 237, 0.14);
+}
+
+.ai-agent em {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 12px rgba(0, 217, 255, 0.35);
+  flex-shrink: 0;
+}
+
+.ai-agent span {
+  height: 8px;
+  width: 100%;
+  border-radius: 4px;
+  background: rgba(247, 247, 242, 0.18);
+}
+
+.ai-chat {
+  position: relative;
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(5, 8, 22, 0.55);
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.ai-bubble {
+  height: 22px;
+  border-radius: 10px;
+  max-width: 88%;
+}
+
+.ai-bubble.bot {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.28), rgba(66, 103, 255, 0.22));
+}
+
+.ai-bubble.user {
+  margin-left: auto;
+  background: rgba(247, 247, 242, 0.12);
+}
+
+.ai-bubble.short { width: 55%; }
+
+.ai-pulse {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00d9ff;
+  box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.55);
+  animation: ai-pulse 1.8s ease-out infinite;
+}
+
+@keyframes ai-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(0, 217, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 217, 255, 0); }
+}
+
+/* Geofencing */
+.visual-geofence {
+  background:
+    radial-gradient(circle at 40% 45%, rgba(0, 217, 255, 0.12), transparent 50%),
+    linear-gradient(160deg, #071526, #0a1a30 55%, #061018);
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.geo-map {
+  position: relative;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 217, 255, 0.18);
+  background:
+    linear-gradient(rgba(0, 217, 255, 0.05) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px) 0 0 / 22px 22px,
+    rgba(8, 16, 36, 0.9);
+  overflow: hidden;
+}
+
+.geo-ring {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 217, 255, 0.35);
+  box-shadow: 0 0 24px rgba(0, 217, 255, 0.15);
+}
+
+.geo-ring--inner {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-color: rgba(66, 103, 255, 0.55);
+  background: rgba(0, 217, 255, 0.08);
+}
+
+.geo-pin {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--gradient-primary);
+  box-shadow: 0 0 16px rgba(0, 217, 255, 0.45);
+}
+
+.geo-roads {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.geo-roads i {
+  position: absolute;
+  background: rgba(247, 247, 242, 0.08);
+}
+
+.geo-roads i:nth-child(1) {
+  top: 28%;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.geo-roads i:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  left: 62%;
+  width: 3px;
+}
+
+.geo-roads i:nth-child(3) {
+  top: 68%;
+  left: 10%;
+  width: 55%;
+  height: 3px;
+  transform: rotate(-8deg);
+}
+
+.geo-phone {
+  width: 100%;
+  max-width: 110px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 22px;
+  padding: 12px 10px;
+  background: #0b0f1c;
+  border: 1px solid rgba(247, 247, 242, 0.14);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.geo-phone-bar {
+  width: 42%;
+  height: 5px;
+  margin: 0 auto;
+  border-radius: 99px;
+  background: rgba(247, 247, 242, 0.2);
+}
+
+.geo-check {
+  margin-top: 18px;
+  text-align: center;
+  font: 800 22px/1 var(--font-display), sans-serif;
+  letter-spacing: 0.08em;
+  color: #00d9ff;
+}
+
+.geo-status {
+  height: 10px;
+  margin: 8px 8px 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(0, 217, 255, 0.7), rgba(66, 103, 255, 0.35));
+}
+
+/* ERP Integration */
+.visual-erp {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(66, 103, 255, 0.16), transparent 55%),
+    linear-gradient(145deg, #08101f, #0c142c);
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.erp-node {
+  height: 78%;
+  border-radius: 14px;
+  padding: 16px 14px;
+  background: rgba(16, 22, 46, 0.95);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.erp-node--bc {
+  border-color: rgba(124, 58, 237, 0.35);
+  background: linear-gradient(165deg, rgba(24, 16, 48, 0.95), rgba(12, 14, 36, 0.95));
+}
+
+.erp-node strong {
+  font: 700 12px/1.2 var(--font-body), sans-serif;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.erp-node span {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(247, 247, 242, 0.12);
+}
+
+.erp-node span:nth-child(3) { width: 78%; }
+.erp-node span:nth-child(4) { width: 58%; }
+
+.erp-sync {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.erp-sync i {
+  width: 28px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--gradient-primary);
+  opacity: 0.85;
+}
+
+.erp-sync i:nth-child(2) {
+  width: 36px;
+  opacity: 1;
+}
+
+.erp-sync b {
+  margin-top: 4px;
+  font: 800 10px/1 var(--font-body), sans-serif;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+}
+
+/* Reporting */
+.visual-reports {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(66, 103, 255, 0.18), transparent 45%),
+    linear-gradient(145deg, #0a1024, #07101c);
+}
+
+.rpt-body {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  padding: 12px 14px 14px;
+  min-height: 0;
+}
+
+.rpt-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.rpt-filters span {
+  height: 22px;
+  width: 64px;
+  border-radius: 99px;
+  background: rgba(247, 247, 242, 0.08);
+  border: 1px solid rgba(247, 247, 242, 0.1);
+}
+
+.rpt-filters span:first-child {
+  background: rgba(0, 217, 255, 0.16);
+  border-color: rgba(0, 217, 255, 0.3);
+}
+
+.rpt-chart {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: end;
+  gap: 8px;
+  padding: 8px 4px;
+  border-radius: 12px;
+  background: rgba(5, 8, 22, 0.45);
+  border: 1px solid rgba(247, 247, 242, 0.08);
+}
+
+.rpt-chart i {
+  display: block;
+  height: var(--h, 50%);
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, #00d9ff, #4267ff 70%, rgba(124, 58, 237, 0.7));
+  opacity: 0.9;
+}
+
+.rpt-rows {
+  display: grid;
+  gap: 6px;
+}
+
+.rpt-rows span {
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(247, 247, 242, 0.1);
+}
+
+.rpt-rows span:nth-child(2) { width: 86%; }
+.rpt-rows span:nth-child(3) { width: 72%; }
+
+/* DevOps */
+.visual-devops {
+  background:
+    radial-gradient(circle at 70% 30%, rgba(0, 217, 255, 0.12), transparent 40%),
+    linear-gradient(155deg, #050816, #0c1628);
+  align-content: center;
+  gap: 14px;
+}
+
+.dev-terminal {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #070b16;
+  border: 1px solid rgba(0, 217, 255, 0.16);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.dev-lines {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px 16px;
+}
+
+.dev-lines code {
+  font: 600 12px/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #9bb0c9;
+}
+
+.dev-lines code.ok {
+  color: #5eead4;
+}
+
+.dev-pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dev-pipeline span {
+  font: 700 11px/1 var(--font-body), sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.28);
+}
+
+.dev-pipeline i {
+  width: 18px;
+  height: 2px;
+  background: rgba(0, 217, 255, 0.45);
+}
+
 .visual-kitchen {
   height: 330px;
   background: linear-gradient(160deg, #f0ebe3, #c8b5a0);
@@ -3050,8 +3582,58 @@ footer.site-footer {
   .visual-digital,
   .visual-mobile,
   .visual-crm,
-  .visual-kitchen {
+  .visual-kitchen,
+  .visual-tech {
     height: 220px;
+  }
+
+  .visual-tech {
+    padding: 14px;
+  }
+
+  .visual-geofence {
+    grid-template-columns: 1fr 72px;
+    gap: 10px;
+  }
+
+  .geo-phone {
+    height: 160px;
+    max-width: 72px;
+    border-radius: 16px;
+    padding: 8px 6px;
+  }
+
+  .geo-check {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .geo-ring {
+    width: 84px;
+    height: 84px;
+    margin: -42px 0 0 -42px;
+  }
+
+  .geo-ring--inner {
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
+  }
+
+  .dev-pipeline {
+    display: none;
+  }
+
+  .dev-lines code {
+    font-size: 10px;
+  }
+
+  .erp-node strong {
+    font-size: 10px;
+  }
+
+  .tech-topbar b {
+    font-size: 9px;
   }
 
   .work-meta {
@@ -3148,6 +3730,7 @@ footer.site-footer {
   .cta-box {
     grid-template-columns: 1fr;
     gap: 28px;
+    padding: 32px 28px;
   }
 
   .contact-panel {
@@ -5617,6 +6200,8 @@ footer.site-footer {
   background: linear-gradient(145deg, #0A1028, #121A3A);
   border: 1px solid rgba(0, 217, 255, 0.12);
   border-radius: var(--radius-lg);
+  padding: 40px 44px;
+  gap: 40px;
 }
 
 .contact-details span {
@@ -7696,7 +8281,7 @@ h1, h2, h3, h4 {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 28px !important;
-    padding: 28px 20px !important;
+    padding: 28px 22px !important;
   }
 }
 

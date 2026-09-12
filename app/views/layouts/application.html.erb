@@ -59,6 +59,8 @@
 
     <%= render "shared/analytics" %>
 
+    <%= json_ld_script(organization_schema) %>
+    <%= json_ld_script(website_schema) %>
     <% if content_for?(:structured_data) %>
       <%= yield :structured_data %>
     <% else %>
@@ -66,29 +68,6 @@
       {
         "@context": "https://schema.org",
         "@graph": [
-          {
-            "@type": "Organization",
-            "@id": "<%= site_url("/#organization") %>",
-            "name": "Arqvexa",
-            "description": "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India.",
-            "url": "<%= site_url %>",
-            "logo": "<%= site_url("/icon.png?v=20260910") %>",
-            "image": "<%= og_image_url %>",
-            "email": "<%= contact_email %>",
-            "telephone": "+91-99176-39330",
-            "areaServed": ["Delhi NCR", "Gurgaon", "Noida", "India"],
-            "founder": [
-              { "@type": "Person", "name": "Asif", "jobTitle": "Founder — Technology & Business" },
-              { "@type": "Person", "name": "Shalu", "jobTitle": "Co-Founder — Interior Design" }
-            ],
-            "knowsAbout": ["Interior Design", "Web Development", "Mobile Applications", "AI Automation"]
-          },
-          {
-            "@type": "WebSite",
-            "name": "Arqvexa",
-            "url": "<%= site_url %>",
-            "publisher": { "@id": "<%= site_url("/#organization") %>" }
-          },
           {
             "@type": "Service",
             "name": "Interior Design",

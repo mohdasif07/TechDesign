@@ -2,6 +2,13 @@
   title: "#{@item.title} | #{@item.category_label} Portfolio | Arqvexa",
   description: @item.case_study_summary.presence || @item.description,
   canonical: site_url(@item.path),
+  keywords: [
+    @item.title,
+    "#{@item.category_label} portfolio",
+    @item.tag.presence,
+    @item.location.presence,
+    "Arqvexa case study"
+  ].compact.join(", "),
   og_image: (@item.cover_image.present? ? site_url(portfolio_image_file(@item.cover_image, format: "jpg")) : nil)
 ) %>
 

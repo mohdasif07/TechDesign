@@ -5,6 +5,100 @@
     </div>
   <% else %>
   <% case item.visual %>
+  <% when "warehouse" %>
+    <div class="visual-tech visual-warehouse" aria-hidden="true">
+      <div class="tech-panel">
+        <div class="tech-topbar"><span></span><span></span><span></span><b>Storeman · WMS</b></div>
+        <div class="wh-grid">
+          <div class="wh-bay"><i></i><i></i><i></i></div>
+          <div class="wh-bay filled"><i></i><i></i><i></i></div>
+          <div class="wh-bay"><i></i><i></i></div>
+          <div class="wh-bay filled"><i></i><i></i><i></i></div>
+        </div>
+        <div class="wh-stats"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  <% when "ai" %>
+    <div class="visual-tech visual-ai" aria-hidden="true">
+      <div class="tech-panel">
+        <div class="tech-topbar"><span></span><span></span><span></span><b>AI Admin · Agents</b></div>
+        <div class="ai-layout">
+          <div class="ai-agents">
+            <div class="ai-agent on"><em></em><span></span></div>
+            <div class="ai-agent"><em></em><span></span></div>
+            <div class="ai-agent on"><em></em><span></span></div>
+          </div>
+          <div class="ai-chat">
+            <div class="ai-bubble bot"></div>
+            <div class="ai-bubble user"></div>
+            <div class="ai-bubble bot short"></div>
+            <div class="ai-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% when "geofence" %>
+    <div class="visual-tech visual-geofence" aria-hidden="true">
+      <div class="geo-map">
+        <div class="geo-ring"></div>
+        <div class="geo-ring geo-ring--inner"></div>
+        <div class="geo-pin"></div>
+        <div class="geo-roads"><i></i><i></i><i></i></div>
+      </div>
+      <div class="geo-phone">
+        <div class="geo-phone-bar"></div>
+        <div class="geo-check">IN</div>
+        <div class="geo-status"></div>
+      </div>
+    </div>
+  <% when "erp" %>
+    <div class="visual-tech visual-erp" aria-hidden="true">
+      <div class="erp-node">
+        <strong>Storeman</strong>
+        <span></span><span></span><span></span>
+      </div>
+      <div class="erp-sync">
+        <i></i><i></i><i></i>
+        <b>OData</b>
+      </div>
+      <div class="erp-node erp-node--bc">
+        <strong>Business Central</strong>
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  <% when "reports" %>
+    <div class="visual-tech visual-reports" aria-hidden="true">
+      <div class="tech-panel">
+        <div class="tech-topbar"><span></span><span></span><span></span><b>MIS · Control Reports</b></div>
+        <div class="rpt-body">
+          <div class="rpt-filters"><span></span><span></span><span></span></div>
+          <div class="rpt-chart">
+            <i style="--h:42%"></i>
+            <i style="--h:68%"></i>
+            <i style="--h:55%"></i>
+            <i style="--h:82%"></i>
+            <i style="--h:48%"></i>
+            <i style="--h:74%"></i>
+          </div>
+          <div class="rpt-rows"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  <% when "devops" %>
+    <div class="visual-tech visual-devops" aria-hidden="true">
+      <div class="dev-terminal">
+        <div class="tech-topbar"><span></span><span></span><span></span><b>prod · deploy</b></div>
+        <div class="dev-lines">
+          <code>$ git push origin main</code>
+          <code>→ nginx · puma · ssl</code>
+          <code>✓ docker up · migrate</code>
+          <code class="ok">deployed · healthy</code>
+        </div>
+      </div>
+      <div class="dev-pipeline">
+        <span>Build</span><i></i><span>Test</span><i></i><span>Ship</span>
+      </div>
+    </div>
   <% when "digital" %>
     <div class="visual-digital"><div class="browser"><span></span><span></span><span></span><div class="browser-title">Your Business, Online.</div><div class="browser-lines"></div></div></div>
   <% when "mobile" %>

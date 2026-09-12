@@ -69,11 +69,17 @@ module SeoHelper
   def location_schema(location)
     {
       "@context" => "https://schema.org",
-      "@type" => "Service",
+      "@type" => "ProfessionalService",
       "name" => location.h1,
       "description" => location.meta_description,
       "url" => site_url(location.path),
-      "provider" => schema_organization_ref,
+      "provider" => {
+        "@type" => "Organization",
+        "name" => "Arqvexa",
+        "url" => site_url,
+        "telephone" => contact_phone_display,
+        "email" => contact_email
+      },
       "areaServed" => {
         "@type" => "City",
         "name" => location.city,
@@ -150,12 +156,48 @@ module SeoHelper
           "bestRating" => "5"
         },
         "itemReviewed" => {
-          "@type" => "Service",
-          "name" => service_name,
-          "provider" => schema_organization_ref
+          "@type" => "LocalBusiness",
+          "name" => "Arqvexa",
+          "url" => site_url,
+          "image" => site_url("/icon.png?v=20260910"),
+          "description" => service_name,
+          "telephone" => contact_phone_display,
+          "email" => contact_email,
+          "areaServed" => service_name.include?("Interior") ? "Delhi NCR" : "India"
         }
       }
     end
+  end
+
+  def organization_schema
+    {
+      "@context" => "https://schema.org",
+      "@type" => "Organization",
+      "@id" => site_url("/#organization"),
+      "name" => "Arqvexa",
+      "description" => "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India.",
+      "url" => site_url,
+      "logo" => site_url("/icon.png?v=20260910"),
+      "image" => og_image_url,
+      "email" => contact_email,
+      "telephone" => "+91-99176-39330",
+      "areaServed" => ["Delhi NCR", "Gurgaon", "Noida", "India", "Budaun", "Bareilly", "Aligarh", "Moradabad"],
+      "founder" => [
+        { "@type" => "Person", "name" => "Asif", "jobTitle" => "Founder — Technology & Business" },
+        { "@type" => "Person", "name" => "Shalu", "jobTitle" => "Co-Founder — Interior Design" }
+      ],
+      "knowsAbout" => ["Interior Design", "Web Development", "Mobile Applications", "AI Automation"]
+    }
+  end
+
+  def website_schema
+    {
+      "@context" => "https://schema.org",
+      "@type" => "WebSite",
+      "name" => "Arqvexa",
+      "url" => site_url,
+      "publisher" => { "@id" => site_url("/#organization") }
+    }
   end
 
   private

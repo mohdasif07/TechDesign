@@ -75,6 +75,7 @@ pages:
     related_city_slugs:
       - bareilly
       - aligarh
+      - moradabad
 
   - slug: bareilly
     division: interior
@@ -167,6 +168,7 @@ pages:
     related_city_slugs:
       - budaun
       - aligarh
+      - moradabad
 
   - slug: aligarh
     division: interior
@@ -244,6 +246,7 @@ pages:
     related_city_slugs:
       - budaun
       - bareilly
+      - moradabad
 
   - slug: budaun
     division: web
@@ -321,6 +324,7 @@ pages:
     related_city_slugs:
       - bareilly
       - aligarh
+      - moradabad
 
   - slug: bareilly
     division: web
@@ -403,6 +407,7 @@ pages:
     related_city_slugs:
       - budaun
       - aligarh
+      - moradabad
 
   - slug: aligarh
     division: web
@@ -480,3 +485,160 @@ pages:
     related_city_slugs:
       - budaun
       - bareilly
+      - moradabad
+
+  - slug: moradabad
+    division: interior
+    city: Moradabad
+    state: Uttar Pradesh
+    meta_title: Interior Designer in Moradabad | Home & Modular Kitchen | Arqvexa
+    meta_description: Looking for an interior designer in Moradabad? Arqvexa provides home interiors, 2BHK and 3BHK design, modular kitchens, wardrobes, 3D visualization and execution support.
+    meta_keywords: interior designer Moradabad, home interior design Moradabad, modular kitchen Moradabad, 2BHK interior Moradabad, 3BHK interior Moradabad, wardrobe design Moradabad, 3D interior visualization
+    h1: Interior Designer in Moradabad
+    intro: Moradabad's mix of industrial enterprise, brass and handicraft trade, and growing residential colonies creates distinct interior needs for homes and workplaces. Arqvexa supports homeowners and professionals in Moradabad with home interiors, modular kitchens, wardrobe systems, 3D visualization and hands-on execution coordination — delivered from our Delhi NCR hub with scheduled site visits to your property.
+    cta_label: Book an Interior Design Consultation in Moradabad
+    sections:
+      - heading: Home Interior Design in Moradabad
+        body: |
+          <p>From independent houses in established colonies to new flats in developing residential sectors, Moradabad interiors must balance practical daily living with spaces that welcome family and guests. Arqvexa designs living rooms, bedrooms, dining areas and entry zones as a connected whole — accounting for natural light, ventilation, storage and how your household actually uses each room.</p>
+          <p>We begin with a structured brief: family size, working hours, entertaining habits and budget. That clarity shapes layouts and material palettes before any modular production starts, so Moradabad projects avoid expensive mid-way changes.</p>
+          <p>As an expanded service area from Delhi NCR, Moradabad receives planned site visits for measurements and key execution milestones, with remote coordination between visits so progress stays visible.</p>
+      - heading: 2BHK & 3BHK Interior Design in Moradabad
+        body: |
+          <p>Two- and three-bedroom homes are common interior projects in Moradabad. A 2BHK often needs clever storage, multi-purpose zones and a kitchen that works within a compact footprint. A 3BHK allows dedicated study corners, guest bedrooms and richer material choices — when the layout is planned early.</p>
+          <p>For 2BHK interiors we focus on usable floor area, ceiling-height wardrobes and lighter palettes that make rooms feel larger. For 3BHK homes we balance shared family spaces with private retreats, ensuring each bedroom has adequate storage, electrical points and layered lighting.</p>
+          <p>Every layout includes furniture placement, circulation paths and electrical planning guidance. You review 2D plans and 3D renders for key rooms before modular vendors begin manufacturing.</p>
+      - heading: Modular Kitchen Design in Moradabad
+        body: |
+          <p>Daily cooking in Moradabad homes demands practical work triangles, strong ventilation and storage mapped to utensils and groceries. Arqvexa designs modular kitchens with L-shape, U-shape, parallel and galley layouts adapted to your available space and window positions.</p>
+          <p>Cabinet heights, drawer configurations, tall-unit pantries and corner solutions are specified in detail. Material guidance covers carcass quality, shutter finishes, hardware and countertops matched to your budget.</p>
+          <p>Before production starts, you review 3D kitchen renders showing finishes, handles and appliance positions — preventing costly rework and helping families approve a kitchen they will enjoy for years.</p>
+      - heading: Wardrobe & Storage Solutions
+        body: |
+          <p>Storage gaps are a frequent complaint in Moradabad homes — shallow wardrobes, no place for seasonal items, cluttered bedrooms because furniture was bought before planning. Arqvexa designs floor-to-ceiling wardrobes, loft storage, TV units with concealed cabinets and hallway solutions that keep daily life organised.</p>
+          <p>We map storage to actual belongings: hanging sections, drawers, shoe racks, jewellery trays and dedicated spaces for luggage or festival items. Sliding, hinged and walk-in options are evaluated against room dimensions.</p>
+          <p>Modular wardrobe systems match laminates and handles across bedrooms so your home feels cohesive. Vendor-ready drawings speed up production and installation.</p>
+      - heading: 3D Interior Visualization
+        body: |
+          <p>Choosing colours and furniture from small samples is risky. Arqvexa provides 3D interior visualization for Moradabad projects so you see realistic room views — wall colours, flooring, lighting mood and furniture scale — before committing to purchases.</p>
+          <p>Renders cover living rooms, master bedrooms, kitchens and other priority spaces. We iterate until the design matches your expectations — especially useful when family members need a shared visual reference for approval.</p>
+          <p>Contractors and modular vendors work from the same approved images, reducing misunderstandings during execution of your Moradabad interior project.</p>
+      - heading: Interior Execution & Project Coordination
+        body: |
+          <p>Good design only matters if it is built correctly. Arqvexa supports execution for interior projects in Moradabad through vendor coordination, milestone checklists and site visits at critical stages — before modular installation, after electrical rough-in and at final handover.</p>
+          <p>We help compare modular quotes, review shop drawings and flag discrepancies early. Timelines, material lead times and snag lists are communicated in plain language.</p>
+          <p>While our primary studio operates from Delhi NCR, Moradabad clients benefit from planned site visits and remote coordination between visits — professional oversight without needing a full local design office.</p>
+      - heading: Why Choose Arqvexa for Interior Design in Moradabad?
+        body: |
+          <p>Arqvexa combines interior design expertise from Delhi NCR with genuine reach into Moradabad as a service area. You receive structured layouts, 3D visualization and execution coordination from a team that handles residential and commercial projects across North India.</p>
+          <p>We design for real budgets and timelines. Material choices, scope phasing and vendor recommendations are discussed openly so you can start with a kitchen or single room and expand later without redesigning from scratch.</p>
+          <p>If you are searching for an interior designer in Moradabad who offers home interiors, modular kitchens, wardrobes and 3D previews under one roof, Arqvexa is ready to discuss your project.</p>
+    process:
+      - { step: Consultation & site visit, detail: Lifestyle discussion, measurements and budget alignment during a planned visit to your Moradabad property. }
+      - { step: Layout & 3D design, detail: 2D space plans and 3D renders for key rooms submitted for your approval. }
+      - { step: Material & vendor selection, detail: Finish boards, modular quotes and shop-drawing review before production starts. }
+      - { step: Execution & handover, detail: Site coordination, snag checks and final walkthrough until your interior is ready to use. }
+    benefits:
+      - Structured home interiors for 2BHK and 3BHK homes in Moradabad
+      - Modular kitchen and wardrobe design with 3D previews before build
+      - Site visits and execution coordination from Delhi NCR hub
+      - One team for layout, visualization and vendor alignment
+      - Scope flexibility — full home or room-by-room upgrades
+    faqs:
+      - question: Do you visit homes in Moradabad for interior design projects?
+        answer: <p>Yes. Arqvexa serves Moradabad as an expanded service area from our Delhi NCR base. We schedule site visits for measurements, design discussions and key execution milestones.</p>
+      - question: Can I start with just a modular kitchen or wardrobe?
+        answer: <p>Absolutely. Many Moradabad clients begin with a kitchen or bedroom upgrade and extend to full-home interiors later. We design so future phases connect cleanly.</p>
+      - question: Do you provide 3D views before construction begins?
+        answer: <p>Yes. 3D interior visualization is a standard part of our process for living rooms, bedrooms and kitchens so you approve finishes and layouts before production.</p>
+      - question: How do you handle vendor coordination in Moradabad?
+        answer: <p>We share vendor-ready drawings, review modular quotes, track milestones and conduct site checks at critical stages. Remote coordination continues between scheduled visits.</p>
+      - question: What is the typical timeline for a 2BHK interior in Moradabad?
+        answer: <p>Timelines depend on scope and material lead times. After design approval, most residential projects run several weeks to a few months. We share a realistic schedule during consultation.</p>
+    related_service_slugs:
+      - residential-interior-design
+      - modular-kitchen
+      - 3d-visualization
+      - wardrobes-storage
+    related_city_slugs:
+      - budaun
+      - bareilly
+      - aligarh
+
+  - slug: moradabad
+    division: web
+    city: Moradabad
+    state: Uttar Pradesh
+    meta_title: Web Development Company in Moradabad | Websites & Software | Arqvexa
+    meta_description: Arqvexa is a web development company serving Moradabad. We build business websites, e-commerce stores, web apps, CRM systems, AI chatbots and custom software.
+    meta_keywords: web development company Moradabad, website developer Moradabad, software development Moradabad, e-commerce development Moradabad, CRM development Moradabad, AI chatbot Moradabad
+    h1: Web Development Company in Moradabad
+    intro: Moradabad's brass, handicraft, manufacturing and trading businesses increasingly need websites and software that work as hard as they do — clear messaging, mobile-friendly design and reliable technology behind the scenes. Arqvexa is a web development company serving Moradabad from our Delhi NCR hub, delivering business websites, e-commerce stores, web applications, CRM systems, AI chatbots and custom software through remote collaboration with structured demos and milestones.
+    cta_label: Discuss Your Software Project in Moradabad
+    sections:
+      - heading: Business Website Development in Moradabad
+        body: |
+          <p>A professional website is often the first impression your Moradabad business makes — for buyers searching on mobile and for partners evaluating credibility online. Arqvexa builds business websites with clear service pages, fast load times, contact forms, WhatsApp integration and SEO foundations so you are discoverable and trustworthy.</p>
+          <p>We plan information architecture before design: what pages you need, how visitors navigate, where calls-to-action sit and how content updates will happen after launch. Sites are responsive across phones and desktops.</p>
+          <p>Delivery is remote from Delhi NCR with video walkthroughs at each stage. Moradabad clients receive the same structured process as metro businesses without needing a local agency office nearby.</p>
+      - heading: E-commerce Development for Moradabad Businesses
+        body: |
+          <p>Retailers, exporters, distributors and D2C brands in Moradabad can reach customers beyond walk-in footfall with a well-built online store. Arqvexa develops e-commerce websites with product catalogs, category navigation, cart and checkout, payment gateway integration and order management panels.</p>
+          <p>We scope catalog size, shipping workflows, tax display, customer notifications and admin tools during discovery so the store matches how you actually fulfil orders — whether from a workshop, warehouse or third-party logistics partner.</p>
+          <p>Mobile shopping experience receives priority attention. Admin training and launch support ensure your team can manage products and orders confidently after go-live.</p>
+      - heading: Web Applications & Portals
+        body: |
+          <p>When a brochure website is not enough, Arqvexa builds web applications — booking portals, dealer dashboards, membership sites, internal tools and service marketplaces tailored to your workflow. We use maintainable stacks including Ruby on Rails where long-term stability and SEO matter.</p>
+          <p>Authentication, role-based access, data validation and reporting features are designed around real user journeys. Sprints include demos so Moradabad stakeholders see progress regularly without travelling to a dev office.</p>
+          <p>API-first architecture allows future mobile apps or third-party integrations as your business grows beyond initial launch scope.</p>
+      - heading: CRM & Business Software
+        body: |
+          <p>Spreadsheets and scattered WhatsApp threads make follow-ups easy to miss. Arqvexa builds custom CRM systems for Moradabad businesses — lead capture from your website, pipeline views, task reminders, sales dashboards and integration with email or messaging channels.</p>
+          <p>Unlike generic CRM subscriptions that force you to adapt, custom software mirrors how your team actually sells and supports customers. We map stages, fields, automations and reports during discovery before writing code.</p>
+          <p>CRM projects often pair naturally with a new business website so enquiries flow directly into a system your staff uses daily.</p>
+      - heading: AI Chatbots & Automation
+        body: |
+          <p>AI tools should solve practical problems — answering FAQs after hours, qualifying leads on your website or reducing repetitive internal tasks. Arqvexa implements AI chatbots and workflow automation for Moradabad businesses with clear handoff to humans when conversations need personal attention.</p>
+          <p>We start with structured knowledge — your service list, pricing FAQs, product categories — rather than promising magic without content. Pilots validate accuracy before expanding scope.</p>
+          <p>Automation can connect your website, CRM, email and spreadsheets so data moves reliably without manual re-entry.</p>
+      - heading: Custom Software Solutions
+        body: |
+          <p>Some Moradabad businesses need software that off-the-shelf products simply do not offer — inventory logic specific to your supply chain, export documentation workflows, commission calculations or multi-branch reporting. Arqvexa develops custom software scoped to measurable outcomes.</p>
+          <p>Projects begin with a written scope, milestone plan and demo schedule. You always know what is being built, why it matters and when the next review happens.</p>
+          <p>Post-launch, we support bug fixes, hosting guidance and iterative improvements so your investment continues to serve operations as they evolve.</p>
+      - heading: Why Choose Arqvexa for Web Development in Moradabad?
+        body: |
+          <p>Arqvexa combines Delhi NCR engineering discipline with genuine service to Moradabad and surrounding areas. You work with a team that builds websites, e-commerce, CRM and AI solutions daily — not a generalist shop treating software as a side offering.</p>
+          <p>Remote delivery keeps costs sensible while video demos, shared staging links and documented handovers maintain transparency. Many clients also know us for interior design, which helps when you need a new showroom and a matching web presence coordinated together.</p>
+          <p>Ready to build or upgrade your digital presence in Moradabad? Contact Arqvexa for a discovery call and a realistic proposal aligned to your goals and timeline.</p>
+    process:
+      - { step: Discovery & scope, detail: Goals, features, content and timeline agreed in a structured briefing call. }
+      - { step: UX design & architecture, detail: Wireframes, UI design and technical plan reviewed before development. }
+      - { step: Development & testing, detail: Sprint-based builds with staging demos accessible from Moradabad remotely. }
+      - { step: Launch & support, detail: Deployment, training, analytics setup and post-launch assistance. }
+    benefits:
+      - Business websites with SEO and mobile-first design for Moradabad
+      - E-commerce, web apps and CRM built to your workflow
+      - AI chatbots and automation with practical, scoped pilots
+      - Remote delivery from Delhi NCR with regular video demos
+      - Maintainable code and clear documentation at handover
+    faqs:
+      - question: Can you build websites for businesses in Moradabad without local meetings?
+        answer: <p>Yes. IT projects are delivered remotely with video calls, shared staging links and documented milestones. Occasional in-person meetings are possible when needed but not required.</p>
+      - question: How long does a business website typically take?
+        answer: <p>Most multi-page business websites take two to four weeks after content and design approval. Complex web apps or CRM systems follow longer milestone plans agreed upfront.</p>
+      - question: Do you integrate payment gateways for e-commerce in India?
+        answer: <p>Yes. We integrate common Indian payment gateways and configure checkout, order notifications and admin order management.</p>
+      - question: Can you connect a new website to a CRM you build?
+        answer: <p>Absolutely. Lead forms, chatbots and enquiry flows can feed directly into a custom CRM dashboard your team uses daily.</p>
+      - question: What technology stack do you use?
+        answer: <p>We choose stacks based on project needs — including Ruby on Rails for maintainable web applications and SEO-friendly business sites, with modern front-end practices throughout.</p>
+    related_service_slugs:
+      - web-development
+      - ecommerce-development
+      - custom-software-development
+      - ai-development
+    related_city_slugs:
+      - budaun
+      - bareilly
+      - aligarh

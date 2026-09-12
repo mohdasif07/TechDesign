@@ -1,7 +1,13 @@
 <% seo_page(
   title: "#{@post.title} | Arqvexa Blog",
   description: @post.excerpt,
-  canonical: site_url(blog_post_path(@post.slug))
+  canonical: site_url(blog_post_path(@post.slug)),
+  keywords: [
+    @post.title,
+    @post.category_label,
+    @post.slug.tr("-", " "),
+    "Arqvexa blog"
+  ].join(", ")
 ) %>
 
 <% breadcrumbs(

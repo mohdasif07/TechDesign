@@ -4,7 +4,7 @@ class LocationPage
 
   class NotFound < StandardError; end
 
-  CITY_SLUGS = %w[budaun bareilly aligarh].freeze
+  CITY_SLUGS = %w[budaun bareilly aligarh moradabad].freeze
 
   DIVISIONS = {
     interior: "interior-design",

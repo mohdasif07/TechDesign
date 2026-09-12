@@ -4,7 +4,7 @@ items:
     tag: Enterprise Platform
     title: NCML Storeman — Warehouse Management
     description: Legacy .NET warehouse platform modernized to Ruby on Rails + React with contracts, orders, weighbridge, approvals and Business Central integration.
-    visual: crm
+    visual: warehouse
     location: India
     case_study:
       type: Real project
@@ -57,7 +57,7 @@ items:
     tag: AI Platform
     title: F45 Admin Console — AI Feature Module
     description: AI administration module for managing agents, conversations, and settings — React frontend integrated; backend APIs and LLM integration in progress.
-    visual: crm
+    visual: ai
     location: Remote · India
     case_study:
       type: Real project
@@ -109,7 +109,7 @@ items:
     tag: Geolocation
     title: Warehouse Monitoring & Geofencing
     description: GPS-based geofenced clock-in/out and warehouse presence monitoring to help identify unmanned godown situations.
-    visual: mobile
+    visual: geofence
     location: India
     case_study:
       type: Real project
@@ -149,7 +149,7 @@ items:
     tag: ERP Integration
     title: Business Central Integration
     description: OData integration between Storeman and Microsoft Dynamics 365 Business Central for master and operational data exchange.
-    visual: digital
+    visual: erp
     location: India
     case_study:
       type: Real project
@@ -191,7 +191,7 @@ items:
     tag: Reporting
     title: Enterprise MIS & Control Reports
     description: Rails reporting services with filters, validations, pagination, and CSV export for warehouse operational and management data.
-    visual: crm
+    visual: reports
     location: India
     case_study:
       type: Real project
@@ -232,7 +232,7 @@ items:
     tag: DevOps
     title: Rails Production Deployment
     description: Production deployment and support for Rails apps on Ubuntu with Nginx, Puma, Docker, MySQL migrations, SSL, and troubleshooting.
-    visual: digital
+    visual: devops
     location: India
     case_study:
       type: Real project
