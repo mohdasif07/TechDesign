@@ -98,6 +98,25 @@
     </section>
   <% end %>
 
+  <% if @service.it? && @service.related_portfolio_items.any? %>
+    <section class="section work" id="portfolio">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div>
+            <div class="eyebrow"><span></span> Portfolio</div>
+            <h2>Related <em>projects.</em></h2>
+          </div>
+          <p><%= link_to "View full IT portfolio", portfolio_path(anchor: "tech") %></p>
+        </div>
+        <div class="work-grid work-grid-3 reveal">
+          <% @service.related_portfolio_items.first(3).each do |item| %>
+            <%= render "shared/portfolio_card", item: item, linked: true %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
   <% if @service.related_pages.any? %>
     <section class="section">
       <div class="container">
@@ -107,6 +126,15 @@
         <div class="service-link-section">
           <%= render "shared/service_link_grid", services: @service.related_pages, variant: (@service.interior? ? "interior" : "tech") %>
         </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @service.it? %>
+    <section class="section content-block content-block-dark">
+      <div class="container content-prose reveal">
+        <h2>Serving Delhi NCR, Noida &amp; India</h2>
+        <p>Arqvexa delivers IT projects remotely across India, with a strong focus on <%= link_to "web development in Noida", web_location_path(city: "noida") %>, Delhi NCR and growing businesses nationwide. Looking for the full service list? Visit <%= link_to "IT Development", it_development_path %>.</p>
       </div>
     </section>
   <% end %>

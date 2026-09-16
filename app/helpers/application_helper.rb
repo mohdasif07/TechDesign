@@ -170,12 +170,14 @@ module ApplicationHelper
     else
       {
         "web-development" => "◆",
+        "website-development" => "▣",
         "ecommerce-development" => "🛒",
         "mobile-app-development" => "📱",
         "ai-development" => "✦",
+        "ai-automation" => "⚡",
         "crm-development" => "📊",
-        "custom-software-development" => "⚙",
-        "api-development" => "⇄"
+        "software-development" => "⚙",
+        "api-integration" => "⇄"
       }
     end
     icons.fetch(slug, division == "interior" ? "⌂" : "◆")

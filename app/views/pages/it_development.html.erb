@@ -1,8 +1,8 @@
 <% seo_page(
   title: "IT Development Company in Delhi NCR | Arqvexa",
-  description: "Arqvexa builds websites, e-commerce platforms, mobile apps, CRM systems, AI automation, APIs and custom software for businesses across India.",
+  description: "Arqvexa is an IT development company in Delhi NCR and Noida — websites, web apps, mobile apps, custom software, e-commerce, CRM, AI and API integrations for growing businesses across India.",
   canonical: site_url(it_development_path),
-  keywords: "IT development company Delhi NCR, web development Delhi, mobile app development India, AI development, CRM development, custom software India"
+  keywords: "IT development company Delhi NCR, IT development company Noida, web development company Delhi NCR, software development company Delhi NCR, custom software development Delhi NCR"
 ) %>
 
 <% breadcrumbs(
@@ -24,41 +24,30 @@
           "url": "<%= site_url %>"
         },
         "url": "<%= site_url(it_development_path) %>",
-        "description": "Website development, mobile apps, e-commerce, CRM, AI chatbots and custom software development for businesses in India and internationally.",
+        "description": "Websites, web applications, mobile apps, e-commerce, CRM, AI development, AI automation, API integrations and custom software for businesses in India.",
         "areaServed": [
           { "@type": "Country", "name": "India" },
           { "@type": "AdministrativeArea", "name": "Delhi NCR" },
-          { "@type": "City", "name": "Budaun", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } },
-          { "@type": "City", "name": "Bareilly", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } },
-          { "@type": "City", "name": "Aligarh", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } }
+          { "@type": "City", "name": "Noida", "containedInPlace": { "@type": "State", "name": "Uttar Pradesh" } },
+          { "@type": "City", "name": "Gurugram", "containedInPlace": { "@type": "State", "name": "Haryana" } },
+          { "@type": "City", "name": "Delhi" }
         ],
-        "serviceType": ["Web Development", "Mobile App Development", "E-commerce Development", "CRM Development", "AI Automation"]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much does a business website cost in India?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A professional business website typically starts from a modest budget for a landing page and scales with pages, features and integrations. We provide a clear quote after understanding your goals."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you build mobile apps for Android and iOS?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. We build cross-platform and native mobile applications depending on your requirements, timeline and budget."
-            }
-          }
-        ]
+        "serviceType": ["Web Development", "Website Development", "Mobile App Development", "Software Development", "E-commerce Development", "CRM Development", "AI Development", "AI Automation", "API Integration"]
       }
     ]
   }
   </script>
   <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+  <%= json_ld_script(faq_page_schema([
+        { "question" => "How much does a business website cost in India?",
+          "answer" => "Professional business websites with Arqvexa start from ₹35,000. Final pricing depends on pages, features and integrations." },
+        { "question" => "Do you build mobile apps for Android and iOS?",
+          "answer" => "Yes. We recommend cross-platform or native based on requirements, timeline and budget." },
+        { "question" => "Do you serve Noida and Delhi NCR?",
+          "answer" => "Yes. We focus on Delhi NCR and Noida while delivering IT projects remotely across India." },
+        { "question" => "Do you provide maintenance after launch?",
+          "answer" => "Yes. Support plans cover bug fixes, updates, hosting guidance and new feature development." }
+      ])) %>
   <%= json_ld_script({ "@context" => "https://schema.org", "@graph" => client_reviews_schema(ClientReview.for_division(:it), service_name: "IT Development Services") }) %>
 <% end %>
 
@@ -86,17 +75,17 @@
     </div>
     <div class="container page-hero-grid reveal">
       <div>
-        <div class="eyebrow"><span></span> IT Development · India &amp; Remote</div>
+        <div class="eyebrow"><span></span> IT Development · Delhi NCR, Noida &amp; India</div>
         <p class="it-hero-kicker" aria-hidden="true">BUILD. SHIP. SCALE.</p>
         <h1>IT Development Company in <em>Delhi NCR.</em></h1>
-        <p class="page-hero-text">Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software — built for businesses that need results, not just a pretty homepage.</p>
-        <p class="page-hero-text" style="margin-top:-8px;opacity:0.85;">Digital products and automation that help businesses work smarter.</p>
+        <p class="page-hero-text">Websites, apps, software and AI solutions for growing businesses — built by Arqvexa’s IT division with clear scope, regular demos and maintainable code.</p>
+        <p class="page-hero-text" style="margin-top:-8px;opacity:0.85;">Strong focus on Noida and Delhi NCR, with remote delivery across India.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Discuss Your Software Project <span aria-hidden="true">→</span></a>
-          <%= link_to "View Interior Design", interior_design_path, class: "btn btn-ghost-light" %>
+          <a class="btn btn-primary" href="#contact">Start Your IT Project <span aria-hidden="true">→</span></a>
+          <%= link_to "Web Development in Noida", web_location_path(city: "noida"), class: "btn btn-ghost-light" %>
         </div>
         <ul class="page-hero-tags">
-          <li>Websites</li><li>Mobile Apps</li><li>E-commerce</li><li>CRM</li><li>AI</li>
+          <li>Websites</li><li>Web Apps</li><li>Mobile</li><li>Software</li><li>AI</li><li>CRM</li>
         </ul>
       </div>
       <div class="page-hero-visual reveal delay-1">
@@ -126,17 +115,34 @@
   </section>
 
   <section class="section">
+    <div class="container content-prose reveal">
+      <h2>What Arqvexa builds</h2>
+      <p>We partner with startups, SMEs and operations-heavy teams that need digital products that work — not vanity pages. Typical engagements include business websites, custom web applications, mobile apps, e-commerce stores, CRM systems, AI features, automation and API integrations.</p>
+      <p>Interior Design remains an equal division of Arqvexa. This page focuses on IT so searchers and buyers can evaluate our software practice clearly.</p>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container">
       <div class="section-head reveal">
         <div>
           <div class="eyebrow"><span></span> Services</div>
-          <h2>What we <em>build.</em></h2>
+          <h2>IT services we <em>offer.</em></h2>
         </div>
-        <p>Full-stack IT development for startups, SMEs and established businesses — led by founder Asif with a focus on performance, maintainability and business outcomes.</p>
+        <p>Every service has its own page — unique intent, process and CTA. Start with the problem you need solved.</p>
       </div>
       <div class="service-link-section reveal">
         <%= render "shared/service_link_grid", services: @it_services, variant: "tech" %>
       </div>
+    </div>
+  </section>
+
+  <section class="section content-block">
+    <div class="container content-prose reveal">
+      <h2>Who we work with</h2>
+      <p>Founders validating an MVP, service businesses that need leads from Google, retailers moving online, and teams replacing spreadsheet chaos with custom software. Clients are often in <strong>Noida</strong>, <strong>Delhi NCR</strong> and across India via remote delivery.</p>
+      <h3>Local IT landing page</h3>
+      <p>Looking specifically for a partner in Noida? Visit our <%= link_to "web development company in Noida", web_location_path(city: "noida") %> page for local context, coverage and FAQs.</p>
     </div>
   </section>
 
@@ -147,12 +153,12 @@
       <div class="section-head compact reveal">
         <div>
           <div class="eyebrow"><span></span> Portfolio</div>
-          <h2>Digital <em>concepts.</em></h2>
+          <h2>Selected IT <em>projects.</em></h2>
         </div>
-        <p>Real enterprise software projects alongside interior concept work — <%= link_to "view full portfolio", portfolio_path %>.</p>
+        <p>Real software work — <%= link_to "view full portfolio", portfolio_path %>.</p>
       </div>
       <div class="work-grid work-grid-3 reveal">
-        <% PortfolioItem.by_category("tech").first(3).each do |item| %>
+        <% PortfolioItem.by_category("tech").first(6).each do |item| %>
           <%= render "shared/portfolio_card", item: item, linked: true %>
         <% end %>
       </div>
@@ -173,16 +179,24 @@
     </div>
   </section>
 
+  <section class="section content-block content-block-dark">
+    <div class="container content-prose reveal">
+      <h2>Technologies we use</h2>
+      <p>We choose stacks for maintainability and the problem at hand. Common tools include <strong>Ruby on Rails</strong>, <strong>React</strong>, <strong>MySQL</strong>, REST APIs, and production delivery with Nginx and Puma. Mobile approach (cross-platform vs native) is decided after reviewing scope — we do not claim technologies we cannot deliver.</p>
+      <h2>Pricing guidance</h2>
+      <p><strong>Business websites start from ₹35,000.</strong> Web apps, mobile apps, CRM and AI projects are scoped after discovery. Read the <%= link_to "website cost guide", blog_post_path("website-cost-delhi-ncr") %> and <%= link_to "mobile app cost guide", blog_post_path("mobile-app-development-cost-india") %>, then request a quote with your must-haves.</p>
+    </div>
+  </section>
+
   <%= render "shared/client_reviews", division: :it %>
 
   <%= render "shared/service_areas" %>
 
-  <section class="section content-block content-block-dark">
+  <section class="section content-block">
     <div class="container content-prose reveal">
       <h2>Why choose Arqvexa for IT development?</h2>
-      <p>When you search for a <strong>web development company in Delhi NCR</strong> or <strong>app developer in Gurgaon</strong>, you need a team that understands business — not just code. Arqvexa's IT division is led by founder <strong>Asif</strong>, who builds websites, apps and software with a focus on speed, SEO, conversion and long-term maintainability.</p>
-      <p>We serve clients across <strong>Delhi NCR</strong> and deliver projects <strong>remotely across India</strong>. Whether you need a landing page, an e-commerce store, a mobile app, a CRM or an AI chatbot — you get clear scope, transparent pricing and regular communication throughout.</p>
-      <p>Many clients also use our <%= link_to "interior design services", interior_design_path %> when opening a new office or showroom — one studio for both your space and your digital presence.</p>
+      <p>When you search for an <strong>IT development company in Delhi NCR</strong> or a <strong>web development company in Noida</strong>, you need a team that understands business outcomes — speed, SEO, conversion and long-term maintainability — not only screenshots.</p>
+      <p>Arqvexa’s IT division is founder-led by <strong>Asif</strong>. You also keep access to our equal <%= link_to "interior design division", interior_design_path %> when space and software should launch together.</p>
     </div>
   </section>
 
@@ -193,15 +207,15 @@
       <div class="faq-list">
         <details class="faq-item">
           <summary>How much does a business website cost in India?</summary>
-          <p>Depends on pages, features and integrations. We provide a clear quote after discovery — see our <%= link_to "website cost guide", blog_post_path("website-cost-delhi-ncr") %> for typical ranges.</p>
+          <p>Business websites with Arqvexa start from ₹35,000. Scope changes with pages and integrations — see our <%= link_to "website cost guide", blog_post_path("website-cost-delhi-ncr") %>.</p>
         </details>
         <details class="faq-item">
           <summary>Do you build mobile apps for Android and iOS?</summary>
-          <p>Yes. We recommend cross-platform or native based on your budget, timeline and feature requirements.</p>
+          <p>Yes. We recommend cross-platform or native based on budget, timeline and features. Details on <%= link_to "mobile app development", it_service_path("mobile-app-development") %>.</p>
         </details>
         <details class="faq-item">
-          <summary>Can you work remotely outside Delhi NCR?</summary>
-          <p>Absolutely. Most IT projects are delivered remotely with video calls, shared demos and async updates — including clients in <%= link_to "Budaun", web_location_path(city: "budaun") %>, <%= link_to "Bareilly", web_location_path(city: "bareilly") %>, <%= link_to "Aligarh", web_location_path(city: "aligarh") %> and <%= link_to "Moradabad", web_location_path(city: "moradabad") %>.</p>
+          <summary>Do you serve Noida as well as Delhi NCR?</summary>
+          <p>Yes — see <%= link_to "web development in Noida", web_location_path(city: "noida") %>. We also deliver remotely across India.</p>
         </details>
         <details class="faq-item">
           <summary>Do you provide maintenance after launch?</summary>
@@ -220,7 +234,7 @@
       <div class="reveal">
         <div class="eyebrow"><span></span> Start your IT project</div>
         <h2>Ready to build<br><em>your product?</em></h2>
-        <p>Share your idea, target users and timeline. We'll reply with next steps and a discovery call slot.</p>
+        <p>Share your idea, target users and timeline. We’ll reply with next steps and a discovery call slot.</p>
       </div>
       <%= render "shared/contact_panel",
             default_service: "IT Development",

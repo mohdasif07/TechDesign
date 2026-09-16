@@ -186,7 +186,18 @@ module SeoHelper
         { "@type" => "Person", "name" => "Asif", "jobTitle" => "Founder — Technology & Business" },
         { "@type" => "Person", "name" => "Shalu", "jobTitle" => "Co-Founder — Interior Design" }
       ],
-      "knowsAbout" => ["Interior Design", "Web Development", "Mobile Applications", "AI Automation"]
+      "knowsAbout" => [
+        "Interior Design",
+        "Web Development",
+        "Website Development",
+        "Mobile Applications",
+        "Custom Software Development",
+        "E-commerce Development",
+        "CRM Development",
+        "AI Development",
+        "AI Automation",
+        "API Integration"
+      ]
     }
   end
 

@@ -153,14 +153,27 @@
     </section>
   <% end %>
 
+  <% if @item.tech? && @item.related_services.any? %>
+    <section class="section">
+      <div class="container">
+        <div class="section-head compact reveal">
+          <div><div class="eyebrow"><span></span> Related services</div><h2>Build something <em>similar.</em></h2></div>
+        </div>
+        <div class="service-link-section reveal">
+          <%= render "shared/service_link_grid", services: @item.related_services, variant: "tech" %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
   <section class="section cta-inline">
     <div class="container">
       <%= render "shared/cta_banner",
             title: (@item.interior? ? "Book an interior design consultation" : "Discuss your software project"),
-            button_label: "Get a quote",
+            button_label: (@item.interior? ? "Get a quote" : "Start Your Project"),
             button_url: contact_page_path(anchor: "contact"),
-            secondary_label: "Back to portfolio",
-            secondary_url: portfolio_path %>
+            secondary_label: (@item.interior? ? "Back to portfolio" : "View IT services"),
+            secondary_url: (@item.interior? ? portfolio_path : it_development_path) %>
     </div>
   </section>
 </main>

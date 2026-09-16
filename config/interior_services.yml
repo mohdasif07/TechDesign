@@ -142,7 +142,7 @@ pages:
       - { step: Execution, detail: Vendor coordination and handover walkthrough. }
     faqs:
       - question: Can you align interiors with our website or brand?
-        answer: Yes. We often pair commercial interiors with <a href="/it-development/web-development">web development</a> for a unified brand launch.
+        answer: Yes. We often pair commercial interiors with <a href="/web-development">web development</a> for a unified brand launch.
     related_slugs:
       - office-interior-design
       - 3d-visualization

@@ -32,7 +32,10 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact_message).permit(:name, :email, :phone, :service, :message, :website, :return_to)
+    params.require(:contact_message).permit(
+      :name, :email, :phone, :company, :service, :project_type,
+      :budget_range, :timeline, :message, :website, :return_to
+    )
   end
 
   def redirect_path

@@ -232,7 +232,11 @@ function initContactForm() {
             name,
             email,
             phone,
+            company: field("company"),
             service,
+            project_type: field("project_type"),
+            budget_range: field("budget_range"),
+            timeline: field("timeline"),
             message,
             from_name: "Arqvexa Website",
             replyto: email,
@@ -417,27 +421,27 @@ function initProjectRecommender() {
     website: {
       title: "Business website or landing page",
       note: "Best when you mainly need online presence, service information and a way for customers to contact you.",
-      path: "/it-development/web-development"
+      path: "/web-development"
     },
     ecommerce: {
       title: "E-commerce store",
       note: "Best when selling products online with cart, payments and order management is the core goal.",
-      path: "/it-development/ecommerce-development"
+      path: "/ecommerce-development"
     },
     crm: {
       title: "CRM or custom business software",
       note: "Best when your team needs to track leads, clients, workflows or internal operations in one place.",
-      path: "/it-development/crm-development"
+      path: "/crm-development"
     },
     mobile: {
       title: "Mobile app",
       note: "Best when users need a dedicated app experience — bookings, accounts, notifications or on-the-go access.",
-      path: "/it-development/mobile-app-development"
+      path: "/mobile-app-development"
     },
     ai: {
       title: "AI chatbot or automation",
       note: "Best for FAQ handling, lead qualification or repetitive support tasks that can be automated.",
-      path: "/it-development/ai-development"
+      path: "/ai-automation"
     }
   };
 

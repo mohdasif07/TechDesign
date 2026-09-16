@@ -4,7 +4,7 @@ class LocationPage
 
   class NotFound < StandardError; end
 
-  CITY_SLUGS = %w[budaun bareilly aligarh moradabad].freeze
+  CITY_SLUGS = %w[budaun bareilly aligarh moradabad noida].freeze
 
   DIVISIONS = {
     interior: "interior-design",
@@ -31,6 +31,11 @@ class LocationPage
   class << self
     def all
       @all ||= load_pages
+    end
+
+    def reload!
+      @all = nil
+      all
     end
 
     def city_slugs
@@ -69,7 +74,8 @@ class LocationPage
   end
 
   def hub_url_path
-    interior? ? "/interior-design" : "/it-development"
+    # Web location pages nest under /web-development; interior under /interior-design.
+    hub_path
   end
 
   def path

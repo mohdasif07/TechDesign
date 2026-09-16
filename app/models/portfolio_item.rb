@@ -9,6 +9,7 @@ class PortfolioItem
   attribute :description, :string
   attribute :visual, :string
   attribute :location, :string
+  attribute :related_service_slugs, default: -> { [] }
   attribute :case_study, default: -> { {} }
 
   CATEGORIES = %w[tech interior].freeze
@@ -108,5 +109,11 @@ class PortfolioItem
 
   def case_study_specifications
     case_study["specifications"].is_a?(Hash) ? case_study["specifications"] : {}
+  end
+
+  def related_services
+    related_service_slugs.filter_map do |slug|
+      ServicePage.all.find { |page| page.slug == slug && page.division == "it" }
+    end
   end
 end

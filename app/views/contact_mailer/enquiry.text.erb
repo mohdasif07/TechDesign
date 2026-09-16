@@ -3,7 +3,11 @@ New enquiry from Arqvexa website
 Name: <%= @contact.name %>
 Email: <%= @contact.email %>
 <% if @contact.phone.present? %>Phone: <%= @contact.phone %>
+<% end %><% if @contact.company.present? %>Company: <%= @contact.company %>
 <% end %>Service: <%= @contact.service.presence || "Not specified" %>
-
+<% if @contact.project_type.present? %>Project type: <%= @contact.project_type %>
+<% end %><% if @contact.budget_range.present? %>Budget: <%= @contact.budget_range %>
+<% end %><% if @contact.timeline.present? %>Timeline: <%= @contact.timeline %>
+<% end %>
 Message:
 <%= @contact.message %>

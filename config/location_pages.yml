@@ -319,7 +319,7 @@ pages:
     related_service_slugs:
       - web-development
       - ecommerce-development
-      - custom-software-development
+      - software-development
       - ai-development
     related_city_slugs:
       - bareilly
@@ -402,7 +402,7 @@ pages:
     related_service_slugs:
       - web-development
       - ecommerce-development
-      - custom-software-development
+      - software-development
       - ai-development
     related_city_slugs:
       - budaun
@@ -480,7 +480,7 @@ pages:
     related_service_slugs:
       - web-development
       - ecommerce-development
-      - custom-software-development
+      - software-development
       - ai-development
     related_city_slugs:
       - budaun
@@ -636,9 +636,118 @@ pages:
     related_service_slugs:
       - web-development
       - ecommerce-development
-      - custom-software-development
+      - software-development
       - ai-development
     related_city_slugs:
       - budaun
       - bareilly
       - aligarh
+
+  - slug: noida
+    division: web
+    city: Noida
+    state: Uttar Pradesh
+    meta_title: Web Development Company in Noida | Arqvexa
+    meta_description: Arqvexa is a web development company serving businesses in Noida with websites, web
+      applications, mobile apps, custom software, e-commerce and AI development.
+    meta_keywords: web development company Noida, website development company Noida, web design company
+      Noida, mobile app development company Noida, software development company Noida, AI development company
+      Noida, IT company Noida, ecommerce development Noida
+    h1: Web Development Company in Noida
+    intro: Arqvexa helps Noida startups and established businesses build websites, web applications, mobile
+      apps, custom software, e-commerce, CRM and AI solutions — with clear scope, regular demos and remote-friendly
+      delivery from our Delhi NCR practice.
+    cta_label: Start Your Noida IT Project
+    sections:
+    - heading: Web development services for Noida businesses
+      body: |
+        <p>Noida’s product, services and manufacturing firms need digital systems that keep up with sales cycles and operations — not brochure sites that go stale. As a <a href="/web-development">web development</a> partner, Arqvexa builds marketing sites and custom web applications with maintainable architecture, SEO foundations and APIs when your tools must connect.</p>
+        <p>You get a structured discovery call, staged delivery and a staging URL your stakeholders in Noida can review without travelling to a vendor office.</p>
+    - heading: Website development
+      body: |
+        <p>Professional <a href="/website-development">website development</a> for Noida companies starts with clear information architecture: service pages, credibility content, mobile-first layouts, contact forms and WhatsApp paths. Business websites start from ₹35,000; final cost depends on pages and features.</p>
+        <p>We set up SEO-ready structure, analytics guidance and hosting/deployment support so your site is discoverable and maintainable after launch.</p>
+    - heading: Mobile app development
+      body: |
+        <p>Field teams, customers and partners increasingly expect app experiences. Arqvexa provides <a href="/mobile-app-development">mobile app development</a> for Android, iOS and cross-platform MVPs — with authentication, push notifications, payments and admin panels when the product needs them.</p>
+        <p>See our <a href="/blog/mobile-app-development-cost-india">mobile app cost guide</a> for planning ranges before you commit budget.</p>
+    - heading: Custom software development
+      body: |
+        <p>When spreadsheets and generic SaaS stop fitting, <a href="/software-development">custom software development</a> covers internal tools, MIS/reporting, workflow systems and legacy modernization. Our portfolio includes enterprise warehouse work such as <a href="/portfolio/ncml-storeman">NCML Storeman</a> — without publishing confidential client metrics.</p>
+    - heading: AI development
+      body: |
+        <p><a href="/ai-development">AI development</a> and <a href="/ai-automation">AI automation</a> for Noida teams focus on practical outcomes: chatbots, lead qualification, document assistants and workflow automation. Where portfolio work is still in progress — such as the F45 AI admin module frontend with backend/LLM integration underway — we state status accurately.</p>
+    - heading: E-commerce development
+      body: |
+        <p><a href="/ecommerce-development">E-commerce development</a> for Noida retailers and D2C brands includes catalogues, cart, checkout, payment gateways, order admin and room to connect inventory or CRM via APIs.</p>
+    - heading: CRM development
+      body: |
+        <p><a href="/crm-development">Custom CRM development</a> helps Noida sales teams track leads, pipelines and follow-ups without forcing an ill-fitting off-the-shelf tool. Website forms and chatbots can feed the CRM directly.</p>
+    - heading: API integrations
+      body: |
+        <p><a href="/api-integration">API integration</a> connects websites, apps, payments, CRMs and ERPs — including experience with Business Central / OData patterns on enterprise projects. Reliable sync beats brittle manual exports.</p>
+    - heading: Why businesses in Noida choose Arqvexa
+      body: |
+        <p>You work with a two-division studio that treats IT as a core practice — not a side hustle. Founder-led delivery means direct communication, honest scoping and technology choices we can maintain (including Ruby on Rails and React where they fit).</p>
+        <p>Interior design remains an equal division for Delhi NCR spaces; many clients value one studio when a showroom and a website must launch together. IT delivery is India-wide and remote-friendly.</p>
+    - heading: Technology stack
+      body: |
+        <p>Common building blocks: Ruby on Rails, React, MySQL, REST APIs, Nginx and Puma for production. Mobile approach (cross-platform vs native) is chosen after reviewing scope. We do not claim stacks we do not deliver.</p>
+    - heading: Relevant portfolio
+      body: |
+        <ul>
+        <li><a href="/portfolio/ncml-storeman">NCML Storeman</a> — warehouse platform modernization</li>
+        <li><a href="/portfolio/business-central-integration">Business Central / OData integration</a></li>
+        <li><a href="/portfolio/enterprise-mis-reports">Enterprise MIS &amp; control reports</a></li>
+        <li><a href="/portfolio/f45-ai-admin-module">F45 AI admin module</a> — frontend integrated; APIs/LLM in progress</li>
+        <li><a href="/portfolio/rails-production-devops">Rails production deployment</a></li>
+        </ul>
+    - heading: Industries we serve
+      body: |
+        <p>Services firms, product startups, trading and distribution businesses, education and training providers, and operations-heavy teams that need software beyond a brochure site. If your industry has unique workflows, we map them in discovery before proposing build vs buy.</p>
+    - heading: Noida service coverage
+      body: |
+        <p>We work with clients across Noida and Greater Noida — including teams around major commercial corridors such as Sector 62/63 and Film City — as well as Delhi, Gurugram and remote India. Meetings are typically video-first; in-person sessions can be arranged when useful.</p>
+        <p>Explore the full <a href="/it-development">IT development</a> hub for every service line.</p>
+    process:
+    - step: Discovery & scope
+      detail: Goals, features, content and timeline in a structured briefing.
+    - step: UX & architecture
+      detail: Wireframes, UI direction and technical plan before heavy build.
+    - step: Development & demos
+      detail: Sprint delivery with staging links for Noida stakeholders.
+    - step: Launch & support
+      detail: Deployment, training, analytics and optional maintenance.
+    benefits:
+    - Local Noida / Delhi NCR focus with India-wide remote delivery
+    - Websites, apps, software, e-commerce, CRM and AI under one studio
+    - Honest scoping and portfolio status
+    - Maintainable technology choices
+    - Clear CTAs and conversion-minded builds
+    faqs:
+    - question: Are you a web development company based for Noida clients?
+      answer: |
+        <p>Yes. We actively serve Noida businesses with websites, web apps and related IT services, delivered remotely from our Delhi NCR practice with structured demos.</p>
+    - question: Do you also offer website and mobile app development in Noida?
+      answer: |
+        <p>Yes — see our <a href="/website-development">website development</a> and <a href="/mobile-app-development">mobile app development</a> pages for scope and process details.</p>
+    - question: Can you build custom software or AI for a Noida startup?
+      answer: |
+        <p>Yes. We scope MVPs carefully and expand after real usage. AI features are only proposed when they solve a concrete workflow problem.</p>
+    - question: How do we start?
+      answer: |
+        <p>Use the form on this page or WhatsApp us with your goals, timeline and budget band. We reply with next steps and a discovery call slot.</p>
+    related_service_slugs:
+    - web-development
+    - website-development
+    - mobile-app-development
+    - software-development
+    - ai-development
+    - ecommerce-development
+    - crm-development
+    - api-integration
+    related_city_slugs:
+    - bareilly
+    - aligarh
+    - moradabad
+    - budaun

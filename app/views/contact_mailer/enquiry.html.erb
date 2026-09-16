@@ -5,7 +5,19 @@
 <% if @contact.phone.present? %>
   <p><strong>Phone:</strong> <%= @contact.phone %></p>
 <% end %>
+<% if @contact.company.present? %>
+  <p><strong>Company:</strong> <%= @contact.company %></p>
+<% end %>
 <p><strong>Service:</strong> <%= @contact.service.presence || "Not specified" %></p>
+<% if @contact.project_type.present? %>
+  <p><strong>Project type:</strong> <%= @contact.project_type %></p>
+<% end %>
+<% if @contact.budget_range.present? %>
+  <p><strong>Budget:</strong> <%= @contact.budget_range %></p>
+<% end %>
+<% if @contact.timeline.present? %>
+  <p><strong>Timeline:</strong> <%= @contact.timeline %></p>
+<% end %>
 
 <h2>Message</h2>
 <p><%= simple_format(@contact.message) %></p>

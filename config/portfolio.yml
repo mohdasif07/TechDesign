@@ -6,6 +6,10 @@ items:
     description: Legacy .NET warehouse platform modernized to Ruby on Rails + React with contracts, orders, weighbridge, approvals and Business Central integration.
     visual: warehouse
     location: India
+    related_service_slugs:
+      - software-development
+      - api-integration
+      - web-development
     case_study:
       type: Real project
       role: Software Developer — Backend & Full Stack
@@ -59,6 +63,10 @@ items:
     description: AI administration module for managing agents, conversations, and settings — React frontend integrated; backend APIs and LLM integration in progress.
     visual: ai
     location: Remote · India
+    related_service_slugs:
+      - ai-development
+      - ai-automation
+      - software-development
     case_study:
       type: Real project
       role: Full Stack Developer
@@ -111,6 +119,10 @@ items:
     description: GPS-based geofenced clock-in/out and warehouse presence monitoring to help identify unmanned godown situations.
     visual: geofence
     location: India
+    related_service_slugs:
+      - mobile-app-development
+      - software-development
+      - api-integration
     case_study:
       type: Real project
       role: Backend / Full Stack Developer
@@ -151,6 +163,9 @@ items:
     description: OData integration between Storeman and Microsoft Dynamics 365 Business Central for master and operational data exchange.
     visual: erp
     location: India
+    related_service_slugs:
+      - api-integration
+      - software-development
     case_study:
       type: Real project
       role: Backend / Integration Developer
@@ -193,6 +208,9 @@ items:
     description: Rails reporting services with filters, validations, pagination, and CSV export for warehouse operational and management data.
     visual: reports
     location: India
+    related_service_slugs:
+      - software-development
+      - api-integration
     case_study:
       type: Real project
       role: Backend / Full Stack Developer
@@ -234,6 +252,9 @@ items:
     description: Production deployment and support for Rails apps on Ubuntu with Nginx, Puma, Docker, MySQL migrations, SSL, and troubleshooting.
     visual: devops
     location: India
+    related_service_slugs:
+      - web-development
+      - software-development
     case_study:
       type: Real project
       role: Software Developer / Deployment & Production Support

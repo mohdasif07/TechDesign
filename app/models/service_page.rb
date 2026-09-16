@@ -23,10 +23,34 @@ class ServicePage
   attribute :benefits, default: -> { [] }
   attribute :faqs, default: -> { [] }
   attribute :related_slugs, default: -> { [] }
+  attribute :related_portfolio_ids, default: -> { [] }
+
+  # Top-level public URLs for IT service pages (SEO-friendly).
+  IT_TOP_LEVEL_SLUGS = %w[
+    web-development
+    website-development
+    mobile-app-development
+    software-development
+    ai-development
+    ai-automation
+    ecommerce-development
+    crm-development
+    api-integration
+  ].freeze
+
+  LEGACY_PATH_REDIRECTS = {
+    "custom-software-development" => "/software-development",
+    "api-development" => "/api-integration"
+  }.freeze
 
   class << self
     def all
       @all ||= load_pages
+    end
+
+    def reload!
+      @all = nil
+      all
     end
 
     def for_division(division)
@@ -38,6 +62,14 @@ class ServicePage
       raise NotFound unless page
 
       page
+    end
+
+    def it_top_level_constraint
+      Regexp.union(IT_TOP_LEVEL_SLUGS)
+    end
+
+    def legacy_redirect_path(slug)
+      LEGACY_PATH_REDIRECTS[slug] || (IT_TOP_LEVEL_SLUGS.include?(slug) ? "/#{slug}" : nil)
     end
 
     private
@@ -68,7 +100,7 @@ class ServicePage
   end
 
   def path
-    "#{hub_path}/#{slug}"
+    interior? ? "#{hub_path}/#{slug}" : "/#{slug}"
   end
 
   def hub_label
@@ -79,6 +111,10 @@ class ServicePage
     related_slugs.filter_map do |related_slug|
       self.class.all.find { |page| page.slug == related_slug && page.division == division }
     end
+  end
+
+  def related_portfolio_items
+    related_portfolio_ids.filter_map { |id| PortfolioItem.find(id) }
   end
 
   def default_cta_label

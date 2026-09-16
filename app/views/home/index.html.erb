@@ -1,8 +1,8 @@
 <% seo_page(
   title: "Arqvexa | Interior Design & IT Development in Delhi NCR",
-  description: "Arqvexa provides interior design services across Delhi NCR and web, mobile, AI and custom software development for businesses across India.",
+  description: "Arqvexa provides interior design across Delhi NCR and websites, web apps, mobile apps, custom software, CRM, e-commerce, AI and API integrations for businesses across India — with a strong focus on Delhi NCR and Noida.",
   canonical: site_url("/"),
-  keywords: "interior design Delhi NCR, web development Delhi, IT company Gurgaon, website design Noida, modular kitchen, mobile app development, interior designer near me"
+  keywords: "interior design Delhi NCR, web development company India, website development Noida, IT company Delhi NCR, mobile app development, custom software, AI development, interior designer near me"
 ) %>
 <% content_for :division, "studio" %>
 <% content_for :body_class, "page-home" %>
@@ -95,8 +95,8 @@
       <%= link_to it_development_path, class: "path-card path-tech", data: { tilt_card: true } do %>
         <%= render "shared/icon_tech" %>
         <h2>IT Development</h2>
-        <p>Websites, mobile apps, e-commerce, CRM, AI chatbots and custom software.</p>
-        <span class="path-link">Explore technology <span aria-hidden="true">→</span></span>
+        <p>Websites, apps, software &amp; AI solutions for growing businesses across India.</p>
+        <span class="path-link">Start your IT project <span aria-hidden="true">→</span></span>
       <% end %>
     </div>
   </section>
@@ -211,18 +211,21 @@
         </div>
         <div class="world-copy reveal delay-1">
           <div class="eyebrow"><span></span> IT Development</div>
-          <h2>Digital products designed around how your business works.</h2>
-          <p>Websites, dashboards, mobile apps, CRM and AI — wired into one coherent system.</p>
+          <h2>Websites, Apps, Software &amp; AI for growing businesses.</h2>
+          <p>From business websites and web apps to mobile apps, custom software, CRM, e-commerce, API integrations and AI automation — built for startups and SMEs across India, with a strong focus on Delhi NCR and Noida.</p>
           <div class="world-links">
-            <%= link_to "Web", it_service_path("web-development") %>
-            <%= link_to "E-commerce", it_service_path("ecommerce-development") %>
+            <%= link_to "Web Development", it_service_path("web-development") %>
+            <%= link_to "Websites", it_service_path("website-development") %>
             <%= link_to "Mobile Apps", it_service_path("mobile-app-development") %>
+            <%= link_to "Software", it_service_path("software-development") %>
             <%= link_to "AI", it_service_path("ai-development") %>
+            <%= link_to "E-commerce", it_service_path("ecommerce-development") %>
             <%= link_to "CRM", it_service_path("crm-development") %>
+            <%= link_to "Noida", web_location_path(city: "noida") %>
           </div>
           <div class="hero-actions" style="margin-top: 28px;">
             <%= link_to it_development_path, class: "btn btn-primary" do %>
-              Explore IT Development <span aria-hidden="true">→</span>
+              Build Your Website, App or Software <span aria-hidden="true">→</span>
             <% end %>
           </div>
         </div>
@@ -260,15 +263,15 @@
           <div class="service-icon icon-tech-wrap" aria-hidden="true"><%= render "shared/icon_tech" %></div>
           <div class="service-no">02</div>
           <h3>IT Development</h3>
-          <p>Digital products and automation that help businesses look better and work smarter.</p>
+          <p>Websites, web applications, mobile apps, custom software, CRM, AI and API integrations for growing businesses.</p>
           <ul>
-            <li>Websites &amp; E-commerce</li>
-            <li>Web &amp; Mobile Applications</li>
-            <li>AI Chatbots &amp; Automation</li>
-            <li>CRM &amp; Custom Software</li>
+            <li>Website &amp; Web Development</li>
+            <li>Mobile Apps &amp; SaaS / MVP</li>
+            <li>E-commerce &amp; CRM Systems</li>
+            <li>AI Development &amp; Automation</li>
             <li>API Integration &amp; Support</li>
           </ul>
-          <%= link_to it_development_path do %>View IT services <span aria-hidden="true">→</span><% end %>
+          <%= link_to it_development_path do %>Start Your IT Project <span aria-hidden="true">→</span><% end %>
         </article>
       </div>
     </div>

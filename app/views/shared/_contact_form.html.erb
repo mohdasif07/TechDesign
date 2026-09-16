@@ -2,6 +2,7 @@
 <% contact_message = local_assigns[:contact_message].presence || ContactMessage.new(service: prefilled_service) %>
 <% return_to = local_assigns.fetch(:return_to, request.path + "#contact") %>
 <% web3forms_key = ENV["WEB3FORMS_ACCESS_KEY"].presence %>
+<% it_focused = prefilled_service.to_s.include?("IT") %>
 
 <%= form_with model: contact_message, url: contact_path, method: :post, local: true, class: "contact-form", html: {
       id: "contact-form",
@@ -31,19 +32,42 @@
       <%= f.telephone_field :phone, autocomplete: "tel", placeholder: "+91 99176 39330" %>
     </div>
     <div class="form-field">
+      <%= f.label :company, "Company" %>
+      <%= f.text_field :company, autocomplete: "organization", placeholder: "Business or startup name" %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-field">
       <%= f.label :service, "What do you need?" %>
       <%= f.select :service, ContactMessage::SERVICES, { include_blank: "Select a service" } %>
+    </div>
+    <div class="form-field">
+      <%= f.label :project_type, "Project type" %>
+      <%= f.select :project_type, ContactMessage::PROJECT_TYPES, { include_blank: "Select project type" } %>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-field">
+      <%= f.label :budget_range, "Budget range" %>
+      <%= f.select :budget_range, ContactMessage::BUDGET_RANGES, { include_blank: "Optional" } %>
+    </div>
+    <div class="form-field">
+      <%= f.label :timeline, "Timeline" %>
+      <%= f.select :timeline, ContactMessage::TIMELINES, { include_blank: "Optional" } %>
     </div>
   </div>
 
   <div class="form-field">
-    <%= f.label :message, "Your message *" %>
-    <%= f.text_area :message, required: true, rows: 5, placeholder: "Tell us about your space, website, app or project..." %>
+    <%= f.label :message, "Project description *" %>
+    <%= f.text_area :message, required: true, rows: 5,
+          placeholder: it_focused ? "Tell us about the website, app or software you want to build..." : "Tell us about your space, website, app or project..." %>
   </div>
 
   <div class="form-status" role="status" hidden></div>
 
-  <%= f.submit "Send Message", class: "btn btn-light btn-block form-submit" %>
+  <%= f.submit it_focused ? "Start Your Project" : "Send Message", class: "btn btn-light btn-block form-submit" %>
 <% end %>
 
 <p class="contact-or">or reach us directly</p>
