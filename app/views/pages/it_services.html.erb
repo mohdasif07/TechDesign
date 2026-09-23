@@ -1,0 +1,233 @@
+<% seo_page(
+  title: "IT Development Services | Web, Mobile & AI Solutions | Arqvexa",
+  description: "Explore Arqvexa's IT development services, including web development, mobile app development, AI solutions, automation, API integrations, and custom software development.",
+  canonical: site_url(it_services_path),
+  keywords: "IT development services, web development services, mobile app development, AI development, business automation, API integrations, custom software development, Arqvexa"
+) %>
+
+<% breadcrumbs(
+  { label: "Home", url: site_url },
+  { label: "IT Development", url: site_url(it_development_path) },
+  { label: "IT Services", url: site_url(it_services_path) }
+) %>
+
+<% content_for :structured_data do %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Arqvexa IT Development Services",
+        "provider": {
+          "@type": "Organization",
+          "name": "Arqvexa",
+          "url": "<%= site_url %>"
+        },
+        "url": "<%= site_url(it_services_path) %>",
+        "description": "Web development, mobile app development, AI solutions, automation, API integrations and custom software development by Arqvexa.",
+        "areaServed": [
+          { "@type": "Country", "name": "India" },
+          { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+        ],
+        "serviceType": [
+          "Web Development",
+          "Mobile App Development",
+          "AI Development",
+          "Business Automation",
+          "API Integration",
+          "Custom Software Development"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Arqvexa IT Development Services",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Web Development",
+            "url": "<%= site_url(it_service_path("web-development")) %>"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Mobile App Development",
+            "url": "<%= site_url(it_service_path("mobile-app-development")) %>"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI Development",
+            "url": "<%= site_url(it_service_path("ai-development")) %>"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "API Integration",
+            "url": "<%= site_url(it_service_path("api-integration")) %>"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <%= json_ld_script(breadcrumb_schema(breadcrumb_items)) %>
+<% end %>
+
+<% content_for :division, "it" %>
+
+<%= render "shared/navigation" %>
+
+<main id="main-content">
+  <%= render_breadcrumbs %>
+
+  <section class="page-hero page-hero-tech">
+    <div class="container reveal">
+      <div class="eyebrow"><span></span> IT Development · Services</div>
+      <h1>IT Development Services</h1>
+      <p class="page-lead">Clear, business-focused IT services from Arqvexa — web, mobile, AI and supporting integrations built for real workflows, not slide decks.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Start a Project <span aria-hidden="true">→</span></a>
+        <%= link_to "View Portfolio", portfolio_path, class: "btn btn-ghost-light" %>
+      </div>
+      <ul class="page-hero-tags">
+        <li>Web</li><li>Mobile</li><li>AI</li><li>Integrations</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-prose reveal">
+      <h2>Services, not portfolio</h2>
+      <p>This page covers what Arqvexa’s IT division can build and support. For genuine completed work, see our <%= link_to "portfolio", portfolio_path %> — we keep those separate so you can evaluate capability and evidence independently.</p>
+      <p>Looking for company context, process and local coverage? Visit the <%= link_to "IT Development", it_development_path %> hub. Prefer a conversation first? <%= link_to "Contact us", contact_page_path %> or learn more <%= link_to "about Arqvexa", about_path %>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="web-development">
+    <div class="container content-prose reveal">
+      <h2>Web Development</h2>
+      <p>Websites and web applications that load fast, work on mobile and support how your business actually operates.</p>
+      <ul>
+        <li>Business websites</li>
+        <li>Custom web applications</li>
+        <li>SaaS applications</li>
+        <li>API / backend development</li>
+        <li>Website modernization and maintenance</li>
+      </ul>
+      <p>
+        <%= link_to "Web development", it_service_path("web-development") %> ·
+        <%= link_to "Website development", it_service_path("website-development") %> ·
+        <%= link_to "Software development", it_service_path("software-development") %>
+      </p>
+    </div>
+  </section>
+
+  <section class="section content-block" id="mobile-app-development">
+    <div class="container content-prose reveal">
+      <h2>Mobile App Development</h2>
+      <p>Mobile products with clear UX, solid APIs and a maintainable roadmap after launch.</p>
+      <ul>
+        <li>Android / iOS applications</li>
+        <li>Cross-platform applications</li>
+        <li>Business / mobile solutions</li>
+        <li>API integration</li>
+        <li>App maintenance and improvements</li>
+      </ul>
+      <p>
+        <%= link_to "Mobile app development", it_service_path("mobile-app-development") %> ·
+        <%= link_to "API integration", it_service_path("api-integration") %>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="ai-development">
+    <div class="container content-prose reveal">
+      <h2>AI Development &amp; Automation</h2>
+      <p>Practical AI features and automation scoped to outcomes — not buzzwords.</p>
+      <ul>
+        <li>AI-powered applications</li>
+        <li>Business automation</li>
+        <li>AI integrations</li>
+        <li>AI chatbots / assistants</li>
+        <li>Workflow automation</li>
+        <li>AI features for existing web / mobile applications</li>
+      </ul>
+      <p>
+        <%= link_to "AI development", it_service_path("ai-development") %> ·
+        <%= link_to "AI automation", it_service_path("ai-automation") %>
+      </p>
+    </div>
+  </section>
+
+  <section class="section content-block" id="supporting-it-services">
+    <div class="container content-prose reveal">
+      <h2>Supporting IT Services</h2>
+      <p>The connective tissue that keeps products, CRMs and third-party tools working together.</p>
+      <ul>
+        <li>API integrations</li>
+        <li>CRM integrations</li>
+        <li>Custom software solutions</li>
+        <li>Third-party integrations</li>
+        <li>Maintenance and technical support</li>
+      </ul>
+      <p>
+        <%= link_to "API integration", it_service_path("api-integration") %> ·
+        <%= link_to "CRM development", it_service_path("crm-development") %> ·
+        <%= link_to "Software development", it_service_path("software-development") %> ·
+        <%= link_to "E-commerce development", it_service_path("ecommerce-development") %>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow"><span></span> All IT services</div>
+          <h2>Explore each service in <em>detail.</em></h2>
+        </div>
+        <p>Dedicated pages for scope, process and FAQs — Interior Design remains separate on its own hub.</p>
+      </div>
+      <div class="service-link-section reveal">
+        <%= render "shared/service_link_grid", services: @it_services, variant: "tech" %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-block content-block-dark">
+    <div class="container content-prose reveal">
+      <h2>Portfolio for completed work</h2>
+      <p>Services describe what we can build. Our <%= link_to "IT portfolio", portfolio_path %> shows genuine projects Arqvexa has already delivered — without invented clients, statistics or testimonials on this page.</p>
+      <p>Need company background first? Read <%= link_to "about Arqvexa", about_path %> or start from the <%= link_to "IT Development", it_development_path %> overview.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <%= render "shared/cta_banner",
+            title: "Have a project in mind?",
+            text: "Let's build it together — share your goals, users and timeline.",
+            button_label: "Start a Project",
+            button_url: "#contact",
+            secondary_label: "View Portfolio",
+            secondary_url: portfolio_path %>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="container cta-box">
+      <div class="reveal">
+        <div class="eyebrow"><span></span> Start a Project</div>
+        <h2>Have a project in mind?<br><em>Let's build it together.</em></h2>
+        <p>Tell us what you need — web, mobile, AI or integrations. We’ll reply with next steps and a discovery call slot.</p>
+      </div>
+      <%= render "shared/contact_panel",
+            default_service: "IT Development",
+            return_to: it_services_path(anchor: "contact") %>
+    </div>
+  </section>
+</main>
+
+<%= render "shared/footer" %>

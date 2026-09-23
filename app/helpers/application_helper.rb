@@ -104,7 +104,7 @@ module ApplicationHelper
 
   def contact_form_path
     if (controller_name == "home" && action_name == "index") ||
-       (controller_name == "pages" && action_name.in?(%w[interior_design it_development contact])) ||
+       (controller_name == "pages" && action_name.in?(%w[interior_design it_development it_services contact])) ||
        controller_name == "services"
       "#contact"
     else

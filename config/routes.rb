@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "interior-design/:slug", to: "services#interior", as: :interior_service
 
   get "it-development", to: "pages#it_development", as: :it_development
+  get "it-services", to: "pages#it_services", as: :it_services
   get "it-development/tools/website-cost-calculator", to: "tools#website_cost_calculator", as: :website_cost_calculator
   get "it-development/tools/project-recommender", to: "tools#project_recommender", as: :project_recommender
 

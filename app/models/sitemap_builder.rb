@@ -13,6 +13,7 @@ class SitemapBuilder
         entry("/contact", changefreq: "monthly", priority: "0.85", lastmod: today),
         entry("/interior-design", changefreq: "weekly", priority: "0.9", lastmod: today),
         entry("/it-development", changefreq: "weekly", priority: "0.9", lastmod: today),
+        entry("/it-services", changefreq: "weekly", priority: "0.9", lastmod: today),
         entry("/portfolio", changefreq: "weekly", priority: "0.85", lastmod: today),
         entry("/blog", changefreq: "weekly", priority: "0.85", lastmod: today),
         entry("/privacy", changefreq: "yearly", priority: "0.4", lastmod: "2026-08-30")

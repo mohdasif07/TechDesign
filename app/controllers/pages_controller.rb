@@ -7,6 +7,10 @@ class PagesController < ApplicationController
     @it_services = ServicePage.for_division(:it)
   end
 
+  def it_services
+    @it_services = ServicePage.for_division(:it)
+  end
+
   def about
   end
 
