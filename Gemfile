@@ -6,4 +6,4 @@ gem "importmap-rails"
 
 gem "puma", "~> 8.0"
 
-gem "sqlite3", "~> 2.9"
+gem "sqlite3", "~> 2.10"
